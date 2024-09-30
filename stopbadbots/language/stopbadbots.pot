@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: stop bad bots\n"
-"POT-Creation-Date: 2024-09-05 14:57+0100\n"
+"POT-Creation-Date: 2024-09-25 11:42+0100\n"
 "PO-Revision-Date: 2018-08-28 16:59-0000\n"
 "Last-Translator: Bill <sergiominozzi@gmail.com>\n"
 "Language-Team: Bill Minozzi <sergiominozzi@gmail.com>\n"
@@ -18,13 +18,13 @@ msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:541
 #: _includes/diagnose/class_bill_diagnose.php:562
-#: includes/diagnose/class_bill_diagnose.php:603
-#: includes/diagnose/class_bill_diagnose.php:624
+#: includes/diagnose/class_bill_diagnose.php:604
+#: includes/diagnose/class_bill_diagnose.php:625
 msgid "Our plugin"
 msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:543
-#: includes/diagnose/class_bill_diagnose.php:605
+#: includes/diagnose/class_bill_diagnose.php:606
 msgid ""
 "cannot function properly because your WordPress Memory Limit is too low. "
 "Your site will experience serious issues, even if you deactivate our plugin."
@@ -32,18 +32,18 @@ msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:549
 #: _includes/diagnose/class_bill_diagnose.php:570 functions/functions.php:6613
-#: functions/functions.php:6635 includes/diagnose/class_bill_diagnose.php:611
-#: includes/diagnose/class_bill_diagnose.php:632
+#: functions/functions.php:6635 includes/diagnose/class_bill_diagnose.php:612
+#: includes/diagnose/class_bill_diagnose.php:633
 msgid "Learn more"
 msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:561
-#: includes/diagnose/class_bill_diagnose.php:623
+#: includes/diagnose/class_bill_diagnose.php:624
 msgid "Your site has errors."
 msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:564
-#: includes/diagnose/class_bill_diagnose.php:626
+#: includes/diagnose/class_bill_diagnose.php:627
 msgid ""
 "can't function as intended. Errors, including JavaScript errors, may lead to "
 "visual problems or disrupt functionality, from minor glitches to critical "
@@ -51,14 +51,14 @@ msgid ""
 msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:632
-#: includes/diagnose/class_bill_diagnose.php:694
+#: includes/diagnose/class_bill_diagnose.php:695
 msgid ""
 "Displaying the latest recurring errors from your error log file and "
 "eventually alert about low WordPress memory limit is a courtesy of plugin"
 msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:634
-#: includes/diagnose/class_bill_diagnose.php:696
+#: includes/diagnose/class_bill_diagnose.php:697
 msgid ""
 "Disabling our plugin does not stop the errors from occurring; \n"
 "                it simply means you will no longer be notified here that "
@@ -66,29 +66,29 @@ msgid ""
 msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:642
-#: includes/diagnose/class_bill_diagnose.php:704
+#: includes/diagnose/class_bill_diagnose.php:705
 msgid "Potential Problems"
 msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:650
-#: includes/diagnose/class_bill_diagnose.php:712
+#: includes/diagnose/class_bill_diagnose.php:713
 msgid "Low WordPress Memory Limit"
 msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:663
-#: includes/diagnose/class_bill_diagnose.php:725
+#: includes/diagnose/class_bill_diagnose.php:726
 msgid "Your usage now"
 msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:671
-#: includes/diagnose/class_bill_diagnose.php:733
+#: includes/diagnose/class_bill_diagnose.php:734
 msgid "Total Php Server Memory"
 msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:680
 #: _includes/install-checkup/class_bill_install.php:307
 #: includes/__install/class_bill_install.php:307
-#: includes/diagnose/class_bill_diagnose.php:742
+#: includes/diagnose/class_bill_diagnose.php:743
 #: includes/install-checkup/class_bill_install.php:307
 msgid ""
 "Your WordPress Memory Limit is too low, which can lead to critical issues on "
@@ -104,8 +104,8 @@ msgstr ""
 #: dashboard/dashboard.php:121 dashboard/memory.php:103
 #: functions/functions.php:4296 includes/__install/class_bill_install.php:316
 #: includes/__install/class_bill_install.php:385
-#: includes/diagnose/class_bill_diagnose.php:748
-#: includes/diagnose/class_bill_diagnose.php:786
+#: includes/diagnose/class_bill_diagnose.php:749
+#: includes/diagnose/class_bill_diagnose.php:787
 #: includes/install-checkup/class_bill_install.php:316
 #: includes/install-checkup/class_bill_install.php:385
 #: includes/vendor/vendor.php:54
@@ -113,12 +113,12 @@ msgid "Learn More"
 msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:715
-#: includes/diagnose/class_bill_diagnose.php:777
+#: includes/diagnose/class_bill_diagnose.php:778
 msgid "Site Errors"
 msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:720
-#: includes/diagnose/class_bill_diagnose.php:782
+#: includes/diagnose/class_bill_diagnose.php:783
 msgid ""
 "Your site has experienced errors for the past 2 days. These errors, "
 "including JavaScript issues, can result in visual problems or disrupt "
@@ -128,12 +128,12 @@ msgid ""
 msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:778
-#: includes/diagnose/class_bill_diagnose.php:840
+#: includes/diagnose/class_bill_diagnose.php:841
 msgid "This is a partial list of the errors found."
 msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:1263
-#: includes/diagnose/class_bill_diagnose.php:1325
+#: includes/diagnose/class_bill_diagnose.php:1326
 msgid ""
 "These are critical issues that can have a significant impact on your site's "
 "performance. They can cause many plugins and functionalities to malfunction "
@@ -211,108 +211,101 @@ msgid "Just Deactivate"
 msgstr ""
 
 #: _includes/list-tables/class-sbb-list-table.php:19 dashboard/topbots.php:36
-#: includes/list-tables/class-sbb-list-table.php:19
+#: includes/list-tables/class-sbb-list-table.php:22
 msgid "Nickname"
 msgstr ""
 
 #: _includes/list-tables/class-sbb-list-table.php:20
-#: includes/list-tables/class-sbb-list-table.php:20
+#: includes/list-tables/class-sbb-list-table.php:23
 msgid "Name"
 msgstr ""
 
 #: _includes/list-tables/class-sbb-list-table.php:21
-#: _includes/list-tables/class-sbb-list-table2.php:20
+#: _includes/list-tables/class-sbb-list-table2.php:23
 #: _includes/list-tables/class-sbb-list-table3.php:20
 #: includes/__tgm/class-tgm-plugin-activation.php:2647
-#: includes/list-tables/class-sbb-list-table.php:21
-#: includes/list-tables/class-sbb-list-table2.php:20
-#: includes/list-tables/class-sbb-list-table3.php:20
+#: includes/list-tables/class-sbb-list-table.php:24
+#: includes/list-tables/class-sbb-list-table2.php:23
+#: includes/list-tables/class-sbb-list-table3.php:34
 msgid "Status"
 msgstr ""
 
 #: _includes/list-tables/class-sbb-list-table.php:22
-#: _includes/list-tables/class-sbb-list-table2.php:22
+#: _includes/list-tables/class-sbb-list-table2.php:25
 #: _includes/list-tables/class-sbb-list-table3.php:22
-#: includes/list-tables/class-sbb-list-table.php:22
-#: includes/list-tables/class-sbb-list-table2.php:22
-#: includes/list-tables/class-sbb-list-table3.php:22
+#: includes/list-tables/class-sbb-list-table.php:25
+#: includes/list-tables/class-sbb-list-table2.php:25
+#: includes/list-tables/class-sbb-list-table3.php:36
 msgid "Num Blocked"
 msgstr ""
 
 #: _includes/list-tables/class-sbb-list-table.php:29
-#: includes/list-tables/class-sbb-list-table.php:29
 msgid "botnickname"
 msgstr ""
 
 #: _includes/list-tables/class-sbb-list-table.php:30
 #: _includes/list-tables/class-sbb-list-table3.php:28
-#: includes/list-tables/class-sbb-list-table.php:30
-#: includes/list-tables/class-sbb-list-table3.php:28
 msgid "botname"
 msgstr ""
 
 #: _includes/list-tables/class-sbb-list-table.php:32
-#: _includes/list-tables/class-sbb-list-table2.php:32
+#: _includes/list-tables/class-sbb-list-table2.php:36
 #: _includes/list-tables/class-sbb-list-table3.php:31
-#: includes/list-tables/class-sbb-list-table.php:32
-#: includes/list-tables/class-sbb-list-table2.php:32
-#: includes/list-tables/class-sbb-list-table3.php:31
 msgid "botblocked"
 msgstr ""
 
 #: _includes/list-tables/class-sbb-list-table.php:73
-#: _includes/list-tables/class-sbb-list-table2.php:72
+#: _includes/list-tables/class-sbb-list-table2.php:78
 #: _includes/list-tables/class-sbb-list-table3.php:71
-#: includes/list-tables/class-sbb-list-table.php:73
-#: includes/list-tables/class-sbb-list-table2.php:72
-#: includes/list-tables/class-sbb-list-table3.php:71
+#: includes/list-tables/class-sbb-list-table.php:90
+#: includes/list-tables/class-sbb-list-table2.php:86
+#: includes/list-tables/class-sbb-list-table3.php:108
 msgid "Change Status"
 msgstr ""
 
 #: _includes/list-tables/class-sbb-list-table.php:89
 #: _includes/list-tables/class-sbb-list-table.php:102
-#: _includes/list-tables/class-sbb-list-table2.php:88
-#: _includes/list-tables/class-sbb-list-table2.php:101
+#: _includes/list-tables/class-sbb-list-table2.php:94
+#: _includes/list-tables/class-sbb-list-table2.php:108
 #: _includes/list-tables/class-sbb-list-table3.php:87
 #: _includes/list-tables/class-sbb-list-table3.php:100
-#: includes/list-tables/class-sbb-list-table.php:89
-#: includes/list-tables/class-sbb-list-table.php:102
-#: includes/list-tables/class-sbb-list-table2.php:88
-#: includes/list-tables/class-sbb-list-table2.php:101
-#: includes/list-tables/class-sbb-list-table3.php:87
-#: includes/list-tables/class-sbb-list-table3.php:100
+#: includes/list-tables/class-sbb-list-table.php:106
+#: includes/list-tables/class-sbb-list-table.php:120
+#: includes/list-tables/class-sbb-list-table2.php:102
+#: includes/list-tables/class-sbb-list-table2.php:116
+#: includes/list-tables/class-sbb-list-table3.php:124
+#: includes/list-tables/class-sbb-list-table3.php:138
 msgid "deactivate"
 msgstr ""
 
 #: _includes/list-tables/class-sbb-list-table.php:101
-#: _includes/list-tables/class-sbb-list-table2.php:100
+#: _includes/list-tables/class-sbb-list-table2.php:107
 #: _includes/list-tables/class-sbb-list-table3.php:99
 #: includes/__tgm/class-tgm-plugin-activation.php:2819
-#: includes/list-tables/class-sbb-list-table.php:101
-#: includes/list-tables/class-sbb-list-table2.php:100
-#: includes/list-tables/class-sbb-list-table3.php:99
+#: includes/list-tables/class-sbb-list-table.php:119
+#: includes/list-tables/class-sbb-list-table2.php:115
+#: includes/list-tables/class-sbb-list-table3.php:137
 msgid "Activate"
 msgstr ""
 
-#: _includes/list-tables/class-sbb-list-table2.php:19
-#: includes/list-tables/class-sbb-list-table2.php:19
+#: _includes/list-tables/class-sbb-list-table2.php:22
+#: includes/list-tables/class-sbb-list-table2.php:22
 msgid "IP"
 msgstr ""
 
-#: _includes/list-tables/class-sbb-list-table2.php:21
+#: _includes/list-tables/class-sbb-list-table2.php:24
 #: _includes/list-tables/class-sbb-list-table3.php:21
-#: includes/list-tables/class-sbb-list-table2.php:21
-#: includes/list-tables/class-sbb-list-table3.php:21
+#: includes/list-tables/class-sbb-list-table2.php:24
+#: includes/list-tables/class-sbb-list-table3.php:35
 msgid "Added by"
 msgstr ""
 
-#: _includes/list-tables/class-sbb-list-table2.php:29
-#: includes/list-tables/class-sbb-list-table2.php:29
+#: _includes/list-tables/class-sbb-list-table2.php:33
 msgid "botip"
 msgstr ""
 
 #: _includes/list-tables/class-sbb-list-table3.php:19
-#: includes/list-tables/class-sbb-list-table3.php:19
+#: includes/list-tables/class-sbb-list-table3.php:33
 msgid "Referer Name"
 msgstr ""
 
@@ -629,38 +622,60 @@ msgid ""
 "    Here is the link:"
 msgstr ""
 
-#: dashboard/mybanners.php:200
+#: dashboard/mybanners.php:21
+msgid "Get Extra Protection"
+msgstr ""
+
+#: dashboard/mybanners.php:25
+msgid "Bots Can Slow Your Server and Hurt Your Google Rankings"
+msgstr ""
+
+#: dashboard/mybanners.php:29
+msgid "Avoid Bots Damaging Your SEO"
+msgstr ""
+
+#: dashboard/mybanners.php:41
+msgid "features are not included in the free version:"
+msgstr ""
+
+#: dashboard/mybanners.php:45
 msgid ""
 "Bots can steal content, harm SEO, slow servers, and exploit vulnerabilities."
 msgstr ""
 
-#: dashboard/mybanners.php:201
-msgid ""
-"Upgrade to Premium for enhanced protection and automatic weekly updates."
+#: dashboard/mybanners.php:47
+msgid "Automatic updates."
 msgstr ""
 
-#: dashboard/mybanners.php:202
-msgid "Limit Bots Visits and block HTTP Tools."
+#: dashboard/mybanners.php:49
+msgid "Limit Number of Visits."
 msgstr ""
 
-#: dashboard/mybanners.php:204
-msgid ""
-"Block traffic from China, Cuba, and North Korea to enhance your security."
+#: dashboard/mybanners.php:51
+msgid "Block HTTP Tools."
 msgstr ""
 
-#: dashboard/mybanners.php:206
+#: dashboard/mybanners.php:55
+msgid "4 options of Engine Management."
+msgstr ""
+
+#: dashboard/mybanners.php:60
 msgid "Block User Enumeration."
 msgstr ""
 
-#: dashboard/mybanners.php:207
+#: dashboard/mybanners.php:63
+msgid "Block traffic from China, Cuba, and North Korea."
+msgstr ""
+
+#: dashboard/mybanners.php:66
 msgid "Firewall Protection."
 msgstr ""
 
-#: dashboard/mybanners.php:208
+#: dashboard/mybanners.php:68
 msgid "Dedicated Premium Support."
 msgstr ""
 
-#: dashboard/mybanners.php:209
+#: dashboard/mybanners.php:70
 msgid "More..."
 msgstr ""
 
@@ -2278,23 +2293,23 @@ msgstr ""
 msgid "Stop Bad Bots: Could not load the localization file (Language file)"
 msgstr ""
 
-#: stopbadbots.php:819
+#: stopbadbots.php:869
 msgid "Protection rate:"
 msgstr ""
 
-#: stopbadbots.php:823
+#: stopbadbots.php:873
 msgid "For details, visit the plugin dashboard"
 msgstr ""
 
-#: stopbadbots.php:825
+#: stopbadbots.php:875
 msgid "Attacks Blocked Last 15 days"
 msgstr ""
 
-#: stopbadbots.php:832
+#: stopbadbots.php:882
 msgid "Total Attacks Blocked By Type"
 msgstr ""
 
-#: stopbadbots.php:841
+#: stopbadbots.php:891
 msgid "Total Attacks Blocked By IP"
 msgstr ""
 

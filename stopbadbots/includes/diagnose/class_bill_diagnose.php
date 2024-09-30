@@ -278,7 +278,8 @@ class ErrorChecker {
         fclose($handle);
 
         // Reverte o array para retornar as linhas na ordem correta
-        return array_reverse($text);
+        // return array_reverse($text);
+        return $text;
     }
 
 } // end class error checker

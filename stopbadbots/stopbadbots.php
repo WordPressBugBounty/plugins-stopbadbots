@@ -2,9 +2,9 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 10.56
+Version: 10.57
 Text Domain: stopbadbots
-Domain Path: /languageo
+Domain Path: /language
 Author: Bill Minozzi
 Author URI: http://stopbadbots.com
 License:     GPL2

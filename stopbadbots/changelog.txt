@@ -3,6 +3,7 @@ This file contains changelog entries, so we can keep the size of the standard Wo
 
 
 == Changelog ==
+10.57 -2024-09-25-Translation files improved.
 10.56 -2024-09-10-Fixed small bug on bots table order by.
 10.55 -2024-09-06-Translation files improved.
 10.51 -2024-09-05-Translation files improved.

@@ -9,6 +9,74 @@ namespace bill_banners;
 if (!defined("ABSPATH")) {
     die("Invalid request.");
 }
+
+// Exibe vídeos e informações adicionais
+if (empty($stopbadbots_checkversion)) {
+    echo '<ul>';
+    $x = rand(1, 3);
+    $url = '';
+    switch ($x) {
+        case 1:
+            $url = esc_url(STOPBADBOTSURL . "assets/videos/security11.mp4");
+            $title_ad = esc_attr__("Get Extra Protection", "stopbadbots");
+            break;
+        case 2:
+            $url = esc_url(STOPBADBOTSURL . "assets/videos/security12.mp4");
+            $title_ad = esc_attr__("Bots Can Slow Your Server and Hurt Your Google Rankings", "stopbadbots");
+            break;
+        case 3:
+            $url = esc_url(STOPBADBOTSURL . "assets/videos/security13.mp4");
+            $title_ad = esc_attr__("Avoid Bots Damaging Your SEO", "stopbadbots");
+
+            break;
+    }
+    echo '<h2>' . esc_attr($title_ad) . '</h2>';
+    ?>
+    <video id="bill-banner-2" style="margin:-30px 0px -15px -12px; padding:0px;" width="400" height="230" muted>
+        <source src="<?php echo esc_url($url); ?>" type="video/mp4">
+    </video>
+
+    <li>
+    <?php
+    esc_attr_e('features are not included in the free version:', 'stopbadbots');
+    echo '</li>';
+    ?>
+    <!--
+    <li><?php esc_attr_e("Bots can steal content, harm SEO, slow servers, and exploit vulnerabilities.", "stopbadbots"); ?></li>
+    -->
+    - <?php esc_attr_e("Automatic updates.", "stopbadbots"); ?>
+    <br>
+    - <?php esc_attr_e("Limit Number of Visits.", "stopbadbots"); ?>
+    <br>
+    - <?php esc_attr_e("Block HTTP Tools.", "stopbadbots"); ?>
+    <br>
+
+
+- <?php esc_attr_e("4 options of Engine Management.", "stopbadbots"); ?>
+
+    <br>
+
+
+    - <?php esc_attr_e("Block User Enumeration.", "stopbadbots"); ?>
+    <br />
+
+   -<?php esc_attr_e("Block traffic from China, Cuba, and North Korea.", "stopbadbots"); ?>
+   <br />
+
+    -<?php esc_attr_e("Firewall Protection.", "stopbadbots"); ?>
+    <br />
+    -<?php esc_attr_e("Dedicated Premium Support.", "stopbadbots"); ?>
+    <br />
+    -<?php esc_attr_e("More...", "stopbadbots"); ?></li>
+
+
+    <br />
+    <a href="https://stopbadbots.com/premium/" class="button button-medium button-primary"><?php esc_html_e('Learn More', 'stopbadbots'); ?></a>
+    <?php
+    echo '</ul>';
+}
+
+
 ob_start();
 // Define the expiration time for transients (1 day)
 $transient_expiration = DAY_IN_SECONDS;
@@ -175,50 +243,13 @@ if ($cached_coupon_data !== '' && $cached_coupon_data !== false) {
 
 
 
-// Exibe vídeos e informações adicionais
-if (empty($stopbadbots_checkversion)) {
-    echo '<ul>';
-    $x = rand(1, 3);
-    $url = '';
-    switch ($x) {
-        case 1:
-            $url = esc_url(STOPBADBOTSURL . "assets/videos/security11.mp4");
-            break;
-        case 2:
-            $url = esc_url(STOPBADBOTSURL . "assets/videos/security12.mp4");
-            break;
-        case 3:
-            $url = esc_url(STOPBADBOTSURL . "assets/videos/security13.mp4");
-            break;
-    }
-    ?>
-    <video id="bill-banner-2" style="margin:-20px 0px -15px -12px; padding:0px;" width="400" height="230" muted>
-        <source src="<?php echo esc_url($url); ?>" type="video/mp4">
-    </video>
 
-
-    <li><?php esc_attr_e("Bots can steal content, harm SEO, slow servers, and exploit vulnerabilities.", "stopbadbots"); ?></li>
-    <li><?php esc_attr_e("Upgrade to Premium for enhanced protection and automatic weekly updates.", "stopbadbots"); ?></li>
-    <li><?php esc_attr_e("Limit Bots Visits and block HTTP Tools.", "stopbadbots"); ?></li>
-
-    <li><?php esc_attr_e("Block traffic from China, Cuba, and North Korea to enhance your security.", "stopbadbots"); ?></li>
-
-    <li><?php esc_attr_e("Block User Enumeration.", "stopbadbots"); ?></li>
-    <li><?php esc_attr_e("Firewall Protection.", "stopbadbots"); ?></li>
-    <li><?php esc_attr_e("Dedicated Premium Support.", "stopbadbots"); ?></li>
-    <li><?php esc_attr_e("More...", "stopbadbots"); ?></li>
-
-
-    <br />
-    <a href="https://stopbadbots.com/premium/" class="button button-medium button-primary"><?php esc_html_e('Learn More', 'stopbadbots'); ?></a>
-    <?php
-    echo '</ul>';
-}
 // Sempre exibe a seção adicional
 echo '<ul>';
 $x = rand(1, 2);
 if ($x < 2) {
-    echo '<h2>' . esc_html__('Did you like it?', 'stopbadbots') . '</h2>';
+    echo '<h2>' . esc_html__('Did you like Stop Bad Bots Plugin?', 'stopbadbots') . '</h2>';
+    echo '<img src="' . esc_url(STOPBADBOTSIMAGES) . '/help1.jpg' . '" style="width: 100%; height: auto;" />';
     esc_html_e('Please support us by rating our plugin on WordPress.org.', 'stopbadbots');
 ?>
     <br /><br />
@@ -226,6 +257,7 @@ if ($x < 2) {
 <?php
 } else {
     echo '<h2>' . esc_html__('Can You Do Us a Favor?', 'stopbadbots') . '</h2>';
+    echo '<img src="' . esc_url(STOPBADBOTSIMAGES) . '/help3.jpg' . '" style="width: 100%; height: auto;" />';
     esc_html_e("If you're enjoying the Stop Bad Bots Plugin, we’d be grateful if you could rate it on WordPress.org. It only takes a moment and helps us reach more users and stay motivated. Thank you!", 'stopbadbots');
 ?>
     <br /><br />

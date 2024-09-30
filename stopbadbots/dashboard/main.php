@@ -103,13 +103,17 @@ function stopbadbots_options_page_main()
 
 
         <div id="stopbadbots-nocloud">
+            <br>
             <img alt="No Cloud" src="<?php echo esc_attr(STOPBADBOTSIMAGES); ?>/no_cloud.png" width="200px" />
         </div>
 
         <div id="stopbadbots_help_title">
             Help and Support Page
         </div>
+        <br>
         <?php
+        //
+        //
 
 
         if (isset($_GET['tab'])) {

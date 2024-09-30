@@ -413,7 +413,7 @@ class recaptcha_for_all_Bill_Diagnose
 
         // Adicionando as ações dentro do construtor
         add_action("admin_notices", [$this, "show_dismissible_notification"]);
-        add_action("admin_notices", [$this, "show_dismissible_notification2"]);
+        //add_action("admin_notices", [$this, "show_dismissible_notification2"]);
         // 2024
         if($this->global_variable_has_errors)
            add_action("admin_bar_menu", [$this, "add_site_health_link_to_admin_toolbar"], 999);
@@ -615,6 +615,7 @@ class recaptcha_for_all_Bill_Diagnose
         echo '<p style="color: red;">' . wp_kses_post($message) . "</p>";
         echo "</div>";
     }
+    /*
     public function show_dismissible_notification2()
     {
         if ($this->is_notification_displayed_today()) {
@@ -638,6 +639,7 @@ class recaptcha_for_all_Bill_Diagnose
             echo "</div>";
         }
     }
+    */
     // Helper function to check if a notification has been displayed today
     public function is_notification_displayed_today()
     {

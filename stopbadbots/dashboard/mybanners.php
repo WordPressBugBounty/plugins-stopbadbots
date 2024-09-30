@@ -52,7 +52,7 @@ if (empty($stopbadbots_checkversion)) {
     <br>
 
 
-- <?php esc_attr_e("4 options of Engine Management.", "stopbadbots"); ?>
+   - <?php esc_attr_e("4 options of Engine Management.", "stopbadbots"); ?>
 
     <br>
 
@@ -248,9 +248,9 @@ if ($cached_coupon_data !== '' && $cached_coupon_data !== false) {
 echo '<ul>';
 $x = rand(1, 2);
 if ($x < 2) {
-    echo '<h2>' . esc_html__('Did you like Stop Bad Bots Plugin?', 'stopbadbots') . '</h2>';
+    echo '<h2>' . esc_html__('Did you like The Stop Bad Bots Plugin?', 'stopbadbots') . '</h2>';
     echo '<img src="' . esc_url(STOPBADBOTSIMAGES) . '/help1.jpg' . '" style="width: 100%; height: auto;" />';
-    esc_html_e('Please support us by rating our plugin on WordPress.org.', 'stopbadbots');
+    esc_html_e('Please support us by rating our plugin on WordPress.org. Help us keep this plugin live and updated.', 'stopbadbots');
 ?>
     <br /><br />
     <a href="https://wordpress.org/support/plugin/stopbadbots/reviews/#new-post" class="button button-medium button-primary"><?php esc_html_e('Rate or Share', 'stopbadbots'); ?></a>

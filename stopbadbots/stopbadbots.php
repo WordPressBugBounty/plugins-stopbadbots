@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 10.58
+Version: 10.59
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -305,8 +305,9 @@ $stopbadbots_go_pro_hide    = sanitize_text_field(get_option('stopbadbots_go_pro
 $stopbadbots_rate404_limiting = sanitize_text_field(get_option('stopbadbots_rate404_limiting', 'unlimited'));
 
 // $stopbadbots_install_anti_hacker = sanitize_text_field( get_option( 'stopbadbots_install_anti_hacker', '' ) );
-
 $stopbadbots_keep_log = sanitize_text_field(get_option('stopbadbots_keep_log', '30'));
+
+// die(var_dump($stopbadbots_keep_log));
 
 
 $stopbadbots_update_http_tools = sanitize_text_field(get_option('stopbadbots_update_http_tools', 'no'));
@@ -1217,6 +1218,7 @@ add_action('wp_ajax_stopbadbots_go_pro_hide2', 'stopbadbots_go_pro_hide2');
 
 
 // Cron customized
+
 add_action('template_redirect', 'stopbadbots_check_cron_request');
 
 function stopbadbots_check_cron_request()
@@ -1248,6 +1250,47 @@ function stopbadbots_check_cron_request()
 		}
 	}
 }
+
+
+
+/*
+function stopbadbots_check_cron_request_debug()
+{
+	//error_log('stopbadbots_check_cron_request iniciado'); // Log de início
+
+	if (get_transient('stopbadbots_cron_clear')) {
+		error_log('Transiente stopbadbots_cron_clear existe. Saindo da função.'); // Log se o transiente existir
+		return;
+	} else {
+		set_transient('stopbadbots_cron_clear', true, MINUTE_IN_SECONDS * 5);
+		error_log('Transiente stopbadbots_cron_clear definido'); // Log ao definir o transiente
+	}
+
+	if (did_action('template_redirect')) {
+		try {
+			$execute_cron = get_query_var('execute-cron');
+			error_log('Valor de execute-cron: ' . print_r($execute_cron, true)); // Log do valor da query
+
+			if ($execute_cron !== null) {
+				stopbadbots_cron_function_clear();
+			} else {
+				$cron_url = home_url('/?execute-cron');
+				$args = array(
+					'timeout' => 5,
+					'blocking' => false,
+					'sslverify' => apply_filters('https_local_ssl_verify', false)
+				);
+				$result = wp_remote_post($cron_url, $args);
+				if (is_wp_error($result)) {
+					error_log('Erro na requisição wp_remote_post: ' . $result->get_error_message()); // Log do erro
+				}
+			}
+		} catch (Exception $e) {
+			error_log('Exceção capturada: ' . $e->getMessage()); // Log da exceção
+		}
+	}
+}
+*/
 
 
 function stopbadbots_add_more_plugins()

@@ -3,6 +3,7 @@ This file contains changelog entries, so we can keep the size of the standard Wo
 
 
 == Changelog ==
+10.60 -2024-11-28-Imroved Messages from premature header sent.
 10.59 -2024-10-11-Imroved errors warnings.
 10.58 -2024-09-30-Fixed small issue with warning (line 626...).
 10.57 -2024-09-25-Translation files improved.

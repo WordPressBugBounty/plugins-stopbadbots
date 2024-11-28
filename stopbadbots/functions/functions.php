@@ -4590,7 +4590,19 @@ function stopbadbots_response($stopbadbots_why_block)
 {
 	global $stopbadbots_active;
 	if ($stopbadbots_active == 'yes' and ! stopbadbots_block_whitelist_IP()) {
-		http_response_code(403);
+
+
+		//http_response_code(403);
+		if (!headers_sent()) {
+			http_response_code(403);
+		} else {
+			error_log("[Warning] Another plugin has prematurely sent headers to the browser, which prevents Stop Bad Bots plugin from effectively blocking the visit.");
+		}
+
+
+
+
+
 		stopbadbots_record_log($stopbadbots_why_block);
 
 		if (! headers_sent()) {

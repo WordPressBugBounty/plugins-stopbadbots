@@ -6222,7 +6222,7 @@ function stopbadbots_find_ua_version($agent, $browser)
 
 
 
-
+/*
 function stopbadbots_check_host_ripe($ip)
 {
 
@@ -6248,6 +6248,82 @@ function stopbadbots_check_host_ripe($ip)
 		return false;
 	}
 }
+*/
+function stopbadbots_check_host_ripe($ip)
+{
+	// Validate the IP address format
+	$ip = filter_var($ip, FILTER_VALIDATE_IP);
+	if (!$ip) {
+		return false; // Invalid IP
+	}
+
+	// Check if the data is already cached in a transient
+	$cache_key = 'stopbadbots_host_' . md5($ip);
+	$cached_data = get_transient($cache_key);
+
+	// If cached data exists, process it and return the result
+	if ($cached_data !== false) {
+		return stopbadbots_process_response($cached_data);
+	}
+
+	// Construct the RDAP API URL
+	$urlcurl = 'https://rdap.db.ripe.net/ip/' . $ip;
+
+	try {
+		// Set up request options with timeout
+		$request_options = array(
+			'timeout'   => 5, // Set a timeout of 5 seconds
+			'sslverify' => true, // Verify SSL for security
+		);
+
+		// Perform the HTTP request
+		$response = wp_remote_get($urlcurl, $request_options);
+
+		// Check if the request was successful
+		$http_code = wp_remote_retrieve_response_code($response);
+		if ($http_code !== 200) {
+			return false; // API did not return a successful response
+		}
+
+		// Ensure the response is an array and contains a body
+		if (is_array($response) && isset($response['body'])) {
+			$decoded_response = json_decode($response['body'], true);
+
+			// Ensure the JSON decoding succeeded
+			if (json_last_error() === JSON_ERROR_NONE) {
+				// Cache the decoded response in a transient for 1 hour
+				// set_transient($cache_key, $decoded_response, HOUR_IN_SECONDS);
+				set_transient($cache_key, $decoded_response, 3 * MINUTE_IN_SECONDS);
+
+				return stopbadbots_process_response($decoded_response); // Process and return the result
+			}
+		}
+
+		return false; // Fallback if the response or decoding is invalid
+	} catch (Exception $e) {
+		// Log the exception message for debugging
+		error_log('Exception in stopbadbots_check_host_ripe: ' . $e->getMessage());
+		return false; // Return false in case of an exception
+	}
+}
+
+
+function stopbadbots_process_response($response)
+{
+	// Example processing logic for the RDAP response
+	if (isset($response['entities']) && is_array($response['entities'])) {
+		foreach ($response['entities'] as $entity) {
+			if (isset($entity['roles']) && in_array('abuse', $entity['roles'])) {
+				return true; // Mark as bad host if an abuse role is found
+			}
+		}
+	}
+
+	return false; // Return false if no relevant data indicates a bad host
+}
+
+
+
 function stopbadbots_find_email($item)
 {
 	global $_email;

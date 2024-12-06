@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 10.60
+Version: 10.61
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -85,8 +85,10 @@ define('STOPBADBOTSIMAGES', plugin_dir_url(__file__) . 'assets/images');
 
 define('STOPBADBOTSPAGE', trim(sanitize_text_field($GLOBALS['pagenow'])));
 
-define('STOPBADBOTS_CHROME', '90');
-define('STOPBADBOTS_FIREFOX', '88');
+define('STOPBADBOTS_CHROME', '108'); // 131.0.6723.58
+define('STOPBADBOTS_FIREFOX', '108'); // 122
+define('STOPBADBOTS_EDGE', '110'); // 131
+
 define('STOPBADBOTSPATHLANGUAGE', dirname(plugin_basename(__FILE__)) . '/language/');
 
 if (! defined('STOPBADBOTSHOMEURL')) {
@@ -734,10 +736,16 @@ if ($stopbadbots_engine_option != 'minimal') {
 				}
 			}
 
-			if ($stopbadbots_ua_browser == 'MSIE' and ! empty($stopbadbots_ua_version)) {
-				if (version_compare($stopbadbots_ua_version, '11') <= 0) {
+			if ($stopbadbots_ua_browser == 'Edge' and ! empty($stopbadbots_ua_version)) {
+				if (version_compare($stopbadbots_ua_version, STOPBADBOTS_EDGE) <= 0) {
 					$stopbadbots_template = true;
 				}
+			}
+
+			if ($stopbadbots_ua_browser == 'MSIE' and ! empty($stopbadbots_ua_version)) {
+				//if (version_compare($stopbadbots_ua_version, '11') <= 0) {
+					$stopbadbots_template = true;
+				//}
 			}
 
 

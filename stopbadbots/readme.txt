@@ -5,7 +5,7 @@ Tags: Bad Bots, block bots, save server bandwidth, server overload, limit visits
 Requires at least: 4.0
 Tested up to: 6.7
 Requires PHP: 5.6 
-Stable tag: 10.61
+Stable tag: 11.01
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -332,6 +332,9 @@ This plugin is a service. If you choose the premium version, your site will rece
 Only in this case, when applying your purchase code, it will be sent to our server, which will return whether it is valid or not.
 
 == External service (3) ==
+When using our chat, only some information about issues, such as your language and data from the Diagnose tab, may be sent to our server. We do not share, publish, or disclose any information with third parties.
+
+== External service (4) ==
 The Stop Bad Bots plugin will retrieve tips and news from our site BillMinozzi.com. This information will be displayed in the plugin dashboard, in the right-hand column under the title "Tips and News." No data is sent to our server. Learn about the terms of use for our plugins and themes at this link:
 https://siterightaway.net/terms-of-use-of-our-plugins-and-themes/
 

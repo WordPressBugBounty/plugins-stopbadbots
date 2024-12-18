@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 10.61
+Version: 11.01
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -1369,6 +1369,31 @@ add_action("init", "stopbadbots_bill_more", 5);
 
 //
 
+function stopbadbots_load_chat()
+{
+	if (function_exists('is_admin') && function_exists('current_user_can')) {
+		if (is_admin() and current_user_can("manage_options")) {
+			// ob_start();
+			//debug2();
+
+			if ( ! class_exists( 'stopbadbots_BillChat\ChatPlugin' ) ) {
+				require_once dirname(__FILE__) . "/includes/chat/class_bill_chat.php";
+
+			}
+
+			
+
+			// ob_end_clean();
+		}
+	}
+}
+add_action('wp_loaded', 'stopbadbots_load_chat');
+//
+////
+//
+//
+//
+
 
 function stopbadbots_bill_hooking_diagnose()
 {
@@ -1486,3 +1511,5 @@ function stopbadbots_new_more_plugins()
 	$plugin = new stopbadbots_Bill_show_more_plugins();
 	$plugin->bill_show_plugins();
 }
+
+

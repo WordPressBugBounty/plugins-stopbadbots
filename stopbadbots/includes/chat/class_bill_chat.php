@@ -125,61 +125,73 @@ class ChatPlugin
         //ini_set('display_errors', 1);
         //ini_set('display_startup_errors', 1);
         //error_reporting(E_ALL);
-        $file = ABSPATH . "error_log";
-        try {
-            // Verificar se o arquivo existe e é legível
-            if (file_exists($file) && is_readable($file)) {
-                $bill_chat_erros = $this->bill_read_file($file, 20);
-            } else {
-                $bill_chat_erros = "The file does not exist or is not readable.";
+
+
+
+        $transient_name = 'bill_chat';
+
+        // delete_transient($transient_name);
+
+
+        if (false === get_transient($transient_name)) {
+            $file = ABSPATH . "error_log";
+            try {
+                // Verificar se o arquivo existe e é legível
+                if (file_exists($file) && is_readable($file)) {
+                    $bill_chat_erros = $this->bill_read_file($file, 20);
+                } else {
+                    $bill_chat_erros = "The file does not exist or is not readable.";
+                }
+                // Debug e logs
+                // debug2($bill_chat_erros);
+                // error_log(var_export($bill_chat_erros, true));
+                if (is_array($bill_chat_erros) || is_object($bill_chat_erros)) {
+                    // error_log(print_r($bill_chat_erros, true));
+                } else {
+                    // error_log($bill_chat_erros);
+                }
+                // Incluir ferramenta adicional
+                include_once STOPBADBOTSPATH . 'dashboard/tools.php';
+                $stopbadbots_checkup = stopbadbots_sysinfo_get();
+            } catch (Exception $e) {
+                // Captura qualquer exceção lançada e registra no log
+                error_log("Exception caught: " . $e->getMessage());
+                $bill_chat_erros = "An error occurred: " . $e->getMessage();
+                $stopbadbots_checkup = '';
             }
-            // Debug e logs
-            // debug2($bill_chat_erros);
-            // error_log(var_export($bill_chat_erros, true));
-            if (is_array($bill_chat_erros) || is_object($bill_chat_erros)) {
-                // error_log(print_r($bill_chat_erros, true));
-            } else {
-                // error_log($bill_chat_erros);
-            }
-            // Incluir ferramenta adicional
-            include_once STOPBADBOTSPATH . 'dashboard/tools.php';
-            $stopbadbots_checkup = stopbadbots_sysinfo_get();
-        } catch (Exception $e) {
-            // Captura qualquer exceção lançada e registra no log
-            error_log("Exception caught: " . $e->getMessage());
-            $bill_chat_erros = "An error occurred: " . $e->getMessage();
+            // Transiente não existe, cria um novo com a data atual
+            $current_date = date('Y-m-d H:i:s'); // Formato da data: Ano-Mês-Dia Hora:Minuto:Segundo
+            set_transient($transient_name, $current_date, DAY_IN_SECONDS); // Transiente com duração de 1 dia
+
+        } else {
             $stopbadbots_checkup = '';
+            $bill_chat_erros = '';
         }
+        //
+        //
+        //
+        //
+        //
+
+
         $plugin_path = plugin_basename(__FILE__); // Retorna algo como "plugin-folder/plugin-file.php"
         $language = get_locale();
         $plugin_slug = explode('/', $plugin_path)[0]; // Pega apenas o primeiro diretório (a raiz)
         $domain = parse_url(home_url(), PHP_URL_HOST);
-        $transient_name = 'bill_chat';
-        // Verifica se o transiente existe
-        if (false === get_transient($transient_name)) {
-            // Transiente não existe, cria um novo com a data atual
-            $current_date = date('Y-m-d H:i:s'); // Formato da data: Ano-Mês-Dia Hora:Minuto:Segundo
-            set_transient($transient_name, $current_date, DAY_IN_SECONDS); // Transiente com duração de 1 dia
-            $data2 = [
-                'param1' => $data,
-                'param2' => $stopbadbots_checkup,
-                'param3' => $bill_chat_erros,
-                'param4' => $language,
-                'param5' => $plugin_slug,
-                'param6' => $domain,
-            ];
-            echo "Transiente '$transient_name' criado com a data: $current_date";
-        } else {
-            // Transiente existe, pega o valor atual
-            $data2 = [
-                'param1' => $data,
-                'param2' => '',
-                'param3' => '',
-                'param4' => $language,
-                'param5' => $plugin_slug,
-                'param6' => $domain,
-            ];
-        }
+
+
+
+
+        $data2 = [
+            'param1' => $data,
+            'param2' => $stopbadbots_checkup,
+            'param3' => $bill_chat_erros,
+            'param4' => $language,
+            'param5' => $plugin_slug,
+            'param6' => $domain,
+        ];
+
+
         $response = wp_remote_post('https://BillMinozzi.com/chat/api/api.php', [
             'timeout' => 60,
             'headers' => [

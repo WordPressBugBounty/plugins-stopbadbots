@@ -3,7 +3,7 @@ This file contains changelog entries, so we can keep the size of the standard Wo
 
 
 == Changelog ==
-11.01 -2024-12-18-Added Chat with IA for help about issues.
+11.01/02 -2024-12-18-Added Chat with IA for help about issues.
 10.61 -2024-12-06-Improved provider control.
 10.60 -2024-11-28-Improved Messages from premature header sent.
 10.59 -2024-10-11-Imroved errors warnings.

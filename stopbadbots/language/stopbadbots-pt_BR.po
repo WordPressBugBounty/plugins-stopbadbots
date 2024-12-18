@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: stop bad bots\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-18 12:08+0000\n"
-"PO-Revision-Date: 2024-12-18 12:22+0000\n"
+"PO-Revision-Date: 2024-12-18 15:03+0000\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt_BR\n"
@@ -1938,10 +1938,6 @@ msgid "Welcome to plugin Insights!"
 msgstr "Bem-vindo ao plugin Insights!"
 
 #: includes/diagnose/class_bill_diagnose.php:852
-#, fuzzy
-#| msgid ""
-#| "Displaying the latest recurring errors from your error log file and "
-#| "eventually alert about low WordPress memory limit is a courtesy of plugin"
 msgid ""
 "Displaying the latest recurring errors (Javascript Included) from your error "
 "log file and eventually alert about low WordPress memory limit is a courtesy "
@@ -1952,11 +1948,6 @@ msgstr ""
 "cortesia do plugin"
 
 #: includes/diagnose/class_bill_diagnose.php:854
-#, fuzzy
-#| msgid ""
-#| "Disabling our plugin does not stop the errors from occurring; \n"
-#| "                it simply means you will no longer be notified here that "
-#| "they are happening, but they can still harm your site."
 msgid ""
 "Disabling our plugin does not stop the errors from occurring; it simply "
 "means you will no longer be notified here that they are happening, but they "

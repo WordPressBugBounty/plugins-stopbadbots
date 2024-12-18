@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: stop bad bots\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-18 12:09+0000\n"
-"PO-Revision-Date: 2024-12-18 12:27+0000\n"
+"PO-Revision-Date: 2024-12-18 15:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -36,8 +36,6 @@ msgstr ""
 #: _includes/diagnose/class_bill_diagnose.php:549
 #: _includes/diagnose/class_bill_diagnose.php:570 functions/functions.php:6849
 #: functions/functions.php:6872 includes/diagnose/class_bill_diagnose.php:768
-#, fuzzy
-#| msgid "Learn More"
 msgid "Learn more"
 msgstr "Mehr erfahren"
 
@@ -87,8 +85,6 @@ msgstr "Niedriges WordPress-Speicherlimit"
 
 #: _includes/diagnose/class_bill_diagnose.php:663
 #: includes/diagnose/class_bill_diagnose.php:913
-#, fuzzy
-#| msgid "Your usage now:"
 msgid "Your usage now"
 msgstr "Ihre aktuelle Nutzung:"
 
@@ -371,8 +367,6 @@ msgstr "Ablehnen"
 
 #: _includes/visits_stats/analytics-30days.php:20
 #: includes/visits_stats/analytics-30days.php:20
-#, fuzzy
-#| msgid "Empty Table. Please, try again later."
 msgid "No vists, try again later..."
 msgstr "Die Tabelle ist leer. Bitte, versuchen Sie es später noch einmal."
 
@@ -413,10 +407,7 @@ msgid "Activate Block User Enumeration in Settings Page."
 msgstr "Aktivieren Sie 'Block User Enumeration' auf der Seite Einstellungen."
 
 #: dashboard/dashboard.php:63
-#, fuzzy, no-php-format
-#| msgid ""
-#| "Go Premium to get weekly Updates, Firewall Protection and more, "
-#| "consequently protection level 10."
+#, no-php-format
 msgid ""
 "Upgrade to Premium for weekly updates, enhanced firewall protection, and "
 "more, ensuring a level 100% of security."
@@ -464,11 +455,6 @@ msgid "Only Partial Protection enabled!"
 msgstr "Nur teilweiser Schutz aktiviert!"
 
 #: dashboard/dashboard.php:117
-#, fuzzy
-#| msgid ""
-#| "Bad bots consume bandwidth, slow down and can hack your server, create "
-#| "SPAM, steal your content to sell to your competitors, look for "
-#| "vulnerabilities and ruining the customer experience."
 msgid ""
 "Bad bots consume bandwidth, slow down servers, hack into your system, create "
 "spam, steal your content to sell to competitors - harm SEO - , search for "
@@ -778,24 +764,16 @@ msgid "Block User Enumeration."
 msgstr "Benutzeraufzählung blockieren."
 
 #: dashboard/mybanners.php:63
-#, fuzzy
-#| msgid ""
-#| "Block Traffic from China, Cuba and North Korea?  (available only in pro "
-#| "version)"
 msgid "Block traffic from China, Cuba, and North Korea."
 msgstr ""
 "Bots aus China, Kuba und Nordkorea blockieren?  (nur in der Pro-Version "
 "verfügbar)"
 
 #: dashboard/mybanners.php:66
-#, fuzzy
-#| msgid "Firewall Protection"
 msgid "Firewall Protection."
 msgstr "Firewall-Schutz"
 
 #: dashboard/mybanners.php:68
-#, fuzzy
-#| msgid "Dedicated Premium Support"
 msgid "Dedicated Premium Support."
 msgstr "Dedizierter Premium-Support"
 
@@ -1207,8 +1185,6 @@ msgstr ""
 "Name GoogleBot lautet."
 
 #: functions/functions.php:2714
-#, fuzzy
-#| msgid "Do not use special characters."
 msgid "Do not use special characters neither HTML"
 msgstr "Verwenden Sie keine Sonderzeichen."
 
@@ -1252,8 +1228,6 @@ msgstr ""
 "keine doppelten Namen."
 
 #: functions/functions.php:2752
-#, fuzzy
-#| msgid "Be carefull. This Referer will be blocked to access your site."
 msgid ""
 "Be carefull. This Referer will be blocked to access your site. Do not use "
 "HTML"
@@ -1621,8 +1595,6 @@ msgid "You don't need create any robots.txt or htaccess file. "
 msgstr "Sie müssen keine robots.txt- oder htaccess-Datei erstellen. "
 
 #: guide/guide.php:110
-#, fuzzy
-#| msgid "The Plugin doesn't block main Google, Yahoo and Bing (Microsoft)."
 msgid ""
 "The Plugin doesn't block main Google, Yahoo, Bing (Microsoft), Twitter and "
 "Facebook bots."
@@ -1981,8 +1953,6 @@ msgid "AJAX request failed:"
 msgstr "AJAX-Anforderung fehlgeschlagen:"
 
 #: includes/chat/class_bill_chat.php:50
-#, fuzzy
-#| msgid "Empty Table. Please, try again later."
 msgid "Error sending the message. Please try again later."
 msgstr "Die Tabelle ist leer. Bitte, versuchen Sie es später noch einmal."
 
@@ -2030,10 +2000,6 @@ msgid "Welcome to plugin Insights!"
 msgstr "Willkommen bei Plugin Insights!"
 
 #: includes/diagnose/class_bill_diagnose.php:852
-#, fuzzy
-#| msgid ""
-#| "Displaying the latest recurring errors from your error log file and "
-#| "eventually alert about low WordPress memory limit is a courtesy of plugin"
 msgid ""
 "Displaying the latest recurring errors (Javascript Included) from your error "
 "log file and eventually alert about low WordPress memory limit is a courtesy "
@@ -2044,11 +2010,6 @@ msgstr ""
 "Speichergrenzen sind eine Funktion des Plugins"
 
 #: includes/diagnose/class_bill_diagnose.php:854
-#, fuzzy
-#| msgid ""
-#| "Disabling our plugin does not stop the errors from occurring; \n"
-#| "                it simply means you will no longer be notified here that "
-#| "they are happening, but they can still harm your site."
 msgid ""
 "Disabling our plugin does not stop the errors from occurring; it simply "
 "means you will no longer be notified here that they are happening, but they "
@@ -2231,10 +2192,6 @@ msgstr ""
 "Force-Passwortangriffen und anderen unangenehmen Dingen."
 
 #: settings/options/plugin_options_tabbed.php:92
-#, fuzzy
-#| msgid ""
-#| "Block Engine Management let you manage the user agent filter, Server CPU "
-#| "utilization and other things"
 msgid ""
 "Find the balance between our software and server power with Block Engine "
 "Management, which lets you control user agent filtering, server CPU "
@@ -2244,10 +2201,6 @@ msgstr ""
 "Auslastung des Servers und andere Dinge verwalten."
 
 #: settings/options/plugin_options_tabbed.php:94
-#, fuzzy
-#| msgid ""
-#| "Maximum Block option: maybe can generate false positives if your user use "
-#| "Proxy, VPN or block cookie and/or javascript for example."
 msgid ""
 "Maximum Block option: may result in false positives if your users use "
 "proxies, VPNs, or block cookies and/or JavaScript."
@@ -2268,10 +2221,6 @@ msgstr ""
 "."
 
 #: settings/options/plugin_options_tabbed.php:99
-#, fuzzy
-#| msgid ""
-#| "Normal option:  try to keep the balance between Conserative and Maximum "
-#| "Block."
 msgid ""
 "Standard option:  maintains a balance between Conservative and Maximum Block "
 "and also considers the behavior of bots."
@@ -2357,9 +2306,6 @@ msgid "Block all bots included at Bad Referer Table?"
 msgstr "Alle Bots in der Bad Referer Table blockieren?"
 
 #: settings/options/plugin_options_tabbed.php:183
-#, fuzzy
-#| msgid ""
-#| "Block Engine Management (Maximum Block is available only in pro version)"
 msgid ""
 "Block Engine Management (Only Minimal and Conservative options available in "
 "the free version of the plugin)."
@@ -2431,10 +2377,6 @@ msgstr ""
 "verfügbar)"
 
 #: settings/options/plugin_options_tabbed.php:413
-#, fuzzy
-#| msgid ""
-#| "How long keep the visitors log file? If you have a very heavy traffic, "
-#| "select 1 day"
 msgid ""
 "How long keep the visitors log file? If you have a very heavy traffic, "
 "select 1 day. Your choices can impact the Visits Log and Visits Chart Pages."

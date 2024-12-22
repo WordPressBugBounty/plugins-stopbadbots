@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: stop bad bots\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-18 12:08+0000\n"
-"PO-Revision-Date: 2024-12-18 15:03+0000\n"
+"POT-Creation-Date: 2024-12-22 09:18+0000\n"
+"PO-Revision-Date: 2024-12-22 09:20+0000\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt_BR\n"
@@ -163,17 +163,14 @@ msgstr ""
 "imediatamente."
 
 #: _includes/feedback-last/feedback-last.php:232
-#: includes/feedback-last/feedback-last.php:239
 msgid "We're sorry to hear that you're leaving."
 msgstr "Lamentamos saber que você está indo embora."
 
 #: _includes/feedback-last/feedback-last.php:234
-#: includes/feedback-last/feedback-last.php:241
 msgid "Hello,"
 msgstr "Olá,"
 
 #: _includes/feedback-last/feedback-last.php:238
-#: includes/feedback-last/feedback-last.php:245
 msgid ""
 "Thank you for using our products. Before you deactivate, we'd like to offer "
 "a few options to improve your experience:"
@@ -182,28 +179,23 @@ msgstr ""
 "ofereceralgumas opções para melhorar sua experiência:"
 
 #: _includes/feedback-last/feedback-last.php:241
-#: includes/feedback-last/feedback-last.php:248
 msgid "Explore more plugins - Discover our other free plugins and themes."
 msgstr ""
 "Explore mais plugins - Descubra nossos outros plugins e temas gratuitos."
 
 #: _includes/feedback-last/feedback-last.php:243
-#: includes/feedback-last/feedback-last.php:250
 msgid "Support - Need help? Visit our support page."
 msgstr "Suporte - Precisa de ajuda? Visite nossa página de suporte."
 
 #: _includes/feedback-last/feedback-last.php:245
-#: includes/feedback-last/feedback-last.php:252
 msgid "Cancel deactivation - Changed your mind? Keep using this plugin."
 msgstr "Cancelar desativação - Mudou de ideia? Continue usando este plugin."
 
 #: _includes/feedback-last/feedback-last.php:247
-#: includes/feedback-last/feedback-last.php:254
 msgid "Deactivate - Proceed with deactivation."
 msgstr "Desativar - Prosseguir com a desativação."
 
 #: _includes/feedback-last/feedback-last.php:250
-#: includes/feedback-last/feedback-last.php:257
 msgid ""
 "Trusted by over 50,000 users, our 20+ free plugins and 6 themes can "
 "supercharge your site's security, functionality, and backups."
@@ -213,7 +205,6 @@ msgstr ""
 "backups do seu site."
 
 #: _includes/feedback-last/feedback-last.php:252
-#: includes/feedback-last/feedback-last.php:259
 msgid "Best regards!"
 msgstr "Atenciosamente!"
 
@@ -1901,13 +1892,13 @@ msgstr "Erro enviando mensagem. Por favor, tente novamente mais tarde."
 msgid "Please enter a message!"
 msgstr "Por favor, insira uma mensagem!"
 
-#: includes/chat/class_bill_chat.php:199
+#: includes/chat/class_bill_chat.php:212
 msgid ""
 "Error contacting the Artificial Intelligence (API). Please try again later."
 msgstr ""
 "Erro ao contatar a Inteligência Artificial (API). Tente novamente mais tarde."
 
-#: includes/chat/class_bill_chat.php:218
+#: includes/chat/class_bill_chat.php:242
 msgid "Error to get response from AI source!"
 msgstr "Erro ao obter resposta da fonte de IA!"
 
@@ -1967,20 +1958,36 @@ msgstr ""
 "sobre os problemas listados."
 
 #: includes/diagnose/class_bill_diagnose.php:865
+#: includes/feedback-last/feedback-last.php:250
 msgid "Artificial Intelligence Support Chat for Issues and Solutions"
 msgstr "Chat de suporte de inteligência artificial para problemas e soluções"
 
 #: includes/diagnose/class_bill_diagnose.php:874
+#: includes/feedback-last/feedback-last.php:260
 msgid "Enter your message..."
 msgstr "Digite sua mensagem..."
 
 #: includes/diagnose/class_bill_diagnose.php:875
+#: includes/feedback-last/feedback-last.php:261
 msgid "Send"
 msgstr "Enviar"
 
 #: includes/diagnose/class_bill_diagnose.php:1533
 msgid "Critical Issues"
 msgstr "Crítico"
+
+#: includes/feedback-last/feedback-last.php:241
+msgid "What can we do to resolve the problem you're facing?"
+msgstr ""
+"O que podemos fazer para resolver o problema que você está enfrentando?"
+
+#: includes/feedback-last/feedback-last.php:245
+msgid ""
+"Depending on your response, we can help keep the plugin running smoothly for "
+"you immediately!"
+msgstr ""
+"Dependendo da sua resposta, podemos ajudar a manter o plugin funcionando "
+"perfeitamente para você imediatamente!"
 
 #: settings/options/plugin_options_tabbed.php:27
 #: settings/options/plugin_options_tabbed.php:126
@@ -2675,29 +2682,29 @@ msgstr "Você não precisa reinstalar o plugin."
 msgid "Purchase Code (just paste here to activate your product)"
 msgstr "Código de compra (basta colar aqui para ativar seu produto)"
 
-#: stopbadbots.php:208
+#: stopbadbots.php:210
 msgid "Stop Bad Bots: Could not load the localization file (Language file)"
 msgstr ""
 "Stop Bad Bots: Não foi possível carregar o arquivo de localização (arquivo "
 "de idioma)"
 
-#: stopbadbots.php:878
+#: stopbadbots.php:880
 msgid "Protection rate:"
 msgstr "Taxa de proteção:"
 
-#: stopbadbots.php:882
+#: stopbadbots.php:884
 msgid "For details, visit the plugin dashboard"
 msgstr "Para mais detalhes, visite o painel de controle do plugin"
 
-#: stopbadbots.php:884
+#: stopbadbots.php:886
 msgid "Attacks Blocked Last 15 days"
 msgstr "Ataques Bloqueados nos últimos 15 dias"
 
-#: stopbadbots.php:891
+#: stopbadbots.php:893
 msgid "Total Attacks Blocked By Type"
 msgstr "Ataques totais bloqueados por tipo"
 
-#: stopbadbots.php:900
+#: stopbadbots.php:902
 msgid "Total Attacks Blocked By IP"
 msgstr "Total de ataques bloqueados por IP"
 

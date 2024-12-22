@@ -3,6 +3,7 @@ This file contains changelog entries, so we can keep the size of the standard Wo
 
 
 == Changelog ==
+11.04  2024-12-22 - Added chat with IA to help on deactivation
 11.03  2024-12-21 - Fixed warning about textdomain
 11.01/02 -2024-12-18-Added Chat with IA for help about issues.
 10.61 -2024-12-06-Improved provider control.

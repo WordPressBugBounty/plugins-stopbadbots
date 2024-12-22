@@ -2,7 +2,7 @@
     if (!defined("ABSPATH")) {
         exit(); // Exit if accessed directly
     }
-    $bill_debug = true;
+   // $bill_debug = true;
     $bill_debug = false;
     //
     //
@@ -221,68 +221,68 @@ add_action('wp_loaded', 'wpmemory_load_feedback');
             // var_dump(__LINE__);
         }
         //
+
+
         public static function message()
         {
             if (!update_option(LAST, time())) {
                 add_option(LAST, time());
-            } 
-           $slug = self::$plugin_slug;
-            ?>  
+            }
+?>
             <div class="<?php echo esc_attr(
-                    PRODCLASS
-                ); ?>-wrap-deactivate" style="display:none">
-                            <div class="bill-vote-gravatar"><a href="https://profiles.wordpress.org/sminozzi" target="_blank"><img src="https://en.gravatar.com/userimage/94727241/31b8438335a13018a1f52661de469b60.jpg?size=100" alt="Bill Minozzi" width="70" height="70"></a></div>
-            <div class="bill-vote-message">
-                                    <?php
-                        echo '<h2 style="color:blue;">';
-                        echo esc_attr(PRODUCTNAME) . " - ";
-                        echo esc_attr__("We're sorry to hear that you're leaving.", $slug);
-                        echo "</h2>";
-                        esc_attr_e("Hello,", $slug);
-                        echo "<br />";
-                        echo "<br />";
-                        ?>
-                        <?php esc_attr_e("Thank you for using our products. Before you deactivate, we'd like to offer a few options to improve your experience:", $slug); ?>
-                        <br><br>
-                        <strong>
-                        1. <?php esc_attr_e("Explore more plugins - Discover our other free plugins and themes.", $slug); ?>
-                        <br>
-                        2. <?php esc_attr_e("Support - Need help? Visit our support page.", $slug); ?>
-                        <br>
-                        3. <?php esc_attr_e("Cancel deactivation - Changed your mind? Keep using this plugin.", $slug); ?>
-                        <br>
-                        4. <?php esc_attr_e("Deactivate - Proceed with deactivation.", $slug); ?>
-                        </strong>
-                        <br><br>
-                        <?php esc_attr_e("Trusted by over 50,000 users, our 20+ free plugins and 6 themes can supercharge your site's security, functionality, and backups.", $slug); ?>
-                        <br><br>
-                        <?php esc_attr_e("Best regards!", $slug); ?>
-                        <br><br>
-                            Bill Minozzi<br /> 
-                            Plugin Developer
-        `                    <br /> <br /> 
+                            PRODCLASS
+                        ); ?>-wrap-deactivate" style="display:none">
+                <div class="bill-vote-gravatar"><a href="https://profiles.wordpress.org/sminozzi" target="_blank"><img src="https://en.gravatar.com/userimage/94727241/31b8438335a13018a1f52661de469b60.jpg?size=100" alt="Bill Minozzi" width="70" height="70"></a></div>
+                <div class="bill-vote-message">
+                    <?php
+                    echo '<h2 style="color:blue;">';
+                    // echo esc_attr(PRODUCTNAME);
+                    //echo "<br />";
+                    echo esc_attr__("What can we do to resolve the problem you're facing?", "stopbadbots");
+                    echo "</h2>";
+                    ?>
+                    <big><strong>
+                            <?php esc_attr_e("Depending on your response, we can help keep the plugin running smoothly for you immediately!", "stopbadbots"); ?>
+                        </strong></big>
+                    <!-- chat -->
+                    <div id="chat-box">
+                        <div id="chat-header">
+                            <h2><?php echo esc_attr__("Artificial Intelligence Support Chat for Issues and Solutions", "stopbadbots"); ?></h2>
+                        </div>
+                        <div id="gif-container">
+                            <div class="spinner999"></div>
+                        </div> <!-- Onde o efeito será exibido -->
+                        <div id="chat-messages"></div>
+                        <div id="error-message" style="display:none;"></div> <!-- Mensagem de erro -->
+                        <form id="chat-form">
+                            <input type="hidden" id="chat-type" value="last-feedback" />
+                            <!-- Novo parâmetro -->
+                            <input type="text" id="chat-input" placeholder="<?php echo esc_attr__('Enter your message...', 'stopbadbots'); ?>" />
+                            <button type="submit"><?php echo esc_attr__('Send', 'stopbadbots'); ?></button>
+                        </form>
+                    </div>
+                </div>
+                <br>
+                <div class="bill-minozzi-button-group">
+                    <a href="<?php echo esc_url(PAGE); ?>" class="button button-primary <?php echo esc_attr(PRODCLASS); ?>-close-submit_lf discover-plugins-btn">
+                        <?php esc_attr_e("Discover New FREE Plugins", "stopbadbots"); ?>
+                    </a>
+                    <a href="https://BillMinozzi.com/dove/" class="button button-primary <?php echo esc_attr(PRODCLASS); ?>-close-dialog_lf support-page-btn">
+                        <?php esc_attr_e("Support Page", "stopbadbots"); ?>
+                    </a>
+                    <a href="#" class="button <?php echo esc_attr(PRODCLASS); ?>-close-dialog_lf cancel-btn_feedback">
+                        <?php esc_attr_e("Cancel", "stopbadbots"); ?>
+                    </a>
+                    <a href="#" class="button <?php echo esc_attr(PRODCLASS); ?>-deactivate_lf deactivate-btn">
+                        <?php esc_attr_e("Just Deactivate", "stopbadbots"); ?>
+                    </a>
+                </div>
+                <br><br>
             </div>
-            <br>
-            <div class="bill-minozzi-button-group">
-                <a href="<?php echo esc_url(PAGE); ?>" class="button button-primary <?php echo esc_attr(PRODCLASS); ?>-close-submit_lf discover-plugins-btn">
-                    <?php esc_attr_e("Discover New FREE Plugins", $slug); ?>
-                </a>
-                <a href="https://BillMinozzi.com/dove/" class="button button-primary <?php echo esc_attr(PRODCLASS); ?>-close-dialog_lf support-page-btn">
-                    <?php esc_attr_e("Support Page", $slug); ?>
-                </a>
-                <a href="#" class="button <?php echo esc_attr(PRODCLASS); ?>-close-dialog_lf cancel-btn_feedback">
-                    <?php esc_attr_e("Cancel", $slug); ?>
-                </a>
-                <a href="#" class="button <?php echo esc_attr(PRODCLASS); ?>-deactivate_lf deactivate-btn">
-                    <?php esc_attr_e("Just Deactivate", $slug); ?>
-                </a>
-            </div>
-            <br><br>
+<?php
+        } // end function message
 
-               
-			 </div> 
-					<?php
-        }
+
 
     } //end class
     new Bill_mConfig();

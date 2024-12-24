@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.05
+Version: 11.08
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -123,11 +123,32 @@ if ($stopbadbots_is_admin) {
 	}
 	*/
 
+	//Function _load_textdomain_just_in_time was called incorrectly. 
+	//Translation loading for the wptools domain was triggered too early. 
+	//This is usually an indicator for some code in the plugin or theme running too early.
+	// Translations should be loaded at the init action or later. 
+	// Please see Debugging in WordPress for more information. 
+	// (This message was added in version 6.7.0.)
 
-	// add_action('plugins_loaded', 'stopbadbots_localization_init');
+
+	//add_action('plugins_loaded', 'stopbadbots_localization_init');
+	//add_action('init', 'stopbadbots_localization_init');
+
+
+	//if (isset($_GET['page']) && $_GET['page'] === 'settings-stop-bad-bots') {
+	// Ação a ser executada apenas na página específica
+	//	add_action('plugins_loaded', 'stopbadbots_localization_init');
+	//} else {
 	add_action('init', 'stopbadbots_localization_init');
-
+	//}
 }
+//
+//
+//
+//
+//
+//
+
 
 //$stopbadbotsserver = sanitize_text_field( $_SERVER['SERVER_NAME'] );
 
@@ -284,6 +305,14 @@ function stopbadbots_localization_init()
 
 	// Load the plugin
 	load_plugin_textdomain('stopbadbots', false, plugin_basename(STOPBADBOTSPATH) . '/language/');
+
+	//Function _load_textdomain_just_in_time was called incorrectly. 
+	//Translation loading for the wptools domain was triggered too early. 
+	//This is usually an indicator for some code in the plugin or theme running too early.
+	// Translations should be loaded at the init action or later. 
+	// Please see Debugging in WordPress for more information. 
+	// (This message was added in version 6.7.0.)
+
 }
 
 
@@ -293,8 +322,21 @@ function stopbadbots_localization_init()
 /* End language */
 
 
+/*
+//require_once STOPBADBOTSPATH . 'settings/load-plugin.php';
 
-require_once STOPBADBOTSPATH . 'settings/load-plugin.php';
+function stopbadbots_initialize_plugin_settings()
+{
+	// Inicialização do plugin.
+	require_once STOPBADBOTSPATH . 'settings/load-plugin.php';
+}
+add_action('admin_menu', 'stopbadbots_initialize_plugin_settings', 150);
+*/
+
+
+
+
+
 $stopbadbots_block_spam_contacts = sanitize_text_field(get_option('stopbadbots_block_spam_contacts', 'no'));
 $stopbadbots_block_spam_comments = sanitize_text_field(get_option('stopbadbots_block_spam_comments', 'no'));
 $stopbadbots_block_spam_login    = sanitize_text_field(get_option('stopbadbots_block_spam_login', 'no'));
@@ -385,7 +427,7 @@ if ($stopbadbots_is_admin)
 
 if ($stopbadbots_is_admin) {
 	//require_once(WPTOOLSPATH . 'includes/help/help.php');
-	add_action('setup_theme', 'stopbadbots_load_settings');
+	//add_action('setup_theme', 'stopbadbots_load_settings');
 
 	function stopbadbots_load_settings()
 	{
@@ -746,7 +788,7 @@ if ($stopbadbots_engine_option != 'minimal') {
 
 			if ($stopbadbots_ua_browser == 'MSIE' and ! empty($stopbadbots_ua_version)) {
 				//if (version_compare($stopbadbots_ua_version, '11') <= 0) {
-					$stopbadbots_template = true;
+				$stopbadbots_template = true;
 				//}
 			}
 
@@ -1378,12 +1420,11 @@ function stopbadbots_load_chat()
 			// ob_start();
 			//debug2();
 
-			if ( ! class_exists( 'stopbadbots_BillChat\ChatPlugin' ) ) {
+			if (! class_exists('stopbadbots_BillChat\ChatPlugin')) {
 				require_once dirname(__FILE__) . "/includes/chat/class_bill_chat.php";
-
 			}
 
-			
+
 
 			// ob_end_clean();
 		}
@@ -1515,3 +1556,31 @@ function stopbadbots_new_more_plugins()
 }
 
 
+function stopbadbots_initialize_plugin_settings()
+{
+	// Inicialização do plugin.
+	if (is_admin() and current_user_can("manage_options")) {
+		require_once STOPBADBOTSPATH . 'settings/load-plugin.php';
+		require_once(STOPBADBOTSPATH . "settings/options/plugin_options_tabbed.php");
+	}
+}
+add_action('init', 'stopbadbots_initialize_plugin_settings', 150);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//

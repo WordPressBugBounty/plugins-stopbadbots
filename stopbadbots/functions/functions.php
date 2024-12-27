@@ -5635,7 +5635,17 @@ function stopbadbots_check_4spammer($result, $tag)
 {
 	global $stopbadbots_ip;
 	if (stopbadbots_check_for_spam()) {
-		$name = $tag->name;
+
+		if (is_object($tag) && isset($tag->name)) {
+			$name = $tag->name;
+		} elseif (is_array($tag) && isset($tag['name'])) {
+			$name = $tag['name'];
+		} else {
+			return $result;
+		}
+
+		//$name = $tag->name;
+
 		add_filter('wpcf7_validation_error', 'cf7_add_custom_class', 10, 2);
 		add_filter('wpcf7_display_message', 'stopbadbots_validation_messages_fail2', 10, 2);
 		// add_action(“wpcf7_ajax_json_echo”, “cf7_change_response_message”,10,2);
@@ -6344,7 +6354,8 @@ function stopbadbots_is_bad_hosting2($ip)
 
 	$host = false;
 
-	if (count($ret) > 0) {
+	// if (count($ret) > 0) {
+	if (is_array($ret) && count($ret) > 0) {
 
 		if (! isset($ret['entities'])) {
 			return false;

@@ -98,7 +98,10 @@ $tables = array(
   'sbb_visitorslog',
   'sbb_http_tools',
   'sbb_fingerprint',
+  'wptools_page_load_times'
 );
+
+
 
 foreach ($tables as $table) {
   $current_table = $wpdb->prepare("DROP TABLE IF EXISTS %s", $prefix . $table);

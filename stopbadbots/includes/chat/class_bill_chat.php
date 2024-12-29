@@ -128,45 +128,45 @@ class ChatPlugin
 
 
 
-        $transient_name = 'bill_chat';
+        // $transient_name = 'bill_chat';
 
         // delete_transient($transient_name);
 
 
-        if (false === get_transient($transient_name)) {
-            $file = ABSPATH . "error_log";
-            try {
-                // Verificar se o arquivo existe e é legível
-                if (file_exists($file) && is_readable($file)) {
-                    $bill_chat_erros = $this->bill_read_file($file, 20);
-                } else {
-                    $bill_chat_erros = "The file does not exist or is not readable.";
-                }
-                // Debug e logs
-                // debug2($bill_chat_erros);
-                // error_log(var_export($bill_chat_erros, true));
-                if (is_array($bill_chat_erros) || is_object($bill_chat_erros)) {
-                    // error_log(print_r($bill_chat_erros, true));
-                } else {
-                    // error_log($bill_chat_erros);
-                }
-                // Incluir ferramenta adicional
-                include_once STOPBADBOTSPATH . 'dashboard/tools.php';
-                $stopbadbots_checkup = stopbadbots_sysinfo_get();
-            } catch (Exception $e) {
-                // Captura qualquer exceção lançada e registra no log
-                error_log("Exception caught: " . $e->getMessage());
-                $bill_chat_erros = "An error occurred: " . $e->getMessage();
-                $stopbadbots_checkup = '';
+        // if (false === get_transient($transient_name)) {
+        $file = ABSPATH . "error_log";
+        try {
+            // Verificar se o arquivo existe e é legível
+            if (file_exists($file) && is_readable($file)) {
+                $bill_chat_erros = $this->bill_read_file($file, 20);
+            } else {
+                $bill_chat_erros = "The file does not exist or is not readable.";
             }
-            // Transiente não existe, cria um novo com a data atual
-            $current_date = date('Y-m-d H:i:s'); // Formato da data: Ano-Mês-Dia Hora:Minuto:Segundo
-            set_transient($transient_name, $current_date, DAY_IN_SECONDS); // Transiente com duração de 1 dia
-
-        } else {
+            // Debug e logs
+            // debug2($bill_chat_erros);
+            // error_log(var_export($bill_chat_erros, true));
+            if (is_array($bill_chat_erros) || is_object($bill_chat_erros)) {
+                // error_log(print_r($bill_chat_erros, true));
+            } else {
+                // error_log($bill_chat_erros);
+            }
+            // Incluir ferramenta adicional
+            include_once STOPBADBOTSPATH . 'dashboard/tools.php';
+            $stopbadbots_checkup = stopbadbots_sysinfo_get();
+        } catch (Exception $e) {
+            // Captura qualquer exceção lançada e registra no log
+            error_log("Exception caught: " . $e->getMessage());
+            $bill_chat_erros = "An error occurred: " . $e->getMessage();
             $stopbadbots_checkup = '';
-            $bill_chat_erros = '';
         }
+        // Transiente não existe, cria um novo com a data atual
+        //$current_date = date('Y-m-d H:i:s'); // Formato da data: Ano-Mês-Dia Hora:Minuto:Segundo
+        //set_transient($transient_name, $current_date, DAY_IN_SECONDS); // Transiente com duração de 1 dia
+
+        //} else {
+        //    $stopbadbots_checkup = '';
+        //    $bill_chat_erros = '';
+        //}
         //
         //
         //
@@ -222,6 +222,10 @@ class ChatPlugin
 
         // Captura e sanitiza a mensagem
         $message = sanitize_text_field($_POST['message']);
+
+        if (empty($message)) {
+            $message = esc_attr("Auto Checkup button clicked...", "stopbadbots");
+        }
 
         // Verifica e sanitiza o chat_type, atribuindo 'default' caso não exista
         $chatType = isset($_POST['chat_type']) ? sanitize_text_field($_POST['chat_type']) : 'default';

@@ -136,16 +136,35 @@ jQuery(document).ready(function ($) {
             },
         });
     }
-    billChatForm.on('submit', function (e) {
+    // billChatForm.on('submit', function (e) {
+    $('#chat-form button').on('click', function (e) {
         e.preventDefault();
+
+        const clickedButtonId = $(this).attr('id'); // Identifica qual botão foi clicado
+
+
         const message = billChatInput.val().trim();
 
-        const chatType = $('#chat-type').length ? $('#chat-type').val() : 'default';
+        const chatType = clickedButtonId === 'auto-checkup' ? 'auto-checkup' : ($('#chat-type').length ? $('#chat-type').val() : 'default');
+
+        //const chatType = $('#chat-type').length ? $('#chat-type').val() : 'default';
+
+        //console.log(chatType);
 
 
 
         const billChaterrorMessage = $('#error-message');
-        if (message !== '') {
+
+
+
+        //if (message !== '' and chatType !== 'auto-checkup') {
+        // if (message !== '' && chatType !== 'auto-checkup') {
+        //if ((chatType === 'auto-checkup' && message === '') || (chatType !== 'auto-checkup' && message !== '')) {
+        //if (chatType !== 'auto-checkup' && message !== '') {
+        if ((chatType === 'auto-checkup') || (chatType !== 'auto-checkup' && message !== '')) {
+
+            //alert('ok');
+
             $('.spinner999').css('display', 'block');
             $('#chat-form button').prop('disabled', true);
             $.ajax({
@@ -172,10 +191,12 @@ jQuery(document).ready(function ($) {
                 }
             });
         } else {
+            // alert('nao ok');
             billChaterrorMessage.text(bill_data.empty_message_error).show();
             setTimeout(() => billChaterrorMessage.fadeOut(), 3000);
         }
     });
+
     setInterval(() => {
         if (billChatMessages.is(':visible')) {
             billChatLoadMessages();

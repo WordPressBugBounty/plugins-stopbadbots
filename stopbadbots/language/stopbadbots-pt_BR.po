@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: stop bad bots\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-22 09:18+0000\n"
-"PO-Revision-Date: 2024-12-22 09:20+0000\n"
+"POT-Creation-Date: 2024-12-29 12:34+0000\n"
+"PO-Revision-Date: 2024-12-29 12:43+0000\n"
 "Last-Translator: \n"
-"Language-Team: Portuguese (Brazil)\n"
+"Language-Team: Português do Brasil\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,12 +19,12 @@ msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:541
 #: _includes/diagnose/class_bill_diagnose.php:562
-#: includes/diagnose/class_bill_diagnose.php:760
+#: includes/diagnose/class_bill_diagnose.php:788
 msgid "Our plugin"
 msgstr "Nosso plugin"
 
 #: _includes/diagnose/class_bill_diagnose.php:543
-#: includes/diagnose/class_bill_diagnose.php:762
+#: includes/diagnose/class_bill_diagnose.php:790
 msgid ""
 "cannot function properly because your WordPress Memory Limit is too low. "
 "Your site will experience serious issues, even if you deactivate our plugin."
@@ -34,8 +34,8 @@ msgstr ""
 "nosso plugin."
 
 #: _includes/diagnose/class_bill_diagnose.php:549
-#: _includes/diagnose/class_bill_diagnose.php:570 functions/functions.php:6849
-#: functions/functions.php:6872 includes/diagnose/class_bill_diagnose.php:768
+#: _includes/diagnose/class_bill_diagnose.php:570 functions/functions.php:6860
+#: functions/functions.php:6883 includes/diagnose/class_bill_diagnose.php:796
 msgid "Learn more"
 msgstr "Saiba Mais"
 
@@ -74,29 +74,29 @@ msgstr ""
 "acontecendo, mas eles ainda podem prejudicar seu site."
 
 #: _includes/diagnose/class_bill_diagnose.php:642
-#: includes/diagnose/class_bill_diagnose.php:892
+#: includes/diagnose/class_bill_diagnose.php:1094
 msgid "Potential Problems"
 msgstr "Problemas potenciais"
 
 #: _includes/diagnose/class_bill_diagnose.php:650
-#: includes/diagnose/class_bill_diagnose.php:900
+#: includes/diagnose/class_bill_diagnose.php:1102
 msgid "Low WordPress Memory Limit"
 msgstr "Limite baixo de memória WordPress no arquivo wp-config"
 
 #: _includes/diagnose/class_bill_diagnose.php:663
-#: includes/diagnose/class_bill_diagnose.php:913
+#: includes/diagnose/class_bill_diagnose.php:1115
 msgid "Your usage now"
 msgstr "Seu uso agora:"
 
 #: _includes/diagnose/class_bill_diagnose.php:671
-#: includes/diagnose/class_bill_diagnose.php:921
+#: includes/diagnose/class_bill_diagnose.php:1123
 msgid "Total Php Server Memory"
 msgstr "Memória total do servidor:"
 
 #: _includes/diagnose/class_bill_diagnose.php:680
 #: _includes/install-checkup/class_bill_install.php:307
 #: includes/__install/class_bill_install.php:307
-#: includes/diagnose/class_bill_diagnose.php:930
+#: includes/diagnose/class_bill_diagnose.php:1132
 #: includes/install-checkup/class_bill_install.php:307
 msgid ""
 "Your WordPress Memory Limit is too low, which can lead to critical issues on "
@@ -115,8 +115,8 @@ msgstr ""
 #: dashboard/dashboard.php:121 dashboard/memory.php:103
 #: functions/functions.php:4306 includes/__install/class_bill_install.php:316
 #: includes/__install/class_bill_install.php:385
-#: includes/diagnose/class_bill_diagnose.php:936
-#: includes/diagnose/class_bill_diagnose.php:974
+#: includes/diagnose/class_bill_diagnose.php:1138
+#: includes/diagnose/class_bill_diagnose.php:1167
 #: includes/install-checkup/class_bill_install.php:316
 #: includes/install-checkup/class_bill_install.php:385
 #: includes/vendor/vendor.php:54
@@ -124,12 +124,12 @@ msgid "Learn More"
 msgstr "Saiba Mais"
 
 #: _includes/diagnose/class_bill_diagnose.php:715
-#: includes/diagnose/class_bill_diagnose.php:965
+#: includes/diagnose/class_bill_diagnose.php:1158
 msgid "Site Errors"
 msgstr "Erros do site"
 
 #: _includes/diagnose/class_bill_diagnose.php:720
-#: includes/diagnose/class_bill_diagnose.php:970
+#: includes/diagnose/class_bill_diagnose.php:1163
 msgid ""
 "Your site has experienced errors for the past 2 days. These errors, "
 "including JavaScript issues, can result in visual problems or disrupt "
@@ -144,12 +144,12 @@ msgstr ""
 "os comandos subsequentes inoperantes."
 
 #: _includes/diagnose/class_bill_diagnose.php:778
-#: includes/diagnose/class_bill_diagnose.php:1028
+#: includes/diagnose/class_bill_diagnose.php:1221
 msgid "This is a partial list of the errors found."
 msgstr "Esta é uma lista parcial dos erros encontrados."
 
 #: _includes/diagnose/class_bill_diagnose.php:1263
-#: includes/diagnose/class_bill_diagnose.php:1527
+#: includes/diagnose/class_bill_diagnose.php:1717
 msgid ""
 "These are critical issues that can have a significant impact on your site's "
 "performance. They can cause many plugins and functionalities to malfunction "
@@ -1264,7 +1264,7 @@ msgstr "Stop Bad Bots Plugin.  Chegou a hora de obter proteção profissional!"
 msgid "Go to WordPress"
 msgstr "Ir para WordPress"
 
-#: functions/functions.php:5659
+#: functions/functions.php:5669
 msgid ""
 "Your IP is blacklisted on Internet Public Databases. Please, use another way "
 "to contact us."
@@ -1272,7 +1272,7 @@ msgstr ""
 "Seu IP está na lista negra dos bancos de dados públicos da Internet. Por "
 "favor, use outra forma de entrar em contato conosco."
 
-#: functions/functions.php:5664
+#: functions/functions.php:5674
 msgid ""
 "Looks Like This Message doesn't come from our site. Please, use another way "
 "to contact us."
@@ -1280,11 +1280,11 @@ msgstr ""
 "Parece que esta mensagem não vem de nosso site. Por favor, use outra forma "
 "de entrar em contato conosco."
 
-#: functions/functions.php:6849
+#: functions/functions.php:6860
 msgid "Errors have been detected on this site. "
 msgstr "Foram detectados erros neste site."
 
-#: functions/functions.php:6872
+#: functions/functions.php:6883
 msgid "Memory issues have been detected on this site. "
 msgstr "Problemas de memória foram detectados neste site."
 
@@ -1898,11 +1898,11 @@ msgid ""
 msgstr ""
 "Erro ao contatar a Inteligência Artificial (API). Tente novamente mais tarde."
 
-#: includes/chat/class_bill_chat.php:242
+#: includes/chat/class_bill_chat.php:246
 msgid "Error to get response from AI source!"
 msgstr "Erro ao obter resposta da fonte de IA!"
 
-#: includes/diagnose/class_bill_diagnose.php:87
+#: includes/diagnose/class_bill_diagnose.php:115
 msgid ""
 "Here are some details about error and memory monitoring for your plugin. "
 "Errors and low memory can prevent your site from functioning properly. On "
@@ -1920,15 +1920,15 @@ msgstr ""
 "Se precisar se aprofundar mais, instale o plugin gratuito WPTools, que "
 "fornece insights mais aprofundados."
 
-#: includes/diagnose/class_bill_diagnose.php:95
+#: includes/diagnose/class_bill_diagnose.php:123
 msgid "Memory & Error Monitoring"
 msgstr "Monitoramento de memória e erros"
 
-#: includes/diagnose/class_bill_diagnose.php:96
+#: includes/diagnose/class_bill_diagnose.php:124
 msgid "Welcome to plugin Insights!"
 msgstr "Bem-vindo ao plugin Insights!"
 
-#: includes/diagnose/class_bill_diagnose.php:852
+#: includes/diagnose/class_bill_diagnose.php:886
 msgid ""
 "Displaying the latest recurring errors (Javascript Included) from your error "
 "log file and eventually alert about low WordPress memory limit is a courtesy "
@@ -1938,7 +1938,7 @@ msgstr ""
 "eventualmente alertar sobre o limite baixo de memória do WordPress é uma "
 "cortesia do plugin"
 
-#: includes/diagnose/class_bill_diagnose.php:854
+#: includes/diagnose/class_bill_diagnose.php:888
 msgid ""
 "Disabling our plugin does not stop the errors from occurring; it simply "
 "means you will no longer be notified here that they are happening, but they "
@@ -1948,7 +1948,7 @@ msgstr ""
 "significa apenas que você não será mais notificado aqui que eles estão "
 "acontecendo, mas eles ainda podem prejudicar seu site."
 
-#: includes/diagnose/class_bill_diagnose.php:856
+#: includes/diagnose/class_bill_diagnose.php:890
 msgid ""
 "Click the help button in the top right or go directly to the AI chat box "
 "below for more specific information on the issues listed."
@@ -1957,22 +1957,68 @@ msgstr ""
 "caixa de bate-papo da IA abaixo para obter informações mais específicas "
 "sobre os problemas listados."
 
-#: includes/diagnose/class_bill_diagnose.php:865
+#: includes/diagnose/class_bill_diagnose.php:899
 #: includes/feedback-last/feedback-last.php:250
 msgid "Artificial Intelligence Support Chat for Issues and Solutions"
 msgstr "Chat de suporte de inteligência artificial para problemas e soluções"
 
-#: includes/diagnose/class_bill_diagnose.php:874
+#: includes/diagnose/class_bill_diagnose.php:910
 #: includes/feedback-last/feedback-last.php:260
 msgid "Enter your message..."
 msgstr "Digite sua mensagem..."
 
-#: includes/diagnose/class_bill_diagnose.php:875
+#: includes/diagnose/class_bill_diagnose.php:911
 #: includes/feedback-last/feedback-last.php:261
 msgid "Send"
 msgstr "Enviar"
 
-#: includes/diagnose/class_bill_diagnose.php:1533
+#: includes/diagnose/class_bill_diagnose.php:914
+msgid ""
+"Enter a message and click 'Send', or just click 'Auto Checkup' to analyze "
+"the site's error log."
+msgstr ""
+"Digite uma mensagem e clique em \"Enviar\" ou simplesmente clique em "
+"\"Verificação automática\" para analisar o log de erros do site."
+
+#: includes/diagnose/class_bill_diagnose.php:921
+msgid "Auto Checkup"
+msgstr "Revisão Automática"
+
+#: includes/diagnose/class_bill_diagnose.php:1056
+msgid "The page load time is poor."
+msgstr "O tempo de carregamento da página é ruim."
+
+#: includes/diagnose/class_bill_diagnose.php:1058
+msgid "The page load time is very poor!"
+msgstr "O tempo de carregamento da página é muito ruim!"
+
+#: includes/diagnose/class_bill_diagnose.php:1063
+msgid "The Load average of yours front pages is: "
+msgstr "A média de carga das suas primeiras páginas é:"
+
+#: includes/diagnose/class_bill_diagnose.php:1066
+msgid "Loading time can significantly impact your SEO."
+msgstr "O tempo de carregamento pode impactar significativamente seu SEO."
+
+#: includes/diagnose/class_bill_diagnose.php:1068
+msgid "Many users will abandon the site before it fully loads."
+msgstr "Muitos usuários abandonam o site antes que ele carregue completamente."
+
+#: includes/diagnose/class_bill_diagnose.php:1070
+msgid ""
+"Search engines prioritize faster-loading pages, as they improve user "
+"experience and reduce bounce rates."
+msgstr ""
+"Os mecanismos de busca priorizam páginas de carregamento mais rápido, pois "
+"elas melhoram a experiência do usuário e reduzem as taxas de rejeição."
+
+#: includes/diagnose/class_bill_diagnose.php:1075
+msgid "Learn more about Page Load Times and their negative impact on SEO"
+msgstr ""
+"Saiba mais sobre os tempos de carregamento de página e seu impacto negativo "
+"no SEO"
+
+#: includes/diagnose/class_bill_diagnose.php:1723
 msgid "Critical Issues"
 msgstr "Crítico"
 
@@ -2682,29 +2728,29 @@ msgstr "Você não precisa reinstalar o plugin."
 msgid "Purchase Code (just paste here to activate your product)"
 msgstr "Código de compra (basta colar aqui para ativar seu produto)"
 
-#: stopbadbots.php:210
+#: stopbadbots.php:231
 msgid "Stop Bad Bots: Could not load the localization file (Language file)"
 msgstr ""
 "Stop Bad Bots: Não foi possível carregar o arquivo de localização (arquivo "
 "de idioma)"
 
-#: stopbadbots.php:880
+#: stopbadbots.php:922
 msgid "Protection rate:"
 msgstr "Taxa de proteção:"
 
-#: stopbadbots.php:884
+#: stopbadbots.php:926
 msgid "For details, visit the plugin dashboard"
 msgstr "Para mais detalhes, visite o painel de controle do plugin"
 
-#: stopbadbots.php:886
+#: stopbadbots.php:928
 msgid "Attacks Blocked Last 15 days"
 msgstr "Ataques Bloqueados nos últimos 15 dias"
 
-#: stopbadbots.php:893
+#: stopbadbots.php:935
 msgid "Total Attacks Blocked By Type"
 msgstr "Ataques totais bloqueados por tipo"
 
-#: stopbadbots.php:902
+#: stopbadbots.php:944
 msgid "Total Attacks Blocked By IP"
 msgstr "Total de ataques bloqueados por IP"
 

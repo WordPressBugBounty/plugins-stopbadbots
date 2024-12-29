@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - StopBadBots - Development (trunk)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-22 09:27+0000\n"
-"PO-Revision-Date: 2024-12-22 09:28+0000\n"
+"POT-Creation-Date: 2024-12-29 12:37+0000\n"
+"PO-Revision-Date: 2024-12-29 12:44+0000\n"
 "Last-Translator: \n"
 "Language-Team: French (France)\n"
 "Language: fr_FR\n"
@@ -21,12 +21,12 @@ msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:541
 #: _includes/diagnose/class_bill_diagnose.php:562
-#: includes/diagnose/class_bill_diagnose.php:760
+#: includes/diagnose/class_bill_diagnose.php:788
 msgid "Our plugin"
 msgstr "Notre plugin"
 
 #: _includes/diagnose/class_bill_diagnose.php:543
-#: includes/diagnose/class_bill_diagnose.php:762
+#: includes/diagnose/class_bill_diagnose.php:790
 msgid ""
 "cannot function properly because your WordPress Memory Limit is too low. "
 "Your site will experience serious issues, even if you deactivate our plugin."
@@ -36,10 +36,8 @@ msgstr ""
 "désactivez notre plugin."
 
 #: _includes/diagnose/class_bill_diagnose.php:549
-#: _includes/diagnose/class_bill_diagnose.php:570 functions/functions.php:6849
-#: functions/functions.php:6872 includes/diagnose/class_bill_diagnose.php:768
-#, fuzzy
-#| msgid "Learn More"
+#: _includes/diagnose/class_bill_diagnose.php:570 functions/functions.php:6860
+#: functions/functions.php:6883 includes/diagnose/class_bill_diagnose.php:796
 msgid "Learn more"
 msgstr "En apprendre plus"
 
@@ -79,29 +77,29 @@ msgstr ""
 "produisent, mais elles peuvent toujours nuire à votre site."
 
 #: _includes/diagnose/class_bill_diagnose.php:642
-#: includes/diagnose/class_bill_diagnose.php:892
+#: includes/diagnose/class_bill_diagnose.php:1094
 msgid "Potential Problems"
 msgstr "Problèmes potentiels"
 
 #: _includes/diagnose/class_bill_diagnose.php:650
-#: includes/diagnose/class_bill_diagnose.php:900
+#: includes/diagnose/class_bill_diagnose.php:1102
 msgid "Low WordPress Memory Limit"
 msgstr "Limite de mémoire WordPress faible"
 
 #: _includes/diagnose/class_bill_diagnose.php:663
-#: includes/diagnose/class_bill_diagnose.php:913
+#: includes/diagnose/class_bill_diagnose.php:1115
 msgid "Your usage now"
 msgstr "Votre utilisation maintenant"
 
 #: _includes/diagnose/class_bill_diagnose.php:671
-#: includes/diagnose/class_bill_diagnose.php:921
+#: includes/diagnose/class_bill_diagnose.php:1123
 msgid "Total Php Server Memory"
 msgstr "Mémoire totale du serveur PHP"
 
 #: _includes/diagnose/class_bill_diagnose.php:680
 #: _includes/install-checkup/class_bill_install.php:307
 #: includes/__install/class_bill_install.php:307
-#: includes/diagnose/class_bill_diagnose.php:930
+#: includes/diagnose/class_bill_diagnose.php:1132
 #: includes/install-checkup/class_bill_install.php:307
 msgid ""
 "Your WordPress Memory Limit is too low, which can lead to critical issues on "
@@ -120,8 +118,8 @@ msgstr ""
 #: dashboard/dashboard.php:121 dashboard/memory.php:103
 #: functions/functions.php:4306 includes/__install/class_bill_install.php:316
 #: includes/__install/class_bill_install.php:385
-#: includes/diagnose/class_bill_diagnose.php:936
-#: includes/diagnose/class_bill_diagnose.php:974
+#: includes/diagnose/class_bill_diagnose.php:1138
+#: includes/diagnose/class_bill_diagnose.php:1167
 #: includes/install-checkup/class_bill_install.php:316
 #: includes/install-checkup/class_bill_install.php:385
 #: includes/vendor/vendor.php:54
@@ -129,12 +127,12 @@ msgid "Learn More"
 msgstr "En apprendre plus"
 
 #: _includes/diagnose/class_bill_diagnose.php:715
-#: includes/diagnose/class_bill_diagnose.php:965
+#: includes/diagnose/class_bill_diagnose.php:1158
 msgid "Site Errors"
 msgstr "Erreurs du site"
 
 #: _includes/diagnose/class_bill_diagnose.php:720
-#: includes/diagnose/class_bill_diagnose.php:970
+#: includes/diagnose/class_bill_diagnose.php:1163
 msgid ""
 "Your site has experienced errors for the past 2 days. These errors, "
 "including JavaScript issues, can result in visual problems or disrupt "
@@ -149,12 +147,12 @@ msgstr ""
 "de JavaScript, rendant toutes les commandes suivantes inutilisables."
 
 #: _includes/diagnose/class_bill_diagnose.php:778
-#: includes/diagnose/class_bill_diagnose.php:1028
+#: includes/diagnose/class_bill_diagnose.php:1221
 msgid "This is a partial list of the errors found."
 msgstr "Ceci est une liste partielle des erreurs trouvées."
 
 #: _includes/diagnose/class_bill_diagnose.php:1263
-#: includes/diagnose/class_bill_diagnose.php:1527
+#: includes/diagnose/class_bill_diagnose.php:1717
 msgid ""
 "These are critical issues that can have a significant impact on your site's "
 "performance. They can cause many plugins and functionalities to malfunction "
@@ -232,25 +230,16 @@ msgstr "Annuler"
 
 #: _includes/feedback-last/feedback-last.php:264
 #: includes/feedback-last/feedback-last.php:277
-#, fuzzy
-#| msgctxt "List table bulk action"
-#| msgid "deactivate"
 msgid "Just Deactivate"
 msgstr "désactiver"
 
 #: _includes/list-tables/class-sbb-list-table.php:19 dashboard/topbots.php:36
 #: includes/list-tables/class-sbb-list-table.php:22
-#, fuzzy
-#| msgctxt "Column label"
-#| msgid "Nickname"
 msgid "Nickname"
 msgstr "Pseudonyme"
 
 #: _includes/list-tables/class-sbb-list-table.php:20
 #: includes/list-tables/class-sbb-list-table.php:23
-#, fuzzy
-#| msgctxt "Column label"
-#| msgid "Name"
 msgid "Name"
 msgstr "Nom"
 
@@ -261,9 +250,6 @@ msgstr "Nom"
 #: includes/list-tables/class-sbb-list-table.php:24
 #: includes/list-tables/class-sbb-list-table2.php:23
 #: includes/list-tables/class-sbb-list-table3.php:34
-#, fuzzy
-#| msgctxt "Column label"
-#| msgid "Status"
 msgid "Status"
 msgstr "État "
 
@@ -297,9 +283,6 @@ msgstr "bloqué par un robot"
 #: includes/list-tables/class-sbb-list-table.php:90
 #: includes/list-tables/class-sbb-list-table2.php:86
 #: includes/list-tables/class-sbb-list-table3.php:108
-#, fuzzy
-#| msgctxt "List table row action"
-#| msgid "Change Status"
 msgid "Change Status"
 msgstr "Modifier l'état"
 
@@ -315,9 +298,6 @@ msgstr "Modifier l'état"
 #: includes/list-tables/class-sbb-list-table2.php:116
 #: includes/list-tables/class-sbb-list-table3.php:124
 #: includes/list-tables/class-sbb-list-table3.php:138
-#, fuzzy
-#| msgctxt "List table bulk action"
-#| msgid "deactivate"
 msgid "deactivate"
 msgstr "désactiver"
 
@@ -328,17 +308,11 @@ msgstr "désactiver"
 #: includes/list-tables/class-sbb-list-table.php:119
 #: includes/list-tables/class-sbb-list-table2.php:115
 #: includes/list-tables/class-sbb-list-table3.php:137
-#, fuzzy
-#| msgctxt "List table bulk action"
-#| msgid "Activate"
 msgid "Activate"
 msgstr "Activer"
 
 #: _includes/list-tables/class-sbb-list-table2.php:22
 #: includes/list-tables/class-sbb-list-table2.php:22
-#, fuzzy
-#| msgctxt "Column label"
-#| msgid "IP"
 msgid "IP"
 msgstr "IP"
 
@@ -346,9 +320,6 @@ msgstr "IP"
 #: _includes/list-tables/class-sbb-list-table3.php:21
 #: includes/list-tables/class-sbb-list-table2.php:24
 #: includes/list-tables/class-sbb-list-table3.php:35
-#, fuzzy
-#| msgctxt "Column label"
-#| msgid "Added by"
 msgid "Added by"
 msgstr "Ajouté par"
 
@@ -871,8 +842,6 @@ msgid "and mark all with yes."
 msgstr "et cochez tout avec oui."
 
 #: dashboard/notifications.php:90
-#, fuzzy
-#| msgid "Notifications"
 msgid "No notifications at this time!"
 msgstr "Notifications"
 
@@ -883,8 +852,6 @@ msgstr ""
 "ci-dessous dans notre"
 
 #: dashboard/tools.php:29
-#, fuzzy
-#| msgid "Support Page"
 msgid "Support Site"
 msgstr "Page de support"
 
@@ -954,8 +921,6 @@ msgstr "pour plus de détails, support et guide en ligne."
 
 #: functions/functions.php:668 functions/functions.php:691
 #: table/visitors_render.php:53
-#, fuzzy
-#| msgid "Visit the"
 msgid "Visits Log"
 msgstr "Visiter l’onglet"
 
@@ -1118,8 +1083,6 @@ msgstr ""
 "Un faux Google/Bing/Msn a été détecté et bloqué par le plugin Stop Bad Bots."
 
 #: functions/functions.php:1375
-#, fuzzy
-#| msgid "User Agent"
 msgid "Fake User Agent:"
 msgstr "Agent utilisateur"
 
@@ -1339,7 +1302,7 @@ msgstr ""
 msgid "Go to WordPress"
 msgstr "Accéder à WordPress"
 
-#: functions/functions.php:5659
+#: functions/functions.php:5669
 msgid ""
 "Your IP is blacklisted on Internet Public Databases. Please, use another way "
 "to contact us."
@@ -1347,7 +1310,7 @@ msgstr ""
 "Votre adresse IP est sur liste noire dans les bases de données publiques "
 "Internet. Veuillez utiliser un autre moyen pour nous contacter."
 
-#: functions/functions.php:5664
+#: functions/functions.php:5674
 msgid ""
 "Looks Like This Message doesn't come from our site. Please, use another way "
 "to contact us."
@@ -1355,11 +1318,11 @@ msgstr ""
 "Il semblerait que ce message ne provienne pas de notre site. Veuillez "
 "utiliser un autre moyen de nous contacter."
 
-#: functions/functions.php:6849
+#: functions/functions.php:6860
 msgid "Errors have been detected on this site. "
 msgstr "Des erreurs ont été détectées sur ce site."
 
-#: functions/functions.php:6872
+#: functions/functions.php:6883
 msgid "Memory issues have been detected on this site. "
 msgstr "Des problèmes de mémoire ont été détectés sur ce site."
 
@@ -1788,9 +1751,6 @@ msgid "Installed But Not Activated"
 msgstr "Installé mais pas activé"
 
 #: includes/__tgm/class-tgm-plugin-activation.php:2414
-#, fuzzy
-#| msgctxt "List table bulk action"
-#| msgid "Activate"
 msgid "Active"
 msgstr "Activer"
 
@@ -1980,8 +1940,6 @@ msgid "AJAX request failed:"
 msgstr "La requête AJAX a échoué :"
 
 #: includes/chat/class_bill_chat.php:50
-#, fuzzy
-#| msgid "Empty Table. Please, try again later."
 msgid "Error sending the message. Please try again later."
 msgstr "Tableau vide. Veuillez réessayer plus tard."
 
@@ -1996,11 +1954,11 @@ msgstr ""
 "Erreur lors de la prise de contact avec l'intelligence artificielle (API). "
 "Veuillez réessayer ultérieurement."
 
-#: includes/chat/class_bill_chat.php:242
+#: includes/chat/class_bill_chat.php:246
 msgid "Error to get response from AI source!"
 msgstr "Erreur lors de l'obtention d'une réponse de la source AI !"
 
-#: includes/diagnose/class_bill_diagnose.php:87
+#: includes/diagnose/class_bill_diagnose.php:115
 msgid ""
 "Here are some details about error and memory monitoring for your plugin. "
 "Errors and low memory can prevent your site from functioning properly. On "
@@ -2019,19 +1977,15 @@ msgstr ""
 "Si vous avez besoin d'aller plus loin, installez le plugin gratuit WPTools, "
 "qui fournit des informations plus détaillées."
 
-#: includes/diagnose/class_bill_diagnose.php:95
+#: includes/diagnose/class_bill_diagnose.php:123
 msgid "Memory & Error Monitoring"
 msgstr "Surveillance de la mémoire et des erreurs"
 
-#: includes/diagnose/class_bill_diagnose.php:96
+#: includes/diagnose/class_bill_diagnose.php:124
 msgid "Welcome to plugin Insights!"
 msgstr "Bienvenue dans le plugin Insights !"
 
-#: includes/diagnose/class_bill_diagnose.php:852
-#, fuzzy
-#| msgid ""
-#| "Displaying the latest recurring errors from your error log file and "
-#| "eventually alert about low WordPress memory limit is a courtesy of plugin"
+#: includes/diagnose/class_bill_diagnose.php:886
 msgid ""
 "Displaying the latest recurring errors (Javascript Included) from your error "
 "log file and eventually alert about low WordPress memory limit is a courtesy "
@@ -2041,12 +1995,7 @@ msgstr ""
 "d'erreurs et éventuellement une alerte sur la limite de mémoire faible de "
 "WordPress est une gracieuseté du plugin"
 
-#: includes/diagnose/class_bill_diagnose.php:854
-#, fuzzy
-#| msgid ""
-#| "Disabling our plugin does not stop the errors from occurring; \n"
-#| "                it simply means you will no longer be notified here that "
-#| "they are happening, but they can still harm your site."
+#: includes/diagnose/class_bill_diagnose.php:888
 msgid ""
 "Disabling our plugin does not stop the errors from occurring; it simply "
 "means you will no longer be notified here that they are happening, but they "
@@ -2057,7 +2006,7 @@ msgstr ""
 "cela signifie simplement que vous ne serez plus averti ici qu'elles se "
 "produisent, mais elles peuvent toujours nuire à votre site."
 
-#: includes/diagnose/class_bill_diagnose.php:856
+#: includes/diagnose/class_bill_diagnose.php:890
 msgid ""
 "Click the help button in the top right or go directly to the AI chat box "
 "below for more specific information on the issues listed."
@@ -2066,24 +2015,75 @@ msgstr ""
 "boîte de discussion AI ci-dessous pour obtenir des informations plus "
 "spécifiques sur les problèmes répertoriés."
 
-#: includes/diagnose/class_bill_diagnose.php:865
+#: includes/diagnose/class_bill_diagnose.php:899
 #: includes/feedback-last/feedback-last.php:250
 msgid "Artificial Intelligence Support Chat for Issues and Solutions"
 msgstr ""
 "Chat d'assistance sur l'intelligence artificielle pour les problèmes et les "
 "solutions"
 
-#: includes/diagnose/class_bill_diagnose.php:874
+#: includes/diagnose/class_bill_diagnose.php:910
 #: includes/feedback-last/feedback-last.php:260
 msgid "Enter your message..."
 msgstr "Entrez votre message..."
 
-#: includes/diagnose/class_bill_diagnose.php:875
+#: includes/diagnose/class_bill_diagnose.php:911
 #: includes/feedback-last/feedback-last.php:261
 msgid "Send"
 msgstr "Envoyer"
 
-#: includes/diagnose/class_bill_diagnose.php:1533
+#: includes/diagnose/class_bill_diagnose.php:914
+msgid ""
+"Enter a message and click 'Send', or just click 'Auto Checkup' to analyze "
+"the site's error log."
+msgstr ""
+"Saisissez un message et cliquez sur « Envoyer », ou cliquez simplement sur "
+"« Vérification automatique » pour analyser le journal des erreurs du site."
+
+#: includes/diagnose/class_bill_diagnose.php:921
+msgid "Auto Checkup"
+msgstr "Vérification automatique"
+
+#: includes/diagnose/class_bill_diagnose.php:1056
+msgid "The page load time is poor."
+msgstr "Le temps de chargement de la page est médiocre."
+
+#: includes/diagnose/class_bill_diagnose.php:1058
+msgid "The page load time is very poor!"
+msgstr "Le temps de chargement de la page est très mauvais !"
+
+#: includes/diagnose/class_bill_diagnose.php:1063
+msgid "The Load average of yours front pages is: "
+msgstr "La charge moyenne de vos pages d'accueil est :"
+
+#: includes/diagnose/class_bill_diagnose.php:1066
+msgid "Loading time can significantly impact your SEO."
+msgstr ""
+"Le temps de chargement peut avoir un impact significatif sur votre "
+"référencement."
+
+#: includes/diagnose/class_bill_diagnose.php:1068
+msgid "Many users will abandon the site before it fully loads."
+msgstr ""
+"De nombreux utilisateurs abandonneront le site avant qu’il ne soit "
+"complètement chargé."
+
+#: includes/diagnose/class_bill_diagnose.php:1070
+msgid ""
+"Search engines prioritize faster-loading pages, as they improve user "
+"experience and reduce bounce rates."
+msgstr ""
+"Les moteurs de recherche privilégient les pages à chargement plus rapide, "
+"car elles améliorent l'expérience utilisateur et réduisent les taux de "
+"rebond."
+
+#: includes/diagnose/class_bill_diagnose.php:1075
+msgid "Learn more about Page Load Times and their negative impact on SEO"
+msgstr ""
+"En savoir plus sur les temps de chargement des pages et leur impact négatif "
+"sur le référencement"
+
+#: includes/diagnose/class_bill_diagnose.php:1723
 msgid "Critical Issues"
 msgstr "Problèmes critiques"
 
@@ -2822,29 +2822,29 @@ msgstr "Vous n'avez pas besoin de réinstaller le plugin."
 msgid "Purchase Code (just paste here to activate your product)"
 msgstr "Code d'achat (collez-le simplement ici pour activer votre produit)"
 
-#: stopbadbots.php:210
+#: stopbadbots.php:231
 msgid "Stop Bad Bots: Could not load the localization file (Language file)"
 msgstr ""
 "Arrêter les mauvais robots : impossible de charger le fichier de "
 "localisation (fichier de langue)"
 
-#: stopbadbots.php:880
+#: stopbadbots.php:922
 msgid "Protection rate:"
 msgstr "Taux de protection :"
 
-#: stopbadbots.php:884
+#: stopbadbots.php:926
 msgid "For details, visit the plugin dashboard"
 msgstr "Pour plus de détails, visitez le tableau de bord du plugin"
 
-#: stopbadbots.php:886
+#: stopbadbots.php:928
 msgid "Attacks Blocked Last 15 days"
 msgstr "Attaques bloquées au cours des 15 derniers jours"
 
-#: stopbadbots.php:893
+#: stopbadbots.php:935
 msgid "Total Attacks Blocked By Type"
 msgstr "Nombre total d'attaques bloquées par type"
 
-#: stopbadbots.php:902
+#: stopbadbots.php:944
 msgid "Total Attacks Blocked By IP"
 msgstr "Nombre total d'attaques bloquées par IP"
 

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - StopBadBots - Development (trunk)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-22 09:28+0000\n"
-"PO-Revision-Date: 2024-12-22 09:29+0000\n"
+"POT-Creation-Date: 2024-12-29 12:35+0000\n"
+"PO-Revision-Date: 2024-12-29 12:44+0000\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -21,12 +21,12 @@ msgstr ""
 
 #: _includes/diagnose/class_bill_diagnose.php:541
 #: _includes/diagnose/class_bill_diagnose.php:562
-#: includes/diagnose/class_bill_diagnose.php:760
+#: includes/diagnose/class_bill_diagnose.php:788
 msgid "Our plugin"
 msgstr "Onze plug-in"
 
 #: _includes/diagnose/class_bill_diagnose.php:543
-#: includes/diagnose/class_bill_diagnose.php:762
+#: includes/diagnose/class_bill_diagnose.php:790
 msgid ""
 "cannot function properly because your WordPress Memory Limit is too low. "
 "Your site will experience serious issues, even if you deactivate our plugin."
@@ -35,8 +35,8 @@ msgstr ""
 "site zal ernstige problemen ondervinden, zelfs als u onze plugin deactiveert."
 
 #: _includes/diagnose/class_bill_diagnose.php:549
-#: _includes/diagnose/class_bill_diagnose.php:570 functions/functions.php:6849
-#: functions/functions.php:6872 includes/diagnose/class_bill_diagnose.php:768
+#: _includes/diagnose/class_bill_diagnose.php:570 functions/functions.php:6860
+#: functions/functions.php:6883 includes/diagnose/class_bill_diagnose.php:796
 msgid "Learn more"
 msgstr "Meer informatie"
 
@@ -75,29 +75,29 @@ msgstr ""
 "optreden, maar ze kunnen nog steeds schadelijk zijn voor uw site."
 
 #: _includes/diagnose/class_bill_diagnose.php:642
-#: includes/diagnose/class_bill_diagnose.php:892
+#: includes/diagnose/class_bill_diagnose.php:1094
 msgid "Potential Problems"
 msgstr "Mogelijke problemen"
 
 #: _includes/diagnose/class_bill_diagnose.php:650
-#: includes/diagnose/class_bill_diagnose.php:900
+#: includes/diagnose/class_bill_diagnose.php:1102
 msgid "Low WordPress Memory Limit"
 msgstr "Lage WordPress-geheugenlimiet"
 
 #: _includes/diagnose/class_bill_diagnose.php:663
-#: includes/diagnose/class_bill_diagnose.php:913
+#: includes/diagnose/class_bill_diagnose.php:1115
 msgid "Your usage now"
 msgstr "Uw gebruik nu"
 
 #: _includes/diagnose/class_bill_diagnose.php:671
-#: includes/diagnose/class_bill_diagnose.php:921
+#: includes/diagnose/class_bill_diagnose.php:1123
 msgid "Total Php Server Memory"
 msgstr "Totaal PHP-servergeheugen"
 
 #: _includes/diagnose/class_bill_diagnose.php:680
 #: _includes/install-checkup/class_bill_install.php:307
 #: includes/__install/class_bill_install.php:307
-#: includes/diagnose/class_bill_diagnose.php:930
+#: includes/diagnose/class_bill_diagnose.php:1132
 #: includes/install-checkup/class_bill_install.php:307
 msgid ""
 "Your WordPress Memory Limit is too low, which can lead to critical issues on "
@@ -116,8 +116,8 @@ msgstr ""
 #: dashboard/dashboard.php:121 dashboard/memory.php:103
 #: functions/functions.php:4306 includes/__install/class_bill_install.php:316
 #: includes/__install/class_bill_install.php:385
-#: includes/diagnose/class_bill_diagnose.php:936
-#: includes/diagnose/class_bill_diagnose.php:974
+#: includes/diagnose/class_bill_diagnose.php:1138
+#: includes/diagnose/class_bill_diagnose.php:1167
 #: includes/install-checkup/class_bill_install.php:316
 #: includes/install-checkup/class_bill_install.php:385
 #: includes/vendor/vendor.php:54
@@ -125,12 +125,12 @@ msgid "Learn More"
 msgstr "Meer informatie"
 
 #: _includes/diagnose/class_bill_diagnose.php:715
-#: includes/diagnose/class_bill_diagnose.php:965
+#: includes/diagnose/class_bill_diagnose.php:1158
 msgid "Site Errors"
 msgstr "Sitefouten"
 
 #: _includes/diagnose/class_bill_diagnose.php:720
-#: includes/diagnose/class_bill_diagnose.php:970
+#: includes/diagnose/class_bill_diagnose.php:1163
 msgid ""
 "Your site has experienced errors for the past 2 days. These errors, "
 "including JavaScript issues, can result in visual problems or disrupt "
@@ -145,12 +145,12 @@ msgstr ""
 "beëindigen, waardoor alle daaropvolgende opdrachten niet meer werken."
 
 #: _includes/diagnose/class_bill_diagnose.php:778
-#: includes/diagnose/class_bill_diagnose.php:1028
+#: includes/diagnose/class_bill_diagnose.php:1221
 msgid "This is a partial list of the errors found."
 msgstr "Dit is een gedeeltelijke lijst van de gevonden fouten."
 
 #: _includes/diagnose/class_bill_diagnose.php:1263
-#: includes/diagnose/class_bill_diagnose.php:1527
+#: includes/diagnose/class_bill_diagnose.php:1717
 msgid ""
 "These are critical issues that can have a significant impact on your site's "
 "performance. They can cause many plugins and functionalities to malfunction "
@@ -226,24 +226,16 @@ msgstr "Annuleren"
 
 #: _includes/feedback-last/feedback-last.php:264
 #: includes/feedback-last/feedback-last.php:277
-#, fuzzy
-#| msgid "No, Just Deactivate it"
 msgid "Just Deactivate"
 msgstr "Nee, graag gewoon deactiveren"
 
 #: _includes/list-tables/class-sbb-list-table.php:19 dashboard/topbots.php:36
 #: includes/list-tables/class-sbb-list-table.php:22
-#, fuzzy
-#| msgctxt "Column label"
-#| msgid "Nickname"
 msgid "Nickname"
 msgstr "Nickname"
 
 #: _includes/list-tables/class-sbb-list-table.php:20
 #: includes/list-tables/class-sbb-list-table.php:23
-#, fuzzy
-#| msgctxt "Column label"
-#| msgid "Name"
 msgid "Name"
 msgstr "Naam"
 
@@ -254,9 +246,6 @@ msgstr "Naam"
 #: includes/list-tables/class-sbb-list-table.php:24
 #: includes/list-tables/class-sbb-list-table2.php:23
 #: includes/list-tables/class-sbb-list-table3.php:34
-#, fuzzy
-#| msgctxt "Column label"
-#| msgid "Status"
 msgid "Status"
 msgstr "Status"
 
@@ -266,9 +255,6 @@ msgstr "Status"
 #: includes/list-tables/class-sbb-list-table.php:25
 #: includes/list-tables/class-sbb-list-table2.php:25
 #: includes/list-tables/class-sbb-list-table3.php:36
-#, fuzzy
-#| msgctxt "Column label"
-#| msgid "Num Blocked"
 msgid "Num Blocked"
 msgstr "Num Blocked"
 
@@ -293,9 +279,6 @@ msgstr "botblocked"
 #: includes/list-tables/class-sbb-list-table.php:90
 #: includes/list-tables/class-sbb-list-table2.php:86
 #: includes/list-tables/class-sbb-list-table3.php:108
-#, fuzzy
-#| msgctxt "List table row action"
-#| msgid "Change Status"
 msgid "Change Status"
 msgstr "Status wijzigen"
 
@@ -311,9 +294,6 @@ msgstr "Status wijzigen"
 #: includes/list-tables/class-sbb-list-table2.php:116
 #: includes/list-tables/class-sbb-list-table3.php:124
 #: includes/list-tables/class-sbb-list-table3.php:138
-#, fuzzy
-#| msgctxt "List table bulk action"
-#| msgid "deactivate"
 msgid "deactivate"
 msgstr "deactiveren"
 
@@ -324,9 +304,6 @@ msgstr "deactiveren"
 #: includes/list-tables/class-sbb-list-table.php:119
 #: includes/list-tables/class-sbb-list-table2.php:115
 #: includes/list-tables/class-sbb-list-table3.php:137
-#, fuzzy
-#| msgctxt "List table bulk action"
-#| msgid "Activate"
 msgid "Activate"
 msgstr "Activeren"
 
@@ -373,8 +350,6 @@ msgstr "Bekijk opnieuw"
 
 #: _includes/vendor/vendor.php:56 dashboard/notifications.php:85
 #: functions/functions.php:4319 includes/vendor/vendor.php:56
-#, fuzzy
-#| msgid "No, dismiss"
 msgid "Dismiss"
 msgstr "Nee, wijs af"
 
@@ -409,8 +384,6 @@ msgstr ""
 "u kunnen weergeven."
 
 #: dashboard/dashboard.php:15
-#, fuzzy
-#| msgid "eMail sent by Stop Bad Bots Plugin."
 msgid "Stop Bad Bots Plugin Activated"
 msgstr "E-mail verstuurd door Stop Bad Bots plugin."
 
@@ -444,8 +417,6 @@ msgid "Activate Block All IPs in Settings Page."
 msgstr "Activeer 'Alle IP's blokkeren' op de pagina 'Instellingen'."
 
 #: dashboard/dashboard.php:80
-#, fuzzy
-#| msgid "Block all Bots included at Bad Bots Table?"
 msgid "Activate Block all bots included at Bad Referer Table"
 msgstr "Alle Bots in de lijst met kwaadaardige Bots blokkeren?"
 
@@ -794,22 +765,16 @@ msgid "Notifications"
 msgstr "Meldingen"
 
 #: dashboard/notifications.php:42
-#, fuzzy
-#| msgid "eMail sent by Stop Bad Bots Plugin."
 msgid "Plugin Stop Bad Bots It is not active!"
 msgstr "E-mail verstuurd door Stop Bad Bots plugin."
 
 #: dashboard/notifications.php:44
-#, fuzzy
-#| msgid "Read the StartUp guide at Stop Bad Bots Settings page."
 msgid ""
 "Go to Dashboard => Stop Bad Bots => Settings => General Settings (tab) and "
 "activate it. "
 msgstr "Lees Aan-de-slag op de instellingen-pagina."
 
 #: dashboard/notifications.php:46
-#, fuzzy
-#| msgid "Block all Bots included at Bad Bots Table?"
 msgid "Mark: \"Block all Bots included at Bad Bots Table?\" with yes."
 msgstr "Alle Bots in de lijst met kwaadaardige Bots blokkeren?"
 
@@ -818,16 +783,12 @@ msgid "Plugin Stop Bad Bots (Block Ips) It is not active!"
 msgstr "Plugin Stop Bad Bots (Block Ips) Deze is niet actief!"
 
 #: dashboard/notifications.php:55 dashboard/notifications.php:65
-#, fuzzy
-#| msgid "Read the StartUp guide at Stop Bad Bots Settings page."
 msgid ""
 "Go to Dashboard => Stop Bad Bots => Settings => General Settings (tab) and "
 "activate it."
 msgstr "Lees Aan-de-slag op de instellingen-pagina."
 
 #: dashboard/notifications.php:57
-#, fuzzy
-#| msgid "Block all Bots included at Bad Bots Table?"
 msgid "Mark: \"Block all IPs included at Bad IPs Table?\" with yes."
 msgstr "Alle Bots in de lijst met kwaadaardige Bots blokkeren?"
 
@@ -836,8 +797,6 @@ msgid "Plugin Stop Bad Bots (Block Bad Refer Table) It is not active!"
 msgstr "Plugin Stop Bad Bots (Block Bad Refer Table) Deze is niet actief!"
 
 #: dashboard/notifications.php:67
-#, fuzzy
-#| msgid "Block all Bots included at Bad Bots Table?"
 msgid "Mark: \"Block all bots included at Bad Referer Table?\" with yes."
 msgstr "Alle Bots in de lijst met kwaadaardige Bots blokkeren?"
 
@@ -854,8 +813,6 @@ msgid "To increase, go to"
 msgstr "Om te vergroten, ga naar"
 
 #: dashboard/notifications.php:81
-#, fuzzy
-#| msgid "Read the StartUp guide at Stop Bad Bots Settings page."
 msgid "Stop Bad Bots => Setting => General Settings"
 msgstr "Lees Aan-de-slag op de instellingen-pagina."
 
@@ -864,8 +821,6 @@ msgid "and mark all with yes."
 msgstr "en markeer alles met ja."
 
 #: dashboard/notifications.php:90
-#, fuzzy
-#| msgid "Notifications"
 msgid "No notifications at this time!"
 msgstr "Meldingen"
 
@@ -876,8 +831,6 @@ msgstr ""
 "informatie in ons"
 
 #: dashboard/tools.php:29
-#, fuzzy
-#| msgid "Support Page"
 msgid "Support Site"
 msgstr "Support pagina"
 
@@ -896,9 +849,6 @@ msgstr "Nummer"
 
 #: dashboard/topbots.php:40 dashboard/topcountries.php:62
 #: dashboard/topips.php:70 dashboard/topips.php:77 dashboard/toprefs.php:38
-#, fuzzy
-#| msgctxt "Column label"
-#| msgid "Num Blocked"
 msgid "Blocked"
 msgstr "Num Blocked"
 
@@ -911,8 +861,6 @@ msgid "Country"
 msgstr "Land"
 
 #: functions/functions.php:584
-#, fuzzy
-#| msgid "Read the StartUp guide at Stop Bad Bots Settings page."
 msgid ""
 "Read the StartUp guide at Stop Bad Bots Settings page. (WP Dashboard => Stop "
 "Bad Bots = Settings)"
@@ -943,15 +891,11 @@ msgid "plugin site"
 msgstr "site van deze plugin"
 
 #: functions/functions.php:603
-#, fuzzy
-#| msgid "for more details, video and online guide."
 msgid "for more details, Support and online guide."
 msgstr "voor meer informatie, video's en de online handleiding."
 
 #: functions/functions.php:668 functions/functions.php:691
 #: table/visitors_render.php:53
-#, fuzzy
-#| msgid "Visit the"
 msgid "Visits Log"
 msgstr "Bezoek de"
 
@@ -960,8 +904,6 @@ msgid "Overview"
 msgstr "Overzicht"
 
 #: functions/functions.php:729
-#, fuzzy
-#| msgid "eMail sent by Stop Bad Bots Plugin."
 msgid "Open Stop Bad Bots Plugin Here!"
 msgstr "E-mail verstuurd door Stop Bad Bots plugin."
 
@@ -974,21 +916,15 @@ msgid "Bots per page"
 msgstr "Bots per pagina"
 
 #: functions/functions.php:1173
-#, fuzzy
-#| msgid "Bots per page"
 msgid "IPs per page"
 msgstr "Bots per pagina"
 
 #: functions/functions.php:1187 functions/functions.php:1201
-#, fuzzy
-#| msgid "Bots per page"
 msgid "Bad Referers per page"
 msgstr "Bots per pagina"
 
 #: functions/functions.php:1216 functions/functions.php:1240
 #: functions/functions.php:1262 functions/functions.php:1285
-#, fuzzy
-#| msgid "Detected Bot on "
 msgid "Detected Bot on"
 msgstr "Bot gedetecteerd op "
 
@@ -1051,8 +987,6 @@ msgstr ""
 #: functions/functions.php:1442 functions/functions.php:1464
 #: functions/functions.php:1484 functions/functions.php:1504
 #: functions/functions.php:1524
-#, fuzzy
-#| msgid "Read the StartUp guide at Stop Bad Bots Settings page."
 msgid "Dashboard => Stop Bad Bots => Settings."
 msgstr "Lees Aan-de-slag op de instellingen-pagina."
 
@@ -1070,33 +1004,23 @@ msgstr ""
 "ontvangen:"
 
 #: functions/functions.php:1263
-#, fuzzy
-#| msgid "Bot was detected and blocked."
 msgid "Malicious bot was detected and blocked by firewall."
 msgstr "Bot gedetecteerd en geblokkeerd."
 
 #: functions/functions.php:1267
-#, fuzzy
-#| msgid "String Found:"
 msgid "Malicious String Found:"
 msgstr "Gevonden tekststring:"
 
 #: functions/functions.php:1286
-#, fuzzy
-#| msgid "Bot was detected and blocked."
 msgid "Bad Referer Bot was detected and blocked by Stop Bad Bots Plugin."
 msgstr "Bot gedetecteerd en geblokkeerd."
 
 #: functions/functions.php:1289
-#, fuzzy
-#| msgid "String Found:"
 msgid "Referer String Found:"
 msgstr "Gevonden tekststring:"
 
 #: functions/functions.php:1307 functions/functions.php:1329
 #: functions/functions.php:1351 functions/functions.php:1373
-#, fuzzy
-#| msgid "Detected Bot on "
 msgid "Detected Possible Bot on"
 msgstr "Bot gedetecteerd op "
 
@@ -1112,8 +1036,6 @@ msgstr ""
 #: functions/functions.php:1435 functions/functions.php:1457
 #: functions/functions.php:1477 functions/functions.php:1497
 #: functions/functions.php:1517
-#, fuzzy
-#| msgid "String Found:"
 msgid "IP Found:"
 msgstr "Gevonden tekststring:"
 
@@ -1124,8 +1046,6 @@ msgstr ""
 "Plugin."
 
 #: functions/functions.php:1352
-#, fuzzy
-#| msgid "eMail sent by Stop Bad Bots Plugin."
 msgid "User Enumeration was detected and blocked by Stop Bad Bots Plugin."
 msgstr "E-mail verstuurd door Stop Bad Bots plugin."
 
@@ -1136,8 +1056,6 @@ msgstr ""
 "de Stop Bad Bots Plugin."
 
 #: functions/functions.php:1375
-#, fuzzy
-#| msgid "User Agent"
 msgid "Fake User Agent:"
 msgstr "User Agent"
 
@@ -1150,14 +1068,10 @@ msgid "Detected Spammer in Comments Form"
 msgstr "Spammer gedetecteerd in opmerkingenformulier"
 
 #: functions/functions.php:1433
-#, fuzzy
-#| msgid "Detected Bot on "
 msgid "Detected bot in Login Form"
 msgstr "Bot gedetecteerd op "
 
 #: functions/functions.php:1453
-#, fuzzy
-#| msgid "Detected Bot on "
 msgid "Detected bot using HTTP tools"
 msgstr "Bot gedetecteerd op "
 
@@ -1211,8 +1125,6 @@ msgstr ""
 "de tabel toevoegen."
 
 #: functions/functions.php:2699
-#, fuzzy
-#| msgid "Example: SpiderBot (no case sensitive)"
 msgid "Example: SpiderBot (no case sensitive)"
 msgstr "Voorbeeld: SpiderBot (niet hoofdlettergevoelig)"
 
@@ -1234,8 +1146,6 @@ msgid ""
 msgstr "Pas op! In dit geval blokker je ook Google; hun bot heet GoogleBot."
 
 #: functions/functions.php:2714
-#, fuzzy
-#| msgid "Do not use special characters."
 msgid "Do not use special characters neither HTML"
 msgstr "Gebruik geen speciale tekens."
 
@@ -1251,9 +1161,6 @@ msgstr ""
 "toevoegen."
 
 #: functions/functions.php:2730
-#, fuzzy
-#| msgid ""
-#| "Add one bad bot each time. The table don't accept duplicate nicknames."
 msgid "Add one bad ip each time. The table don't accept duplicate ips."
 msgstr "Voeg één bot per keer toe. Nicknames moeten uniek zijn."
 
@@ -1270,9 +1177,6 @@ msgstr ""
 "tabel toevoegen."
 
 #: functions/functions.php:2747
-#, fuzzy
-#| msgid ""
-#| "Add one bad bot each time. The table don't accept duplicate nicknames."
 msgid "Add one bad referer each time. The table don't accept duplicate names."
 msgstr "Voeg één bot per keer toe. Nicknames moeten uniek zijn."
 
@@ -1297,16 +1201,10 @@ msgstr ""
 "moet zijn."
 
 #: functions/functions.php:2783
-#, fuzzy
-#| msgid "Bot included at table!"
 msgid "IP included at table!"
 msgstr "Bot opgenomen in lijst."
 
 #: functions/functions.php:2794
-#, fuzzy
-#| msgid ""
-#| "Fail to include bot! Check bot nickname and remember Duplicates are not "
-#| "allowed. "
 msgid ""
 "Fail to include IP! Check bot IP and remember Duplicates are not allowed. "
 msgstr ""
@@ -1314,16 +1212,10 @@ msgstr ""
 "moet zijn."
 
 #: functions/functions.php:2806
-#, fuzzy
-#| msgid "Bot included at table!"
 msgid "Referer included at table!"
 msgstr "Bot opgenomen in lijst."
 
 #: functions/functions.php:2817
-#, fuzzy
-#| msgid ""
-#| "Fail to include bot! Check bot nickname and remember Duplicates are not "
-#| "allowed. "
 msgid ""
 "Fail to include Referer! Check referer name and remember Duplicates are not "
 "allowed. "
@@ -1360,8 +1252,6 @@ msgid "Become Pro: Your bad bots table is always updated."
 msgstr "Word Pro: uw tabel met slechte bots wordt altijd bijgewerkt."
 
 #: functions/functions.php:4146
-#, fuzzy
-#| msgid "Stop Bad Bots Plugin was activated!"
 msgid "Stop Bad Bots Plugin. Its time to Get Pro Protection!"
 msgstr "Plugin Stop Bad Bots geactiveerd!"
 
@@ -1369,7 +1259,7 @@ msgstr "Plugin Stop Bad Bots geactiveerd!"
 msgid "Go to WordPress"
 msgstr "Ga naar WordPress"
 
-#: functions/functions.php:5659
+#: functions/functions.php:5669
 msgid ""
 "Your IP is blacklisted on Internet Public Databases. Please, use another way "
 "to contact us."
@@ -1377,7 +1267,7 @@ msgstr ""
 "Uw IP staat op de zwarte lijst van openbare internetdatabases. Neem "
 "alstublieft op een andere manier contact met ons op."
 
-#: functions/functions.php:5664
+#: functions/functions.php:5674
 msgid ""
 "Looks Like This Message doesn't come from our site. Please, use another way "
 "to contact us."
@@ -1385,11 +1275,11 @@ msgstr ""
 "Het lijkt erop dat dit bericht niet van onze site komt. Gebruik een andere "
 "manier om contact met ons op te nemen."
 
-#: functions/functions.php:6849
+#: functions/functions.php:6860
 msgid "Errors have been detected on this site. "
 msgstr "Er zijn fouten op deze site ontdekt."
 
-#: functions/functions.php:6872
+#: functions/functions.php:6883
 msgid "Memory issues have been detected on this site. "
 msgstr "Er zijn geheugenproblemen gedetecteerd op deze site."
 
@@ -1475,10 +1365,6 @@ msgstr ""
 "U kunt naar het tabblad WhiteList gaan en de String- en IP-tabel beheren."
 
 #: guide/guide.php:43
-#, fuzzy
-#| msgid ""
-#| "At eMail Settings tab, you can customize your contact email or left blank "
-#| "to use your WordPress eMail."
 msgid ""
 "At eMail and Notifications tab, you can customize your contact email or left "
 "blank to use your WordPress eMail."
@@ -1651,8 +1537,6 @@ msgid "You don't need create any robots.txt or htaccess file. "
 msgstr "Je hoeft geen robots.txt of .htaccess bestand te maken."
 
 #: guide/guide.php:110
-#, fuzzy
-#| msgid "The Plugin doesn't block main Google, Yahoo and Bing (Microsoft)."
 msgid ""
 "The Plugin doesn't block main Google, Yahoo, Bing (Microsoft), Twitter and "
 "Facebook bots."
@@ -1815,9 +1699,6 @@ msgid "Installed But Not Activated"
 msgstr "Geïnstalleerd maar niet geactiveerd"
 
 #: includes/__tgm/class-tgm-plugin-activation.php:2414
-#, fuzzy
-#| msgctxt "List table bulk action"
-#| msgid "Activate"
 msgid "Active"
 msgstr "Activeren"
 
@@ -1974,8 +1855,6 @@ msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Plugin %1$s (%2$d/%3$d) installeren"
 
 #: includes/__tgm/pinstaller.php:92
-#, fuzzy
-#| msgid "https://stopbadbots.com"
 msgid "stopbadbots"
 msgstr "https://stopbadbots.com"
 
@@ -2008,8 +1887,6 @@ msgid "AJAX request failed:"
 msgstr "AJAX-verzoek mislukt:"
 
 #: includes/chat/class_bill_chat.php:50
-#, fuzzy
-#| msgid "Empty Table. Please, try again later."
 msgid "Error sending the message. Please try again later."
 msgstr "Lege tabel. Probeer het later opnieuw."
 
@@ -2024,11 +1901,11 @@ msgstr ""
 "Fout bij het contacteren van de Artificial Intelligence (API). Probeer het "
 "later opnieuw."
 
-#: includes/chat/class_bill_chat.php:242
+#: includes/chat/class_bill_chat.php:246
 msgid "Error to get response from AI source!"
 msgstr "Fout bij het ontvangen van antwoord van AI-bron!"
 
-#: includes/diagnose/class_bill_diagnose.php:87
+#: includes/diagnose/class_bill_diagnose.php:115
 msgid ""
 "Here are some details about error and memory monitoring for your plugin. "
 "Errors and low memory can prevent your site from functioning properly. On "
@@ -2047,19 +1924,15 @@ msgstr ""
 "Als u dieper wilt duiken, installeer dan de gratis plugin WPTools, die meer "
 "diepgaande inzichten biedt."
 
-#: includes/diagnose/class_bill_diagnose.php:95
+#: includes/diagnose/class_bill_diagnose.php:123
 msgid "Memory & Error Monitoring"
 msgstr "Geheugen- en foutbewaking"
 
-#: includes/diagnose/class_bill_diagnose.php:96
+#: includes/diagnose/class_bill_diagnose.php:124
 msgid "Welcome to plugin Insights!"
 msgstr "Welkom bij de plugin Insights!"
 
-#: includes/diagnose/class_bill_diagnose.php:852
-#, fuzzy
-#| msgid ""
-#| "Displaying the latest recurring errors from your error log file and "
-#| "eventually alert about low WordPress memory limit is a courtesy of plugin"
+#: includes/diagnose/class_bill_diagnose.php:886
 msgid ""
 "Displaying the latest recurring errors (Javascript Included) from your error "
 "log file and eventually alert about low WordPress memory limit is a courtesy "
@@ -2069,12 +1942,7 @@ msgstr ""
 "en uiteindelijk een waarschuwing over een lage geheugenlimiet voor WordPress "
 "is een service van de plugin"
 
-#: includes/diagnose/class_bill_diagnose.php:854
-#, fuzzy
-#| msgid ""
-#| "Disabling our plugin does not stop the errors from occurring; \n"
-#| "                it simply means you will no longer be notified here that "
-#| "they are happening, but they can still harm your site."
+#: includes/diagnose/class_bill_diagnose.php:888
 msgid ""
 "Disabling our plugin does not stop the errors from occurring; it simply "
 "means you will no longer be notified here that they are happening, but they "
@@ -2084,7 +1952,7 @@ msgstr ""
 "het betekent alleen dat u hier niet langer op de hoogte wordt gesteld dat ze "
 "optreden, maar ze kunnen nog steeds schadelijk zijn voor uw site."
 
-#: includes/diagnose/class_bill_diagnose.php:856
+#: includes/diagnose/class_bill_diagnose.php:890
 msgid ""
 "Click the help button in the top right or go directly to the AI chat box "
 "below for more specific information on the issues listed."
@@ -2092,24 +1960,68 @@ msgstr ""
 "Klik op de helpknop rechtsboven of ga direct naar het AI-chatvak hieronder "
 "voor meer specifieke informatie over de genoemde problemen."
 
-#: includes/diagnose/class_bill_diagnose.php:865
+#: includes/diagnose/class_bill_diagnose.php:899
 #: includes/feedback-last/feedback-last.php:250
 msgid "Artificial Intelligence Support Chat for Issues and Solutions"
 msgstr ""
 "Ondersteuningschat voor kunstmatige intelligentie voor problemen en "
 "oplossingen"
 
-#: includes/diagnose/class_bill_diagnose.php:874
+#: includes/diagnose/class_bill_diagnose.php:910
 #: includes/feedback-last/feedback-last.php:260
 msgid "Enter your message..."
 msgstr "Voer uw bericht in..."
 
-#: includes/diagnose/class_bill_diagnose.php:875
+#: includes/diagnose/class_bill_diagnose.php:911
 #: includes/feedback-last/feedback-last.php:261
 msgid "Send"
 msgstr "Versturen"
 
-#: includes/diagnose/class_bill_diagnose.php:1533
+#: includes/diagnose/class_bill_diagnose.php:914
+msgid ""
+"Enter a message and click 'Send', or just click 'Auto Checkup' to analyze "
+"the site's error log."
+msgstr ""
+"Voer een bericht in en klik op 'Verzenden', of klik op 'Automatisch "
+"controleren' om het foutenlogboek van de site te analyseren."
+
+#: includes/diagnose/class_bill_diagnose.php:921
+msgid "Auto Checkup"
+msgstr "Automatische controle"
+
+#: includes/diagnose/class_bill_diagnose.php:1056
+msgid "The page load time is poor."
+msgstr "De pagina laadt snel."
+
+#: includes/diagnose/class_bill_diagnose.php:1058
+msgid "The page load time is very poor!"
+msgstr "De laadtijd van de pagina is erg kort!"
+
+#: includes/diagnose/class_bill_diagnose.php:1063
+msgid "The Load average of yours front pages is: "
+msgstr "De gemiddelde laadsnelheid van uw voorpagina's is:"
+
+#: includes/diagnose/class_bill_diagnose.php:1066
+msgid "Loading time can significantly impact your SEO."
+msgstr "De laadtijd kan een grote impact hebben op uw SEO."
+
+#: includes/diagnose/class_bill_diagnose.php:1068
+msgid "Many users will abandon the site before it fully loads."
+msgstr "Veel gebruikers verlaten de site voordat deze volledig geladen is."
+
+#: includes/diagnose/class_bill_diagnose.php:1070
+msgid ""
+"Search engines prioritize faster-loading pages, as they improve user "
+"experience and reduce bounce rates."
+msgstr ""
+"Zoekmachines geven prioriteit aan pagina's die sneller laden, omdat deze de "
+"gebruikerservaring verbeteren en het bouncepercentage verlagen."
+
+#: includes/diagnose/class_bill_diagnose.php:1075
+msgid "Learn more about Page Load Times and their negative impact on SEO"
+msgstr "Leer meer over laadtijden van pagina's en hun negatieve impact op SEO"
+
+#: includes/diagnose/class_bill_diagnose.php:1723
 msgid "Critical Issues"
 msgstr "Kritieke problemen"
 
@@ -2406,9 +2318,6 @@ msgid "Standard"
 msgstr "Standaard"
 
 #: settings/options/plugin_options_tabbed.php:199
-#, fuzzy
-#| msgctxt "Column label"
-#| msgid "Num Blocked"
 msgid "Maximum Block"
 msgstr "Num Blocked"
 
@@ -2730,8 +2639,6 @@ msgid "Enable Both Withelist?"
 msgstr "Beide Withelist inschakelen?"
 
 #: settings/options/plugin_options_tabbed.php:830
-#, fuzzy
-#| msgid "Example: SpiderBot (no case sensitive)"
 msgid "String whitelist (no case sensitive)"
 msgstr "Voorbeeld: SpiderBot (niet hoofdlettergevoelig)"
 
@@ -2829,27 +2736,27 @@ msgstr "U hoeft de plugin niet opnieuw te installeren."
 msgid "Purchase Code (just paste here to activate your product)"
 msgstr "Aankoopcode (plak deze hier om uw product te activeren)"
 
-#: stopbadbots.php:210
+#: stopbadbots.php:231
 msgid "Stop Bad Bots: Could not load the localization file (Language file)"
 msgstr "Kon het lokalisatie bestand niet vinden (Language File)"
 
-#: stopbadbots.php:880
+#: stopbadbots.php:922
 msgid "Protection rate:"
 msgstr "Beschermingsgraad:"
 
-#: stopbadbots.php:884
+#: stopbadbots.php:926
 msgid "For details, visit the plugin dashboard"
 msgstr "Voor meer informatie, bezoek het plugin-dashboard"
 
-#: stopbadbots.php:886
+#: stopbadbots.php:928
 msgid "Attacks Blocked Last 15 days"
 msgstr "Aanvallen geblokkeerd afgelopen 15 dagen"
 
-#: stopbadbots.php:893
+#: stopbadbots.php:935
 msgid "Total Attacks Blocked By Type"
 msgstr "Totaal aantal geblokkeerde aanvallen per type"
 
-#: stopbadbots.php:902
+#: stopbadbots.php:944
 msgid "Total Attacks Blocked By IP"
 msgstr "Totaal aantal aanvallen geblokkeerd door IP"
 

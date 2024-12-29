@@ -20,7 +20,7 @@ if (function_exists('is_multisite') and is_multisite()) {
 
 /*
 // >>>>>>>>>>>>>>>> call
-function recaptcha_for_all_bill_hooking_diagnose()
+function stopbadbots_bill_hooking_diagnose()
 {
     if (function_exists('is_admin') && function_exists('current_user_can')) {
         if(is_admin() and current_user_can("manage_options")){
@@ -31,7 +31,7 @@ function recaptcha_for_all_bill_hooking_diagnose()
         }
     }
 }
-add_action("plugins_loaded", "recaptcha_for_all_bill_hooking_diagnose");
+add_action("plugins_loaded", "stopbadbots_bill_hooking_diagnose");
 // end >>>>>>>>>>>>>>>>>>>>>>>>>
 */
 
@@ -541,7 +541,7 @@ class MemoryChecker
 }
 
 
-class recaptcha_for_all_Bill_Diagnose
+class stopbadbots_Bill_Diagnose
 {
     private static $instance = null;
 
@@ -827,7 +827,7 @@ class recaptcha_for_all_Bill_Diagnose
     // Helper function to check if a notification has been displayed today
     public function is_notification_displayed_today()
     {
-        $last_notification_date = get_option("recaptcha_for_all_bill_show_warnings");
+        $last_notification_date = get_option("stopbadbots_bill_show_warnings");
         $today = date("Y-m-d");
         return $last_notification_date === $today;
     }
@@ -853,8 +853,8 @@ class recaptcha_for_all_Bill_Diagnose
 
 
 
-        if (!function_exists('recaptcha_for_all_bill_strip_strong99')) {
-            function recaptcha_for_all_bill_strip_strong99($htmlString)
+        if (!function_exists('stopbadbots_bill_strip_strong99')) {
+            function stopbadbots_bill_strip_strong99($htmlString)
             {
                 // return $htmlString;
                 // Use preg_replace para remover as tags <strong>
@@ -904,14 +904,38 @@ class recaptcha_for_all_Bill_Diagnose
                 <div id="chat-messages"></div>
                 <div id="error-message" style="display:none;"></div> <!-- Mensagem de erro -->
 
-                <form id="chat-form">
-                    <input type="text" id="chat-input" placeholder="<?php echo esc_attr__('Enter your message...', 'stopbadbots'); ?>" />
-                    <button type="submit"><?php echo esc_attr__('Send', 'stopbadbots'); ?></button>
 
+                <form id="chat-form">
+                    <div id="input-group">
+                        <input type="text" id="chat-input" placeholder="<?php echo esc_attr__('Enter your message...', 'stopbadbots'); ?>" />
+                        <button type="submit"><?php echo esc_attr__('Send', 'stopbadbots'); ?></button>
+                    </div>
+                    <div id="action-instruction" style="text-align: center; margin-top: 10px;">
+                        <span><?php echo esc_attr__("Enter a message and click 'Send', or just click 'Auto Checkup' to analyze the site's error log.", 'stopbadbots'); ?></span>
+                    </div>
+                    <div class="auto-checkup-container" style="text-align: center; margin-top: 10px;">
+
+
+                        <button type="button" id="auto-checkup">
+                            <img src="<?php echo plugin_dir_url(__FILE__) . 'robot2.png'; ?>" alt="" width="35" height="30">
+                            <?php echo esc_attr__('Auto Checkup', 'stopbadbots'); ?>
+                        </button>
+
+
+
+
+
+                    </div>
                 </form>
+
             </div>
 
             <?php
+
+
+
+
+
 
             // echo (var_export(__LINE__));
 
@@ -1519,7 +1543,7 @@ class recaptcha_for_all_Bill_Diagnose
                                             $log_entry = [
                                                 "Date" => $filteredDate,
                                                 "News Type" => $matches[1],
-                                                "Problem Description" => recaptcha_for_all_bill_strip_strong99(
+                                                "Problem Description" => stopbadbots_bill_strip_strong99(
                                                     $matches[2]
                                                 ),
                                             ];
@@ -1711,8 +1735,8 @@ $notification_url = "https://wpmemory.com/fix-low-memory-limit/";
 $notification_url2 =
     "https://billplugin.com/site-language-error-can-crash-your-site/";
 */
-    $diagnose_instance = recaptcha_for_all_Bill_Diagnose::get_instance(
+    $diagnose_instance = stopbadbots_Bill_Diagnose::get_instance(
         $notification_url,
         $notification_url2,
     );
-    update_option("recaptcha_for_all_bill_show_warnings", date("Y-m-d"));
+    update_option("stopbadbots_bill_show_warnings", date("Y-m-d"));

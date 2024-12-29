@@ -1,5 +1,6 @@
 jQuery(document).ready(function ($) {
     // console.log("Loaded Chat");
+    let chatVersion = "1.01"; // This can be updated as needed.
     const billChatMessages = $('#chat-messages'); // Div where messages are displayed
     const billChatForm = $('#chat-form');        // Submission form
     const billChatInput = $('#chat-input');      // Message input field
@@ -165,6 +166,9 @@ jQuery(document).ready(function ($) {
 
             //alert('ok');
 
+            //alert(chatVersion);
+
+
             $('.spinner999').css('display', 'block');
             $('#chat-form button').prop('disabled', true);
             $.ajax({
@@ -173,7 +177,8 @@ jQuery(document).ready(function ($) {
                 data: {
                     action: 'bill_chat_send_message',
                     message: message,
-                    chat_type: chatType // Inclui o chat-type no envio
+                    chat_type: chatType,
+                    chat_version: chatVersion
                 },
                 timeout: 60000,
                 success: function () {

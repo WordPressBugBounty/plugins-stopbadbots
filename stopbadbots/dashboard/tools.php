@@ -139,10 +139,12 @@ function stopbadbots_sysinfo_get()
 
     // $return .= 'WP_DEBUG:                 ' . ( defined('WP_DEBUG') ? WP_DEBUG ? 'Enabled' : 'Disabled' : 'Not set' ) . "\n";
   
-    if(defined('WP_DEBUG'))
-      $return .= 'WP_DEBUG:                 ' .  WP_DEBUG ? 'Enabled' : 'Disabled' . "\n";
-    else 
-      $return .= 'WP_DEBUG:                 ' .  'Not Set\n';
+	if (defined('WP_DEBUG'))
+		$return .= 'WP_DEBUG:                 ' .  WP_DEBUG ? 'Enabled' : 'Disabled' ;
+	else
+		$return .= 'WP_DEBUG:   
+	              ' .  'Not Set\n';
+$return .= "\n";
 
     
   

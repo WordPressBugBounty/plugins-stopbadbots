@@ -367,6 +367,8 @@ class MemoryChecker
 }
 class stopbadbots_Bill_Diagnose
 {
+    protected $global_plugin_slug;
+    
     private static $instance = null;
     private $notification_url;
     private $notification_url2;

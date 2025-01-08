@@ -3,6 +3,7 @@ This file contains changelog entries, so we can keep the size of the standard Wo
 
 
 == Changelog ==
+11.13/14  2025-01-08 - Small Improvements.
 11.12  2025-01-04 - Small Improvements.
 11.10/11  2024-12-29 - Added Auto Diagnose with IA.
 11.09  2024-12-27 - small improvements.

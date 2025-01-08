@@ -98,6 +98,9 @@ class ErrorChecker
 {
     public function bill_check_errors_today($num_days, $filter = null)
     {
+        // return true;
+
+
         $bill_count = 0;
         $bill_folders = [];
         //$bill_themePath = get_theme_root();
@@ -151,46 +154,48 @@ class ErrorChecker
             '/\d{2}\.\d{2}\.\d{4}/',         // DD.MM.YYYY (ex: 31.12.2024)
             '/\d{4}\/\d{2}\/\d{2}/',         // YYYY/MM/DD (ex: 2024/12/31)
         ];
-        function parseDate($dateString, $locale)
-        {
-            // Mapeamento de formatos de data por idioma
-            $dateFormatsByLanguage = [
-                'pt' => 'd/m/Y', // 31/12/2024 (Português)
-                'en' => 'm/d/Y', // 12/31/2024 (Inglês)
-                'fr' => 'd/m/Y', // 31/12/2024 (Francês)
-                'de' => 'd.m.Y', // 31.12.2024 (Alemão)
-                'es' => 'd/m/Y', // 31/12/2024 (Espanhol)
-                'nl' => 'd-m-Y', // 31-12-2024 (Holandês)
-            ];
-            // Extrai o código de idioma do locale (ex: 'pt_BR' -> 'pt')
-            $language = substr($locale, 0, 2);
-            // Obtém o formato de data correspondente ao idioma
-            $format = $dateFormatsByLanguage[$language] ?? 'Y-m-d'; // Fallback para um formato padrão
-            // Tenta criar o DateTime com o formato correspondente
-            $date = \DateTime::createFromFormat($format, $dateString);
-            if ($date !== false) {
-                return $date;
-            }
-            // Se o formato específico do idioma falhar, tenta detectar o formato automaticamente
-            $possibleFormats = [
-                'd/m/Y', // 31/12/2024
-                'm/d/Y', // 12/31/2024
-                'Y-m-d', // 2024-12-31
-                'd-M-Y', // 31-Dec-2024
-                'd F Y', // 31 December 2024
-                'd.m.Y', // 31.12.2024 (Alemão)
-                'd-m-Y', // 31-12-2024 (Holandês)
-            ];
-            foreach ($possibleFormats as $format) {
+        if(!function_exists("bill_parseDate")){
+            function bill_parseDate($dateString, $locale)
+            {
+                // Mapeamento de formatos de data por idioma
+                $dateFormatsByLanguage = [
+                    'pt' => 'd/m/Y', // 31/12/2024 (Português)
+                    'en' => 'm/d/Y', // 12/31/2024 (Inglês)
+                    'fr' => 'd/m/Y', // 31/12/2024 (Francês)
+                    'de' => 'd.m.Y', // 31.12.2024 (Alemão)
+                    'es' => 'd/m/Y', // 31/12/2024 (Espanhol)
+                    'nl' => 'd-m-Y', // 31-12-2024 (Holandês)
+                ];
+                // Extrai o código de idioma do locale (ex: 'pt_BR' -> 'pt')
+                $language = substr($locale, 0, 2);
+                // Obtém o formato de data correspondente ao idioma
+                $format = $dateFormatsByLanguage[$language] ?? 'Y-m-d'; // Fallback para um formato padrão
+                // Tenta criar o DateTime com o formato correspondente
                 $date = \DateTime::createFromFormat($format, $dateString);
                 if ($date !== false) {
                     return $date;
                 }
+                // Se o formato específico do idioma falhar, tenta detectar o formato automaticamente
+                $possibleFormats = [
+                    'd/m/Y', // 31/12/2024
+                    'm/d/Y', // 12/31/2024
+                    'Y-m-d', // 2024-12-31
+                    'd-M-Y', // 31-Dec-2024
+                    'd F Y', // 31 December 2024
+                    'd.m.Y', // 31.12.2024 (Alemão)
+                    'd-m-Y', // 31-12-2024 (Holandês)
+                ];
+                foreach ($possibleFormats as $format) {
+                    $date = \DateTime::createFromFormat($format, $dateString);
+                    if ($date !== false) {
+                        return $date;
+                    }
+                }
+                // Se nenhum formato funcionar, lança uma exceção
+                // throw new \Exception("Falha ao parsear a data: " . $dateString);
+                return false;
             }
-            // Se nenhum formato funcionar, lança uma exceção
-            // throw new \Exception("Falha ao parsear a data: " . $dateString);
-            return false;
-        }
+    }
         // Obtém o locale do WordPress
         $locale = get_locale(); // Exemplo: 'pt_BR', 'en_US', etc.
         $language = substr($locale, 0, 2); // Extrai o código de idioma (ex: 'pt', 'en')
@@ -215,7 +220,7 @@ class ErrorChecker
                             if (preg_match($pattern, $line, $matches)) {
                                 try {
                                     // Usa a função parseDate para interpretar a data
-                                    $date = parseDate($matches[0], $locale);
+                                    $date = bill_parseDate($matches[0], $locale);
                                     if (!$date)
                                         return false;
                                     // Verifica se a data é anterior ao limite
@@ -375,6 +380,13 @@ class stopbadbots_Bill_Diagnose
         $errorChecker = new ErrorChecker(); //
         //
         $this->global_variable_has_errors  = $errorChecker->bill_check_errors_today(1);
+
+
+
+
+        //  \debug3($this->global_variable_has_errors);
+
+
         // NOT same class
         $memoryChecker = new MemoryChecker();
         $this->global_variable_memory = $memoryChecker->check_memory();

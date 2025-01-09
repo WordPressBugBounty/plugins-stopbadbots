@@ -63,6 +63,9 @@ class ChatPlugin
 
     public function bill_chat_load_messages()
     {
+        if (ob_get_length()) {
+            ob_clean();
+        }
         //\debug3();
         $messages = get_option('chat_messages', []);
         $last_count = isset($_POST['last_count']) ? intval($_POST['last_count']) : 0;
@@ -83,6 +86,8 @@ class ChatPlugin
         ]);
         wp_die();
     }
+
+
     public function bill_chat_load_messages_NEW()
     {
         // Verifica se é uma solicitação AJAX
@@ -250,11 +255,11 @@ class ChatPlugin
         //debug2($bill_chat_erros);
         // \debug3();
 
-       //2025
-       $stopbadbots_checkup = \stopbadbots_sysinfo_get();
-      //  \debug3( \stopbadbots_sysinfo_get());
+        //2025
+        $stopbadbots_checkup = \stopbadbots_sysinfo_get();
+        //  \debug3( \stopbadbots_sysinfo_get());
 
-       //\debug3($stopbadbots_checkup);
+        //\debug3($stopbadbots_checkup);
 
 
 

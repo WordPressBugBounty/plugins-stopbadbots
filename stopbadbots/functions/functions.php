@@ -796,6 +796,7 @@ function stopbadbots_create_httptools()
 		'Go http package',
 		'Go-http-client',
 		'Gree_HTTP_Loader',
+		'grequests',
 		'GuzzleHttp',
 		'hyp_http_request',
 		'HTTPConnect',
@@ -6259,6 +6260,8 @@ function stopbadbots_check_host_ripe($ip)
 	}
 }
 */
+
+
 function stopbadbots_check_host_ripe($ip)
 {
 	// Validate the IP address format
@@ -6271,11 +6274,69 @@ function stopbadbots_check_host_ripe($ip)
 	$cache_key = 'stopbadbots_host_' . md5($ip);
 	$cached_data = get_transient($cache_key);
 
-	// If cached data exists, process it and return the result
+	// If cached data exists return it
 	if ($cached_data !== false) {
-		return stopbadbots_process_response($cached_data);
+		return $cached_data;
+	}
+	// Construct the RDAP API URL
+	$urlcurl = 'https://rdap.db.ripe.net/ip/' . $ip;
+
+	try {
+		// Set up request options with timeout
+		$request_options = array(
+			'timeout'   => 5, // Set a timeout of 5 seconds
+			'sslverify' => true, // Verify SSL for security
+		);
+
+		// Perform the HTTP request
+		$response = wp_remote_get($urlcurl, $request_options);
+
+		// Check if the request was successful
+		$http_code = wp_remote_retrieve_response_code($response);
+		if ($http_code !== 200) {
+			return false; // API did not return a successful response
+		}
+
+		// Ensure the response is an array and contains a body
+		if (is_array($response) && isset($response['body'])) {
+			$decoded_response = json_decode($response['body'], true);
+
+			// Ensure the JSON decoding succeeded
+			if (json_last_error() === JSON_ERROR_NONE) {
+				// Cache the decoded response in a transient for 1 hour
+				// set_transient($cache_key, $decoded_response, HOUR_IN_SECONDS);
+				set_transient($cache_key, $decoded_response, 3 * MINUTE_IN_SECONDS);
+
+				return $decoded_response; // Process and return the result
+			}
+		}
+
+		return false; // Fallback if the response or decoding is invalid
+	} catch (Exception $e) {
+		// Log the exception message for debugging
+		error_log('Exception in stopbadbots_check_host_ripe: ' . $e->getMessage());
+		return false; // Return false in case of an exception
+	}
+}
+
+
+/*
+function stopbadbots_check_host_ripe($ip)
+{
+	// Validate the IP address format
+	$ip = filter_var($ip, FILTER_VALIDATE_IP);
+	if (!$ip) {
+		return false; // Invalid IP
 	}
 
+	// Check if the data is already cached in a transient
+	$cache_key = 'stopbadbots_host_' . md5($ip);
+	$cached_data = get_transient($cache_key);
+
+	// If cached data exists return it
+	if ($cached_data !== false) {
+		return $cached_data;
+	}
 	// Construct the RDAP API URL
 	$urlcurl = 'https://rdap.db.ripe.net/ip/' . $ip;
 
@@ -6316,6 +6377,7 @@ function stopbadbots_check_host_ripe($ip)
 		return false; // Return false in case of an exception
 	}
 }
+*/
 
 
 function stopbadbots_process_response($response)
@@ -6345,209 +6407,164 @@ function stopbadbots_find_email($item)
 
 function stopbadbots_is_bad_hosting2($ip)
 {
+	global $stopbadbots_bad_host;
 
 	$ret = stopbadbots_check_host_ripe($ip);
-
-	if (gettype($ret) != 'array') {
+	if (!isset($ret['body'])) {
+		// A chave 'body' não existe no array $ret
+		return false;
+	}
+	$bodyArray = json_decode($ret['body'], true);
+	if ($bodyArray === null) {
+		// Falha ao decodificar o JSON
 		return false;
 	}
 
-	$host = false;
-
-	// if (count($ret) > 0) {
-	if (is_array($ret) && count($ret) > 0) {
-
-		if (! isset($ret['entities'])) {
-			return false;
-		}
-
-		// expects parameter 1 to be array, null given
-		if (gettype($ret['entities']) != 'array') {
-			return false;
-		}
-
-		array_walk_recursive($ret['entities'], 'stopbadbots_find_email');
-
-		if (isset($_email)) {
-			$_email = trim(sanitize_text_field($_email));
-		} else {
-			$_email = '';
-		}
-
-		if (isset($ret['country'])) {
-			$country = trim(sanitize_text_field($ret['country']));
-		} else {
-			$country = '';
-		}
-
-		if (isset($ret['name'])) {
-			$name = trim(sanitize_text_field($ret['name']));
-		} else {
-			$name = '';
-		}
-
-		$host = '';
-
-		if (empty($country)) {
-			$host = $country . ' - ';
-		}
-
-		if (! empty($name)) {
-			$host .= $name;
-		}
-
-		if (! empty($_email)) {
-			$host .= '-' . $_email;
-		}
-	}
-
-	if ($host === false) {
-		return false;
-	} else {
-		$host = trim(sanitize_text_field($host));
-	}
-
-	if ($host == trim($ip) or empty($host)) {
-		return false;
-	}
-
-	/*
-	'ALISOFT',
-	'ALICLOUD',
-	'ARUBA-NET',
-	'CONTABO',
-	'DIGITALOCEAN',
-	'HIPL', // Huaway
-	'HETZNER',
-	'IONOS',
-	'LINODE',
-	'MSFT', // Microsoft
-	'OVH',
-	'SOFTLAYER',
-	'UNIFIEDLAYER',
-	*/
-
-
-	$bad_host = array(
-		'ALISOFT',
-		'ALICLOUD',
-		'ALIBABA',
-		'APPLE',
-		'ARUBA-NET',
-		'CHINANET',
-		'CONTABO',
-		'DIGITALOCEAN',
-		'GoDaddy',
-		'HIPL', // Huaway
-		'HWCLOUDS', // Huaway
-		'HUAWAY',
-		'HETZNER',
-		'IONOS',
-		// 'OVH-DEDICATED',
-		'LINODE',
-		'MSFT', // Microsoft
-		'MICROSOFT',
-		'ORACLE' .
-			'OVH',
-		'SOFTLAYER',
-		'UNIFIEDLAYER' // Blue Host
-	);
-
-	for ($i = 0; $i < count($bad_host); $i++) {
-
-		if (stripos($host, $bad_host[$i]) !== false) {
+	for ($i = 0; $i < count($stopbadbots_bad_host); $i++) {
+		if (stopbadbots_searchInArray($bodyArray, $stopbadbots_bad_host[$i])) {
+			// Host encontrado
 			return true;
 		}
 	}
-
 	return false;
 }
 
+
+/*
+function stopbadbots_is_bad_hosting2($ip)
+{
+	global $stopbadbots_bad_host;
+
+	$ret = stopbadbots_check_host_ripe($ip);
+	if (!isset($ret['body'])) {
+		// A chave 'body' não existe no array $ret
+		return false;
+	}
+	$bodyArray = json_decode($ret['body'], true);
+	if ($bodyArray === null) {
+		// Falha ao decodificar o JSON
+		return false;
+	}
+
+	for ($i = 0; $i < count($stopbadbots_bad_host); $i++) {
+		if (stopbadbots_searchInArray($bodyArray, $stopbadbots_bad_host[$i])) {
+			// Host encontrado
+			return true;
+		}
+	}
+	return false;
+}
+*/
+function stopbadbots_searchInArray($bodyArray, $badHost)
+{
+	foreach ($bodyArray as $element) {
+		if (is_string($element) && stripos($element, $badHost) !== false) {
+			// Host encontrado
+			return true;
+		} elseif (is_array($element)) {
+			// Busca recursiva em subarrays
+			if (searchInArray($element, $badHost)) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+
 function stopbadbots_is_bad_hosting($ip)
 {
+	global $stopbadbots_bad_host;
 	try {
-
 		if (PHP_OS_FAMILY == 'Linux') {
 			putenv('RES_OPTIONS=retrans:1 retry:1 timeout:1 attempts:1');
 		}
-
 		$ip = filter_var($ip, FILTER_VALIDATE_IP);
-
 		if ($ip) {
-			if (function_exists('gethostbyaddr'))
-				$host = @gethostbyaddr($ip);
-			else
-				return false;
-		} else
-			return true;
+			// Tenta obter o host a partir do transiente
+			$host = get_transient('host_for_ip_2' . $ip);
+			// Se não encontrou no transiente, chama gethostbyaddr e salva no transiente
+			if (!$host) {
+				if (function_exists('gethostbyaddr')) {
+					$host = @gethostbyaddr($ip);
+					// Armazena o resultado por 3 minutos
+					set_transient('host_for_ip_2' . $ip, $host, 3 * MINUTE_IN_SECONDS);
+				} else {
+					return false;
+				}
+			}
+		} else {
+			return false; // era true em 2024;
+		}
 	} catch (Exception $e) {
 		// echo 'Caught exception: ',  $e->getMessage(), "\n";
 		return false;
 	}
-
 	if ($host === false) {
 		return false;
 	} else {
 		$host = trim(sanitize_text_field($host));
 	}
-
 	if ($host == trim($ip) or empty($host)) {
 		return false;
 	}
-
-	/*
-	'amazonaws.com',
-	'bluehost',
-	'clients.your-server.de',
-	'colocrossing',
-	'dreamhost',
-	'googleusercontent.com',
-	'Hetzner',
-	'researchscan',
-	'startdedicated.com',
-	'secureserver.net',
-	'server',
-	'vps',
-	'vps.ovh',
-	*/
-
-	$bad_host = array(
-		'ahrefs.com',
-		'alibaba',
-		'apple',
-		'amazonaws.com',
-		'bluehost',
-		'clients.your-server.de',
-		'colocrossing',
-		'dreamhost',
-		'googleusercontent.com',
-		'GoDaddy',
-		'Go-Daddy',
-		'Hetzner',
-		'HIPL',
-		'huaway',
-		'HWCLOUDS', // Huaway
-		'Linode',
-		'researchscan',
-		'semrush',
-		'startdedicated.com',
-		'secureserver.net',
-		'server',
-		'vps',
-		'vps.ovh'
-	);
-
-	for ($i = 0; $i < count($bad_host); $i++) {
-
-		if (stripos($host, $bad_host[$i]) !== false) {
+	for ($i = 0; $i < count($stopbadbots_bad_host); $i++) {
+		// O primeiro parâmetro $host é a string onde será feita a busca.
+		if (stripos($host, $stopbadbots_bad_host[$i]) !== false) {
 			return true;
 		}
 	}
-
 	return false;
 }
 
 
+/*
+function stopbadbots_is_bad_hosting($ip)
+{
+
+	global $stopbadbots_bad_host;
+	try {
+		if (PHP_OS_FAMILY == 'Linux') {
+			putenv('RES_OPTIONS=retrans:1 retry:1 timeout:1 attempts:1');
+		}
+		$ip = filter_var($ip, FILTER_VALIDATE_IP);
+		if ($ip) {
+			// Tenta obter o host a partir do transiente
+			$host = get_transient('host_for_ip' . $ip);
+			// Se não encontrou no transiente, chama gethostbyaddr e salva no transiente
+			if (!$host) {
+				if (function_exists('gethostbyaddr')) {
+					$host = @gethostbyaddr($ip);
+					// Armazena o resultado por 3 minutos
+					set_transient('host_for_ip' . $ip, $host, 3 * MINUTE_IN_SECONDS);
+				} else {
+					return false;
+				}
+			}
+		} else {
+			return false; // era true em 2024;
+		}
+	} catch (Exception $e) {
+		// echo 'Caught exception: ',  $e->getMessage(), "\n";
+		return false;
+	}
+	if ($host === false) {
+		return false;
+	} else {
+		$host = trim(sanitize_text_field($host));
+	}
+	if ($host == trim($ip) or empty($host)) {
+		return false;
+	}
+	for ($i = 0; $i < count($stopbadbots_bad_host); $i++) {
+		// O primeiro parâmetro $host é a string onde será feita a busca.
+		if (stripos($host, $stopbadbots_bad_host[$i]) !== false) {
+			return true;
+		}
+	}
+	return false;
+}
+*/
 
 
 

@@ -298,16 +298,34 @@ class ChatPlugin
     /**
      * Função para enviar a mensagem do usuário e obter a resposta do ChatGPT.
      */
+
+
     public function bill_chat_send_message()
     {
         // \debug3();
         // Captura e sanitiza a mensagem
         $message = sanitize_text_field($_POST['message']);
-        if (empty($message)) {
-            $message = esc_attr("Auto Checkup button clicked...", "stopbadbots");
-        }
+
+
         // Verifica e sanitiza o chat_type, atribuindo 'default' caso não exista
         $chatType = isset($_POST['chat_type']) ? sanitize_text_field($_POST['chat_type']) : 'default';
+
+        if (empty($message)) {
+            if ($chatType == 'auto-checkup') {
+                $message = esc_attr("Auto Checkup for Erros button clicked...", "stopbadbots");
+            } elseif ($chatType == 'auto-checkup2') {
+                $message = esc_attr("Auto Checkup Server button clicked...", "stopbadbots");
+            }
+        }
+
+        //  if (empty($message)) {
+        //    $message = esc_attr("Auto Checkup button clicked...", "stopbadbots");
+        // }
+
+
+
+        // error_log(var_export($chatType));
+
         $chatVersion = isset($_POST['chat_version']) ? sanitize_text_field($_POST['chat_version']) : '1.00';
         // Chama a API e obtém a resposta
         $response_data = $this->bill_chat_call_chatgpt_api($message, $chatType, $chatVersion);
@@ -332,6 +350,8 @@ class ChatPlugin
         update_option('chat_messages', $messages);
         wp_die();
     }
+
+
     /**
      * Função para resetar as mensagens.
      */

@@ -582,13 +582,21 @@ class stopbadbots_Bill_Diagnose
                         <button type="submit"><?php echo esc_attr__('Send', 'stopbadbots'); ?></button>
                     </div>
                     <div id="action-instruction" style="text-align: center; margin-top: 10px;">
-                        <span><?php echo esc_attr__("Enter a message and click 'Send', or just click 'Auto Checkup' to analyze the site's error log.", 'stopbadbots'); ?></span>
+                        <span><?php echo esc_attr__("Enter a message and click 'Send', or just click 'Auto Checkup' to analyze error log ou server info configuration.", 'stopbadbots'); ?></span>
                     </div>
                     <div class="auto-checkup-container" style="text-align: center; margin-top: 10px;">
+
                         <button type="button" id="auto-checkup">
                             <img src="<?php echo plugin_dir_url(__FILE__) . 'robot2.png'; ?>" alt="" width="35" height="30">
-                            <?php echo esc_attr__('Auto Checkup', 'stopbadbots'); ?>
+                            <?php echo esc_attr__('Auto Checkup for Errors', 'stopbadbots'); ?>
                         </button>
+                        &nbsp;&nbsp;&nbsp;
+                        <button type="button" id="auto-checkup2">
+                            <img src="<?php echo plugin_dir_url(__FILE__) . 'robot2.png'; ?>" alt="" width="35" height="30">
+                            <?php echo esc_attr__('Auto Checkup Server ', 'stopbadbots'); ?>
+                        </button>
+
+
                     </div>
                 </form>
             </div>

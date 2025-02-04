@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: stop bad bots\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-04 12:37+0000\n"
-"PO-Revision-Date: 2025-01-04 12:45+0000\n"
+"POT-Creation-Date: 2025-02-04 17:59+0000\n"
+"PO-Revision-Date: 2025-02-04 18:07+0000\n"
 "Last-Translator: \n"
-"Language-Team: Português do Brasil\n"
+"Language-Team: Portuguese (Brazil)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,364 +14,8 @@ msgstr ""
 "X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_x;_nx;_e;esc_attr_e;esc_attr__\n"
-"X-Loco-Version: 2.6.14; wp-6.7.1\n"
+"X-Loco-Version: 2.7.1; wp-6.7.1\n"
 "X-Poedit-SearchPath-0: .\n"
-
-#: _includes/diagnose/class_bill_diagnose.php:541
-#: _includes/diagnose/class_bill_diagnose.php:562
-#: includes/diagnose/class_bill_diagnose.php:471
-msgid "Our plugin"
-msgstr "Nosso plugin"
-
-#: _includes/diagnose/class_bill_diagnose.php:543
-#: includes/diagnose/class_bill_diagnose.php:473
-msgid ""
-"cannot function properly because your WordPress Memory Limit is too low. "
-"Your site will experience serious issues, even if you deactivate our plugin."
-msgstr ""
-"não pode funcionar corretamente porque o limite de memória do WordPress é "
-"muito baixo. Seu site enfrentará sérios problemas, mesmo se você desativar "
-"nosso plugin."
-
-#: _includes/diagnose/class_bill_diagnose.php:549
-#: _includes/diagnose/class_bill_diagnose.php:570 functions/functions.php:6860
-#: functions/functions.php:6883 includes/diagnose/class_bill_diagnose.php:479
-msgid "Learn more"
-msgstr "Saiba Mais"
-
-#: _includes/diagnose/class_bill_diagnose.php:561
-msgid "Your site has errors."
-msgstr "Seu site talvez tenha códigos de erro."
-
-#: _includes/diagnose/class_bill_diagnose.php:564
-msgid ""
-"can't function as intended. Errors, including JavaScript errors, may lead to "
-"visual problems or disrupt functionality, from minor glitches to critical "
-"site failures. Promptly address these issues before continuing."
-msgstr ""
-"não pode funcionar como pretendido. Erros, incluindo erros de JavaScript, "
-"podem levar a problemas visuais ou interromper a funcionalidade, desde "
-"pequenas falhas até falhas críticas do site. Resolva esses problemas "
-"imediatamente antes de continuar."
-
-#: _includes/diagnose/class_bill_diagnose.php:632
-msgid ""
-"Displaying the latest recurring errors from your error log file and "
-"eventually alert about low WordPress memory limit is a courtesy of plugin"
-msgstr ""
-"Exibir os últimos erros recorrentes do seu arquivo de log de erros e "
-"eventualmente alertar sobre o limite baixo de memória do WordPress é uma "
-"cortesia do plugin"
-
-#: _includes/diagnose/class_bill_diagnose.php:634
-msgid ""
-"Disabling our plugin does not stop the errors from occurring; \n"
-"                it simply means you will no longer be notified here that "
-"they are happening, but they can still harm your site."
-msgstr ""
-"Desabilitar nosso plugin não impede que os erros ocorram; \n"
-"significa apenas que você não será mais notificado aqui que eles estão "
-"acontecendo, mas eles ainda podem prejudicar seu site."
-
-#: _includes/diagnose/class_bill_diagnose.php:642
-#: includes/diagnose/class_bill_diagnose.php:564
-msgid "Potential Problems"
-msgstr "Problemas potenciais"
-
-#: _includes/diagnose/class_bill_diagnose.php:650
-#: includes/diagnose/class_bill_diagnose.php:572
-msgid "Low WordPress Memory Limit"
-msgstr "Limite baixo de memória WordPress no arquivo wp-config"
-
-#: _includes/diagnose/class_bill_diagnose.php:663
-#: includes/diagnose/class_bill_diagnose.php:585
-msgid "Your usage now"
-msgstr "Seu uso agora:"
-
-#: _includes/diagnose/class_bill_diagnose.php:671
-#: includes/diagnose/class_bill_diagnose.php:593
-msgid "Total Php Server Memory"
-msgstr "Memória total do servidor:"
-
-#: _includes/diagnose/class_bill_diagnose.php:680
-#: _includes/install-checkup/class_bill_install.php:307
-#: includes/__install/class_bill_install.php:307
-#: includes/diagnose/class_bill_diagnose.php:602
-#: includes/install-checkup/class_bill_install.php:307
-msgid ""
-"Your WordPress Memory Limit is too low, which can lead to critical issues on "
-"your site due to insufficient resources. Promptly address this issue before "
-"continuing."
-msgstr ""
-"Seu Limite de Memória do WordPress é muito baixo, o que pode levar a "
-"problemas críticos em seu site devido a recursos insuficientes. Resolva esse "
-"problema imediatamente antes de continuar."
-
-#: _includes/diagnose/class_bill_diagnose.php:686
-#: _includes/diagnose/class_bill_diagnose.php:724
-#: _includes/install-checkup/class_bill_install.php:316
-#: _includes/install-checkup/class_bill_install.php:385
-#: _includes/vendor/vendor.php:54 dashboard/dashboard.php:105
-#: dashboard/dashboard.php:121 dashboard/memory.php:103
-#: functions/functions.php:4306 includes/__install/class_bill_install.php:316
-#: includes/__install/class_bill_install.php:385
-#: includes/diagnose/class_bill_diagnose.php:608
-#: includes/diagnose/class_bill_diagnose.php:629
-#: includes/install-checkup/class_bill_install.php:316
-#: includes/install-checkup/class_bill_install.php:385
-#: includes/vendor/vendor.php:54
-msgid "Learn More"
-msgstr "Saiba Mais"
-
-#: _includes/diagnose/class_bill_diagnose.php:715
-#: includes/diagnose/class_bill_diagnose.php:620
-msgid "Site Errors"
-msgstr "Erros do site"
-
-#: _includes/diagnose/class_bill_diagnose.php:720
-#: includes/diagnose/class_bill_diagnose.php:625
-msgid ""
-"Your site has experienced errors for the past 2 days. These errors, "
-"including JavaScript issues, can result in visual problems or disrupt "
-"functionality, ranging from minor glitches to critical site failures. "
-"JavaScript errors can terminate JavaScript execution, leaving all subsequent "
-"commands inoperable."
-msgstr ""
-"Seu site apresentou erros nos últimos 2 dias. Esses erros, incluindo "
-"problemas de JavaScript, podem resultar em problemas visuais ou interromper "
-"a funcionalidade, variando de pequenas falhas a falhas críticas do site. "
-"Erros de JavaScript podem encerrar a execução do JavaScript, deixando todos "
-"os comandos subsequentes inoperantes."
-
-#: _includes/diagnose/class_bill_diagnose.php:778
-#: includes/diagnose/class_bill_diagnose.php:674
-msgid "This is a partial list of the errors found."
-msgstr "Esta é uma lista parcial dos erros encontrados."
-
-#: _includes/diagnose/class_bill_diagnose.php:1263
-#: includes/diagnose/class_bill_diagnose.php:1093
-msgid ""
-"These are critical issues that can have a significant impact on your site's "
-"performance. They can cause many plugins and functionalities to malfunction "
-"and, in some cases, render your site completely inoperative, depending on "
-"their severity. Address them promptly."
-msgstr ""
-"Esses são problemas críticos que podem ter um impacto significativo no "
-"desempenho do seu site. Eles podem fazer com que muitos plugins e "
-"funcionalidades funcionem mal e, em alguns casos, tornar seu site "
-"completamente inoperante, dependendo da gravidade deles. Resolva-os "
-"imediatamente."
-
-#: _includes/feedback-last/feedback-last.php:232
-msgid "We're sorry to hear that you're leaving."
-msgstr "Lamentamos saber que você está indo embora."
-
-#: _includes/feedback-last/feedback-last.php:234
-msgid "Hello,"
-msgstr "Olá,"
-
-#: _includes/feedback-last/feedback-last.php:238
-msgid ""
-"Thank you for using our products. Before you deactivate, we'd like to offer "
-"a few options to improve your experience:"
-msgstr ""
-"Obrigado por usar nossos produtos. Antes de desativar, gostaríamos de "
-"ofereceralgumas opções para melhorar sua experiência:"
-
-#: _includes/feedback-last/feedback-last.php:241
-msgid "Explore more plugins - Discover our other free plugins and themes."
-msgstr ""
-"Explore mais plugins - Descubra nossos outros plugins e temas gratuitos."
-
-#: _includes/feedback-last/feedback-last.php:243
-msgid "Support - Need help? Visit our support page."
-msgstr "Suporte - Precisa de ajuda? Visite nossa página de suporte."
-
-#: _includes/feedback-last/feedback-last.php:245
-msgid "Cancel deactivation - Changed your mind? Keep using this plugin."
-msgstr "Cancelar desativação - Mudou de ideia? Continue usando este plugin."
-
-#: _includes/feedback-last/feedback-last.php:247
-msgid "Deactivate - Proceed with deactivation."
-msgstr "Desativar - Prosseguir com a desativação."
-
-#: _includes/feedback-last/feedback-last.php:250
-msgid ""
-"Trusted by over 50,000 users, our 20+ free plugins and 6 themes can "
-"supercharge your site's security, functionality, and backups."
-msgstr ""
-"Com a confiança de mais de 50.000 usuários, nossos mais de 20 plugins "
-"gratuitos e 6 temas podem supercarregar a segurança, a funcionalidade e os "
-"backups do seu site."
-
-#: _includes/feedback-last/feedback-last.php:252
-msgid "Best regards!"
-msgstr "Atenciosamente!"
-
-#: _includes/feedback-last/feedback-last.php:258
-#: includes/feedback-last/feedback-last.php:268
-msgid "Discover New FREE Plugins"
-msgstr "Descubra novos plugins GRATUITOS"
-
-#: _includes/feedback-last/feedback-last.php:260 guide/guide.php:138
-#: includes/feedback-last/feedback-last.php:271
-msgid "Support Page"
-msgstr "Página de Suporte"
-
-#: _includes/feedback-last/feedback-last.php:262 dashboard/memory.php:31
-#: includes/feedback-last/feedback-last.php:274
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: _includes/feedback-last/feedback-last.php:264
-#: includes/feedback-last/feedback-last.php:277
-msgid "Just Deactivate"
-msgstr "Apenas desative"
-
-#: _includes/list-tables/class-sbb-list-table.php:19 dashboard/topbots.php:36
-#: includes/list-tables/class-sbb-list-table.php:22
-msgid "Nickname"
-msgstr "Apelido"
-
-#: _includes/list-tables/class-sbb-list-table.php:20
-#: includes/list-tables/class-sbb-list-table.php:23
-msgid "Name"
-msgstr "Nome"
-
-#: _includes/list-tables/class-sbb-list-table.php:21
-#: _includes/list-tables/class-sbb-list-table2.php:23
-#: _includes/list-tables/class-sbb-list-table3.php:20
-#: includes/__tgm/class-tgm-plugin-activation.php:2647
-#: includes/list-tables/class-sbb-list-table.php:24
-#: includes/list-tables/class-sbb-list-table2.php:23
-#: includes/list-tables/class-sbb-list-table3.php:34
-msgid "Status"
-msgstr "Status"
-
-#: _includes/list-tables/class-sbb-list-table.php:22
-#: _includes/list-tables/class-sbb-list-table2.php:25
-#: _includes/list-tables/class-sbb-list-table3.php:22
-#: includes/list-tables/class-sbb-list-table.php:25
-#: includes/list-tables/class-sbb-list-table2.php:25
-#: includes/list-tables/class-sbb-list-table3.php:36
-msgid "Num Blocked"
-msgstr "Número Bloqueados"
-
-#: _includes/list-tables/class-sbb-list-table.php:29
-msgid "botnickname"
-msgstr "botnickname"
-
-#: _includes/list-tables/class-sbb-list-table.php:30
-#: _includes/list-tables/class-sbb-list-table3.php:28
-msgid "botname"
-msgstr "botname"
-
-#: _includes/list-tables/class-sbb-list-table.php:32
-#: _includes/list-tables/class-sbb-list-table2.php:36
-#: _includes/list-tables/class-sbb-list-table3.php:31
-msgid "botblocked"
-msgstr "botblock"
-
-#: _includes/list-tables/class-sbb-list-table.php:73
-#: _includes/list-tables/class-sbb-list-table2.php:78
-#: _includes/list-tables/class-sbb-list-table3.php:71
-#: includes/list-tables/class-sbb-list-table.php:90
-#: includes/list-tables/class-sbb-list-table2.php:86
-#: includes/list-tables/class-sbb-list-table3.php:108
-msgid "Change Status"
-msgstr "Alterar estado"
-
-#: _includes/list-tables/class-sbb-list-table.php:89
-#: _includes/list-tables/class-sbb-list-table.php:102
-#: _includes/list-tables/class-sbb-list-table2.php:94
-#: _includes/list-tables/class-sbb-list-table2.php:108
-#: _includes/list-tables/class-sbb-list-table3.php:87
-#: _includes/list-tables/class-sbb-list-table3.php:100
-#: includes/list-tables/class-sbb-list-table.php:106
-#: includes/list-tables/class-sbb-list-table.php:120
-#: includes/list-tables/class-sbb-list-table2.php:102
-#: includes/list-tables/class-sbb-list-table2.php:116
-#: includes/list-tables/class-sbb-list-table3.php:124
-#: includes/list-tables/class-sbb-list-table3.php:138
-msgid "deactivate"
-msgstr "desativar"
-
-#: _includes/list-tables/class-sbb-list-table.php:101
-#: _includes/list-tables/class-sbb-list-table2.php:107
-#: _includes/list-tables/class-sbb-list-table3.php:99
-#: includes/__tgm/class-tgm-plugin-activation.php:2819
-#: includes/list-tables/class-sbb-list-table.php:119
-#: includes/list-tables/class-sbb-list-table2.php:115
-#: includes/list-tables/class-sbb-list-table3.php:137
-msgid "Activate"
-msgstr "Ativar"
-
-#: _includes/list-tables/class-sbb-list-table2.php:22
-#: includes/list-tables/class-sbb-list-table2.php:22
-msgid "IP"
-msgstr "IP"
-
-#: _includes/list-tables/class-sbb-list-table2.php:24
-#: _includes/list-tables/class-sbb-list-table3.php:21
-#: includes/list-tables/class-sbb-list-table2.php:24
-#: includes/list-tables/class-sbb-list-table3.php:35
-msgid "Added by"
-msgstr "Adicionado por"
-
-#: _includes/list-tables/class-sbb-list-table2.php:33
-msgid "botip"
-msgstr "botip"
-
-#: _includes/list-tables/class-sbb-list-table3.php:19
-#: includes/list-tables/class-sbb-list-table3.php:33
-msgid "Referer Name"
-msgstr "Nome do Referente"
-
-#: _includes/list-tables/page.php:16 includes/list-tables/page.php:16
-msgid "Search Nickname"
-msgstr "Pesquisa por apelido"
-
-#: _includes/list-tables/page2.php:18 includes/list-tables/page2.php:18
-msgid "Search IP"
-msgstr "Procurar IP"
-
-#: _includes/list-tables/page3.php:18 includes/list-tables/page3.php:18
-msgid "Search Referer"
-msgstr "Pequisa por Referidor"
-
-#: _includes/vendor/vendor.php:49 includes/vendor/vendor.php:49
-msgid "Please, wait...  Dismissing..."
-msgstr "Por favor, espere...  Dismissing..."
-
-#: _includes/vendor/vendor.php:55 includes/vendor/vendor.php:55
-msgid "Watch Again"
-msgstr "Assistir Novamente"
-
-#: _includes/vendor/vendor.php:56 dashboard/notifications.php:85
-#: functions/functions.php:4319 includes/vendor/vendor.php:56
-msgid "Dismiss"
-msgstr "Dispensar"
-
-#: _includes/visits_stats/analytics-30days.php:20
-#: includes/visits_stats/analytics-30days.php:20
-msgid "No vists, try again later..."
-msgstr "Tabela Vazia. Por favor, tente novamente mais tarde."
-
-#: _includes/visits_stats/visits_dashboard.php:44
-#: includes/visits_stats/visits_dashboard.php:44
-msgid ""
-"These data depend on the number of days you keep in the visitors-log file. "
-"Refer to the plugin settings page for more details."
-msgstr ""
-"Esses dados dependem do número de dias que você mantém no arquivo de log de "
-"visitantes.Consulte a página de configurações do plugin para mais detalhes."
-
-#: _includes/visits_stats/visits_dashboard.php:67
-#: _includes/visits_stats/visits_dashboard.php:84
-#: includes/visits_stats/visits_dashboard.php:67
-#: includes/visits_stats/visits_dashboard.php:84
-msgid "Analysis of total visitor count by unique IP addresses."
-msgstr "Análise da contagem total de visitantes por endereços IP exclusivos."
 
 #: dashboard/botsgraph_pie.php:28 dashboard/calcula_stats_pie2.php:29
 msgid ""
@@ -433,6 +77,16 @@ msgstr "Proteção Pro-Ativada"
 #: dashboard/dashboard.php:102
 msgid "With weekly database updates and Firewall protection."
 msgstr "Com atualizações semanais do banco de dados e proteção Firewall."
+
+#: dashboard/dashboard.php:105 dashboard/dashboard.php:121
+#: dashboard/memory.php:103 functions/functions.php:4307
+#: includes/diagnose/class_bill_diagnose.php:654
+#: includes/diagnose/class_bill_diagnose.php:888
+#: includes/install-checkup/class_bill_install.php:316
+#: includes/install-checkup/class_bill_install.php:385
+#: includes/vendor/vendor.php:54
+msgid "Learn More"
+msgstr "Saiba Mais"
 
 #: dashboard/dashboard.php:114
 msgid "Only Partial Protection enabled!"
@@ -558,9 +212,13 @@ msgid "After Copy the URL, click UPDATE to proceed or Cancel to abort."
 msgstr ""
 "Após copiar a URL, clique em UPDATE para prosseguir ou Cancelar para abortar."
 
-#: dashboard/memory.php:30 includes/__tgm/class-tgm-plugin-activation.php:2816
+#: dashboard/memory.php:30
 msgid "Update"
 msgstr "Atualizar"
+
+#: dashboard/memory.php:31 includes/feedback-last/feedback-last.php:274
+msgid "Cancel"
+msgstr "Cancelar"
 
 #: dashboard/memory.php:46
 msgid "Unable to get your Memory Info"
@@ -825,17 +483,22 @@ msgstr "Stop Bad Bots => Ajuste => Ajustes Gerais"
 msgid "and mark all with yes."
 msgstr "e marcar tudo com sim."
 
+#: dashboard/notifications.php:85 functions/functions.php:4320
+#: includes/vendor/vendor.php:56
+msgid "Dismiss"
+msgstr "Dispensar"
+
 #: dashboard/notifications.php:90
 msgid "No notifications at this time!"
 msgstr "Nenhuma notificação neste momento!"
 
-#: dashboard/tools.php:28
+#: dashboard/tools.php:18
 msgid "If you need support, please, copy and paste the info below in our"
 msgstr ""
 "Se você precisar de suporte, por favor, copie e cole as informações abaixo "
 "em nosso"
 
-#: dashboard/tools.php:29
+#: dashboard/tools.php:19
 msgid "Support Site"
 msgstr "Site de apoio"
 
@@ -846,6 +509,10 @@ msgstr "Nenhum bot bloqueado por Apelido. Por favor, tente novamente amanhã"
 #: dashboard/topbots.php:34 dashboard/topcountries.php:56
 msgid "Bot"
 msgstr "Bot"
+
+#: dashboard/topbots.php:36 includes/list-tables/class-sbb-list-table.php:22
+msgid "Nickname"
+msgstr "Apelido"
 
 #: dashboard/topbots.php:38 dashboard/topcountries.php:60
 #: dashboard/toprefs.php:36
@@ -920,223 +587,223 @@ msgstr ""
 "Basta clicar em \"Stop Bad Bots\" e depois Ir para Configurações=>Guia de "
 "Inicialização."
 
-#: functions/functions.php:1159
+#: functions/functions.php:1160
 msgid "Bots per page"
 msgstr "Bots por página"
 
-#: functions/functions.php:1173
+#: functions/functions.php:1174
 msgid "IPs per page"
 msgstr "IPs por página"
 
-#: functions/functions.php:1187 functions/functions.php:1201
+#: functions/functions.php:1188 functions/functions.php:1202
 msgid "Bad Referers per page"
 msgstr "Maus Referentes por página"
 
-#: functions/functions.php:1216 functions/functions.php:1240
-#: functions/functions.php:1262 functions/functions.php:1285
+#: functions/functions.php:1217 functions/functions.php:1241
+#: functions/functions.php:1263 functions/functions.php:1286
 msgid "Detected Bot on"
 msgstr "Detectado Bot"
 
-#: functions/functions.php:1217 functions/functions.php:1241
+#: functions/functions.php:1218 functions/functions.php:1242
 msgid "Bot was detected and blocked."
 msgstr "O bot foi detectado e bloqueado."
 
-#: functions/functions.php:1219 functions/functions.php:1243
-#: functions/functions.php:1265 functions/functions.php:1288
-#: functions/functions.php:1310 functions/functions.php:1332
-#: functions/functions.php:1354 functions/functions.php:1377
-#: functions/functions.php:1397 functions/functions.php:1414
-#: functions/functions.php:1434 functions/functions.php:1454
-#: functions/functions.php:1476 functions/functions.php:1496
-#: functions/functions.php:1516
+#: functions/functions.php:1220 functions/functions.php:1244
+#: functions/functions.php:1266 functions/functions.php:1289
+#: functions/functions.php:1311 functions/functions.php:1333
+#: functions/functions.php:1355 functions/functions.php:1378
+#: functions/functions.php:1398 functions/functions.php:1415
+#: functions/functions.php:1435 functions/functions.php:1455
+#: functions/functions.php:1477 functions/functions.php:1497
+#: functions/functions.php:1517
 msgid "Date"
 msgstr "Data"
 
-#: functions/functions.php:1220
+#: functions/functions.php:1221
 msgid "User Agent"
 msgstr "Agente de usuário"
 
-#: functions/functions.php:1221 functions/functions.php:1244
-#: functions/functions.php:1266
+#: functions/functions.php:1222 functions/functions.php:1245
+#: functions/functions.php:1267
 msgid "Robot IP Address"
 msgstr "Endereço IP do robô"
 
-#: functions/functions.php:1222
+#: functions/functions.php:1223
 msgid "String Found:"
 msgstr "String encontrada:"
 
-#: functions/functions.php:1224 functions/functions.php:1246
-#: functions/functions.php:1269 functions/functions.php:1291
-#: functions/functions.php:1313 functions/functions.php:1335
-#: functions/functions.php:1357 functions/functions.php:1380
-#: functions/functions.php:1400 functions/functions.php:1417
-#: functions/functions.php:1437 functions/functions.php:1459
-#: functions/functions.php:1479 functions/functions.php:1499
-#: functions/functions.php:1519
+#: functions/functions.php:1225 functions/functions.php:1247
+#: functions/functions.php:1270 functions/functions.php:1292
+#: functions/functions.php:1314 functions/functions.php:1336
+#: functions/functions.php:1358 functions/functions.php:1381
+#: functions/functions.php:1401 functions/functions.php:1418
+#: functions/functions.php:1438 functions/functions.php:1460
+#: functions/functions.php:1480 functions/functions.php:1500
+#: functions/functions.php:1520
 msgid "eMail sent by Stop Bad Bots Plugin."
 msgstr "eMail enviado por Stop Bad Bots Plugin."
 
-#: functions/functions.php:1226 functions/functions.php:1248
-#: functions/functions.php:1271 functions/functions.php:1293
-#: functions/functions.php:1315 functions/functions.php:1337
-#: functions/functions.php:1359 functions/functions.php:1382
-#: functions/functions.php:1401 functions/functions.php:1419
-#: functions/functions.php:1439 functions/functions.php:1461
-#: functions/functions.php:1481 functions/functions.php:1501
-#: functions/functions.php:1521
+#: functions/functions.php:1227 functions/functions.php:1249
+#: functions/functions.php:1272 functions/functions.php:1294
+#: functions/functions.php:1316 functions/functions.php:1338
+#: functions/functions.php:1360 functions/functions.php:1383
+#: functions/functions.php:1402 functions/functions.php:1420
+#: functions/functions.php:1440 functions/functions.php:1462
+#: functions/functions.php:1482 functions/functions.php:1502
+#: functions/functions.php:1522
 msgid "You can stop emails at the Notifications Settings Tab."
 msgstr "Você pode parar os e-mails na tab Configurações de notificações."
 
-#: functions/functions.php:1229 functions/functions.php:1251
-#: functions/functions.php:1274 functions/functions.php:1296
-#: functions/functions.php:1318 functions/functions.php:1340
-#: functions/functions.php:1362 functions/functions.php:1385
-#: functions/functions.php:1402 functions/functions.php:1422
-#: functions/functions.php:1442 functions/functions.php:1464
-#: functions/functions.php:1484 functions/functions.php:1504
-#: functions/functions.php:1524
+#: functions/functions.php:1230 functions/functions.php:1252
+#: functions/functions.php:1275 functions/functions.php:1297
+#: functions/functions.php:1319 functions/functions.php:1341
+#: functions/functions.php:1363 functions/functions.php:1386
+#: functions/functions.php:1403 functions/functions.php:1423
+#: functions/functions.php:1443 functions/functions.php:1465
+#: functions/functions.php:1485 functions/functions.php:1505
+#: functions/functions.php:1525
 msgid "Dashboard => Stop Bad Bots => Settings."
 msgstr "Painel => Stop Bad Bots => Configurações."
 
-#: functions/functions.php:1231 functions/functions.php:1253
-#: functions/functions.php:1276 functions/functions.php:1298
-#: functions/functions.php:1320 functions/functions.php:1342
-#: functions/functions.php:1364 functions/functions.php:1387
-#: functions/functions.php:1404 functions/functions.php:1424
-#: functions/functions.php:1444 functions/functions.php:1466
-#: functions/functions.php:1486 functions/functions.php:1506
-#: functions/functions.php:1526
+#: functions/functions.php:1232 functions/functions.php:1254
+#: functions/functions.php:1277 functions/functions.php:1299
+#: functions/functions.php:1321 functions/functions.php:1343
+#: functions/functions.php:1365 functions/functions.php:1388
+#: functions/functions.php:1405 functions/functions.php:1425
+#: functions/functions.php:1445 functions/functions.php:1467
+#: functions/functions.php:1487 functions/functions.php:1507
+#: functions/functions.php:1527
 msgid "Visit us to learn how to get Weekly Updates and more features:"
 msgstr ""
 "Visite-nos para saber como obter Atualizações Semanais e mais recursos:"
 
-#: functions/functions.php:1263
+#: functions/functions.php:1264
 msgid "Malicious bot was detected and blocked by firewall."
 msgstr "O robô malicioso foi detectado e bloqueado pelo firewall."
 
-#: functions/functions.php:1267
+#: functions/functions.php:1268
 msgid "Malicious String Found:"
 msgstr "String Maliciosa Encontrada:"
 
-#: functions/functions.php:1286
+#: functions/functions.php:1287
 msgid "Bad Referer Bot was detected and blocked by Stop Bad Bots Plugin."
 msgstr "O Bad Referer Bot foi detectado e bloqueado pelo Stop Bad Bots Plugin."
 
-#: functions/functions.php:1289
+#: functions/functions.php:1290
 msgid "Referer String Found:"
 msgstr "String de referência encontrada:"
 
-#: functions/functions.php:1307 functions/functions.php:1329
-#: functions/functions.php:1351 functions/functions.php:1373
+#: functions/functions.php:1308 functions/functions.php:1330
+#: functions/functions.php:1352 functions/functions.php:1374
 msgid "Detected Possible Bot on"
 msgstr "Detectado Possivel bot em"
 
-#: functions/functions.php:1308
+#: functions/functions.php:1309
 msgid "Empty User Agent was detected and blocked by Stop Bad Bots Plugin."
 msgstr ""
 "Um  User Agente vazio foi detectado e bloqueado pelo Plugin Stop Bad Bots."
 
-#: functions/functions.php:1311 functions/functions.php:1333
-#: functions/functions.php:1355 functions/functions.php:1378
-#: functions/functions.php:1398 functions/functions.php:1415
-#: functions/functions.php:1435 functions/functions.php:1457
-#: functions/functions.php:1477 functions/functions.php:1497
-#: functions/functions.php:1517
+#: functions/functions.php:1312 functions/functions.php:1334
+#: functions/functions.php:1356 functions/functions.php:1379
+#: functions/functions.php:1399 functions/functions.php:1416
+#: functions/functions.php:1436 functions/functions.php:1458
+#: functions/functions.php:1478 functions/functions.php:1498
+#: functions/functions.php:1518
 msgid "IP Found:"
 msgstr "IP Encontrado:"
 
-#: functions/functions.php:1330
+#: functions/functions.php:1331
 msgid "PingBack Requested was detected and blocked by Stop Bad Bots Plugin."
 msgstr ""
 "Uma requesta de PingBack  foi detectada e bloqueada pelo Stop Bad Bots "
 "Plugin."
 
-#: functions/functions.php:1352
+#: functions/functions.php:1353
 msgid "User Enumeration was detected and blocked by Stop Bad Bots Plugin."
 msgstr ""
 "Uma enumeração de usuários foi detectada e bloqueada pelo Stop Bad Bots "
 "Plugin."
 
-#: functions/functions.php:1374
+#: functions/functions.php:1375
 msgid "False Google/Bing/Msn was detected and blocked by Stop Bad Bots Plugin."
 msgstr ""
 "O falso Google/Bing/Msn foi detectado e bloqueado pelo Stop Bad Bots Plugin."
 
-#: functions/functions.php:1375
+#: functions/functions.php:1376
 msgid "Fake User Agent:"
 msgstr "Falso Agente:"
 
-#: functions/functions.php:1396
+#: functions/functions.php:1397
 msgid "Detected Spammer in Contact Form"
 msgstr "Spammer detectado no formulário de contato"
 
-#: functions/functions.php:1413
+#: functions/functions.php:1414
 msgid "Detected Spammer in Comments Form"
 msgstr "Spammer detectado no formulário de comentários"
 
-#: functions/functions.php:1433
+#: functions/functions.php:1434
 msgid "Detected bot in Login Form"
 msgstr "Bot detectado no Formulário de Login"
 
-#: functions/functions.php:1453
+#: functions/functions.php:1454
 msgid "Detected bot using HTTP tools"
 msgstr "Bot detectado usando ferramentas HTTP"
 
-#: functions/functions.php:1455
+#: functions/functions.php:1456
 msgid "HTTP tool:"
 msgstr "Ferramenta HTTP:"
 
-#: functions/functions.php:1475
+#: functions/functions.php:1476
 msgid "Blocked Bot by Rate Limiting"
 msgstr "Bot Bloqueado por Excesso de visitas"
 
-#: functions/functions.php:1495
+#: functions/functions.php:1496
 msgid "Blocked Bot by Fake Browser (User Agent)"
 msgstr "Bot Bloqueado por Fake Browser (Falso Agente do Usuário)"
 
-#: functions/functions.php:1515
+#: functions/functions.php:1516
 msgid "Blocked Visitor by Country (China, Cuba, North Korea)"
 msgstr "Visitante Bloqueado por País (China, Cuba, Coréia do Norte)"
 
-#: functions/functions.php:2613
+#: functions/functions.php:2614
 msgid "Add new bad bot to the bad bots Table."
 msgstr "Adicione um novo bot à tabela dos bots ruins."
 
-#: functions/functions.php:2621
+#: functions/functions.php:2622
 msgid "Bad Bot Nickname:"
 msgstr "Bad Bot Nickname:"
 
-#: functions/functions.php:2643
+#: functions/functions.php:2644
 msgid "Add new bad IP to the bad IPs Table."
 msgstr "Adicione novos IPs ruins à tabela de IPs ruins."
 
-#: functions/functions.php:2651
+#: functions/functions.php:2652
 msgid "Bad Bot IP:"
 msgstr "Bad Bot IP:"
 
-#: functions/functions.php:2663
+#: functions/functions.php:2664
 msgid "Add new bad Referer to the bad Referer Table."
 msgstr "Adicionar novo Referer à tabela de maus  Referer."
 
-#: functions/functions.php:2671
+#: functions/functions.php:2672
 msgid "Bad Referer Name:"
 msgstr "Nome do mau referer:"
 
-#: functions/functions.php:2695
+#: functions/functions.php:2696
 msgid ""
 "In addiction to default system table, you can add one or more string to the "
 "table."
 msgstr "Na tabela padrão do sistema, você pode adicionar uma ou mais strings."
 
-#: functions/functions.php:2699
+#: functions/functions.php:2700
 msgid "Example: SpiderBot (no case sensitive)"
 msgstr "Exemplo: SpiderBot (não sensível a maiúsculas e minúsculas)"
 
-#: functions/functions.php:2701
+#: functions/functions.php:2702
 msgid "Just a piece of the name is enough."
 msgstr "Apenas uma parte do nome é suficiente."
 
-#: functions/functions.php:2704
+#: functions/functions.php:2705
 msgid ""
 "For example, if you put \"bot\" will block all bots with the string bot at "
 "user agent name."
@@ -1144,7 +811,7 @@ msgstr ""
 "Por exemplo, se você colocar \"bot\" bloqueará todos os bots com a string "
 "bot no nome do agente usuário."
 
-#: functions/functions.php:2709
+#: functions/functions.php:2710
 msgid ""
 "Attention: In this case, you will block also google bot because their name "
 "is GoogleBot."
@@ -1152,50 +819,50 @@ msgstr ""
 "Atenção: Neste caso, você também irá bloquear o google bot porque seu nome é "
 "GoogleBot."
 
-#: functions/functions.php:2714
+#: functions/functions.php:2715
 msgid "Do not use special characters neither HTML"
 msgstr "Não utilizar caracteres especiais."
 
-#: functions/functions.php:2718
+#: functions/functions.php:2719
 msgid "Add one bad bot each time. The table don't accept duplicate nicknames."
 msgstr ""
 "Adicione apenas um robô de cada vez. A tabela não aceita apelidos duplicados."
 
-#: functions/functions.php:2725
+#: functions/functions.php:2726
 msgid ""
 "In addiction to default ip table, you can add one or more ip to the table."
 msgstr "Você pode adicionar um ou mais IP à tabela."
 
-#: functions/functions.php:2730
+#: functions/functions.php:2731
 msgid "Add one bad ip each time. The table don't accept duplicate ips."
 msgstr "Adicione um IP de cada vez. A tabela não aceita IPS duplicados."
 
-#: functions/functions.php:2735
+#: functions/functions.php:2736
 msgid "Be carefull. This IP will be blocked to access your site."
 msgstr "Tenha cuidado. Este IP será bloqueado para acessar seu site."
 
-#: functions/functions.php:2742
+#: functions/functions.php:2743
 msgid ""
 "In addiction to default referer table, you can add one or more referers to "
 "the table."
 msgstr "Você pode adicionar uma ou mais mau referênte à tabela."
 
-#: functions/functions.php:2747
+#: functions/functions.php:2748
 msgid "Add one bad referer each time. The table don't accept duplicate names."
 msgstr ""
 "Adicionar um mau referrer a cada vez. A tabela não aceita nomes duplicados."
 
-#: functions/functions.php:2752
+#: functions/functions.php:2753
 msgid ""
 "Be carefull. This Referer will be blocked to access your site. Do not use "
 "HTML"
 msgstr "Seja cuidadoso. Este Referente será bloqueado no acesso a seu site."
 
-#: functions/functions.php:2760
+#: functions/functions.php:2761
 msgid "Bot included at table!"
 msgstr "Robô incluído na tabela!"
 
-#: functions/functions.php:2771
+#: functions/functions.php:2772
 msgid ""
 "Fail to include bot! Check bot nickname and remember Duplicates are not "
 "allowed. "
@@ -1203,22 +870,22 @@ msgstr ""
 "Bot não incluído! Verifique o apelido do bot e lembre-se de que não são "
 "permitidos duplicados. "
 
-#: functions/functions.php:2783
+#: functions/functions.php:2784
 msgid "IP included at table!"
 msgstr "IP incluído na tabela!"
 
-#: functions/functions.php:2794
+#: functions/functions.php:2795
 msgid ""
 "Fail to include IP! Check bot IP and remember Duplicates are not allowed. "
 msgstr ""
 "IP  não incluído na tabela! Verifique o IP do bot e lembre-se que não são "
 "permitidas duplicatas."
 
-#: functions/functions.php:2806
+#: functions/functions.php:2807
 msgid "Referer included at table!"
 msgstr "Referidor incluído na tabela!"
 
-#: functions/functions.php:2817
+#: functions/functions.php:2818
 msgid ""
 "Fail to include Referer! Check referer name and remember Duplicates are not "
 "allowed. "
@@ -1226,45 +893,45 @@ msgstr ""
 "Falha ao incluir o Referer! Verifique o nome do referenciador e lembre-se "
 "que não são permitidos. duplicados."
 
-#: functions/functions.php:4124
+#: functions/functions.php:4125
 msgid "Bad Bots can do all sorts of nasty stuff and waste server resources."
 msgstr ""
 "Os Bots podem fazer todo tipo de coisas desagradáveis e desperdiçar recursos "
 "do servidor."
 
-#: functions/functions.php:4128
+#: functions/functions.php:4129
 msgid "Bad bots don’t play by the rules."
 msgstr "Bots ruins não jogam de acordo com as regras."
 
-#: functions/functions.php:4132
+#: functions/functions.php:4133
 msgid "Bad Bots stresses, harm and slowly your Web servers."
 msgstr ""
 "Os Bad Bots estressam, prejudicam e tornam lentos os  seus servidores Web."
 
-#: functions/functions.php:4136
+#: functions/functions.php:4137
 msgid "Show support with a 5-star rating."
 msgstr "Mostre apoio com uma classificação de 5 estrelas."
 
-#: functions/functions.php:4140
+#: functions/functions.php:4141
 msgid ""
 "BLACK FRIDAY 30% OFF! Use the coupon code: special-black_2019. Limited time!"
 msgstr ""
 "SEXTA-FEIRA NEGRA 30% DE DESCONTO! Use o código do cupom: special-"
 "black_2019. Tempo limitado!"
 
-#: functions/functions.php:4144
+#: functions/functions.php:4145
 msgid "Become Pro: Your bad bots table is always updated."
 msgstr "Torne-se Pro: Sua tabelaa de robôs  estará sempre atualizada."
 
-#: functions/functions.php:4146
+#: functions/functions.php:4147
 msgid "Stop Bad Bots Plugin. Its time to Get Pro Protection!"
 msgstr "Stop Bad Bots Plugin.  Chegou a hora de obter proteção profissional!"
 
-#: functions/functions.php:4310
+#: functions/functions.php:4311
 msgid "Go to WordPress"
 msgstr "Ir para WordPress"
 
-#: functions/functions.php:5669
+#: functions/functions.php:5670
 msgid ""
 "Your IP is blacklisted on Internet Public Databases. Please, use another way "
 "to contact us."
@@ -1272,7 +939,7 @@ msgstr ""
 "Seu IP está na lista negra dos bancos de dados públicos da Internet. Por "
 "favor, use outra forma de entrar em contato conosco."
 
-#: functions/functions.php:5674
+#: functions/functions.php:5675
 msgid ""
 "Looks Like This Message doesn't come from our site. Please, use another way "
 "to contact us."
@@ -1280,11 +947,16 @@ msgstr ""
 "Parece que esta mensagem não vem de nosso site. Por favor, use outra forma "
 "de entrar em contato conosco."
 
-#: functions/functions.php:6860
+#: functions/functions.php:6877
 msgid "Errors have been detected on this site. "
 msgstr "Foram detectados erros neste site."
 
-#: functions/functions.php:6883
+#: functions/functions.php:6877 functions/functions.php:6900
+#: includes/diagnose/class_bill_diagnose.php:513
+msgid "Learn more"
+msgstr "Saiba Mais"
+
+#: functions/functions.php:6900
 msgid "Memory issues have been detected on this site. "
 msgstr "Problemas de memória foram detectados neste site."
 
@@ -1585,320 +1257,57 @@ msgstr "Guia OnLine"
 msgid "Faq Page"
 msgstr "Página Faq"
 
+#: guide/guide.php:138 includes/feedback-last/feedback-last.php:271
+msgid "Support Page"
+msgstr "Página de Suporte"
+
 #: guide/guide.php:142
 msgid "Go Pro"
 msgstr "Realizar upgrade para a versão Pro"
 
-#: includes/__tgm/class-tgm-plugin-activation.php:334
-msgid "Install Required Plugins"
-msgstr "Instalar Plugins Requeridos"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:335
-msgid "Install Plugins"
-msgstr "Instalar Plugins"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:337
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr "Instalando Plugin: %s"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:339
-#, php-format
-msgid "Updating Plugin: %s"
-msgstr "Atualizando Plugin: %s"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:340
-msgid "Something went wrong with the plugin API."
-msgstr "Algo deu errado com a API do plugin."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:392
-msgid "Return to Required Plugins Installer"
-msgstr "Voltar para instalador de Plugins necessários"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:393
-msgid "Return to the Dashboard"
-msgstr "Voltar ao Painel"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:394
-#: includes/__tgm/class-tgm-plugin-activation.php:3252
-msgid "Plugin activated successfully."
-msgstr "Plugin ativado com sucesso."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:395
-msgid "The following plugin was activated successfully:"
-msgstr "O plugin a seguir foi ativado com sucesso:"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:397
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr "Nenhuma ação tomada. O plugin %1$s já estava ativo."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:399
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-"Plugin não ativado. Uma versão mais recente de %s é necessária para este "
-"tema. Por favor, atualize o plugin."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:401
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr "Todos os plugins instalados e ativados com sucesso. %1$s"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:402
-msgid "Dismiss this notice"
-msgstr "Descartar essa notificação"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:403
-msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
-msgstr ""
-"Há um ou mais plugins necessários ou recomendados para instalar, atualizar "
-"ou ativar."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:404
-msgid "Please contact the administrator of this site for help."
-msgstr "Entre em contato com o administrador deste site para obter ajuda."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:607
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr "Este plugin precisa ser atualizado para ser compatível com seu tema."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2075
-#, php-format
-msgid "TGMPA v%s"
-msgstr "TGMPA v%s"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2366
-msgid "Required"
-msgstr "Obrigatório"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2369
-msgid "Recommended"
-msgstr "Recomendado"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2385
-msgid "WordPress Repository"
-msgstr "Repositório WordPress"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2388
-msgid "External Source"
-msgstr "Fonte externa"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2391
-msgid "Pre-Packaged"
-msgstr "Pré-empacotados"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2408
-msgid "Not Installed"
-msgstr "Não instalado"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2412
-msgid "Installed But Not Activated"
-msgstr "Instalado mas não ativado"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2414
-msgid "Active"
-msgstr "Ativo"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2420
-msgid "Required Update not Available"
-msgstr "Atualização não disponível"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2423
-msgid "Requires Update"
-msgstr "Requer atualização"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2426
-msgid "Update recommended"
-msgstr "Atualização recomendada"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2435
-#, php-format
-msgid "%1$s, %2$s"
-msgstr "%1$s, %2$s"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2481
-#, php-format
-msgid "All <span class=\"count\">(%s)</span>"
-msgstr "Tudo <span class=\"count\">(%s)</span>"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2575
-msgid "unknown"
-msgstr "desconhecido"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2583
-msgid "Installed version:"
-msgstr "Versão instalada:"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2591
-msgid "Minimum required version:"
-msgstr "Versão mínima necessária:"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2603
-msgid "Available version:"
-msgstr "Versão disponível:"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2640
-msgid "Plugin"
-msgstr "Plugin"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2641
-msgid "Source"
-msgstr "Fonte"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2642
-msgid "Type"
-msgstr "Tipo"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2646
-msgid "Version"
-msgstr "Versão"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2696
-#, php-format
-msgid "Install %2$s"
-msgstr "Instalar %2$s"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2701
-#, php-format
-msgid "Update %2$s"
-msgstr "Atualizar %2$s"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2707
-#, php-format
-msgid "Activate %2$s"
-msgstr "Ativar %2$s"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2810
-msgid "Install"
-msgstr "Instalar"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2850
-msgid "No plugins were selected to be installed. No action taken."
-msgstr "Nenhum plugin foi selecionado para ser instalado. Nenhuma ação tomada."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2852
-msgid "No plugins were selected to be updated. No action taken."
-msgstr ""
-"Nenhum plugin foi selecionado para ser atualizado. Nenhuma ação tomada."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2893
-msgid "No plugins are available to be installed at this time."
-msgstr "Nenhum plugin está disponível para ser instalado no momento."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:2895
-msgid "No plugins are available to be updated at this time."
-msgstr "Nenhum plug-in está disponível para ser atualizado neste momento."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:3251
-msgid "Plugin activation failed."
-msgstr "Ativação do plugin falhou."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:3591
-#, php-format
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr "Atualizando Plugin %1$s (%2$d/%3$d)"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:3594
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr "Ocorreu um erro ao instalar %1$s: <strong>%2$s</strong>."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:3596
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr "A instalação de %1$s falhou."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:3600
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-"O processo de instalação e ativação está começando. Este processo pode levar "
-"algum tempo em alguns hosts, por isso, seja paciente."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:3602
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr "%1$s instalado e ativado com sucesso."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:3603
-msgid "All installations and activations have been completed."
-msgstr "Todas as instalações e ativações foram concluídas., "
-
-#: includes/__tgm/class-tgm-plugin-activation.php:3605
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr "Instalando e Ativando o Plugin %1$s (%2$d/%3$d)"
-
-#: includes/__tgm/class-tgm-plugin-activation.php:3608
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-"O processo de instalação está começando. Este processo pode levar algum "
-"tempo em alguns hosts, por isso, seja paciente."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:3611
-msgid "All installations have been completed."
-msgstr "Todas as instalações foram concluídas."
-
-#: includes/__tgm/class-tgm-plugin-activation.php:3613
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr "Instalando o Plugin %1$s (%2$d/%3$d)"
-
-#: includes/__tgm/pinstaller.php:92
-msgid "stopbadbots"
-msgstr "stopbadbots"
-
-#: includes/chat/class_bill_chat.php:44
+#: includes/chat/class_bill_chat.php:48
 msgid "Chat messages reset successfully."
 msgstr "Mensagens de bate-papo redefinidas com sucesso."
 
-#: includes/chat/class_bill_chat.php:45
+#: includes/chat/class_bill_chat.php:49
 msgid "Error resetting chat messages."
 msgstr "Erro ao redefinir mensagens de bate-papo."
 
-#: includes/chat/class_bill_chat.php:46
+#: includes/chat/class_bill_chat.php:50
 msgid "Invalid message received:"
 msgstr "Mensagem inválida recebida:"
 
-#: includes/chat/class_bill_chat.php:47
+#: includes/chat/class_bill_chat.php:51
 msgid "Invalid response format:"
 msgstr "Formato de resposta inválido:"
 
-#: includes/chat/class_bill_chat.php:48
+#: includes/chat/class_bill_chat.php:52
 msgid "Error processing server response:"
 msgstr "Erro ao processar a resposta do servidor:"
 
-#: includes/chat/class_bill_chat.php:49
+#: includes/chat/class_bill_chat.php:53
 msgid "Response is not valid JSON."
 msgstr "A resposta não é um JSON válido."
 
-#: includes/chat/class_bill_chat.php:50
+#: includes/chat/class_bill_chat.php:54
 msgid "AJAX request failed:"
 msgstr "Falha na solicitação AJAX:"
 
-#: includes/chat/class_bill_chat.php:51
+#: includes/chat/class_bill_chat.php:55
 msgid "Error sending the message. Please try again later."
 msgstr "Erro enviando mensagem. Por favor, tente novamente mais tarde."
 
-#: includes/chat/class_bill_chat.php:52
+#: includes/chat/class_bill_chat.php:56
 msgid "Please enter a message!"
 msgstr "Por favor, insira uma mensagem!"
 
-#: includes/chat/class_bill_chat.php:268
+#: includes/chat/class_bill_chat.php:293
 msgid ""
 "Error contacting the Artificial Intelligence (API). Please try again later."
 msgstr ""
 "Erro ao contatar a Inteligência Artificial (API). Tente novamente mais tarde."
 
-#: includes/chat/class_bill_chat.php:294
+#: includes/chat/class_bill_chat.php:338
 msgid "Error to get response from AI source!"
 msgstr "Erro ao obter resposta da fonte de IA!"
 
@@ -1928,7 +1337,20 @@ msgstr "Monitoramento de memória e erros"
 msgid "Welcome to plugin Insights!"
 msgstr "Bem-vindo ao plugin Insights!"
 
-#: includes/diagnose/class_bill_diagnose.php:527
+#: includes/diagnose/class_bill_diagnose.php:505
+msgid "Our plugin"
+msgstr "Nosso plugin"
+
+#: includes/diagnose/class_bill_diagnose.php:507
+msgid ""
+"cannot function properly because your WordPress Memory Limit is too low. "
+"Your site will experience serious issues, even if you deactivate our plugin."
+msgstr ""
+"não pode funcionar corretamente porque o limite de memória do WordPress é "
+"muito baixo. Seu site enfrentará sérios problemas, mesmo se você desativar "
+"nosso plugin."
+
+#: includes/diagnose/class_bill_diagnose.php:561
 msgid ""
 "Displaying the latest recurring errors (Javascript Included) from your error "
 "log file and eventually alert about low WordPress memory limit is a courtesy "
@@ -1938,7 +1360,7 @@ msgstr ""
 "eventualmente alertar sobre o limite baixo de memória do WordPress é uma "
 "cortesia do plugin"
 
-#: includes/diagnose/class_bill_diagnose.php:529
+#: includes/diagnose/class_bill_diagnose.php:563
 msgid ""
 "Disabling our plugin does not stop the errors from occurring; it simply "
 "means you will no longer be notified here that they are happening, but they "
@@ -1948,7 +1370,7 @@ msgstr ""
 "significa apenas que você não será mais notificado aqui que eles estão "
 "acontecendo, mas eles ainda podem prejudicar seu site."
 
-#: includes/diagnose/class_bill_diagnose.php:531
+#: includes/diagnose/class_bill_diagnose.php:565
 msgid ""
 "Click the help button in the top right or go directly to the AI chat box "
 "below for more specific information on the issues listed."
@@ -1957,50 +1379,144 @@ msgstr ""
 "caixa de bate-papo da IA abaixo para obter informações mais específicas "
 "sobre os problemas listados."
 
-#: includes/diagnose/class_bill_diagnose.php:538
+#: includes/diagnose/class_bill_diagnose.php:572
 #: includes/feedback-last/feedback-last.php:250
 msgid "Artificial Intelligence Support Chat for Issues and Solutions"
 msgstr "Chat de suporte de inteligência artificial para problemas e soluções"
 
-#: includes/diagnose/class_bill_diagnose.php:547
+#: includes/diagnose/class_bill_diagnose.php:581
 #: includes/feedback-last/feedback-last.php:260
 msgid "Enter your message..."
 msgstr "Digite sua mensagem..."
 
-#: includes/diagnose/class_bill_diagnose.php:548
+#: includes/diagnose/class_bill_diagnose.php:582
 #: includes/feedback-last/feedback-last.php:261
 msgid "Send"
 msgstr "Enviar"
 
-#: includes/diagnose/class_bill_diagnose.php:551
+#: includes/diagnose/class_bill_diagnose.php:585
+#| msgid ""
+#| "Enter a message and click 'Send', or just click 'Auto Checkup' to analyze "
+#| "the site's error log."
 msgid ""
 "Enter a message and click 'Send', or just click 'Auto Checkup' to analyze "
-"the site's error log."
+"error log ou server info configuration."
 msgstr ""
-"Digite uma mensagem e clique em \"Enviar\" ou simplesmente clique em "
-"\"Verificação automática\" para analisar o log de erros do site."
+"Digite uma mensagem e clique em \"Enviar\" ou apenas clique em \"Verificação "
+"automática\" para analisar o log de erros ou a configuração das informações "
+"do servidor."
 
-#: includes/diagnose/class_bill_diagnose.php:556
-msgid "Auto Checkup"
-msgstr "Revisão Automática"
+#: includes/diagnose/class_bill_diagnose.php:591
+#| msgid "Auto Checkup"
+msgid "Auto Checkup for Errors"
+msgstr "Verificação automática de erros"
 
-#: includes/diagnose/class_bill_diagnose.php:686
+#: includes/diagnose/class_bill_diagnose.php:596
+#| msgid "Auto Checkup"
+msgid "Auto Checkup Server "
+msgstr "Servidor de verificação automática"
+
+#: includes/diagnose/class_bill_diagnose.php:610
+msgid "Potential Problems"
+msgstr "Problemas potenciais"
+
+#: includes/diagnose/class_bill_diagnose.php:625
+#| msgid "Low WordPress Memory Limit"
+msgid "Low WordPress Memory Limit (click to open)"
+msgstr "Limite de memória baixo do WordPress (clique para abrir)"
+
+#: includes/diagnose/class_bill_diagnose.php:639
+msgid "Your usage now"
+msgstr "Seu uso agora:"
+
+#: includes/diagnose/class_bill_diagnose.php:643
+msgid "Total Php Server Memory"
+msgstr "Memória total do servidor:"
+
+#: includes/diagnose/class_bill_diagnose.php:650
+#: includes/install-checkup/class_bill_install.php:307
+msgid ""
+"Your WordPress Memory Limit is too low, which can lead to critical issues on "
+"your site due to insufficient resources. Promptly address this issue before "
+"continuing."
+msgstr ""
+"Seu Limite de Memória do WordPress é muito baixo, o que pode levar a "
+"problemas críticos em seu site devido a recursos insuficientes. Resolva esse "
+"problema imediatamente antes de continuar."
+
+#: includes/diagnose/class_bill_diagnose.php:828
+msgid ""
+"Keeping your plugins up to date is crucial for ensuring security, "
+"performance, and compatibility with the latest features and improvements."
+msgstr ""
+"Manter seus plugins atualizados é crucial para garantir segurança, "
+"desempenho e compatibilidade com os recursos e melhorias mais recentes."
+
+#: includes/diagnose/class_bill_diagnose.php:831
+msgid ""
+"Our free AntiHacker plugin can even check for abandoned plugins that you are "
+"using, as these plugins may no longer receive security updates, leaving your "
+"site vulnerable to attacks and potential exploits, which can compromise your "
+"site's integrity and data."
+msgstr ""
+"Nosso plugin gratuito AntiHacker pode até mesmo verificar plugins "
+"abandonados que você esteja usando, pois esses plugins podem não receber "
+"mais atualizações de segurança, deixando seu site vulnerável a ataques e "
+"possíveis explorações, o que pode comprometer a integridade e os dados do "
+"seu site."
+
+#: includes/diagnose/class_bill_diagnose.php:879
+msgid "Site Errors"
+msgstr "Erros do site"
+
+#: includes/diagnose/class_bill_diagnose.php:884
+msgid ""
+"Your site has experienced errors for the past 2 days. These errors, "
+"including JavaScript issues, can result in visual problems or disrupt "
+"functionality, ranging from minor glitches to critical site failures. "
+"JavaScript errors can terminate JavaScript execution, leaving all subsequent "
+"commands inoperable."
+msgstr ""
+"Seu site apresentou erros nos últimos 2 dias. Esses erros, incluindo "
+"problemas de JavaScript, podem resultar em problemas visuais ou interromper "
+"a funcionalidade, variando de pequenas falhas a falhas críticas do site. "
+"Erros de JavaScript podem encerrar a execução do JavaScript, deixando todos "
+"os comandos subsequentes inoperantes."
+
+#: includes/diagnose/class_bill_diagnose.php:933
+msgid "This is a partial list of the errors found."
+msgstr "Esta é uma lista parcial dos erros encontrados."
+
+#: includes/diagnose/class_bill_diagnose.php:945
 msgid "File not readable."
 msgstr "Arquivo não legível."
 
-#: includes/diagnose/class_bill_diagnose.php:691
+#: includes/diagnose/class_bill_diagnose.php:950
 msgid "Size not determined."
 msgstr "Tamanho não determinado."
 
-#: includes/diagnose/class_bill_diagnose.php:705
+#: includes/diagnose/class_bill_diagnose.php:964
 msgid "Invalid size."
 msgstr "Tamanho inválido."
 
-#: includes/diagnose/class_bill_diagnose.php:729
+#: includes/diagnose/class_bill_diagnose.php:988
 msgid "File Size: "
 msgstr "Tamanho do arquivo:"
 
-#: includes/diagnose/class_bill_diagnose.php:1098
+#: includes/diagnose/class_bill_diagnose.php:1352
+msgid ""
+"These are critical issues that can have a significant impact on your site's "
+"performance. They can cause many plugins and functionalities to malfunction "
+"and, in some cases, render your site completely inoperative, depending on "
+"their severity. Address them promptly."
+msgstr ""
+"Esses são problemas críticos que podem ter um impacto significativo no "
+"desempenho do seu site. Eles podem fazer com que muitos plugins e "
+"funcionalidades funcionem mal e, em alguns casos, tornar seu site "
+"completamente inoperante, dependendo da gravidade deles. Resolva-os "
+"imediatamente."
+
+#: includes/diagnose/class_bill_diagnose.php:1357
 msgid "Critical Issues"
 msgstr "Crítico"
 
@@ -2016,6 +1532,101 @@ msgid ""
 msgstr ""
 "Dependendo da sua resposta, podemos ajudar a manter o plugin funcionando "
 "perfeitamente para você imediatamente!"
+
+#: includes/feedback-last/feedback-last.php:268
+msgid "Discover New FREE Plugins"
+msgstr "Descubra novos plugins GRATUITOS"
+
+#: includes/feedback-last/feedback-last.php:277
+msgid "Just Deactivate"
+msgstr "Apenas desative"
+
+#: includes/list-tables/class-sbb-list-table.php:23
+msgid "Name"
+msgstr "Nome"
+
+#: includes/list-tables/class-sbb-list-table.php:24
+#: includes/list-tables/class-sbb-list-table2.php:23
+#: includes/list-tables/class-sbb-list-table3.php:34
+msgid "Status"
+msgstr "Status"
+
+#: includes/list-tables/class-sbb-list-table.php:25
+#: includes/list-tables/class-sbb-list-table2.php:25
+#: includes/list-tables/class-sbb-list-table3.php:36
+msgid "Num Blocked"
+msgstr "Número Bloqueados"
+
+#: includes/list-tables/class-sbb-list-table.php:90
+#: includes/list-tables/class-sbb-list-table2.php:86
+#: includes/list-tables/class-sbb-list-table3.php:108
+msgid "Change Status"
+msgstr "Alterar estado"
+
+#: includes/list-tables/class-sbb-list-table.php:106
+#: includes/list-tables/class-sbb-list-table.php:120
+#: includes/list-tables/class-sbb-list-table2.php:102
+#: includes/list-tables/class-sbb-list-table2.php:116
+#: includes/list-tables/class-sbb-list-table3.php:124
+#: includes/list-tables/class-sbb-list-table3.php:138
+msgid "deactivate"
+msgstr "desativar"
+
+#: includes/list-tables/class-sbb-list-table.php:119
+#: includes/list-tables/class-sbb-list-table2.php:115
+#: includes/list-tables/class-sbb-list-table3.php:137
+msgid "Activate"
+msgstr "Ativar"
+
+#: includes/list-tables/class-sbb-list-table2.php:22
+msgid "IP"
+msgstr "IP"
+
+#: includes/list-tables/class-sbb-list-table2.php:24
+#: includes/list-tables/class-sbb-list-table3.php:35
+msgid "Added by"
+msgstr "Adicionado por"
+
+#: includes/list-tables/class-sbb-list-table3.php:33
+msgid "Referer Name"
+msgstr "Nome do Referente"
+
+#: includes/list-tables/page.php:16
+msgid "Search Nickname"
+msgstr "Pesquisa por apelido"
+
+#: includes/list-tables/page2.php:18
+msgid "Search IP"
+msgstr "Procurar IP"
+
+#: includes/list-tables/page3.php:18
+msgid "Search Referer"
+msgstr "Pequisa por Referidor"
+
+#: includes/vendor/vendor.php:49
+msgid "Please, wait...  Dismissing..."
+msgstr "Por favor, espere...  Dismissing..."
+
+#: includes/vendor/vendor.php:55
+msgid "Watch Again"
+msgstr "Assistir Novamente"
+
+#: includes/visits_stats/analytics-30days.php:20
+msgid "No vists, try again later..."
+msgstr "Tabela Vazia. Por favor, tente novamente mais tarde."
+
+#: includes/visits_stats/visits_dashboard.php:44
+msgid ""
+"These data depend on the number of days you keep in the visitors-log file. "
+"Refer to the plugin settings page for more details."
+msgstr ""
+"Esses dados dependem do número de dias que você mantém no arquivo de log de "
+"visitantes.Consulte a página de configurações do plugin para mais detalhes."
+
+#: includes/visits_stats/visits_dashboard.php:67
+#: includes/visits_stats/visits_dashboard.php:84
+msgid "Analysis of total visitor count by unique IP addresses."
+msgstr "Análise da contagem total de visitantes por endereços IP exclusivos."
 
 #: settings/options/plugin_options_tabbed.php:27
 #: settings/options/plugin_options_tabbed.php:126
@@ -2716,23 +2327,23 @@ msgstr ""
 "Stop Bad Bots: Não foi possível carregar o arquivo de localização (arquivo "
 "de idioma)"
 
-#: stopbadbots.php:922
+#: stopbadbots.php:1013
 msgid "Protection rate:"
 msgstr "Taxa de proteção:"
 
-#: stopbadbots.php:926
+#: stopbadbots.php:1017
 msgid "For details, visit the plugin dashboard"
 msgstr "Para mais detalhes, visite o painel de controle do plugin"
 
-#: stopbadbots.php:928
+#: stopbadbots.php:1019
 msgid "Attacks Blocked Last 15 days"
 msgstr "Ataques Bloqueados nos últimos 15 dias"
 
-#: stopbadbots.php:935
+#: stopbadbots.php:1026
 msgid "Total Attacks Blocked By Type"
 msgstr "Ataques totais bloqueados por tipo"
 
-#: stopbadbots.php:944
+#: stopbadbots.php:1035
 msgid "Total Attacks Blocked By IP"
 msgstr "Total de ataques bloqueados por IP"
 

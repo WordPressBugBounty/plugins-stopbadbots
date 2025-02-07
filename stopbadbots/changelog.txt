@@ -3,7 +3,7 @@ This file contains changelog entries, so we can keep the size of the standard Wo
 
 
 == Changelog ==
-11.19  2025-02-04 - Improvements error detection.
+11.19/20  2025-02-04 - Improvements error detection.
 11.18  2025-01-30 - Improvements bot detection.
 11.13/17  2025-01-08 - Small Improvements.
 11.12  2025-01-04 - Small Improvements.

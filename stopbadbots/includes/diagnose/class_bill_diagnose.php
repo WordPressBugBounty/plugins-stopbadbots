@@ -425,7 +425,7 @@ class stopbadbots_Bill_Diagnose
         $memory = $this->global_variable_memory;
         if (
             $memory["free"] < 30 or
-            $memory["percent"] > 85 or
+            $memory["percent"] > 0.85 or
             $this->global_variable_has_errors
         ) {
             add_filter("site_health_navigation_tabs", [
@@ -499,7 +499,7 @@ class stopbadbots_Bill_Diagnose
             return;
         }
         $memory = $this->global_variable_memory;
-        if ($memory["free"] > 30 and $wpmemory["percent"] < 85) {
+        if ($memory["free"] > 30 and $wpmemory["percent"] < 0.85) {
             return;
         }
         $message = esc_attr__("Our plugin", 'stopbadbots');
@@ -618,7 +618,7 @@ class stopbadbots_Bill_Diagnose
                 <?php
                 $memory = $this->global_variable_memory;
                 $wpmemory = $memory;
-                if ($memory["free"] < 30 || $wpmemory["percent"] > 85) {
+                if ($memory["free"] < 30 || $wpmemory["percent"] > 0.85) {
                 ?>
                     <!-- Título da seção -->
                     <h2 style="color: red;">

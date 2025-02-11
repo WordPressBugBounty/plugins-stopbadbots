@@ -26,7 +26,7 @@ function stopbadbots_sysinfo_get()
     if ($host === false) {
         $host = stopbadbots_get_host();
     }
-    $return  = '=== Begin System Info (Generated ' . date('Y-m-d H:i:s') . ') ===' . "\n\n";
+    $return  = '=== Begin System Info 5 (Generated ' . date('Y-m-d H:i:s') . ') ===' . "\n\n";
     $file_path_from_plugin_root = str_replace(WP_PLUGIN_DIR . '/', '', __DIR__);
     $path_array = explode('/', $file_path_from_plugin_root);
     // Plugin folder is the first element
@@ -74,6 +74,49 @@ function stopbadbots_sysinfo_get()
 
 
     $return .= 'WP Memory Limit:             ' . WP_MEMORY_LIMIT . "\n";
+    
+    
+    
+    
+    
+    $return .= "\n" . '-- Error Handler Information' . "\n\n";
+
+    try {
+        if (function_exists('set_error_handler')) {
+            $return .= 'set_error_handler Exists:   Yes' . "\n"; 
+        } else {
+            $return .= 'set_error_handler() Exists:   No' . "\n";
+        }
+    
+    } catch (Exception $e) {
+        $return .= 'Error checking error handler functions: ' . $e->getMessage() . "\n";
+    } 
+
+    $return .= "\n" . '-- PHP Error Log Configuration' . "\n\n";
+ 
+    
+    $return .= "\n" . '-- PHP Error Log Configuration' . "\n\n";
+
+    $error_log_path = ABSPATH . 'error_log'; // Consistent use of single quotes
+
+    $return .= 'Root Place:                     ' . (file_exists($error_log_path) ? 'Exists. ('.$error_log_path.')'  : 'Does Not Exist') . "\n"; // More descriptive wording
+
+    try {
+        if (file_exists($error_log_path)) { // Check if the file exists before attempting to access its size, readability, or writability. This prevents warnings or errors if the file doesn't exist.
+            $return .= 'Size:                     ' . size_format(filesize($error_log_path)) . "\n"; // Use filesize() for file size and size_format() for human-readable format.  file_size() doesn't exist in PHP.
+            $return .= 'Readable:                     ' . (is_readable($error_log_path) ? 'Yes' : 'No') . "\n";  // Use is_readable() instead of file_readable(). More common and accurate.
+            $return .= 'Writable:                     ' . (is_writable($error_log_path) ? 'Yes' : 'No') . "\n"; // Use is_writable() instead of file_writable(). More common and accurate.
+        } else {
+            $return .= 'Size:                     N/A' . "\n";
+            $return .= 'Readable:                     N/A' . "\n";
+            $return .= 'Writable:                     N/A' . "\n";
+        }
+    } catch (Exception $e) {
+        $return .= 'Error checking error log path: ' . $e->getMessage() . "\n";
+    } 
+
+    
+    
     // WordPress active Theme
     $return .= "\n" . '-- WordPress Active Theme' . "\n\n";
     $return .= 'Theme Name:             ' . $parent_theme . "\n";

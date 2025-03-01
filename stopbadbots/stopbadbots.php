@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.21
+Version: 11.23
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -510,7 +510,7 @@ if (stopbadbots_isourserver())
 	$stopbadbots_firewall = 'no';
 
 
-if ($stopbadbots_is_admin){
+if ($stopbadbots_is_admin) {
 	require_once STOPBADBOTSPATH . 'dashboard/main.php';
 	require_once STOPBADBOTSPATH . 'functions/function_sysinfo.php';
 }
@@ -1551,10 +1551,15 @@ function stopbadbots_bill_hooking_diagnose()
 add_action('init', 'stopbadbots_bill_hooking_diagnose', 10);
 
 
+
 function stopbadbots_bill_hooking_catch_errors()
 {
 	global $stopbadbots_plugin_slug;
+	global $restore_classic_widgets_is_admin;
 
+	if (!function_exists("bill_check_install_mu_plugin")) {
+		require_once dirname(__FILE__) . "/includes/catch-errors/bill_install_catch_errors.php";
+	}
 	$declared_classes = get_declared_classes();
 	foreach ($declared_classes as $class_name) {
 		if (strpos($class_name, "bill_catch_errors") !== false) {
@@ -1566,8 +1571,17 @@ function stopbadbots_bill_hooking_catch_errors()
 }
 add_action("init", "stopbadbots_bill_hooking_catch_errors", 15);
 
-
-
+function stopbadbots_bill_hooking_catch_bots()
+{
+	$declared_classes = get_declared_classes();
+	foreach ($declared_classes as $class_name) {
+		if (strpos($class_name, "Bill_Catch_Bots") !== false) {
+			return;
+		}
+	}
+	require_once dirname(__FILE__) . "/includes/catch-bots/class_bill_catch_bots.php";
+}
+add_action("init", "stopbadbots_bill_hooking_catch_bots", 15);
 
 
 // ------------------------

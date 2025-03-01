@@ -1,11 +1,12 @@
 <?php
+
 /**
  * @author    William Sergio Minozzi
  * @copyright 2016 -2024
  */
 /*  If uninstall is not called from WordPress, exit */
-if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
-	exit();
+if (! defined('WP_UNINSTALL_PLUGIN')) {
+  exit();
 }
 $stopbadbots_option_name[] = 'stop_bad_bots_ip_active';
 $stopbadbots_option_name[] = 'stop_bad_bots_referer_active';
@@ -63,10 +64,10 @@ $stopbadbots_option_name[] = 'bill_pre_checkup_finished';
 $stopbadbots_option_name[] = 'bill_pre_checkup_dismissed';
 
 
-for ( $i = 0; $i < count( $stopbadbots_option_name ); $i++ ) {
-	delete_option( $stopbadbots_option_name[ $i ] );
-	// For site options in Multisite
-	delete_site_option( $stopbadbots_option_name[ $i ] );
+for ($i = 0; $i < count($stopbadbots_option_name); $i++) {
+  delete_option($stopbadbots_option_name[$i]);
+  // For site options in Multisite
+  delete_site_option($stopbadbots_option_name[$i]);
 }
 // Drop a custom db table
 global $wpdb;
@@ -98,7 +99,8 @@ $tables = array(
   'sbb_visitorslog',
   'sbb_http_tools',
   'sbb_fingerprint',
-  'wptools_page_load_times'
+  'wptools_page_load_times',
+  'bill_catch_some_bots'
 );
 
 
@@ -120,15 +122,15 @@ $wp_mu_plugins = get_mu_plugins();
 $mu_plugins_dir = WPMU_PLUGIN_DIR;
 
 if (isset($wp_mu_plugins[$plugin_name])) {
-    // Get the plugin's destination path
-    $destination = $mu_plugins_dir . '/' . $plugin_name;
+  // Get the plugin's destination path
+  $destination = $mu_plugins_dir . '/' . $plugin_name;
 
-    // Attempt to remove the plugin
-    if (!unlink($destination)) {
-        // Log the error if the file could not be deleted
-        error_log("Error removing the plugin file from the MU-Plugins directory: $destination");
-    } else {
-        // Optionally, log success if the plugin is removed successfully
-        // error_log("Successfully removed the plugin file: $destination");
-    }
+  // Attempt to remove the plugin
+  if (!unlink($destination)) {
+    // Log the error if the file could not be deleted
+    error_log("Error removing the plugin file from the MU-Plugins directory: $destination");
+  } else {
+    // Optionally, log success if the plugin is removed successfully
+    // error_log("Successfully removed the plugin file: $destination");
+  }
 }

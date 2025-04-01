@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.24
+Version: 11.25
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -1555,7 +1555,7 @@ add_action('init', 'stopbadbots_bill_hooking_diagnose', 10);
 function stopbadbots_bill_hooking_catch_errors()
 {
 	global $stopbadbots_plugin_slug;
-	global $restore_classic_widgets_is_admin;
+	global $stopbadbots_is_admin;
 
 	if (!function_exists("bill_check_install_mu_plugin")) {
 		require_once dirname(__FILE__) . "/includes/catch-errors/bill_install_catch_errors.php";

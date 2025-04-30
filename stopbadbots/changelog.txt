@@ -3,6 +3,7 @@ This file contains changelog entries, so we can keep the size of the standard Wo
 
 
 == Changelog ==
+11.26  2025-04-30 - Improvements error detection.
 11.25  2025-04-01 - Improvements error detection.
 11.24  2025-03-03 - Improvements error detection.
 11.22/23  2025-03-01 - Improvements error detection.

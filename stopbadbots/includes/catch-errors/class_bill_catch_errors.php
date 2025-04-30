@@ -177,7 +177,7 @@ class stopbadbots_bill_catch_errors
             // alert();
 
             var errorQueue = [];
-            let timeout;
+            let bill_timeout;
             var errorMessage = '';
 
             function isBot() {
@@ -201,8 +201,8 @@ class stopbadbots_bill_catch_errors
                 if (errorQueue.length >= 5) {
                     sendErrorsToServer();
                 } else {
-                    clearTimeout(timeout);
-                    timeout = setTimeout(sendErrorsToServer, 5000);
+                    clearTimeout(bill_timeout);
+                    bill_timeout = setTimeout(sendErrorsToServer, 5000);
                 }
             }
                 */
@@ -266,8 +266,8 @@ class stopbadbots_bill_catch_errors
                 if (errorQueue.length >= 5) {
                     sendErrorsToServer();
                 } else {
-                    clearTimeout(timeout);
-                    timeout = setTimeout(sendErrorsToServer, 5000);
+                    clearTimeout(bill_timeout);
+                    bill_timeout = setTimeout(sendErrorsToServer, 5000);
                 }
             }
 

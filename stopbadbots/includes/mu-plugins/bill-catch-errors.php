@@ -392,10 +392,10 @@ class bill_minozzi_bill_catch_errors
                             // Ignorar erros
                         }
                         const warningMessage = message.replace('JQMIGRATE:', 'Error:').trim() + ' - URL: ' + file + ' - Line: ' + line;
-                        // if (!hasSlug(warningMessage)) {
-                        bill_errorQueue.push(warningMessage);
-                        handleErrorQueue();
-                        // }
+                        if (!hasSlug(warningMessage)) {
+                            bill_errorQueue.push(warningMessage);
+                            handleErrorQueue();
+                        }
                     }
                 }
                 // Repassar todas as mensagens para o console.warn original

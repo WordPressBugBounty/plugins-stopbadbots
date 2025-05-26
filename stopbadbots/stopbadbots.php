@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.28
+Version: 11.29
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -30,7 +30,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
  */
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 
@@ -58,6 +58,10 @@ if ($stopbadbots_last == 'g') {
 } elseif ($stopbadbots_last == 'k') {
 	$stopbadbots_maxMemory = $stopbadbots_maxMemory * 1024;
 }
+
+
+
+
 
 //if ( $stopbadbots_maxMemory < 134217728 /* 128 MB */ 
 //&& $stopbadbots_maxMemory > 0 ) {
@@ -91,7 +95,7 @@ define('STOPBADBOTS_EDGE', '110'); // 131
 
 define('STOPBADBOTSPATHLANGUAGE', dirname(plugin_basename(__FILE__)) . '/language/');
 
-if (! defined('STOPBADBOTSHOMEURL')) {
+if (!defined('STOPBADBOTSHOMEURL')) {
 	define('STOPBADBOTSHOMEURL', admin_url());
 }
 
@@ -105,6 +109,12 @@ if($stopbadbots_is_admin)
 // */
 
 if ($stopbadbots_is_admin) {
+
+
+	//	require_once STOPBADBOTSPATH . "functions/fail2ban.php";
+
+
+
 
 	// Reset activation...
 
@@ -195,7 +205,7 @@ $stopbadbots_is_admin = stopbadbots_check_wordpress_logged_in_cookie();
 
 
 
-if (! function_exists('wp_get_current_user')) {
+if (!function_exists('wp_get_current_user')) {
 	include_once ABSPATH . 'wp-includes/pluggable.php';
 }
 
@@ -463,7 +473,9 @@ $stopbadbots_bad_host = array(
 	'wix.com',
 );
 
+//require_once STOPBADBOTSPATH . "functions/fail2ban.php";
 require_once STOPBADBOTSPATH . 'functions/functions.php';
+
 
 if (stopbadbots_is_really_our_server()) {
 	return;
@@ -485,13 +497,13 @@ if ($stopbadbots_is_admin) {
 	if ($result99 == 0) {
 
 		$r = update_option('stopbadbots_tables_empty', 'yes');
-		if (! $r)
+		if (!$r)
 			add_option('stopbadbots_tables_empty', 'yes');
 	}
 
 
 
-	if (! class_exists('WP_List_Table')) {
+	if (!class_exists('WP_List_Table')) {
 		include_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 	}
 	require dirname(__FILE__) . '/includes/list-tables/class-sbb-list-table.php';
@@ -572,8 +584,8 @@ if ($stopbadbots_is_admin) {
 
 
 		$pos4 = strpos($stopbadbots_request_url, 'stopbadbots_my-custom-submenu-page-stats');
-
-		if ($pos !== false or $pos2 !== false or $pos3 or $pos4 !== false) {
+		$pos_fail2ban = strpos($stopbadbots_request_url, 'page=stopbadbots_my-custom-submenu-page-fail2ban');
+		if ($pos !== false || $pos2 !== false || $pos3 || $pos4 !== false || $pos_fail2ban !== false) {
 			wp_enqueue_script(
 				'sbb-flot',
 				STOPBADBOTSURL .
@@ -681,6 +693,7 @@ add_action('wp_enqueue_scripts', 'stopbadbots_add_scripts');
 
 if ($stopbadbots_is_admin) {
 	add_action('admin_menu', 'stopbadbots_add_menu_items');
+	add_action('admin_menu', 'stopbadbots_add_menu_fail2ban');
 	add_filter('set-screen-option', 'stopbadbots_set_screen_options', 10, 3);
 }
 
@@ -707,8 +720,8 @@ $stopbadbots_rate_limiting_day     = sanitize_text_field(get_option('stopbadbots
 
 
 $stopbadbots_admin_email = trim(get_option('stopbadbots_my_email_to'));
-if (! empty($stopbadbots_admin_email)) {
-	if (! is_email($stopbadbots_admin_email)) {
+if (!empty($stopbadbots_admin_email)) {
+	if (!is_email($stopbadbots_admin_email)) {
 		$stopbadbots_admin_email = '';
 		update_option('stopbadbots_my_email_to', '');
 	}
@@ -717,16 +730,16 @@ if (empty($stopbadbots_admin_email)) {
 	$stopbadbots_admin_email = sanitize_text_field(get_option('admin_email'));
 }
 // Firewall
-if (! $stopbadbots_is_admin) {
+if (!$stopbadbots_is_admin) {
 	if ($stopbadbots_firewall != 'no' and $stopbadbots_checkversion != '') {
 		$stopbadbots_request_uri_array   = array('@eval', 'eval\(', 'UNION(.*)SELECT', '\(null\)', 'base64_', '\/localhost', '\%2Flocalhost', '\/pingserver', 'wp-config\.php', '\/config\.', '\/wwwroot', '\/makefile', 'crossdomain\.', 'proc\/self\/environ', 'usr\/bin\/perl', 'var\/lib\/php', 'etc\/passwd', '\/https\:', '\/http\:', '\/ftp\:', '\/file\:', '\/php\:', '\/cgi\/', '\.cgi', '\.cmd', '\.bat', '\.exe', '\.sql', '\.ini', '\.dll', '\.htacc', '\.htpas', '\.pass', '\.asp', '\.jsp', '\.bash', '\/\.git', '\/\.svn', ' ', '\<', '\>', '\/\=', '\.\.\.', '\+\+\+', '@@', '\/&&', '\/Nt\.', '\;Nt\.', '\=Nt\.', '\,Nt\.', '\.exec\(', '\)\.html\(', '\{x\.html\(', '\(function\(', '\.php\([0-9]+\)', '(benchmark|sleep)(\s|%20)*\(', 'indoxploi', 'xrumer');
 		$stopbadbots_query_string_array  = array('@@', '\(0x', '0x3c62723e', '\;\!--\=', '\(\)\}', '\:\;\}\;', '\.\.\/', '127\.0\.0\.1', 'UNION(.*)SELECT', '@eval', 'eval\(', 'base64_', 'localhost', 'loopback', '\%0A', '\%0D', '\%00', '\%2e\%2e', 'allow_url_include', 'auto_prepend_file', 'disable_functions', 'input_file', 'execute', 'file_get_contents', 'mosconfig', 'open_basedir', '(benchmark|sleep)(\s|%20)*\(', 'phpinfo\(', 'shell_exec\(', '\/wwwroot', '\/makefile', 'path\=\.', 'mod\=\.', 'wp-config\.php', '\/config\.', '\$_session', '\$_request', '\$_env', '\$_server', '\$_post', '\$_get', 'indoxploi', 'xrumer');
 		$stopbadbots_request_uri_string  = false;
 		$stopbadbots_query_string_string = false;
-		if (isset($_SERVER['REQUEST_URI']) && ! empty($_SERVER['REQUEST_URI'])) {
+		if (isset($_SERVER['REQUEST_URI']) && !empty($_SERVER['REQUEST_URI'])) {
 			$stopbadbots_request_uri_string = sanitize_text_field($_SERVER['REQUEST_URI']);
 		}
-		if (isset($_SERVER['QUERY_STRING']) && ! empty($_SERVER['QUERY_STRING'])) {
+		if (isset($_SERVER['QUERY_STRING']) && !empty($_SERVER['QUERY_STRING'])) {
 			$stopbadbots_query_string_string = sanitize_text_field($_SERVER['QUERY_STRING']);
 		}
 		if ($stopbadbots_request_uri_string || $stopbadbots_query_string_string) {
@@ -785,7 +798,7 @@ if ($stopbadbots_maybe_search_engine and stopbadbots_really_search_engine($stopb
 
 
 
-if (! empty($stopbadbots_userAgent) and ! $stopbadbots_is_admin  and ! stopbadbots_block_whitelist_string() and ! stopbadbots_block_whitelist_IP()) {
+if (!empty($stopbadbots_userAgent) and !$stopbadbots_is_admin  and !stopbadbots_block_whitelist_string() and !stopbadbots_block_whitelist_IP()) {
 	if (stopbadbots_crawlerDetect($stopbadbots_userAgent) and $stopbadbots_active != 'no') {
 		stopbadbots_moreone($stopbadbots_userAgentOri); // +1
 		stopbadbots_stats_moreone('qnick');
@@ -799,8 +812,8 @@ if (! empty($stopbadbots_userAgent) and ! $stopbadbots_is_admin  and ! stopbadbo
 		stopbadbots_response('Blocked by Name');
 	}
 }
-if (! empty($stopbadbots_ip) and ! $stopbadbots_is_admin) {
-	if (stopbadbots_visitoripDetect($stopbadbots_ip) and $stopbadbots_ip_active != 'no' and ! stopbadbots_block_whitelist_string() and ! stopbadbots_block_whitelist_IP()) {
+if (!empty($stopbadbots_ip) and !$stopbadbots_is_admin) {
+	if (stopbadbots_visitoripDetect($stopbadbots_ip) and $stopbadbots_ip_active != 'no' and !stopbadbots_block_whitelist_string() and !stopbadbots_block_whitelist_IP()) {
 		stopbadbots_moreone2($stopbadbots_ip); // +1
 		stopbadbots_stats_moreone('qip');
 		if ($stopbadbots_my_radio_report_all_visits == 'yes') {
@@ -811,8 +824,8 @@ if (! empty($stopbadbots_ip) and ! $stopbadbots_is_admin) {
 	}
 }
 // Block HTTP_tools
-if (! empty($stopbadbots_userAgent) and ! $stopbadbots_is_admin  and ! stopbadbots_block_whitelist_string() and ! stopbadbots_block_whitelist_IP()) {
-	if (! empty(stopbadbots_block_httptools()) and $stopbadbots_block_http_tools != 'no') {
+if (!empty($stopbadbots_userAgent) and !$stopbadbots_is_admin  and !stopbadbots_block_whitelist_string() and !stopbadbots_block_whitelist_IP()) {
+	if (!empty(stopbadbots_block_httptools()) and $stopbadbots_block_http_tools != 'no') {
 		stopbadbots_moreone_http(stopbadbots_block_httptools()); // +1
 		stopbadbots_stats_moreone('qtools');
 		if ($stopbadbots_my_radio_report_all_visits == 'yes') {
@@ -834,12 +847,12 @@ if ($stopbadbots_engine_option != 'minimal') {
 
 
 	if (
-		! $stopbadbots_maybe_search_engine
-		and ! stopbadbots_block_whitelist_string()
+		!$stopbadbots_maybe_search_engine
+		and !stopbadbots_block_whitelist_string()
 		and $pos === false
-		and ! stopbadbots_isourserver()
-		and ! $stopbadbots_is_admin
-		and ! is_super_admin()
+		and !stopbadbots_isourserver()
+		and !$stopbadbots_is_admin
+		and !is_super_admin()
 	) {
 
 
@@ -859,25 +872,25 @@ if ($stopbadbots_engine_option != 'minimal') {
 			}
 
 
-			if ($stopbadbots_ua_browser == 'Chrome' and ! empty($stopbadbots_ua_version)) {
+			if ($stopbadbots_ua_browser == 'Chrome' and !empty($stopbadbots_ua_version)) {
 				if (version_compare($stopbadbots_ua_version, STOPBADBOTS_CHROME) <= 0) {
 					$stopbadbots_template = true;
 				}
 			}
 
-			if ($stopbadbots_ua_browser == 'Firefox' and ! empty($stopbadbots_ua_version)) {
+			if ($stopbadbots_ua_browser == 'Firefox' and !empty($stopbadbots_ua_version)) {
 				if (version_compare($stopbadbots_ua_version, STOPBADBOTS_FIREFOX) <= 0) {
 					$stopbadbots_template = true;
 				}
 			}
 
-			if ($stopbadbots_ua_browser == 'Edge' and ! empty($stopbadbots_ua_version)) {
+			if ($stopbadbots_ua_browser == 'Edge' and !empty($stopbadbots_ua_version)) {
 				if (version_compare($stopbadbots_ua_version, STOPBADBOTS_EDGE) <= 0) {
 					$stopbadbots_template = true;
 				}
 			}
 
-			if ($stopbadbots_ua_browser == 'MSIE' and ! empty($stopbadbots_ua_version)) {
+			if ($stopbadbots_ua_browser == 'MSIE' and !empty($stopbadbots_ua_version)) {
 				//if (version_compare($stopbadbots_ua_version, '11') <= 0) {
 				$stopbadbots_template = true;
 				//}
@@ -901,7 +914,7 @@ if ($stopbadbots_engine_option != 'minimal') {
 
 			// Check host...
 			if ($stopbadbots_template) {
-				if (! isset($_COOKIE['_ga']) and ! isset($_COOKIE['__utma'])) {
+				if (!isset($_COOKIE['_ga']) and !isset($_COOKIE['__utma'])) {
 
 
 					if ($stopbadbots_engine_option != 'conservative') {
@@ -1076,7 +1089,7 @@ function stopbadbots_get_referer()
 if ($stopbadbots_referer_active != 'no') {
 
 	$badreferer = '';
-	if (stopbadbots_ReferDetect($stopbadbots_referer) and ! $stopbadbots_is_admin  and ! stopbadbots_block_whitelist_string() and ! stopbadbots_block_whitelist_IP()) {
+	if (stopbadbots_ReferDetect($stopbadbots_referer) and !$stopbadbots_is_admin  and !stopbadbots_block_whitelist_string() and !stopbadbots_block_whitelist_IP()) {
 		global $badreferer;
 		stopbadbots_moreone4($badreferer); // +1
 		stopbadbots_stats_moreone('qref');
@@ -1091,7 +1104,7 @@ if ($stopbadbots_referer_active != 'no') {
 		stopbadbots_response('Bad Referrer');
 	}
 }
-if ($stop_bad_bots_blank_ua == 'yes' and ! $stopbadbots_is_admin) {
+if ($stop_bad_bots_blank_ua == 'yes' and !$stopbadbots_is_admin) {
 
 
 	if (!stopbadbots_isourserver()) {
@@ -1104,7 +1117,7 @@ if ($stop_bad_bots_blank_ua == 'yes' and ! $stopbadbots_is_admin) {
 		}
 	}
 }
-if (! $stopbadbots_is_admin) {
+if (!$stopbadbots_is_admin) {
 	if ($stopbadbots_block_pingbackrequest == 'yes') {
 		add_action('xmlrpc_call', 'stopbadbots_block_pingback_hook');
 	}
@@ -1218,7 +1231,7 @@ if ($stopbadbots_timeout_level) {
 
 
 if ($stopbadbots_timeout_level or $stopbadbots_active != 'yes' or $stopbadbots_ip_active != 'yes' or $stopbadbots_referer_active != 'yes') {
-	if (! is_multisite() and $stopbadbots_is_admin) {
+	if (!is_multisite() and $stopbadbots_is_admin) {
 		add_action('admin_bar_menu', 'stopbadbots_custom_toolbar_link', 999);
 	}
 }
@@ -1256,7 +1269,7 @@ function stopbadbots_load_upsell()
 
 
 
-	if (! empty($stopbadbots_checkversion)) {
+	if (!empty($stopbadbots_checkversion)) {
 		return;
 	}
 
@@ -1315,7 +1328,7 @@ function stopbadbots_load_upsell()
 	if ($delta > (3600 * 24 * 14)) {
 
 		$list = 'enqueued';
-		if (! wp_script_is('bill-css-vendor-fix', $list)) {
+		if (!wp_script_is('bill-css-vendor-fix', $list)) {
 			include_once STOPBADBOTSPATH . 'includes/vendor/vendor.php';
 			wp_enqueue_style('bill-css-vendor-fix', STOPBADBOTSURL . 'includes/vendor/vendor_fix.css');
 
@@ -1335,7 +1348,7 @@ function stopbadbots_load_upsell()
 
 
 
-if (! function_exists('wp_get_current_user')) {
+if (!function_exists('wp_get_current_user')) {
 	include_once ABSPATH . 'wp-includes/pluggable.php';
 }
 
@@ -1351,7 +1364,7 @@ function stopbadbots_go_pro_hide2()
 {
 	// $today = date('Ymd', strtotime('+06 days'));
 	$today = time();
-	if (! update_option('stopbadbots_go_pro_hide', $today)) {
+	if (!update_option('stopbadbots_go_pro_hide', $today)) {
 		add_option('stopbadbots_go_pro_hide', $today);
 	}
 	wp_die();
@@ -1511,7 +1524,7 @@ function stopbadbots_load_chat()
 			// ob_start();
 			//debug2();
 
-			if (! class_exists('stopbadbots_BillChat\ChatPlugin')) {
+			if (!class_exists('stopbadbots_BillChat\ChatPlugin')) {
 				require_once dirname(__FILE__) . "/includes/chat/class_bill_chat.php";
 			}
 
@@ -1665,27 +1678,46 @@ function stopbadbots_initialize_plugin_settings()
 {
 	// Inicialização do plugin.
 	if (is_admin() and current_user_can("manage_options")) {
+		require_once STOPBADBOTSPATH . "functions/fail2ban.php";
 		require_once STOPBADBOTSPATH . 'settings/load-plugin.php';
 		require_once(STOPBADBOTSPATH . "settings/options/plugin_options_tabbed.php");
 	}
 }
 add_action('init', 'stopbadbots_initialize_plugin_settings', 150);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+// fail2ban
+// Function to create the Fail2Ban logs table in the WordPress database
+function stopbadbots_create_fail2ban_table()
+{
+	global $wpdb;
+
+	// Table name with WordPress prefix
+	$table_name = $wpdb->prefix . 'stopbadbots_fail2ban_logs';
+	$charset_collate = $wpdb->get_charset_collate();
+
+	// SQL statement to create the table
+	$sql = "CREATE TABLE IF NOT EXISTS $table_name (
+        id BIGINT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        ip VARCHAR(45) NOT NULL,
+        timestamp DATETIME NOT NULL,
+        jail VARCHAR(100) NOT NULL,
+        reason TEXT,
+        attempts INT NOT NULL,
+        log_line TEXT,
+        host VARCHAR(100),
+        port INT,
+        protocol VARCHAR(10),
+        ban_duration INT NOT NULL,
+        INDEX idx_timestamp (timestamp),
+        INDEX idx_ip (ip),
+        INDEX idx_jail (jail),
+        INDEX idx_attempts (attempts)
+    ) $charset_collate;";
+
+	// Execute the table creation
+	require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+	dbDelta($sql);
+}
+
+// Hook to run the table creation when the plugin is activated
+register_activation_hook(__FILE__, 'stopbadbots_create_fail2ban_table');

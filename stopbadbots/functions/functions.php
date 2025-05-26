@@ -4,7 +4,7 @@
  * @author Bill Minozzi
  * @copyright 2016-2023
  */
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 
@@ -85,7 +85,7 @@ if (version_compare(trim(STOPBADBOTSVERSION), trim($stopbadbots_version)) > 0) {
 
 	if ($stopbadbots_go_pro_hide == '') {
 		$today = date('Ymd', strtotime('+01 days'));
-		if (! update_option('stopbadbots_go_pro_hide', $today)) {
+		if (!update_option('stopbadbots_go_pro_hide', $today)) {
 			add_option('stopbadbots_go_pro_hide', $today);
 		}
 	}
@@ -129,7 +129,7 @@ if (version_compare(trim(STOPBADBOTSVERSION), trim($stopbadbots_version)) > 0) {
 		add_option('stop_bad_bots_network', 'yes');
 	}
 
-	if (! add_option('stopbadbots_version', STOPBADBOTSVERSION)) {
+	if (!add_option('stopbadbots_version', STOPBADBOTSVERSION)) {
 		update_option('stopbadbots_version', STOPBADBOTSVERSION);
 	}
 } // end Install
@@ -200,7 +200,7 @@ if ($stopbadbots_tables_empty == 'yes') { // and isset($_COOKIE[$BILLCLASS])){
 			die(' error -5');
 		}
 		$r = update_option('stopbadbots_tables_empty', 'no');
-		if (! $r)
+		if (!$r)
 			add_option('stopbadbots_tables_empty', 'no');
 		wp_die('success');
 	} // end function 
@@ -261,7 +261,7 @@ if ($stopbadbots_engine_option != 'minimal') {
 
 
 
-		if (! empty($wpdb->last_error)) {
+		if (!empty($wpdb->last_error)) {
 			stopbadbots_create_db6();
 			$qrow = 0;
 		} else {
@@ -280,7 +280,7 @@ if ($stopbadbots_engine_option != 'minimal') {
 
 	$pos                  = stripos($stopbadbots_request_url, '_grava_fingerprint');
 
-	if ($qrow < 1 and ! isset($_COOKIE['stopbadbots_cookie'])) {
+	if ($qrow < 1 and !isset($_COOKIE['stopbadbots_cookie'])) {
 
 		if ($stopbadbots_is_human != '0') {
 			if (stopbadbots_first_time() > 0) {
@@ -290,11 +290,11 @@ if ($stopbadbots_engine_option != 'minimal') {
 			}
 		}
 	} elseif (
-		! $stopbadbots_maybe_search_engine
-		and ! stopbadbots_block_whitelist_string()
+		!$stopbadbots_maybe_search_engine
+		and !stopbadbots_block_whitelist_string()
 		and $pos === false
-		and ! stopbadbots_isourserver()
-		and ! stopbadbots_check_wordpress_logged_in_cookie()
+		and !stopbadbots_isourserver()
+		and !stopbadbots_check_wordpress_logged_in_cookie()
 	) {
 
 		$stopbadbots_fingerprint_filed      = '';
@@ -341,9 +341,9 @@ if ($stopbadbots_engine_option != 'minimal') {
 		// Macau
 
 
-		if (! empty($stopbadbots_checkversion) and $stopbadbots_block_china == 'yes') {
+		if (!empty($stopbadbots_checkversion) and $stopbadbots_block_china == 'yes') {
 
-			if (! empty($stopbadbots_fingerprint_filed)) {
+			if (!empty($stopbadbots_fingerprint_filed)) {
 				if (
 					strpos($stopbadbots_fingerprint_filed, 'Asia/Shanghai') !== false
 					or strpos($stopbadbots_fingerprint_filed, 'Asia/Hong_Kong') !== false
@@ -384,7 +384,7 @@ if ($stopbadbots_engine_option != 'minimal') {
 
 
 		// if ( ! empty( $stopbadbots_fingerprint_filed ) and $stopbadbots_engine_option != 'conservative' ) {
-		if (! empty($stopbadbots_fingerprint_filed) and $stopbadbots_engine_option != 'conservative' and isset($_COOKIE['stopbadbots_cookie'])) {
+		if (!empty($stopbadbots_fingerprint_filed) and $stopbadbots_engine_option != 'conservative' and isset($_COOKIE['stopbadbots_cookie'])) {
 
 
 			$afingerprint = explode('#', $stopbadbots_fingerprint_filed);
@@ -467,7 +467,7 @@ if ($stopbadbots_is_human != '0') {
 }
 
 
-if (! $stopbadbots_is_admin and $stopbadbots_block_spam_contacts == 'yes') {
+if (!$stopbadbots_is_admin and $stopbadbots_block_spam_contacts == 'yes') {
 	if (isset($_POST['stopbadbots_wpforms'])) {
 		global $stopbadbots_my_radio_report_all_visits;
 		if (stopbadbots_check_for_spam()) {
@@ -497,10 +497,10 @@ if (! $stopbadbots_is_admin and $stopbadbots_block_spam_contacts == 'yes') {
 if ($stopbadbots_block_spam_login == 'yes') {
 	add_action('wp_authenticate_user', 'stopbadbos_validate_login', 10, 2);
 }
-if (! $stopbadbots_is_admin  and $stopbadbots_block_spam_contacts == 'yes') {
+if (!$stopbadbots_is_admin  and $stopbadbots_block_spam_contacts == 'yes') {
 	add_filter('wpcf7_validate', 'stopbadbots_check_4spammer', 10, 2);
 }
-if (! $stopbadbots_is_admin  and $stopbadbots_block_spam_comments == 'yes') {
+if (!$stopbadbots_is_admin  and $stopbadbots_block_spam_comments == 'yes') {
 	add_filter('preprocess_comment', 'stopbadbots_check_comment', 1);
 }
 $stopbadbots_now   = strtotime('now');
@@ -710,9 +710,9 @@ function stopbadbots_adm_enqueue_scripts2()
 	// $dismissed = explode(',', (string) get_user_meta(get_current_user_id(), 'dismissed_wp_pointers', true));
 	// if (in_array('plugins', $dismissed)) {
 
-	if (! empty($dismissed_string)) {
+	if (!empty($dismissed_string)) {
 		$r = update_option('stopbadbots_was_activated', '0');
-		if (! $r) {
+		if (!$r) {
 			add_option('stopbadbots_was_activated', '0');
 		}
 		return;
@@ -767,7 +767,7 @@ function stopbadbots_admin_print_footer_scripts()
 function stopbadbots_go_pro_hide()
 {
 	$today = date('Ymd', strtotime('+07 days'));
-	if (! update_option('stopbadbots_go_pro_hide', $today)) {
+	if (!update_option('stopbadbots_go_pro_hide', $today)) {
 		add_option('stopbadbots_go_pro_hide', $today);
 	}
 }
@@ -843,7 +843,7 @@ function stopbadbots_create_httptools()
 	for ($i = 0; $i < count($tools_list); $i++) {
 		$text .= $tools_list[$i] . PHP_EOL;
 	}
-	if (! add_option('stopbadbots_http_tools', $text)) {
+	if (!add_option('stopbadbots_http_tools', $text)) {
 		update_option('stopbadbots_http_tools', $text);
 	}
 }
@@ -881,7 +881,7 @@ function stopbadbots_create_whitelist()
 	for ($i = 0; $i < count($mywhitelist); $i++) {
 		$text .= $mywhitelist[$i] . PHP_EOL;
 	}
-	if (! add_option('stopbadbots_string_whitelist', $text)) {
+	if (!add_option('stopbadbots_string_whitelist', $text)) {
 		update_option('stopbadbots_string_whitelist', $text);
 	}
 }
@@ -1014,7 +1014,7 @@ function stopbadbots_final_step()
 			}
 		}
 	}
-	if ($stopbadbots_limit_visits == 'yes' and ! $stopbadbots_is_admin  and ! stopbadbots_block_whitelist_string() and ! stopbadbots_block_whitelist_IP()) {
+	if ($stopbadbots_limit_visits == 'yes' and !$stopbadbots_is_admin  and !stopbadbots_block_whitelist_string() and !stopbadbots_block_whitelist_IP()) {
 		if ($stopbadbots_rate_limiting == 'unlimited' or $stopbadbots_is_human == '1') {
 			$stopbadbots_rate_limiting = 999999;
 		}
@@ -1028,7 +1028,7 @@ function stopbadbots_final_step()
 			stopbadbots_response('Rate Limit');
 		}
 	}
-	if ($stopbadbots_limit_visits == 'yes' and ! $stopbadbots_is_admin  and ! stopbadbots_block_whitelist_string() and ! stopbadbots_block_whitelist_IP()) {
+	if ($stopbadbots_limit_visits == 'yes' and !$stopbadbots_is_admin  and !stopbadbots_block_whitelist_string() and !stopbadbots_block_whitelist_IP()) {
 		$quant = 999999;
 		switch ($stopbadbots_rate_limiting_day) {
 			case 1:
@@ -1065,7 +1065,7 @@ function stopbadbots_final_step()
 function stopbadbots_include_scripts()
 {
 	wp_enqueue_script('jquery');
-	if (! class_exists('TM_Builder_Core')) {
+	if (!class_exists('TM_Builder_Core')) {
 		wp_enqueue_script('jquery-ui-core');
 	}
 	wp_register_script(
@@ -1113,6 +1113,11 @@ function stopbadbots_add_menu_items()
 		'sbb_my-custom-submenu-page3',
 		'stopbadbots_render_list_page3'
 	);
+
+
+
+
+
 	add_action("load-$stopbadbots_table_page", 'stopbadbots_screen_options3');
 	//
 	// add_submenu_page('car_dealer_plugin', 'Team', 'Team', 'manage_options', 'md-team', 'cardealer_team_callback');
@@ -1550,7 +1555,7 @@ function sbb_findip()
 			if(!array_key_exists($header, $_SERVER))
 			continue;
 			 */
-			if (! isset($_SERVER[$header])) {
+			if (!isset($_SERVER[$header])) {
 				continue;
 			}
 			$myheader = trim(sanitize_text_field($_SERVER[$header]));
@@ -1579,15 +1584,15 @@ function sbb_findip()
 			} else {
 				$ip = filter_var($ip, FILTER_VALIDATE_IP);
 			}
-			if (! empty($ip)) {
+			if (!empty($ip)) {
 				break;
 			}
 		}
-		if (! empty($ip)) {
+		if (!empty($ip)) {
 			break;
 		}
 	}
-	if (! empty($ip)) {
+	if (!empty($ip)) {
 
 
 		$ip = filter_var($ip, FILTER_VALIDATE_IP);
@@ -1646,7 +1651,7 @@ function stopbadbots_plugin_was_activated()
 	// Pointer
 
 	$r = update_option('stopbadbots_was_activated', '1');
-	if (! $r) {
+	if (!$r) {
 		add_option('stopbadbots_was_activated', '1');
 	}
 	$pointers = get_user_meta(get_current_user_id(), 'dismissed_wp_pointers', true);
@@ -1733,7 +1738,7 @@ function stopbadbots_fill_db_froma()
 
 			$wpdb->query($wpdb->prepare("INSERT INTO %i (botua, botblocked, botobs, botip, boturl, botnickname, botname, botstate, botflag, botdate) VALUES ('', 0, '', '', '', %s, %s, 'Enabled', %s, CURRENT_TIMESTAMP())", $table_name, $botnickname, $botname, $botflag));
 		} // End Loop
-		if (! feof($botshandle)) {
+		if (!feof($botshandle)) {
 			// echo "Error: unexpected fgets() fail\n";
 			return false;
 		}
@@ -1753,7 +1758,7 @@ function stopbadbots_fill_db_froma2()
 
 
 	$table_name = $wpdb->prefix . 'sbb_badips';
-	if (! stopbadbots_tablexist($table_name)) {
+	if (!stopbadbots_tablexist($table_name)) {
 		stopbadbots_create_db2();
 	}
 	$charset_collate = $wpdb->get_charset_collate();
@@ -1821,7 +1826,7 @@ function stopbadbots_fill_db_froma2()
 				*/
 			$wpdb->query($wpdb->prepare("INSERT INTO %i (botip, botobs, botstate, botblocked, botdate, added, botflag, botcountry) VALUES (%s, '', 'Enabled', 0, CURRENT_TIMESTAMP(), 'Plugin', %s, %s)", $table_name, $botip, $botflag, $botcountry));
 		} // End Loop
-		if (! feof($botshandle)) {
+		if (!feof($botshandle)) {
 			// echo "Error: unexpected fgets() fail\n";
 			return false;
 		}
@@ -1836,7 +1841,7 @@ function stopbadbots_fill_db_froma3()
 
 	global $wpdb, $wp_filesystem;
 	$table_name = $wpdb->prefix . 'sbb_badref';
-	if (! stopbadbots_tablexist($table_name)) {
+	if (!stopbadbots_tablexist($table_name)) {
 		stopbadbots_create_db3();
 	}
 	$charset_collate = $wpdb->get_charset_collate();
@@ -1890,7 +1895,7 @@ function stopbadbots_fill_db_froma3()
 
 			$wpdb->query($wpdb->prepare("INSERT INTO %i (botname, botstate, botblocked, botdate, added, botobs) VALUES (%s, 'Enabled', 0, CURRENT_TIMESTAMP(), 'Plugin', '')", $table_name, $botname));
 		} // End Loop
-		if (! feof($botshandle)) {
+		if (!feof($botshandle)) {
 			// echo "Error: unexpected fgets() fail\n";
 			return false;
 		}
@@ -2074,7 +2079,7 @@ function stopbadbots_upgrade_db()
 	global $wpdb;
 	require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 	$table_name = $wpdb->prefix . 'sbb_blacklist';
-	if (! stopbadbots_tablexist($table_name)) {
+	if (!stopbadbots_tablexist($table_name)) {
 		return;
 	}
 	$query = 'SHOW COLUMNS FROM ' . $table_name . " LIKE 'botblocked'";
@@ -2107,7 +2112,7 @@ function stopbadbots_upgrade_db2()
 	global $wpdb, $wp_filesystem;
 	require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 	$table_name = $wpdb->prefix . 'sbb_badips';
-	if (! stopbadbots_tablexist($table_name)) {
+	if (!stopbadbots_tablexist($table_name)) {
 		return;
 	}
 	//$query = 'SHOW COLUMNS FROM ' . $table_name . " LIKE 'botcountry'";
@@ -2164,7 +2169,7 @@ function stopbadbots_upgrade_db2()
 			);
 			$r = $wpdb->get_results($query);
 		} // End Loop
-		if (! feof($botshandle)) {
+		if (!feof($botshandle)) {
 			// echo "Error: unexpected fgets() fail\n";
 			return false;
 		}
@@ -2405,7 +2410,7 @@ function stopbadbots_upgrade_fingerprint()
 	global $wpdb;
 	require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 	$table_name = $wpdb->prefix . 'sbb_fingerprint';
-	if (! stopbadbots_tablexist($table_name)) {
+	if (!stopbadbots_tablexist($table_name)) {
 		return;
 	}
 	//$query = 'SHOW COLUMNS FROM ' . $table_name . " LIKE 'deny'";
@@ -2869,7 +2874,7 @@ function stopbadbots_update_db()
 {
 	global $wpdb;
 	$table_name = $wpdb->prefix . 'sbb_blacklist';
-	if (! stopbadbots_tablexist($table_name)) {
+	if (!stopbadbots_tablexist($table_name)) {
 		return;
 	}
 	$options = get_option('stopbadbots_settings');
@@ -2878,7 +2883,7 @@ function stopbadbots_update_db()
 
 		$nickname = sanitize_text_field($options['sbb_input_nickname']);
 
-		if (! empty($nickname)) {
+		if (!empty($nickname)) {
 
 			/*
 			$r = $wpdb->get_results(
@@ -2919,7 +2924,7 @@ function stopbadbots_update_db()
 			$r = false;
 		}
 
-		if (! empty($wpdb->last_error)) {
+		if (!empty($wpdb->last_error)) {
 			stopbadbots_admin_notice__fail();
 		} else {
 			stopbadbots_admin_notice__success();
@@ -2934,7 +2939,7 @@ function stopbadbots_update_db2()
 {
 	global $wpdb, $_POST;
 	$table_name = $wpdb->prefix . 'sbb_badips';
-	if (! stopbadbots_tablexist($table_name)) {
+	if (!stopbadbots_tablexist($table_name)) {
 		return;
 	}
 	$options = get_option('stopbadbots_settings2');
@@ -2943,7 +2948,7 @@ function stopbadbots_update_db2()
 		$ip = $options['sbb_input_ip'];
 		$r  = false;
 		$ip = trim($ip);
-		if (! empty($ip)) {
+		if (!empty($ip)) {
 			if (filter_var($ip, FILTER_VALIDATE_IP)) {
 
 
@@ -3006,14 +3011,14 @@ function stopbadbots_update_db3()
 {
 	global $wpdb, $_POST;
 	$table_name = $wpdb->prefix . 'sbb_badref';
-	if (! stopbadbots_tablexist($table_name)) {
+	if (!stopbadbots_tablexist($table_name)) {
 		return;
 	}
 	$options = get_option('stopbadbots_settings3');
 	if (isset($options['sbb_input_ref'])) {
 		$ref = sanitize_text_field($options['sbb_input_ref']);
 		$r = false;
-		if (! empty($ref)) {
+		if (!empty($ref)) {
 
 			// $r = $wpdb->query(sanitize_text_field($query));
 			/*
@@ -3073,7 +3078,7 @@ function stopbadbots_check_db_sbb_blacklist() {
 function stopbadbots_upload_new_bots()
 {
 	global $wpdb;
-	if (! stopbadbots_gocom()) {
+	if (!stopbadbots_gocom()) {
 		return;
 	}
 
@@ -3084,7 +3089,7 @@ function stopbadbots_upload_new_bots()
 	$result = $wpdb->get_row($wpdb->prepare('SELECT * FROM %i WHERE botflag = "2" OR botflag = "1"', $wpdb->prefix . 'sbb_blacklist'));
 
 
-	if (! $result) {
+	if (!$result) {
 		return;
 	}
 	$id       = $result->id;
@@ -3119,7 +3124,7 @@ function stopbadbots_upload_new_bots()
 		stopbadbots_confail();
 	} else {
 		$botflag = '4';
-		if (! empty($ua) and ! empty($ip)) {
+		if (!empty($ua) and !empty($ip)) {
 			$botglag = '6';
 		}
 
@@ -3142,7 +3147,7 @@ function stopbadbots_upload_new_bots()
 }
 function stopbadbots_get_ua()
 {
-	if (! isset($_SERVER['HTTP_USER_AGENT'])) {
+	if (!isset($_SERVER['HTTP_USER_AGENT'])) {
 		return '';
 	}
 	$ua = trim(sanitize_text_field($_SERVER['HTTP_USER_AGENT']));
@@ -3182,7 +3187,7 @@ function stopbadbots_complete_bot_data($nickname)
 		)
 	);
 
-	if (! $result) {
+	if (!$result) {
 		return;
 	}
 	$id   = $result->id;
@@ -3195,10 +3200,10 @@ function stopbadbots_complete_bot_data($nickname)
 	$ua    = stopbadbots_get_ua();
 	$ip    = sbb_findip();
 	$maybe = false;
-	if (empty($uadb) and ! empty($ua)) {
+	if (empty($uadb) and !empty($ua)) {
 		$maybe = true;
 	}
-	if (empty($ipdb) and ! empty($ip)) {
+	if (empty($ipdb) and !empty($ip)) {
 		$maybe = true;
 	}
 	if ($maybe) {
@@ -3245,7 +3250,7 @@ function stopbadbots_chk_update()
 {
 	global $wpdb, $stopbadbots_checkversion;
 	$table_name = $wpdb->prefix . 'sbb_blacklist';
-	if (! stopbadbots_gocom()) {
+	if (!stopbadbots_gocom()) {
 		return;
 	}
 	$last_checked = get_option('stopbadbots_last_checked', '0');
@@ -3256,7 +3261,7 @@ function stopbadbots_chk_update()
 	}
 	$write = time() - (8 * 24 * 3600);
 	if ($last_checked == '0') {
-		if (! add_option('stopbadbots_last_checked', $write)) {
+		if (!add_option('stopbadbots_last_checked', $write)) {
 			update_option('stopbadbots_last_checked', $write);
 		}
 		return;
@@ -3336,7 +3341,7 @@ function stopbadbots_chk_update()
 	} else {
 		for ($i = 0; $i < $q; $i++) {
 
-			if (! isset($r[$i]['botnickname']) or ! isset($r[$i]['botname']) or ! isset($r[$i]['botip']) or ! isset($r[$i]['botua'])) {
+			if (!isset($r[$i]['botnickname']) or !isset($r[$i]['botname']) or !isset($r[$i]['botip']) or !isset($r[$i]['botua'])) {
 				continue;
 			}
 
@@ -3414,7 +3419,7 @@ function stopbadbots_chk_update()
 		}
 	}
 
-	if (! add_option('stopbadbots_last_checked', time())) {
+	if (!add_option('stopbadbots_last_checked', time())) {
 		update_option('stopbadbots_last_checked', time());
 	}
 	ob_end_clean();
@@ -3422,7 +3427,7 @@ function stopbadbots_chk_update()
 function stopbadbots_chk_update2()
 {
 	global $wpdb, $stopbadbots_checkversion;
-	if (! stopbadbots_gocom()) {
+	if (!stopbadbots_gocom()) {
 		return;
 	}
 	$table_name   = $wpdb->prefix . 'sbb_badips';
@@ -3434,7 +3439,7 @@ function stopbadbots_chk_update2()
 	}
 	$write = time() - (8 * 24 * 3600);
 	if ($last_checked == '0') {
-		if (! add_option('stopbadbots_last_checked2', $write)) {
+		if (!add_option('stopbadbots_last_checked2', $write)) {
 			update_option('stopbadbots_last_checked2', $write);
 		}
 		return;
@@ -3486,7 +3491,7 @@ function stopbadbots_chk_update2()
 	}
 	$r = trim($response['body']);
 	$r = json_decode($r, true);
-	if (! $r or ! is_array($r)) {
+	if (!$r or !is_array($r)) {
 		ob_end_clean();
 		return;
 	}
@@ -3501,7 +3506,7 @@ function stopbadbots_chk_update2()
 	} else {
 		for ($i = 0; $i < $q; $i++) {
 
-			if (! isset($r[$i]['ip']) or ! isset($r[$i]['country']) or ! isset($r[$i]['flag'])) {
+			if (!isset($r[$i]['ip']) or !isset($r[$i]['country']) or !isset($r[$i]['flag'])) {
 				continue;
 			}
 
@@ -3572,7 +3577,7 @@ function stopbadbots_chk_update2()
 			}
 		}
 	}
-	if (! add_option('stopbadbots_last_checked2', time())) {
+	if (!add_option('stopbadbots_last_checked2', time())) {
 		update_option('stopbadbots_last_checked2', time());
 	}
 	ob_end_clean();
@@ -3770,13 +3775,13 @@ function stopbadbots_crawlerDetect($stopbadbots_userAgentOri)
 			return true;
 		}
 	}
-	if (! empty($stopbadbots_found)) {
+	if (!empty($stopbadbots_found)) {
 		return true;
 	}
 	if (get_option('stop_bad_bots_network', '') != 'yes') {
 		return false;
 	}
-	if (! stopbadbots_gocom()) {
+	if (!stopbadbots_gocom()) {
 		return false;
 	}
 	// New
@@ -4108,7 +4113,7 @@ function stopbadbots_custom_plugin_row_meta($links, $file)
 function stopbadbots_bill_ask_for_upgrade()
 {
 	global $stopbadbots_checkversion;
-	if (! empty($stopbadbots_checkversion)) {
+	if (!empty($stopbadbots_checkversion)) {
 		return;
 	}
 	$time = date('Ymd');
@@ -4368,7 +4373,7 @@ function stopbadbots_sbb_populate_stats()
 			// $intval = (int) $string;
 			// $string = (string) $intval;
 			$year = 2020;
-			if (! checkdate($i, $k, $year)) {
+			if (!checkdate($i, $k, $year)) {
 				continue;
 			}
 			$mdata = (string) $i;
@@ -4590,7 +4595,7 @@ function stopbadbots_create_db_stats()
 function stopbadbots_response($stopbadbots_why_block)
 {
 	global $stopbadbots_active;
-	if ($stopbadbots_active == 'yes' and ! stopbadbots_block_whitelist_IP()) {
+	if ($stopbadbots_active == 'yes' and !stopbadbots_block_whitelist_IP()) {
 
 
 		//http_response_code(403);
@@ -4606,7 +4611,7 @@ function stopbadbots_response($stopbadbots_why_block)
 
 		stopbadbots_record_log($stopbadbots_why_block);
 
-		if (! headers_sent()) {
+		if (!headers_sent()) {
 			header('HTTP/1.1 403 Forbidden');
 			header('Status: 403 Forbidden');
 			header('Connection: Close');
@@ -4653,7 +4658,7 @@ function stopbadbots_check_memory_old()
 	global $stopbadbots_memory;
 	$stopbadbots_memory['limit'] = (int) ini_get('memory_limit');
 	$stopbadbots_memory['usage'] = function_exists('memory_get_usage') ? round(memory_get_usage() / 1024 / 1024, 0) : 0;
-	if (! defined('WP_MEMORY_LIMIT')) {
+	if (!defined('WP_MEMORY_LIMIT')) {
 		$stopbadbots_memory['msg_type'] = 'notok';
 		return;
 	}
@@ -4661,11 +4666,11 @@ function stopbadbots_check_memory_old()
 	if ($stopbadbots_memory['wp_limit'] > 9999999) {
 		$stopbadbots_memory['wp_limit'] = ($stopbadbots_memory['wp_limit'] / 1024) / 1024;
 	}
-	if (! is_numeric($stopbadbots_memory['usage'])) {
+	if (!is_numeric($stopbadbots_memory['usage'])) {
 		$stopbadbots_memory['msg_type'] = 'notok';
 		return;
 	}
-	if (! is_numeric($stopbadbots_memory['limit'])) {
+	if (!is_numeric($stopbadbots_memory['limit'])) {
 		$stopbadbots_memory['msg_type'] = 'notok';
 		return;
 	}
@@ -4806,7 +4811,7 @@ function stopbadbots_block_enumeration()
 		return;
 	}
 	if (isset($_SERVER['REQUEST_URI'])) {
-		if (! preg_match('/(wp-comments-post)/', sanitize_text_field($_SERVER['REQUEST_URI'])) && ! empty($_REQUEST['author']) && (int) sanitize_text_field($_REQUEST['author'])) { {
+		if (!preg_match('/(wp-comments-post)/', sanitize_text_field($_SERVER['REQUEST_URI'])) && !empty($_REQUEST['author']) && (int) sanitize_text_field($_REQUEST['author'])) { {
 				if ($stopbadbots_block_enumeration == 'yes') {
 					stopbadbots_stats_moreone('quenu');
 					if ($stopbadbots_my_radio_report_all_visits == 'yes') {
@@ -5548,7 +5553,7 @@ function stopbadbots_grava_fingerprint()
 
 			$fingerprintDb = trim($result->fingerprint);
 
-			if (empty($fingerprintDb) and ! empty($fingerprint)) {
+			if (empty($fingerprintDb) and !empty($fingerprint)) {
 
 				/*
 				$query = "UPDATE " . $mytable_name .
@@ -5594,7 +5599,7 @@ if ($stopbadbots_block_spam_login == 'yes') {
 }
 function stopbadbos_validate_login($user, $password)
 {
-	if (! isset($_POST['stopbadbots_key'])) {
+	if (!isset($_POST['stopbadbots_key'])) {
 		global $stopbadbots_my_radio_report_all_visits, $stopbadbots_ip;
 		stopbadbots_stats_moreone('qlogin');
 		if ($stopbadbots_my_radio_report_all_visits == 'yes') {
@@ -5681,7 +5686,7 @@ function stopbadbots_check_comment($commentdata)
 	global $stopbadbots_ip, $stopbadbots_my_radio_report_all_visits;
 	// global $withcomments; // WP flag to show comments on all pages
 	extract($commentdata);
-	if (! is_user_logged_in() && $comment_type != 'pingback' && $comment_type != 'trackback') {
+	if (!is_user_logged_in() && $comment_type != 'pingback' && $comment_type != 'trackback') {
 		// if ((is_singular() || $withcomments) && comments_open()) {
 		if (stopbadbots_check_for_spam()) {
 			stopbadbots_stats_moreone('qcom');
@@ -5837,7 +5842,7 @@ function stopbadbots_record_log($stopbadbots_why_block = '')
 		$stopbadbots_is_human = 'Maybe';
 	}
 
-	if (! empty(trim($stopbadbots_why_block))) {
+	if (!empty(trim($stopbadbots_why_block))) {
 		$stopbadbots_response = 403;
 	}
 	if ($stopbadbots_response == 403) {
@@ -5936,7 +5941,7 @@ function stopbadbots_add_whitelist()
 
 
 
-	if (! isset($_POST['stopbadbots_nonce_table']) || ! wp_verify_nonce(sanitize_text_field($_POST['stopbadbots_nonce_table']), 'stopbadbots_view_visits')) {
+	if (!isset($_POST['stopbadbots_nonce_table']) || !wp_verify_nonce(sanitize_text_field($_POST['stopbadbots_nonce_table']), 'stopbadbots_view_visits')) {
 		wp_die('Nonce Fail.');
 	}
 
@@ -5946,7 +5951,7 @@ function stopbadbots_add_whitelist()
 
 	$stopbadbots_ip_whitelist  = trim(sanitize_text_field(get_site_option('stopbadbots_ip_whitelist', '')));
 	$astopbadbots_ip_whitelist = explode(' ', $stopbadbots_ip_whitelist);
-	if (! isset($_REQUEST['ip'])) {
+	if (!isset($_REQUEST['ip'])) {
 		die(' 1');
 	}
 	$ip = trim(filter_var(sanitize_text_field($_REQUEST['ip']), FILTER_VALIDATE_IP));
@@ -5965,13 +5970,13 @@ function stopbadbots_add_whitelist()
 	asort($astopbadbots_ip_whitelist);
 	$text = '';
 	for ($i = 0; $i < count($astopbadbots_ip_whitelist); $i++) {
-		if (! empty($text)) {
+		if (!empty($text)) {
 			$text .= PHP_EOL;
 		}
 		$text .= $astopbadbots_ip_whitelist[$i];
 	}
 	$text .= PHP_EOL . $ip;
-	if (! add_option('stopbadbots_ip_whitelist', $text)) {
+	if (!add_option('stopbadbots_ip_whitelist', $text)) {
 		update_option('stopbadbots_ip_whitelist', $text);
 	}
 	die();
@@ -5982,7 +5987,7 @@ function stopbadbots_add_blacklist()
 	global $wpdb;
 
 
-	if (! isset($_POST['stopbadbots_nonce_table']) || ! wp_verify_nonce(sanitize_text_field($_POST['stopbadbots_nonce_table']), 'stopbadbots_view_visits')) {
+	if (!isset($_POST['stopbadbots_nonce_table']) || !wp_verify_nonce(sanitize_text_field($_POST['stopbadbots_nonce_table']), 'stopbadbots_view_visits')) {
 		wp_die('Nonce Fail.');
 	}
 
@@ -5993,7 +5998,7 @@ function stopbadbots_add_blacklist()
 
 	$table_name = $wpdb->prefix . "sbb_badips";
 	$botflag = '6';
-	if (! isset($_REQUEST['ip'])) {
+	if (!isset($_REQUEST['ip'])) {
 		die(' error -1');
 	}
 	$stopbadbots_ip = trim(filter_var(sanitize_text_field($_REQUEST['ip']), FILTER_VALIDATE_IP));
@@ -6919,6 +6924,157 @@ function stopbadbots_show_logo()
 	echo '<br>';
 	echo '</div>';
 }
+
+
+if (!defined('STOPBADBOTS_FAIL2BAN_SECRET_TOKEN')) {
+	define('STOPBADBOTS_FAIL2BAN_SECRET_TOKEN', AUTH_KEY);
+}
+
+//if (is_admin())
+//	die(var_export(STOPBADBOTS_FAIL2BAN_SECRET_TOKEN));
+
+
+
+add_action('wp_ajax_nopriv_log_sbb_fail2ban_event', 'stopbadbots_handle_fail2ban_event');
+add_action('wp_ajax_log_sbb_fail2ban_event', 'stopbadbots_handle_fail2ban_event'); // Opcional
+
+
+function stopbadbots_handle_fail2ban_event()
+{
+	// 1. Check the request method (must be POST)
+	if (strtoupper($_SERVER['REQUEST_METHOD']) !== 'POST') {
+
+
+		error_log('Invalid request method.');
+
+
+		wp_send_json_error(
+			['message' => 'Invalid request method.'],
+			405 // Method Not Allowed
+		);
+		wp_die();
+	}
+
+	// 2. Check the security token
+	$submitted_token = isset($_POST['security_token']) ? sanitize_text_field($_POST['security_token']) : '';
+	if (empty($submitted_token) || !hash_equals(STOPBADBOTS_FAIL2BAN_SECRET_TOKEN, $submitted_token)) {
+		// Log an attempt if you want, but don't give away too much info
+		// error_log('Fail2Ban Logger: Unauthorized access attempt. IP: ' . stopbadbots_get_ip_address());
+
+		error_log('submited token ' . $submitted_token);
+		error_log('token ' . STOPBADBOTS_FAIL2BAN_SECRET_TOKEN);
+
+		error_log('Invalid fail2ban token.');
+
+		wp_send_json_error(
+			['message' => 'Unauthorized.'],
+			403 // Forbidden
+		);
+		wp_die();
+	}
+
+	$ip_address = isset($_POST['ip']) ? sanitize_text_field($_POST['ip']) : '';
+	// Validate IP (optional, but recommended)
+	if (!filter_var($ip_address, FILTER_VALIDATE_IP)) {
+		wp_send_json_error(['message' => 'Invalid IP provided.'], 400);
+		wp_die();
+	}
+
+	$f2b_timestamp = isset($_POST['f2b_timestamp']) ? absint($_POST['f2b_timestamp']) : 0;
+	$event_timestamp = ($f2b_timestamp > 0) ? date('Y-m-d H:i:s', $f2b_timestamp) : current_time('mysql', 1);
+
+	$jail_name = isset($_POST['jail']) ? sanitize_text_field($_POST['jail']) : 'N/A';
+	$attempts = isset($_POST['attempts']) ? absint($_POST['attempts']) : 0;
+	$log_lines_raw = isset($_POST['log_line']) ? $_POST['log_line'] : ''; // Sanitize later, as it may be multiline
+
+	// Sanitize log_lines: wp_kses_post removes dangerous HTML but allows some.
+	// If you want plain text and line breaks as \n:
+	$log_lines_sanitized = sanitize_textarea_field($log_lines_raw);
+
+	// For the 'reason' field, we can take the first line of log_line or part of it
+	$reason = !empty($log_lines_sanitized) ? mb_substr(strtok($log_lines_sanitized, "\n"), 0, 255) : 'N/A';
+	if (empty($reason) && !empty($log_lines_sanitized)) { // In case strtok returns false
+		$reason = mb_substr($log_lines_sanitized, 0, 255);
+	}
+
+	$server_host = isset($_POST['server_host']) ? sanitize_text_field($_POST['server_host']) : '';
+
+	// Handle the 'port' field. Fail2Ban may send 'http', '80,443', or a number.
+	// Your column is INT.
+	$port_str = isset($_POST['port']) ? sanitize_text_field($_POST['port']) : '';
+	$port_int = 0;
+	if (is_numeric($port_str)) {
+		$port_int = intval($port_str);
+	} elseif (!empty($port_str)) {
+		$port_parts = explode(',', $port_str); // Take the first if it's a list
+		$first_port = trim($port_parts[0]);
+		if (is_numeric($first_port)) {
+			$port_int = intval($first_port);
+		} elseif (strtolower($first_port) === 'http') {
+			$port_int = 80;
+		} elseif (strtolower($first_port) === 'https') {
+			$port_int = 443;
+		}
+		// Add more service-to-port mappings if needed
+	}
+
+	$protocol = isset($_POST['protocol']) ? sanitize_text_field($_POST['protocol']) : '';
+	$ban_duration = isset($_POST['ban_duration']) ? intval($_POST['ban_duration']) : 0;
+
+	global $wpdb;
+	$table_name = $wpdb->prefix . 'stopbadbots_fail2ban_logs';
+
+	$data_to_insert = array(
+		'ip'           => $ip_address,
+		'timestamp'    => $event_timestamp,
+		'jail'         => $jail_name,
+		'reason'       => $reason,
+		'attempts'     => $attempts,
+		'log_line'     => $log_lines_sanitized,
+		'host'         => $server_host,
+		'port'         => $port_int,
+		'protocol'     => $protocol,
+		'ban_duration' => $ban_duration,
+	);
+
+	$format = array(
+		'%s', // ip
+		'%s', // timestamp (DATETIME string)
+		'%s', // jail
+		'%s', // reason
+		'%d', // attempts
+		'%s', // log_line
+		'%s', // host
+		'%d', // port
+		'%s', // protocol
+		'%d'  // ban_duration
+	);
+
+	$result = $wpdb->insert($table_name, $data_to_insert, $format);
+
+	if ($result === false) {
+		// For debugging, you may want to log $wpdb->last_error
+		// error_log("Fail2Ban Logger: Error inserting into DB: " . $wpdb->last_error);
+		wp_send_json_error(
+			['message' => 'Failed to log event in the database.', 'db_error' => $wpdb->last_error],
+			500 // Internal Server Error
+		);
+	} else {
+		wp_send_json_success(
+			['message' => 'Fail2Ban event logged successfully.', 'id' => $wpdb->insert_id],
+			200 // OK
+		);
+	}
+
+	wp_die();
+}
+
+
+
+
+
+// end fail2ban
+
 /*
 // acertar
 // Grava Robots.txt

@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.29
+Version: 11.30
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -473,7 +473,7 @@ $stopbadbots_bad_host = array(
 	'wix.com',
 );
 
-//require_once STOPBADBOTSPATH . "functions/fail2ban.php";
+// require_once STOPBADBOTSPATH . "functions/fail2ban.php";
 require_once STOPBADBOTSPATH . 'functions/functions.php';
 
 
@@ -1674,11 +1674,12 @@ function stopbadbots_new_more_plugins()
 }
 
 
+
 function stopbadbots_initialize_plugin_settings()
 {
 	// Inicialização do plugin.
 	if (is_admin() and current_user_can("manage_options")) {
-		require_once STOPBADBOTSPATH . "functions/fail2ban.php";
+		//require_once STOPBADBOTSPATH . "functions/fail2ban.php";
 		require_once STOPBADBOTSPATH . 'settings/load-plugin.php';
 		require_once(STOPBADBOTSPATH . "settings/options/plugin_options_tabbed.php");
 	}
@@ -1721,3 +1722,5 @@ function stopbadbots_create_fail2ban_table()
 
 // Hook to run the table creation when the plugin is activated
 register_activation_hook(__FILE__, 'stopbadbots_create_fail2ban_table');
+
+require_once STOPBADBOTSPATH . "functions/fail2ban.php";

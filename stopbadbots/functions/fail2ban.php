@@ -36,8 +36,8 @@ function stopbadbots_render_ban_report()
 {
     global $wpdb;
     $table_name = $wpdb->prefix . 'stopbadbots_fail2ban_logs';
-    // Start output buffer to capture HTML
-    //ob_start();
+    $title_color_style = 'style="color: #0073aa;"'; // WordPress blue for titles
+
 ?>
     <div id="stopbadbots-logo">
         <img alt="logo" src="<?php echo esc_attr(
@@ -45,10 +45,7 @@ function stopbadbots_render_ban_report()
                                 ); ?>/logo.png" width="250px" />
     </div>
     <?php
-    echo '<h2>SBB Fail2ban Monitor</h2>';
-    // echo "Gain valuable insights into your server's security with the SBB Fail2Ban Monitor.";
-    // Assuming this output is within a PHP function in your WordPress plugin.
-    echo '<div class="sbb_fail2ban_monitor_description">';
+    echo "<h2 {$title_color_style}>SBB Fail2ban Monitor</h2>";
     echo '<div class="sbb_fail2ban_monitor_description">';
     echo '<p>' . esc_html__("The use of this page is optional, and it's intended for more advanced users.", 'stopbadbots') . '</p>';
     echo '<p>' . esc_html__("The SBB Fail2Ban Monitor brings your server's powerful Fail2Ban protection into a clear, visual WordPress dashboard – the user-friendly GUI many have been waiting for!", 'stopbadbots') . '</p>';
@@ -64,13 +61,12 @@ function stopbadbots_render_ban_report()
         '<a href="https://stopbadbots.com/integrating-antihacker-stopbadbots-with-fail2ban/" target="_blank">' . esc_html__('integrating StopBadBots with Fail2Ban', 'stopbadbots') . '</a>'
     );
     echo '</p>';
-    echo '</div>';
     echo '</div>'; // End of .sbb_fail2ban_monitor_description div
-    // Table
-    // Assuming $wpdb is already available in this context
-    // and the variable $table_name has been defined (e.g., $wpdb->prefix . 'stopbadbots_fail2ban_logs';)
+
+    // START OF CHARTS CONTAINER
+    echo '<div class="sbb-charts-container">';
+
     // --- Block Table by Day Section (already present in your code) ---
-    // This query is the one you already have to generate the "Blocks by day" table
     $query_30_days = "
     SELECT
         DATE(timestamp) AS ban_date,
@@ -82,49 +78,47 @@ function stopbadbots_render_ban_report()
     ORDER BY
         ban_date ASC
 ";
-    $results_30_days = $wpdb->get_results($query_30_days, ARRAY_A); // $results_30_days contains data for both table and chart
-    // Only render this section if results are not empty
+    $results_30_days = $wpdb->get_results($query_30_days, ARRAY_A);
+
     if (!empty($results_30_days)) {
-        // --- Logic to prepare data for the Chart (reusing $results_30_days) ---
-        $graph_data_30_days = array(); // Format: [[day_idx, count], ...]
-        $graph_ticks_30_days = array(); // Format: [[day_idx, 'DD/MM'], ...]
-        // To ensure all days from the last 30 days are shown, even if without attacks
+        // START OF FIRST CHART WRAPPER
+        echo '<div class="sbb-chart-wrapper">';
+
+        $graph_data_30_days = array();
+        $graph_ticks_30_days = array();
         $attack_counts_by_date_map = [];
-        // Assuming server's default timezone for date functions is acceptable, as per original code.
-        // For robustness with WordPress timezone settings, one might use current_time('timestamp')
-        for ($i = 29; $i >= 0; $i--) { // From 29 days ago to today
-            $date_map_key = date('Y-m-d', strtotime("-$i days"));
+        for ($i = 29; $i >= 0; $i--) {
+            $date_map_key = date('Y-m-d', strtotime("-$i days", current_time('timestamp')));
             $attack_counts_by_date_map[$date_map_key] = 0;
         }
-        // Fill counts with data obtained from $results_30_days
         foreach ($results_30_days as $row) {
-            // Ensure the date from DB result exists as a key in our map (it should if within last 30 days)
             if (isset($attack_counts_by_date_map[$row['ban_date']])) {
                 $attack_counts_by_date_map[$row['ban_date']] = (int)$row['ban_count'];
             }
         }
-        // Prepare data for Flot.js from the complete map
         $idx = 0;
+        $days_to_skip_ticks = 2;
+
         foreach ($attack_counts_by_date_map as $date_str => $count) {
             $graph_data_30_days[] = [$idx, $count];
-            $graph_ticks_30_days[] = [$idx, date('d/m', strtotime($date_str))]; // Format 'DD/MM'
+            if ($idx % $days_to_skip_ticks == 0) {
+                $graph_ticks_30_days[] = [$idx, date('d/m', strtotime($date_str))];
+            }
             $idx++;
         }
-        // --- End of chart data logic ---
-        echo '<h2>Blocks Last 30 Days</h2>';
-        echo '<br>';
-        // --- JavaScript for the Chart ---
+
+        echo "<h2 {$title_color_style}>" . esc_html__('Blocks Last 30 Days', 'stopbadbots') . '</h2>';
+
         echo '<script type="text/javascript">';
         echo 'jQuery(function() {';
-        // Convert PHP arrays to JavaScript
-        echo 'var d2 = ['; // Keep original variable name 'd2' for this chart
+        echo 'var d2 = [';
         $data_parts = [];
         foreach ($graph_data_30_days as $point) {
             $data_parts[] = '[' . esc_js($point[0]) . ',' . esc_js($point[1]) . ']';
         }
         echo implode(',', $data_parts);
         echo '];';
-        echo 'var ticks = ['; // Keep original variable name 'ticks' for this chart
+        echo 'var ticks_30_days_chart = ['; // Changed variable name for clarity
         $tick_parts = [];
         foreach ($graph_ticks_30_days as $tick) {
             $tick_parts[] = '[' . esc_js($tick[0]) . ',"' . esc_js($tick[1]) . '"]';
@@ -132,11 +126,11 @@ function stopbadbots_render_ban_report()
         echo implode(',', $tick_parts);
         echo '];';
     ?>
-        var options = { // Keep original variable name 'options'
+        var options_30_days = { // Changed variable name for clarity
         series: {
         lines: { show: true },
         points: { show: true },
-        color: "#ff0000" // Chart line color (red)
+        color: "#ff0000"
         },
         grid: {
         hoverable: true,
@@ -147,15 +141,14 @@ function stopbadbots_render_ban_report()
         },
         xaxis:{
         font:{
-        size:6,
+        size:8,
         style:"italic",
         weight:"normal",
         family:"sans-serif",
-        color: "#ff0000", // X-axis text color (red)
+        color: "#ff0000",
         variant:"small-caps"
         },
-        ticks: ticks,
-        // minTickSize: [1, "day"] // Uncomment to force daily ticks, may cause overlap
+        ticks: ticks_30_days_chart,
         },
         yaxis: {
         font:{
@@ -163,29 +156,27 @@ function stopbadbots_render_ban_report()
         style:"italic",
         weight:"bold",
         family:"sans-serif",
-        color: "#616161", // Y-axis text color (gray)
+        color: "#616161",
         variant:"small-caps"
         },
-        // Use a function to format Y-axis ticks without decimals
         tickFormatter: function stopbadbots_suffixFormatter(val, axis) {
         return (val.toFixed(0));
         }
         }
         };
-        jQuery.plot("#placeholder", [ d2 ], options); // Keep original ID 'placeholder'
+        jQuery.plot("#placeholder_30_days_chart", [ d2 ], options_30_days); // Changed ID for clarity
         });
         </script>
     <?php
-        // Where the chart will be rendered
-        echo '<div id="placeholder" style="min-width:250px; max-width:100% !important; height:165px; margin-top: -20px;"></div>'; // Keep original ID 'placeholder'
-        // --- End of JavaScript for the Chart ---
-    } // End of if (!empty($results_30_days)) for Blocks Last 30 Days
-    // --- Chart for Blocks in the Last 24 Hours (replaces the table) ---
-    // Assuming `timestamp` in DB is stored in server's local timezone, consistent with how 30-day chart seems to operate.
-    $twenty_four_hours_ago_server_local = date('Y-m-d H:i:s', time() - (24 * HOUR_IN_SECONDS));
+        echo '<div id="placeholder_30_days_chart" style="min-width:250px; height:165px;"></div>';
+        echo '</div>'; // END OF FIRST CHART WRAPPER
+    }
+
+    // --- Chart for Blocks in the Last 24 Hours ---
+    $twenty_four_hours_ago_server_local = date('Y-m-d H:i:s', current_time('timestamp') - (24 * HOUR_IN_SECONDS));
     $query_24h_chart = $wpdb->prepare("
         SELECT
-            DATE_FORMAT(timestamp, %s) AS hour_block, -- Format: 'YYYY-MM-DD HH:00:00'
+            DATE_FORMAT(timestamp, %s) AS hour_block,
             COUNT(*) AS ban_count
         FROM
             `{$table_name}`
@@ -197,48 +188,44 @@ function stopbadbots_render_ban_report()
             hour_block ASC
     ", '%Y-%m-%d %H:00:00', $twenty_four_hours_ago_server_local);
     $results_24h_raw = $wpdb->get_results($query_24h_chart, ARRAY_A);
-    if (!empty($results_24h_raw)) { // Condition similar to the 30-day chart
-        echo '<h2>Blocks in the Last 24 Hours</h2>';
-        echo '<br>';
+
+    if (!empty($results_24h_raw)) {
+        // START OF SECOND CHART WRAPPER
+        echo '<div class="sbb-chart-wrapper">';
+        echo "<h2 {$title_color_style}>" . esc_html__('Blocks in the Last 24 Hours', 'stopbadbots') . '</h2>';
+
         $graph_data_24h = [];
         $graph_ticks_24h = [];
-        // Create a map for the last 24 hourly slots, initialized to 0.
-        // Keys are server-local hour strings 'YYYY-MM-DD HH:00:00'.
         $hourly_counts_map_local = [];
-        $current_server_time = time(); // Current server local time as UNIX timestamp
+        $current_server_time_wp = current_time('timestamp');
         for ($h = 0; $h < 24; $h++) {
-            // Iterate from 23 hours ago up to the current hour's slot
-            $target_hour_ts = $current_server_time - ((23 - $h) * HOUR_IN_SECONDS);
+            $target_hour_ts = $current_server_time_wp - ((23 - $h) * HOUR_IN_SECONDS);
             $hour_key_local = date('Y-m-d H:00:00', $target_hour_ts);
             $hourly_counts_map_local[$hour_key_local] = 0;
         }
-        // ksort($hourly_counts_map_local); // Ensure chronological order if loop logic was ambiguous (not needed here)
-        // Fill counts from the query results
         foreach ($results_24h_raw as $row) {
             if (isset($hourly_counts_map_local[$row['hour_block']])) {
                 $hourly_counts_map_local[$row['hour_block']] = (int)$row['ban_count'];
             }
         }
-        // Prepare data for Flot.js
         $idx_24h = 0;
         foreach ($hourly_counts_map_local as $hour_str_local => $count) {
             $graph_data_24h[] = [$idx_24h, $count];
-            // Tick label: 'HH' (e.g., 09, 10, 11)
             $tick_label = date('H', strtotime($hour_str_local));
             $graph_ticks_24h[] = [$idx_24h, $tick_label];
             $idx_24h++;
         }
-        // --- JavaScript for the 24-Hour Chart ---
+
         echo '<script type="text/javascript">';
         echo 'jQuery(function() {';
-        echo 'var data_hourly_chart = ['; // Unique JS variable name
+        echo 'var data_hourly_chart = [';
         $js_data_parts_24h = [];
         foreach ($graph_data_24h as $point) {
             $js_data_parts_24h[] = '[' . esc_js($point[0]) . ',' . esc_js($point[1]) . ']';
         }
         echo implode(',', $js_data_parts_24h);
         echo '];';
-        echo 'var ticks_hourly_chart = ['; // Unique JS variable name
+        echo 'var ticks_hourly_chart = [';
         $js_tick_parts_24h = [];
         foreach ($graph_ticks_24h as $tick) {
             $js_tick_parts_24h[] = '[' . esc_js($tick[0]) . ',"' . esc_js($tick[1]) . '"]';
@@ -246,11 +233,11 @@ function stopbadbots_render_ban_report()
         echo implode(',', $js_tick_parts_24h);
         echo '];';
     ?>
-        var options_hourly = { // Unique JS variable name
+        var options_hourly = {
         series: {
         lines: { show: true },
         points: { show: true },
-        color: "#0073aa" // A distinct color (WordPress blue)
+        color: "#0073aa"
         },
         grid: {
         hoverable: true,
@@ -261,7 +248,7 @@ function stopbadbots_render_ban_report()
         },
         xaxis:{
         font:{
-        size:9, // Adjusted for hour display
+        size:9,
         style:"normal",
         weight:"normal",
         family:"sans-serif",
@@ -280,71 +267,158 @@ function stopbadbots_render_ban_report()
         variant:"small-caps"
         },
         tickFormatter: function stopbadbots_suffixFormatter(val, axis) {
-        return (val.toFixed(0)); // Format Y-axis ticks as integers
+        return (val.toFixed(0));
         }
         }
         };
-        jQuery.plot("#placeholder_hourly_blocks", [ data_hourly_chart ], options_hourly); // Unique placeholder ID
+        jQuery.plot("#placeholder_hourly_blocks_chart", [ data_hourly_chart ], options_hourly); // Changed ID for clarity
         });
         </script>
 <?php
-        // Where the 24-hour chart will be rendered
-        echo '<div id="placeholder_hourly_blocks" style="min-width:250px; max-width:100% !important; height:165px; margin-top: -20px;"></div>'; // Unique placeholder ID
-        // --- End of JavaScript for 24-Hour Chart ---
-    } // End of if (!empty($results_24h_raw)) for Blocks Last 24 Hours chart
-    // --- End of Chart for Blocks in the Last 24 Hours ---
-    // Assuming $wpdb and $table_name are already defined in your WordPress context
-    // global $wpdb;
-    // $table_name = $wpdb->prefix . 'your_fail2ban_table'; // Example table name
-    // Query to get the last 100 raw data rows
+        echo '<div id="placeholder_hourly_blocks_chart" style="min-width:250px; height:165px;"></div>';
+        echo '</div>'; // END OF SECOND CHART WRAPPER
+    }
+    echo '</div>'; // END OF CHARTS CONTAINER
+
+    // --- New Row with Two Columns for Jail Stats ---
+    echo '<div style="display: flex; flex-wrap: wrap; margin-top: 30px; width: 100%; clear: both;">';
+
+    // --- Left Column: Jails Stats Last 30 Days ---
+    echo '<div style="flex: 1; min-width: 300px; padding-right: 15px; box-sizing: border-box;">';
+    echo "<h3 {$title_color_style}>" . esc_html__('Jail Activity (Last 30 Days)', 'stopbadbots') . '</h3>';
+
+    $thirty_days_ago_datetime = date('Y-m-d H:i:s', current_time('timestamp') - (30 * DAY_IN_SECONDS));
+    $query_jails_30_days = $wpdb->prepare("
+        SELECT
+            jail,
+            COUNT(*) AS total_bans
+        FROM
+            `{$table_name}`
+        WHERE
+            timestamp >= %s
+        GROUP BY
+            jail
+        ORDER BY
+            total_bans DESC
+    ", $thirty_days_ago_datetime);
+    $results_jails_30_days = $wpdb->get_results($query_jails_30_days, ARRAY_A);
+
+    if (!empty($results_jails_30_days)) {
+        // Calculate total bans for percentage calculation
+        $total_bans_for_period_30_days = 0;
+        foreach ($results_jails_30_days as $row) {
+            $total_bans_for_period_30_days += (int)$row['total_bans'];
+        }
+
+        echo '<div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc;">';
+        echo '<table class="wp-list-table widefat fixed striped pages">';
+        echo '<thead>';
+        echo '<tr>';
+        $th_style_jails = 'style="position: sticky; top: 0; background-color: #f9f9f9; z-index: 1; box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1);"';
+        echo "<th scope=\"col\" {$th_style_jails}>" . esc_html__('Jail', 'stopbadbots') . "</th>";
+        echo "<th scope=\"col\" {$th_style_jails}>" . esc_html__('Total Bans', 'stopbadbots') . "</th>";
+        echo "<th scope=\"col\" {$th_style_jails}>" . esc_html__('Percentage', 'stopbadbots') . "</th>"; // New Column
+        echo '</tr>';
+        echo '</thead>';
+        echo '<tbody id="the-list-jails-30-days">';
+        foreach ($results_jails_30_days as $row) {
+            $percentage = ($total_bans_for_period_30_days > 0) ? ((int)$row['total_bans'] / $total_bans_for_period_30_days) * 100 : 0;
+            echo '<tr>';
+            echo '<td>' . esc_html($row['jail']) . '</td>';
+            echo '<td>' . esc_html($row['total_bans']) . '</td>';
+            echo '<td>' . number_format($percentage, 2) . '%</td>'; // Display Percentage
+            echo '</tr>';
+        }
+        echo '</tbody>';
+        echo '</table>';
+        echo '</div>';
+    } else {
+        echo '<p>' . esc_html__('No jail activity recorded in the last 30 days.', 'stopbadbots') . '</p>';
+    }
+    echo '</div>'; // End Left column
+
+    // --- Right Column: Jails Stats Today ---
+    echo '<div style="flex: 1; min-width: 300px; padding-left: 15px; box-sizing: border-box;">';
+    echo "<h3 {$title_color_style}>" . esc_html__('Jail Activity (Today)', 'stopbadbots') . '</h3>';
+
+    $today_date = current_time('Y-m-d');
+    $query_jails_today = $wpdb->prepare("
+        SELECT
+            jail,
+            COUNT(*) AS total_bans
+        FROM
+            `{$table_name}`
+        WHERE
+            DATE(timestamp) = %s
+        GROUP BY
+            jail
+        ORDER BY
+            total_bans DESC
+    ", $today_date);
+    $results_jails_today = $wpdb->get_results($query_jails_today, ARRAY_A);
+
+    if (!empty($results_jails_today)) {
+        // Calculate total bans for percentage calculation
+        $total_bans_for_today = 0;
+        foreach ($results_jails_today as $row) {
+            $total_bans_for_today += (int)$row['total_bans'];
+        }
+
+        echo '<div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc;">';
+        echo '<table class="wp-list-table widefat fixed striped pages">';
+        echo '<thead>';
+        echo '<tr>';
+        echo "<th scope=\"col\" {$th_style_jails}>" . esc_html__('Jail', 'stopbadbots') . "</th>";
+        echo "<th scope=\"col\" {$th_style_jails}>" . esc_html__('Total Bans', 'stopbadbots') . "</th>";
+        echo "<th scope=\"col\" {$th_style_jails}>" . esc_html__('Percentage', 'stopbadbots') . "</th>"; // New Column
+        echo '</tr>';
+        echo '</thead>';
+        echo '<tbody id="the-list-jails-today">';
+        foreach ($results_jails_today as $row) {
+            $percentage_today = ($total_bans_for_today > 0) ? ((int)$row['total_bans'] / $total_bans_for_today) * 100 : 0;
+            echo '<tr>';
+            echo '<td>' . esc_html($row['jail']) . '</td>';
+            echo '<td>' . esc_html($row['total_bans']) . '</td>';
+            echo '<td>' . number_format($percentage_today, 2) . '%</td>'; // Display Percentage
+            echo '</tr>';
+        }
+        echo '</tbody>';
+        echo '</table>';
+        echo '</div>';
+    } else {
+        echo '<p>' . esc_html__('No jail activity recorded today.', 'stopbadbots') . '</p>';
+    }
+    echo '</div>'; // End Right column
+    echo '</div>'; // End Flex container 
+
+    // --- Last 100 Fail2Ban Block Records ---
     $query_last_100 = "
     SELECT
-        id,
-        ip,
-        timestamp,
-        jail,
-        reason,
-        attempts,
-        host,
-        ban_duration
-        -- Columns 'log_line', 'port', 'protocol' were not included in the display
-        -- to keep the table concise, but can be added if desired.
+        id, ip, timestamp, jail, reason, attempts, host, ban_duration
     FROM
         `{$table_name}`
     ORDER BY
         timestamp DESC
     LIMIT 100
-    "; // Changed from 30 to 100
-    $results_last_100 = $wpdb->get_results($query_last_100, ARRAY_A); // ARRAY_A returns an associative array
+    ";
+    $results_last_100 = $wpdb->get_results($query_last_100, ARRAY_A);
     if (!empty($results_last_100)) {
-        echo '<h2>Last 100 Fail2Ban Block Records</h2>'; // Updated title
-        // Div container for the table with scroll
-        // max-height defines the maximum height before scroll appears
-        // overflow-y: auto enables vertical scroll only when needed
-        // overflow-x: auto can be useful if columns are too wide
-        // border: 1px solid #ccc; is optional, just to outline the scroll area
+        echo "<h2 {$title_color_style} style=\"margin-top: 30px; clear: both;\">" . esc_html__('Last 100 Fail2Ban Block Records', 'stopbadbots') . '</h2>';
         echo '<div style="max-height: 600px; overflow-y: auto; overflow-x: auto; border: 1px solid #ccc;">';
-        echo '<table class="wp-list-table widefat fixed striped pages">'; // Using WP classes for styling
+        echo '<table class="wp-list-table widefat fixed striped pages">';
         echo '<thead>';
         echo '<tr>';
-        // Inline style for sticky headers
-        // position: sticky; top: 0; makes the header stick to the top of the scrollable div
-        // background-color: #f0f0f0; (or another color) to prevent content below from showing through
-        // z-index: 1; to ensure the header stays above the table body when scrolling
         $th_style = 'style="position: sticky; top: 0; background-color: #f9f9f9; z-index: 1; box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1);"';
-        echo "<th scope=\"col\" {$th_style}>Date and Time</th>";
-        echo "<th scope=\"col\" {$th_style}>IP</th>";
-        echo "<th scope=\"col\" {$th_style}>Jail</th>";
-        echo "<th scope=\"col\" {$th_style}>Attempts</th>";
-        echo "<th scope=\"col\" {$th_style}>Ban Duration (seconds)</th>";
+        echo "<th scope=\"col\" {$th_style}>" . esc_html__('Date and Time', 'stopbadbots') . "</th>";
+        echo "<th scope=\"col\" {$th_style}>" . esc_html__('IP', 'stopbadbots') . "</th>";
+        echo "<th scope=\"col\" {$th_style}>" . esc_html__('Jail', 'stopbadbots') . "</th>";
+        echo "<th scope=\"col\" {$th_style}>" . esc_html__('Attempts', 'stopbadbots') . "</th>";
+        echo "<th scope=\"col\" {$th_style}>" . esc_html__('Ban Duration (seconds)', 'stopbadbots') . "</th>";
         echo '</tr>';
         echo '</thead>';
-        echo '<tbody id="the-list">'; // The id "the-list" is a WP standard, good to keep
+        echo '<tbody id="the-list-last-100">'; // Changed ID for clarity
         foreach ($results_last_100 as $row) {
-            // Format date and time for display
-            // Assuming timestamp is server local time. Use wp_date for WP timezone.
-            // For simplicity and consistency with potential existing behavior, using date() with strtotime().
-            $formatted_datetime = date('d/m/Y H:i:s', strtotime($row['timestamp']));
+            $formatted_datetime = date_i18n(get_option('date_format') . ' ' . get_option('time_format'), strtotime($row['timestamp']));
             echo '<tr>';
             echo '<td>' . esc_html($formatted_datetime) . '</td>';
             echo '<td>' . esc_html($row['ip']) . '</td>';
@@ -355,22 +429,23 @@ function stopbadbots_render_ban_report()
         }
         echo '</tbody>';
         echo '</table>';
-        echo '</div>'; // Close the div container
-    } // End of if (!empty($results_last_100)) for Last 100 Records
-    // Return the buffer content and clear it
-    return; // ob_get_clean();
+        echo '</div>';
+    }
 }
+
 function stopbadbots_add_menu_fail2ban()
 {
     $stopbadbots_table_page = add_submenu_page(
-        "stop_bad_bots_plugin", // $parent_slug
-        "Fail2ban Monitor", // string $page_title
-        "Fail2ban Monitor", // string $menu_title
-        "manage_options", // string $capability
+        "stop_bad_bots_plugin",
+        "Fail2ban Monitor",
+        "Fail2ban Monitor",
+        "manage_options",
         "stopbadbots_my-custom-submenu-page-fail2ban",
         "stopbadbots_render_ban_report"
     );
 }
-if (is_admin() and current_user_can("manage_options")) {
+if (is_admin() && current_user_can("manage_options")) {
     add_action('admin_menu', 'stopbadbots_add_menu_fail2ban');
 }
+
+?>

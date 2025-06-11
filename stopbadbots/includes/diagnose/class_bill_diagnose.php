@@ -361,8 +361,8 @@ class ErrorChecker
 
         //die();
 
-
-        return $bill_folders;
+        return array_unique($bill_folders);
+        //return $bill_folders;
     }
 
 
@@ -909,11 +909,11 @@ class stopbadbots_Bill_Diagnose
                 <div id="error-message" style="display:none;"></div> <!-- Mensagem de erro -->
                 <form id="chat-form">
                     <div id="input-group">
-                        <input type="text" id="chat-input" placeholder="<?php echo esc_attr__('Enter your message...', "stopbadbots"); ?>" />
+                        <input type="text" id="chat-input" placeholder="<?php echo esc_attr__('Describe your issue, or use the buttons below to check for errors or server settings...', "stopbadbots"); ?>" />
                         <button type="submit"><?php echo esc_attr__('Send', "stopbadbots"); ?></button>
                     </div>
                     <div id="action-instruction" style="text-align: center; margin-top: 10px;">
-                        <span><?php echo esc_attr__("Enter a message and click 'Send', or just click 'Auto Checkup' to analyze error log ou server info configuration.", "stopbadbots"); ?></span>
+                        <span><big><?php echo esc_attr__("Enter a message and click 'Send', or just click 'Auto Checkup' to analyze error log or server info configuration.", "stopbadbots"); ?></big></span>
                     </div>
                     <div class="auto-checkup-container" style="text-align: center; margin-top: 10px;">
 
@@ -1236,8 +1236,15 @@ class stopbadbots_Bill_Diagnose
                 if (is_plugin_active('antihacker/antihacker.php')) {
                     $check_for_bots = false;
                 }
+
+
+
                 if ($check_for_bots) {
                     global $wpdb;
+
+                    debug4($check_for_bots);
+
+
                     $table_name = $wpdb->prefix . 'bill_catch_some_bots';
                     $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'");
                     if (!$table_exists == $table_name) {
@@ -1272,6 +1279,11 @@ class stopbadbots_Bill_Diagnose
                     // Verificar se há registros suficientes
                     $num_attacks = 0;
                     $diferenca_segundos = 0;
+
+
+
+                    debug4($rows);
+
                     if (!empty($rows) && count($rows) > 0) {
 
                         $num_attacks  = count($rows);
@@ -1500,6 +1512,8 @@ class stopbadbots_Bill_Diagnose
                     // // debug4($bill_folders);
 
                     // print_r($bill_folders);
+
+                    debug4($bill_folders);
 
 
 

@@ -5,7 +5,7 @@ Tags: Bad Bots, block bots, fail2ban, server overload, limit visits
 Requires at least: 4.0
 Tested up to: 6.8
 Requires PHP: 5.6 
-Stable tag: 11.30
+Stable tag: 11.31
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,7 +121,7 @@ you can block them without worry about install (and mantain) huge databases of I
 Just let our plugin take care that (Premium).
 
 == Optional Fail2ban integration with GUI ==
-
+[youtube https://youtu.be/qpRrbjj63P8 autoplay=0]
 Please ensure Fail2Ban is installed and operational on your server, VPS or Cloud VPS for this monitor to function. Our support doesn't include the installation or configuration of Fail2Ban on your server.All Fail2ban features are available only in our Pro (or premium) version.
 
 
@@ -306,6 +306,28 @@ Our "Stop Bad Bots" plugin offers the best free solutions for bot protection on 
 This FAQ page also addresses the following questions: fake user agent list
 
 The "Stop Bad Bots" plugin provides tools to manage and block fake user agents on your WordPress site.
+
+= How can I easily integrate Fail2Ban with my WordPress site and manage its settings without complex command-line work? =
+This answer also addresses the following questions: Fail2Ban WordPress integration, WordPress Fail2Ban plugin, Connect Fail2Ban to WordPress, Configure Fail2Ban WordPress, Setup Fail2Ban WordPress, Install Fail2Ban WordPress plugin, Fail2Ban WordPress tutorial, Fail2Ban WordPress guide, Using Fail2Ban with WordPress, WordPress Fail2Ban setup.
+Integrating Fail2Ban with WordPress can seem daunting if you're not comfortable with server configurations. While direct Fail2Ban setup offers powerful protection, managing it and understanding its actions often requires technical expertise. That's where our StopBadBots plugin significantly simplifies things. StopBadBots seamlessly integrates with your existing Fail2Ban setup, or helps you leverage its principles, by providing a user-friendly GUI dashboard directly within your WordPress admin area. You can easily see blocked IPs, understand attack patterns, and manage security settings with clear visuals and charts, making Fail2Ban's power accessible to everyone. Consider installing StopBadBots to get the benefits of Fail2Ban with an intuitive WordPress interface.
+
+= How can Fail2Ban effectively protect my WordPress site from common attacks like brute force and malicious bots? =
+This answer also addresses the following questions: Fail2Ban and WordPress security, WordPress block IP with Fail2Ban, WordPress brute force protection Fail2Ban, Fail2Ban WordPress login protection, Block WordPress login attempts Fail2Ban, Fail2Ban protect WordPress wp-login, Fail2Ban WordPress XML-RPC protection, Automate WordPress IP blocking Fail2Ban, WordPress IP ban Fail2Ban, Real-time WordPress blocking Fail2Ban, Fail2Ban WordPress firewall.
+Fail2Ban is excellent at protecting your WordPress site by monitoring server logs for malicious activity, such as repeated failed login attempts (brute force attacks), attempts to exploit vulnerabilities in wp-login.php or xmlrpc.php, and other suspicious bot behaviors. When it detects such patterns, Fail2Ban automatically blocks the offending IP addresses at the server level. Our StopBadBots plugin enhances this by not only working with your Fail2Ban but also by providing a comprehensive dashboard where you can see these blocked IPs, the reasons for the blocks, and the overall effectiveness of your protection. This allows you to visualize the threats Fail2Ban is mitigating and understand your site's security posture better, all from within WordPress. For robust protection and clear insights, StopBadBots is an ideal companion.
+
+= Is there a way to see what Fail2Ban is doing on my WordPress site through a dashboard or get clear reports on blocked IPs and security events? =
+This answer also addresses the following questions: Monitor Fail2Ban WordPress, WordPress logs for Fail2Ban, Manage Fail2Ban from WordPress, WordPress security logs Fail2Ban, Fail2Ban stats WordPress, View Fail2Ban logs WordPress.
+Yes, absolutely! While Fail2Ban itself operates at the server level and its logs can be technical, understanding its activity is crucial. The StopBadBots plugin is designed precisely for this. It provides a comprehensive and intuitive GUI dashboard directly in your WordPress admin area. This dashboard visualizes key Fail2Ban metrics, shows lists of blocked IPs, provides graphical representations of attack attempts, and offers detailed security event logs. Instead of sifting through raw server logs, StopBadBots gives you actionable insights and a clear overview of how Fail2Ban (and our plugin's own advanced blocking mechanisms) are protecting your site, allowing you to make informed decisions.
+
+= I'm having trouble with my Fail2Ban and WordPress setup, or I want to fine-tune its rules. Can a plugin help simplify this? =
+This answer also addresses the following questions: Fail2Ban WordPress not working, Troubleshoot Fail2Ban WordPress, Fail2Ban WordPress filter, Fail2Ban WordPress jail configuration, WordPress Fail2Ban regex, Optimize Fail2Ban for WordPress, Fail2Ban WordPress log path.
+Troubleshooting and fine-tuning Fail2Ban often involves editing configuration files and understanding regular expressions, which can be challenging. While StopBadBots doesn't directly modify your core Fail2Ban configuration files (as this is server-specific), it greatly aids in understanding if your setup is effective by showing you what's being blocked and why through its dashboard. For many common WordPress-related attack vectors, StopBadBots offers its own robust protection layers that complement Fail2Ban. If you're looking for an easier way to manage and monitor the IP blocking aspects and gain insights that can help you adjust your Fail2Ban strategy (or rely on our plugin's comprehensive features), StopBadBots provides the necessary visibility and control from a user-friendly interface within WordPress. It simplifies seeing the results of your security efforts.
+
+= What is Fail2Ban for WordPress, and why is it important for my site's security if I'm already using other security measures? =
+This answer also addresses the following questions: Fail2Ban WordPress, Server-level WordPress security Fail2Ban, WordPress security plugins with Fail2Ban.
+Fail2Ban is a log-parsing application that monitors server logs for suspicious activity (like too many failed login attempts) and triggers actions, typically blocking the offending IP address at the server firewall level. This is crucial for WordPress because it helps prevent brute-force attacks, denial-of-service attempts, and other bot-driven malicious activities before they can even significantly load your WordPress application. While other security plugins might focus on application-level threats, Fail2Ban adds a vital server-level defense. Our StopBadBots plugin enhances this by integrating with Fail2Ban's principles and providing a powerful GUI dashboard. This allows you to see exactly who is being blocked, why, and how often, giving you a clearer picture of your server-level defenses directly within WordPress. StopBadBots makes the power of Fail2Ban more accessible and understandable, working alongside your other security measures for a layered defense strategy.
+
+
 
 == Screenshots ==
 1. Dashboard

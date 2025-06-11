@@ -5780,7 +5780,8 @@ function stopbadbots_check_false_googlebot()
 					$stopbadbots_ip = trim($stopbadbots_ip);
 					$host = gethostbyaddr($stopbadbots_ip);
 					if ($host !== null) {
-						$host = strip_tags($host);
+						// $host = strip_tags($host);
+						$host = !is_null($host) ? strip_tags($host) : '';
 					}
 					$host = !empty($host) ? trim($host) : '';
 					$host = strtolower($host);

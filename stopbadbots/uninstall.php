@@ -100,7 +100,9 @@ $tables = array(
   'sbb_http_tools',
   'sbb_fingerprint',
   'wptools_page_load_times',
-  'bill_catch_some_bots'
+  'bill_catch_some_bots',
+  'bill_catch_bots',
+  'stopbadbots_fail2ban_logs'
 );
 
 

@@ -1513,7 +1513,7 @@ class stopbadbots_Bill_Diagnose
 
                     // print_r($bill_folders);
 
-                    debug4($bill_folders);
+                    //debug4($bill_folders);
 
 
 

@@ -108,8 +108,8 @@ $tables = array(
 
 
 foreach ($tables as $table) {
-  $current_table = $wpdb->prepare("DROP TABLE IF EXISTS %s", $prefix . $table);
-  $wpdb->query($current_table);
+  $table_name = $prefix . $table;
+  $wpdb->query("DROP TABLE IF EXISTS $table_name");
 }
 
 

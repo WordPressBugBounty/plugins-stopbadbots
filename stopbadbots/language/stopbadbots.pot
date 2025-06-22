@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: stop bad bots\n"
-"POT-Creation-Date: 2025-06-11 11:11+0100\n"
+"POT-Creation-Date: 2025-06-22 13:27+0100\n"
 "PO-Revision-Date: 2018-08-28 16:59-0000\n"
 "Last-Translator: Bill <sergiominozzi@gmail.com>\n"
 "Language-Team: Bill Minozzi <sergiominozzi@gmail.com>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_x;_nx;_e;esc_attr_e;esc_attr__\n"
+"X-Poedit-KeywordsList: __;_x;_nx;_e;esc_attr_e;esc_attr__;esc_html_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: dashboard/botsgraph_pie.php:28 dashboard/calcula_stats_pie2.php:29
@@ -1453,6 +1453,30 @@ msgstr ""
 msgid "Search Referer"
 msgstr ""
 
+#: includes/stopbadbots.php:241 stopbadbots.php:241
+msgid "Stop Bad Bots: Could not load the localization file (Language file)"
+msgstr ""
+
+#: includes/stopbadbots.php:1132 stopbadbots.php:1236
+msgid "Protection rate:"
+msgstr ""
+
+#: includes/stopbadbots.php:1136 stopbadbots.php:1240
+msgid "For details, visit the plugin dashboard"
+msgstr ""
+
+#: includes/stopbadbots.php:1138 stopbadbots.php:1242
+msgid "Attacks Blocked Last 15 days"
+msgstr ""
+
+#: includes/stopbadbots.php:1145 stopbadbots.php:1249
+msgid "Total Attacks Blocked By Type"
+msgstr ""
+
+#: includes/stopbadbots.php:1154 stopbadbots.php:1258
+msgid "Total Attacks Blocked By IP"
+msgstr ""
+
 #: includes/vendor/vendor.php:49
 msgid "Please, wait...  Dismissing..."
 msgstr ""
@@ -2080,30 +2104,6 @@ msgstr ""
 
 #: settings/options/plugin_options_tabbed.php:1089
 msgid "Purchase Code (just paste here to activate your product)"
-msgstr ""
-
-#: stopbadbots.php:241
-msgid "Stop Bad Bots: Could not load the localization file (Language file)"
-msgstr ""
-
-#: stopbadbots.php:1026
-msgid "Protection rate:"
-msgstr ""
-
-#: stopbadbots.php:1030
-msgid "For details, visit the plugin dashboard"
-msgstr ""
-
-#: stopbadbots.php:1032
-msgid "Attacks Blocked Last 15 days"
-msgstr ""
-
-#: stopbadbots.php:1039
-msgid "Total Attacks Blocked By Type"
-msgstr ""
-
-#: stopbadbots.php:1048
-msgid "Total Attacks Blocked By IP"
 msgstr ""
 
 #: table/visitors_render.php:29

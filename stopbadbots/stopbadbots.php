@@ -1,8 +1,8 @@
-<?php /*
+<?php /* 
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.33
+Version: 11.34
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -526,6 +526,216 @@ if ($stopbadbots_is_admin) {
 	require_once STOPBADBOTSPATH . 'dashboard/main.php';
 	require_once STOPBADBOTSPATH . 'functions/function_sysinfo.php';
 }
+
+
+
+
+
+
+// ---------------------  INSTALLER 
+
+
+/**
+ * Obtém os valores de uma lista predefinida de opções do plugin StopBadBots.
+ *
+ * Esta função contém uma lista fixa de todos os nomes de opções (chaves)
+ * definidos no arquivo de configurações. Ela então executa uma única e
+
+ * eficiente consulta ao banco de dados para buscar os valores atuais de
+ * todas essas opções, retornando-as em um único array associativo.
+ *
+ * @return array Um array associativo no formato 'nome_da_opcao' => 'valor_da_opcao'.
+ *               Opções que não existem no banco de dados não serão incluídas no array.
+ */
+function stopbadbots_get_all_defined_settings()
+{
+	// Passo 1: Definir a lista completa de todas as chaves de opções do plugin.
+	// Esta é a lista que você extraiu do arquivo de configurações.
+	$option_keys = [
+		// General Settings
+		'stop_bad_bots_active',
+		'stop_bad_bots_ip_active',
+		'stop_bad_bots_referer_active',
+		'stop_bad_bots_network',
+		'stop_bad_bots_blank_ua',
+		'stopbadbots_engine_option',
+		'stopbadbots_firewall',
+		'stopbadbots_block_enumeration',
+		'stopbadbots_block_pingbackrequest',
+		'stopbadbots_block_spam_contacts',
+		'stopbadbots_block_spam_comments',
+		'stopbadbots_block_spam_login',
+		'stopbadbots_block_false_google',
+		'stopbadbots_block_china',
+		'stopbadbots_keep_log',
+
+		// Limit Bot Visits
+		'stopbadbots_limit_visits',
+		'stopbadbots_rate_limiting',
+		'stopbadbots_rate_limiting_day',
+		'stopbadbots_rate404_limiting',
+		'stopbadbots_rate_penalty',
+
+		// Block HTTP Tools
+		'stopbadbots_block_http_tools',
+		'stopbadbots_update_http_tools',
+		'stopbadbots_http_tools',
+
+		// Whitelist
+		'stopbadbots_enable_whitelist',
+		'stopbadbots_string_whitelist',
+		'stopbadbots_ip_whitelist',
+
+		// Notifications
+		'stopbadbots_my_email_to',
+		'stopbadbots_my_radio_report_all_visits',
+		'stopbadbots_Blocked_Firewall',
+
+		// Go Pro
+		'stopbadbots_checkversion',
+	];
+
+	// Se por algum motivo a lista estiver vazia, não há o que fazer.
+	if (empty($option_keys)) {
+		return [];
+	}
+
+	// Acessa a classe global do WordPress para interação com o banco de dados.
+	global $wpdb;
+
+	// Passo 2: Preparar a consulta SQL de forma eficiente e segura.
+	// Primeiro, criamos uma string de placeholders ('%s') para cada chave na lista.
+	// Ex: '%s, %s, %s, ...'
+	$placeholders = implode(', ', array_fill(0, count($option_keys), '%s'));
+
+	// Agora, construímos a consulta SQL usando a cláusula 'IN'.
+	// Esta é a maneira mais performática de buscar múltiplos registros por suas chaves.
+	$sql = $wpdb->prepare(
+		"SELECT option_name, option_value FROM {$wpdb->options} WHERE option_name IN ($placeholders)",
+		$option_keys // O segundo argumento do prepare é o array com os valores para os placeholders.
+	);
+
+	// Executa a consulta e obtém os resultados.
+	$results = $wpdb->get_results($sql);
+
+	// Passo 3: Montar o array final com os resultados.
+	$plugin_settings = [];
+	if (!empty($results)) {
+		foreach ($results as $option) {
+			// Adiciona a opção ao array final, desserializando o valor.
+			// A desserialização é crucial para opções que são arrays (como whitelists, etc.).
+			$plugin_settings[$option->option_name] = maybe_unserialize($option->option_value);
+		}
+	}
+
+	return $plugin_settings;
+}
+
+// die(var_dump(stopbadbots_get_all_defined_settings()));
+
+
+/**
+ * =================================================================
+ * INSTALLER LOGIC
+ * =================================================================
+ * This logic ensures the correct files are loaded and that the user
+ * is forced to the setup wizard if the installation is not complete.
+ */
+
+
+/**
+ * Handles the installer reset for debugging purposes.
+ * Access via >>>>>>>>>>>>>>>>>>>>> ?debug_reset_installer=true <<<<<<<<<<<<<<<
+ *
+ * Runs on 'plugins_loaded' to act before other logic.
+ */
+function stopbadbots_handle_debug_reset()
+{
+	// Guard Clause: Exit immediately if conditions are not met.
+	if (!isset($_GET['debug_reset_installer']) || !current_user_can('manage_options')) {
+		return;
+	}
+
+	// Clear the installer options
+	delete_option('stopbadbots_setup_complete');
+	delete_option('stopbadbots_inst_experience_level');
+	delete_transient('stopbadbots_redirect_to_installer');
+
+
+	// Redirect to a clean installer URL and terminate the script.
+	wp_safe_redirect(admin_url('tools.php?page=stopbadbots-installer'));
+	exit;
+}
+add_action('plugins_loaded', 'stopbadbots_handle_debug_reset');
+
+
+/**
+ * STEP 1: Conditionally load the necessary plugin files.
+ *
+ * This must run early (on 'plugins_loaded') so that WordPress knows
+ * about the installer admin page before it tries to render it.
+ */
+function stopbadbots_load_files()
+{
+
+	global $stopbadbots_is_admin;
+
+	// We only care about this logic in the admin area.
+	if (!$stopbadbots_is_admin) {
+		return;
+	}
+
+	// Se o cookie de instalação abortada existir...
+	if (isset($_COOKIE['stopbadbots_setup_aborted']) && $_COOKIE['stopbadbots_setup_aborted'] === 'true') {
+
+		// 1. Atualiza a opção para marcar a instalação como concluída.
+		update_option('stopbadbots_setup_complete', true);
+
+		// 2. Limpa o cookie para não executar esta lógica novamente.
+		unset($_COOKIE['stopbadbots_setup_aborted']);
+		setcookie('stopbadbots_setup_aborted', '', time() - 3600, '/');
+	}
+
+	// If setup is not complete, load the installer file.
+	if (!get_option('stopbadbots_setup_complete', false)) {
+		require_once STOPBADBOTSPATH . 'includes/install/install.php';
+		// includes/install
+	}
+}
+add_action('plugins_loaded', 'stopbadbots_load_files');
+
+
+/**
+ * STEP 2: Enforce the redirect to the installer page.
+ *
+ * This runs on 'admin_init', which is the correct hook for redirects.
+ * It assumes the correct files have already been loaded by stopbadbots_load_files().
+ */
+function stopbadbots_enforce_installer_redirect()
+{
+	// Don't do anything if setup is already complete.
+	if (get_option('stopbadbots_setup_complete', false)) {
+		return;
+	}
+
+	// Don't redirect during AJAX calls to avoid breaking functionality.
+	if (wp_doing_ajax()) {
+		return;
+	}
+
+	// Don't redirect if we are already on the installer page, to prevent a loop.
+	if (isset($_GET['page']) && $_GET['page'] === 'stopbadbots-installer') {
+		return;
+	}
+
+	// If we got here, a redirect is required.
+	wp_safe_redirect(admin_url('tools.php?page=stopbadbots-installer'));
+	exit;
+}
+add_action('admin_init', 'stopbadbots_enforce_installer_redirect');
+// ---------------------  END INSTALLER 
+
+
 
 
 if ($stopbadbots_is_admin) {
@@ -1646,11 +1856,11 @@ function stopbadbots_bill_install()
 		$logo = STOPBADBOTSIMAGES . '/logo.png';
 		//$plugin_adm_url = admin_url('tools.php?page=stopbadbots_new_more_plugins');
 		$plugin_adm_url = admin_url();
-		require_once dirname(__FILE__) . "/includes/install-checkup/class_bill_install.php";
+		//require_once dirname(__FILE__) . "/includes/install-checkup/class_bill_install.php";
 		// ob_end_clean();
 	}
 }
-add_action('wp_loaded', 'stopbadbots_bill_install', 15);
+//add_action('wp_loaded', 'stopbadbots_bill_install', 15);
 // add_action('wp_head', 'stopbadbots_bill_install',15);
 // add_action('admin_init', 'stopbadbots_bill_install',30);
 

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - StopBadBots - Development (trunk)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-11 10:41+0100\n"
-"PO-Revision-Date: 2025-06-11 11:10+0100\n"
+"POT-Creation-Date: 2025-06-22 13:28+0100\n"
+"PO-Revision-Date: 2025-06-22 12:34+0000\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
@@ -13,8 +13,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.6\n"
-"X-Poedit-KeywordsList: __;_e;_nx;_x;_esc_attr_e;esc_attr__;esc_attr_e\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Poedit-KeywordsList: __;_e;_nx;_x;_esc_attr_e;esc_attr__;esc_attr_e;"
+"esc_html_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Loco-Version: 2.8.0; wp-6.8.1; php-8.2.10\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -82,8 +83,8 @@ msgstr ""
 "più funzioni e protezione Firewall."
 
 #: dashboard/dashboard.php:105 dashboard/dashboard.php:121
-#: dashboard/memory.php:103 functions/functions.php:4312
-#: includes/diagnose/class_bill_diagnose.php:999
+#: dashboard/memory.php:103 dashboard/mybanners.php:74
+#: functions/functions.php:4312 includes/diagnose/class_bill_diagnose.php:999
 #: includes/diagnose/class_bill_diagnose.php:1450
 #: includes/install-checkup/class_bill_install.php:316
 #: includes/install-checkup/class_bill_install.php:385
@@ -416,6 +417,32 @@ msgstr "Supporto Premium dedicato"
 #: dashboard/mybanners.php:70
 msgid "More..."
 msgstr "Altro..."
+
+#: dashboard/mybanners.php:253
+msgid ""
+"Please support us by rating our plugin on WordPress.org. Help us keep this "
+"plugin live and updated."
+msgstr ""
+"Sostienici valutando il nostro plugin su WordPress.org. Aiutaci a mantenerlo "
+"attivo e aggiornato."
+
+#: dashboard/mybanners.php:256
+msgid "Rate or Share"
+msgstr "Valuta o condividi"
+
+#: dashboard/mybanners.php:261
+msgid ""
+"If you're enjoying the Stop Bad Bots Plugin, we’d be grateful if you could "
+"rate it on WordPress.org. It only takes a moment and helps us reach more "
+"users and stay motivated. Thank you!"
+msgstr ""
+"Se il plugin Stop Bad Bots ti piace, ti saremmo grati se potessi dargli una "
+"valutazione su WordPress.org. Ci vuole solo un attimo e ci aiuta a "
+"raggiungere più utenti e a rimanere motivati. Grazie!"
+
+#: dashboard/mybanners.php:264
+msgid "Rate"
+msgstr "Valutare"
 
 #: dashboard/notifications.php:34
 #: settings/options/plugin_options_tabbed.php:865
@@ -1545,11 +1572,11 @@ msgstr ""
 #: includes/diagnose/class_bill_diagnose.php:1377
 #, php-format
 msgid ""
-"Our free <a href=\"%1$s\">StopBadBots</a> and <a href=\"%2$s\">AntiHacker</"
-"a> plugins help safeguard your site."
+"Our free <a href=\"%1$s\">StopBadBots</a> and <a href=\"%2$s\">AntiHacker</a>"
+" plugins help safeguard your site."
 msgstr ""
-"I nostri plugin gratuiti <a href=\"%1$s\">StopBadBots</a> e <a "
-"href=\"%2$s\">AntiHacker</a> ti aiutano a proteggere il tuo sito."
+"I nostri plugin gratuiti <a href=\"%1$s\">StopBadBots</a> e <a href=\"%2$s\">"
+"AntiHacker</a> ti aiutano a proteggere il tuo sito."
 
 #: includes/diagnose/class_bill_diagnose.php:1441
 msgid "Site Errors"
@@ -1629,6 +1656,207 @@ msgstr "Scopri nuovi plugin GRATUITI"
 msgid "Just Deactivate"
 msgstr "Disattiva solo"
 
+#: includes/install/install.php:208
+msgid "Loading"
+msgstr "Caricamento"
+
+#: includes/install/install.php:227
+msgid "Welcome"
+msgstr "Benvenuto"
+
+#: includes/install/install.php:228
+msgid ""
+"Thank you for choosing StopBadBots. This quick setup wizard will apply our "
+"recommended security settings to protect your site immediately."
+msgstr ""
+"Grazie per aver scelto StopBadBots. Questa rapida procedura guidata "
+"applicherà le nostre impostazioni di sicurezza consigliate per proteggere "
+"immediatamente il tuo sito."
+
+#: includes/install/install.php:229
+msgid ""
+"Please follow the steps to complete the installation. You can always change "
+"these settings later."
+msgstr ""
+"Segui i passaggi per completare l'installazione. Potrai sempre modificare "
+"queste impostazioni in un secondo momento."
+
+#: includes/install/install.php:232
+msgid "Start Setup"
+msgstr "Avvia configurazione"
+
+#: includes/install/install.php:241
+msgid "Your Experience Level"
+msgstr "Il tuo livello di esperienza"
+
+#: includes/install/install.php:242
+msgid ""
+"This choice helps us understand our users. The default \"One-Click Setup\" "
+"will apply all recommended settings for you."
+msgstr ""
+"Questa scelta ci aiuta a comprendere i nostri utenti. L'impostazione "
+"predefinita \"Configurazione in un clic\" applicherà tutte le impostazioni "
+"consigliate."
+
+#: includes/install/install.php:246
+msgid "One-Click Setup (Recommended)"
+msgstr "Configurazione con un clic (consigliata)"
+
+#: includes/install/install.php:248
+msgid "We'll automatically apply the best-practice settings for you."
+msgstr ""
+"Applicheremo automaticamente le impostazioni più adatte alle tue esigenze."
+
+#: includes/install/install.php:252
+msgid "Manual Setup (Advanced)"
+msgstr "Configurazione manuale (avanzata)"
+
+#: includes/install/install.php:254
+msgid "You plan to configure all settings manually after installation."
+msgstr ""
+"Si prevede di configurare manualmente tutte le impostazioni dopo "
+"l'installazione."
+
+#: includes/install/install.php:257 includes/install/install.php:312
+#: includes/install/install.php:325
+msgid "Back"
+msgstr "Indietro"
+
+#: includes/install/install.php:258 includes/install/install.php:313
+msgid "Next"
+msgstr "Prossimo"
+
+#: includes/install/install.php:271
+msgid "Basic Settings"
+msgstr "Impostazioni di base"
+
+#: includes/install/install.php:272
+msgid ""
+"Please confirm these basic settings. All other security rules will be "
+"applied automatically for you."
+msgstr ""
+"Si prega di confermare queste impostazioni di base. Tutte le altre regole di "
+"sicurezza verranno applicate automaticamente."
+
+#: includes/install/install.php:276
+msgid "Email for security notifications"
+msgstr "Email per notifiche di sicurezza"
+
+#: includes/install/install.php:278
+#| msgid ""
+#| "Left Blank to use your default WordPress email. Then, click save changes."
+msgid "Leave blank to use your default WordPress admin email."
+msgstr ""
+"Lascia vuoto per utilizzare l'email predefinita dell'amministratore di "
+"WordPress."
+
+#: includes/install/install.php:282
+#| msgid "Block all with Blank User Agent?"
+msgid "Block visitors with a blank User-Agent?"
+msgstr "Bloccare i visitatori con uno User-Agent vuoto?"
+
+#: includes/install/install.php:283
+msgid ""
+"This is a common characteristic of poorly written bots and scrapers. "
+"Recommended: Yes."
+msgstr ""
+"Questa è una caratteristica comune dei bot e degli scraper mal scritti. "
+"Consigliato: Sì."
+
+#: includes/install/install.php:284 includes/install/install.php:291
+#: settings/options/plugin_options_tabbed.php:892
+msgid "Yes"
+msgstr "Sì"
+
+#: includes/install/install.php:285 includes/install/install.php:292
+#: settings/options/plugin_options_tabbed.php:896
+msgid "No"
+msgstr "No"
+
+#: includes/install/install.php:289
+#| msgid "Do you want receive email alerts for each bot attempt?"
+msgid "Receive email alerts for each blocked bot?"
+msgstr "Vuoi ricevere avvisi via email per ogni bot bloccato?"
+
+#: includes/install/install.php:290
+msgid ""
+"This can be noisy if your site is under attack. You can view all blocks in "
+"the logs. Recommended: No."
+msgstr ""
+"Questo può essere rumoroso se il tuo sito è sotto attacco. Puoi visualizzare "
+"tutti i blocchi nei log. Consigliato: no."
+
+#: includes/install/install.php:296
+msgid "How long to keep visitor logs?"
+msgstr "Per quanto tempo conservare i registri dei visitatori?"
+
+#: includes/install/install.php:297
+msgid ""
+"Storing data for shorter durations conserves database space; typically, "
+"seven days is adequate. Nevertheless, please note that this will directly "
+"affect your visit and analytics reports."
+msgstr ""
+"L'archiviazione dei dati per periodi più brevi consente di risparmiare "
+"spazio sul database; in genere, sette giorni sono sufficienti. Tuttavia, "
+"tieni presente che ciò influirà direttamente sulle tue visite e sui report "
+"di analisi."
+
+#: includes/install/install.php:299
+msgid "1 day"
+msgstr "1 giorno"
+
+#: includes/install/install.php:300
+#| msgid "days"
+msgid "3 days"
+msgstr "3 giorni"
+
+#: includes/install/install.php:301
+#| msgid "days"
+msgid "7 days"
+msgstr "7 giorni"
+
+#: includes/install/install.php:302
+#| msgid "days"
+msgid "14 days"
+msgstr "14 giorni"
+
+#: includes/install/install.php:303
+#| msgid "days"
+msgid "30 days"
+msgstr "30 giorni"
+
+#: includes/install/install.php:304
+#| msgid "days"
+msgid "90 days"
+msgstr "90 giorni"
+
+#: includes/install/install.php:305
+#| msgid "days"
+msgid "180 days"
+msgstr "180 giorni"
+
+#: includes/install/install.php:306
+#| msgid "days"
+msgid "360 days"
+msgstr "360 giorni"
+
+#: includes/install/install.php:322
+msgid "All Done!"
+msgstr "Tutto fatto!"
+
+#: includes/install/install.php:323
+msgid ""
+"StopBadBots has been successfully configured with our recommended settings! "
+"Your site is now protected."
+msgstr ""
+"StopBadBots è stato configurato correttamente con le impostazioni "
+"consigliate! Il tuo sito è ora protetto."
+
+#: includes/install/install.php:326
+#| msgid "Go to WordPress"
+msgid "Go to Dashboard"
+msgstr "Vai alla Dashboard"
+
 #: includes/list-tables/class-sbb-list-table.php:23
 msgid "Name"
 msgstr "Nome"
@@ -1690,6 +1918,32 @@ msgstr "Ricerca IP"
 #: includes/list-tables/page3.php:18
 msgid "Search Referer"
 msgstr "Ricerca Referente"
+
+#: includes/stopbadbots.php:241 stopbadbots.php:241
+msgid "Stop Bad Bots: Could not load the localization file (Language file)"
+msgstr ""
+"Stop Bad Bots: non riesco a caricare il file della localizzazione (File di "
+"lingua)"
+
+#: includes/stopbadbots.php:1132 stopbadbots.php:1236
+msgid "Protection rate:"
+msgstr "Tasso di protezione:"
+
+#: includes/stopbadbots.php:1136 stopbadbots.php:1240
+msgid "For details, visit the plugin dashboard"
+msgstr "Per i dettagli, visita la bacheca del plugin"
+
+#: includes/stopbadbots.php:1138 stopbadbots.php:1242
+msgid "Attacks Blocked Last 15 days"
+msgstr "Attacchi bloccati negli ultimi 15 giorni"
+
+#: includes/stopbadbots.php:1145 stopbadbots.php:1249
+msgid "Total Attacks Blocked By Type"
+msgstr "Attacchi totali bloccati per tipo"
+
+#: includes/stopbadbots.php:1154 stopbadbots.php:1258
+msgid "Total Attacks Blocked By IP"
+msgstr "Attacchi totali bloccati per IP"
 
 #: includes/vendor/vendor.php:49
 msgid "Please, wait...  Dismissing..."
@@ -2366,14 +2620,6 @@ msgstr ""
 "Avvertimi tutte le volte che il firewall blocca qualcosa. (disponibile solo "
 "nella versione pro)"
 
-#: settings/options/plugin_options_tabbed.php:892
-msgid "Yes"
-msgstr "Sì"
-
-#: settings/options/plugin_options_tabbed.php:896
-msgid "No"
-msgstr "No"
-
 #: settings/options/plugin_options_tabbed.php:1070
 msgid ""
 "Get Pro and receive, automatically, weekly updates, Firewall and more "
@@ -2405,32 +2651,6 @@ msgstr "Non devi reinstallare il plugin."
 #: settings/options/plugin_options_tabbed.php:1089
 msgid "Purchase Code (just paste here to activate your product)"
 msgstr "Codice d'acquisto (incolla qui per attivare il tuo prodotto)"
-
-#: stopbadbots.php:241
-msgid "Stop Bad Bots: Could not load the localization file (Language file)"
-msgstr ""
-"Stop Bad Bots: non riesco a caricare il file della localizzazione (File di "
-"lingua)"
-
-#: stopbadbots.php:1026
-msgid "Protection rate:"
-msgstr "Tasso di protezione:"
-
-#: stopbadbots.php:1030
-msgid "For details, visit the plugin dashboard"
-msgstr "Per i dettagli, visita la bacheca del plugin"
-
-#: stopbadbots.php:1032
-msgid "Attacks Blocked Last 15 days"
-msgstr "Attacchi bloccati negli ultimi 15 giorni"
-
-#: stopbadbots.php:1039
-msgid "Total Attacks Blocked By Type"
-msgstr "Attacchi totali bloccati per tipo"
-
-#: stopbadbots.php:1048
-msgid "Total Attacks Blocked By IP"
-msgstr "Attacchi totali bloccati per IP"
 
 #: table/visitors_render.php:29
 msgid "Empty Table. Please, try again later."

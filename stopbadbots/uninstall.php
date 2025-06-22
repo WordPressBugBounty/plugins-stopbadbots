@@ -62,6 +62,7 @@ $stopbadbots_option_name[] = 'stopbadbots_last_notification_date';
 $stopbadbots_option_name[] = 'stopbadbots_last_notification_date2';
 $stopbadbots_option_name[] = 'bill_pre_checkup_finished';
 $stopbadbots_option_name[] = 'bill_pre_checkup_dismissed';
+$stopbadbots_option_name[] = 'stopbadbots_setup_complete';
 
 
 for ($i = 0; $i < count($stopbadbots_option_name); $i++) {

@@ -1612,6 +1612,27 @@ function stopbadbots_plugin_was_activated()
 	global $stopbadbots_update_http_tools;
 	global $astopbadbots_http_tools;
 
+
+
+
+	global $wpdb;
+
+	// Define o nome da tabela principal que vamos verificar.
+	$stopbadbots_table_name = $wpdb->prefix . 'sbb_blacklist';
+
+	// A maneira mais robusta de verificar se uma tabela existe no WordPress é esta:
+	if ($wpdb->get_var("SHOW TABLES LIKE '$stopbadbots_table_name'") === $stopbadbots_table_name) {
+
+		// SE A TABELA EXISTE: É UMA ATUALIZAÇÃO (UPGRADE).
+
+		// Passo crucial: Marcamos a configuração como completa para que
+		// o instalador NÃO seja executado para este usuário existente.
+		update_option('stopbadbots_setup_complete', true);
+	}
+
+
+
+
 	// if ( false ===  get_transient( 'bill_set_vendor' ) ) {
 	// set_transient( 'bill_set_vendor', '1', 3600*24 );
 	// }
@@ -1629,6 +1650,7 @@ function stopbadbots_plugin_was_activated()
 		add_option('stopbadbots_installed', time());
 		update_option('stopbadbots_installed', time());
 	}
+
 
 	if (empty($stopbadbots_http_tools) or $stopbadbots_update_http_tools == 'yes') {
 

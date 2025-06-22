@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.36
+Version: 11.37
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -473,6 +473,9 @@ $stopbadbots_bad_host = array(
 	'wix.com',
 );
 
+
+
+// 
 // require_once STOPBADBOTSPATH . "functions/fail2ban.php";
 require_once STOPBADBOTSPATH . 'functions/functions.php';
 
@@ -659,7 +662,7 @@ function stopbadbots_handle_debug_reset()
 	// Clear the installer options
 	delete_option('stopbadbots_setup_complete');
 	delete_option('stopbadbots_inst_experience_level');
-	delete_transient('stopbadbots_redirect_to_installer');
+	// delete_transient('stopbadbots_redirect_to_installer');
 
 
 	// Redirect to a clean installer URL and terminate the script.
@@ -696,6 +699,14 @@ function stopbadbots_load_files()
 		setcookie('stopbadbots_setup_aborted', '', time() - 3600, '/');
 	}
 
+
+
+
+
+
+
+
+
 	// If setup is not complete, load the installer file.
 	if (!get_option('stopbadbots_setup_complete', false)) {
 		require_once STOPBADBOTSPATH . 'includes/install/install.php';
@@ -713,22 +724,36 @@ add_action('plugins_loaded', 'stopbadbots_load_files');
  */
 function stopbadbots_enforce_installer_redirect()
 {
+
+	//error_log(__LINE__);
+
 	// Don't do anything if setup is already complete.
 	if (get_option('stopbadbots_setup_complete', false)) {
+		//error_log(__LINE__);
+		//var_dump(__LINE__);
+		//die();
 		return;
 	}
-
+	//error_log(__LINE__);
 	// Don't redirect during AJAX calls to avoid breaking functionality.
 	if (wp_doing_ajax()) {
+		//var_dump(__LINE__);
+		//error_log(__LINE__);
+		//die();
 		return;
 	}
 
 	// Don't redirect if we are already on the installer page, to prevent a loop.
 	if (isset($_GET['page']) && $_GET['page'] === 'stopbadbots-installer') {
+		//error_log(__LINE__);
+		//var_dump(__LINE__);
+		//die();
 		return;
 	}
-
+	//error_log(__LINE__);
 	// If we got here, a redirect is required.
+
+	
 	wp_safe_redirect(admin_url('tools.php?page=stopbadbots-installer'));
 	exit;
 }
@@ -1898,39 +1923,9 @@ add_action('init', 'stopbadbots_initialize_plugin_settings', 150);
 
 // fail2ban
 // Function to create the Fail2Ban logs table in the WordPress database
-function stopbadbots_create_fail2ban_table()
-{
-	global $wpdb;
 
-	// Table name with WordPress prefix
-	$table_name = $wpdb->prefix . 'stopbadbots_fail2ban_logs';
-	$charset_collate = $wpdb->get_charset_collate();
-
-	// SQL statement to create the table
-	$sql = "CREATE TABLE IF NOT EXISTS $table_name (
-        id BIGINT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        ip VARCHAR(45) NOT NULL,
-        timestamp DATETIME NOT NULL,
-        jail VARCHAR(100) NOT NULL,
-        reason TEXT,
-        attempts INT NOT NULL,
-        log_line TEXT,
-        host VARCHAR(100),
-        port INT,
-        protocol VARCHAR(10),
-        ban_duration INT NOT NULL,
-        INDEX idx_timestamp (timestamp),
-        INDEX idx_ip (ip),
-        INDEX idx_jail (jail),
-        INDEX idx_attempts (attempts)
-    ) $charset_collate;";
-
-	// Execute the table creation
-	require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-	dbDelta($sql);
-}
 
 // Hook to run the table creation when the plugin is activated
-register_activation_hook(__FILE__, 'stopbadbots_create_fail2ban_table');
+//register_activation_hook(__FILE__, 'stopbadbots_create_fail2ban_table');
 
 require_once STOPBADBOTSPATH . "functions/fail2ban.php";

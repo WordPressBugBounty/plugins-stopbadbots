@@ -142,7 +142,7 @@ $BILLCLASS = 'ACTIVATED_' . $BILLPRODUCT;
 
 if ($stopbadbots_tables_empty == 'yes') { // and isset($_COOKIE[$BILLCLASS])){
 	$stopbadbots_installed    = sanitize_text_field(get_option('stopbadbots_installed', ''));
-	if ($stopbadbots_installed != '') {
+	if ($stopbadbots_installed != '' and get_option('stopbadbots_setup_complete', false)) {
 		// Obter o timestamp atual (segundos desde 1º de janeiro de 1970)
 		$stopbadbots_currentTimestamp = time();
 		// Obter o timestamp de 1 minuto atrás
@@ -1611,26 +1611,19 @@ function stopbadbots_plugin_was_activated()
 	global $stopbadbots_wp_blacklist;
 	global $stopbadbots_update_http_tools;
 	global $astopbadbots_http_tools;
-
-
-
-
 	global $wpdb;
 
-	// Define o nome da tabela principal que vamos verificar.
-	$stopbadbots_table_name = $wpdb->prefix . 'sbb_blacklist';
 
-	// A maneira mais robusta de verificar se uma tabela existe no WordPress é esta:
-	if ($wpdb->get_var("SHOW TABLES LIKE '$stopbadbots_table_name'") === $stopbadbots_table_name) {
+	// testar aqui se table exist...
+	$stopbadbots_main_table_name = $wpdb->prefix . 'sbb_blacklist';
 
-		// SE A TABELA EXISTE: É UMA ATUALIZAÇÃO (UPGRADE).
 
-		// Passo crucial: Marcamos a configuração como completa para que
-		// o instalador NÃO seja executado para este usuário existente.
-		update_option('stopbadbots_setup_complete', true);
+
+    if ( $wpdb->get_var("SHOW TABLES LIKE '$stopbadbots_main_table_name'") === $stopbadbots_main_table_name ) {
+       // update_option('stopbadbots_setup_complete', true);
+		error_log(__LINE__);
 	}
-
-
+	//error_log(__LINE__);
 
 
 	// if ( false ===  get_transient( 'bill_set_vendor' ) ) {
@@ -1669,6 +1662,7 @@ function stopbadbots_plugin_was_activated()
 	stopbadbots_create_db6(); // finger
 	stopbadbots_create_db_stats();
 	stopbadbots_sbb_populate_stats();
+	stopbadbots_create_fail2ban_table();
 
 	// Pointer
 
@@ -7111,3 +7105,35 @@ if ($stopbadbots_tmp == 'robots.txt' or STOPBADBOTSPAGE == 'wp-login.php') {
 	//add_action('wp_loaded', 'stopbadbots_record_log');
 	add_action('send_headers', 'stopbadbots_record_log');
 }*/
+
+function stopbadbots_create_fail2ban_table()
+{
+	global $wpdb;
+
+	// Table name with WordPress prefix
+	$table_name = $wpdb->prefix . 'stopbadbots_fail2ban_logs';
+	$charset_collate = $wpdb->get_charset_collate();
+
+	// SQL statement to create the table
+	$sql = "CREATE TABLE IF NOT EXISTS $table_name (
+        id BIGINT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        ip VARCHAR(45) NOT NULL,
+        timestamp DATETIME NOT NULL,
+        jail VARCHAR(100) NOT NULL,
+        reason TEXT,
+        attempts INT NOT NULL,
+        log_line TEXT,
+        host VARCHAR(100),
+        port INT,
+        protocol VARCHAR(10),
+        ban_duration INT NOT NULL,
+        INDEX idx_timestamp (timestamp),
+        INDEX idx_ip (ip),
+        INDEX idx_jail (jail),
+        INDEX idx_attempts (attempts)
+    ) $charset_collate;";
+
+	// Execute the table creation
+	require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+	dbDelta($sql);
+}

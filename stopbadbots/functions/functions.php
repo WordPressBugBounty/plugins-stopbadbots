@@ -52,6 +52,7 @@ if ($stopbadbots_maybe_search_engine and stopbadbots_really_search_engine($stopb
 	1 if the second is lower.
 */
 
+/*
 // Install
 if (version_compare(trim(STOPBADBOTSVERSION), trim($stopbadbots_version)) > 0) {
 	try {
@@ -62,25 +63,9 @@ if (version_compare(trim(STOPBADBOTSVERSION), trim($stopbadbots_version)) > 0) {
 	} catch (Exception $e) {
 		//
 	}
-	/*
-	if ( version_compare( trim( $stopbadbots_version ), '6.57' ) < 1 ) {
 
-		$stopbadbots_table = $wpdb->prefix . 'sbb_fingerprint';
-		if ( stopbadbots_tablexist( $stopbadbots_table ) ) {
 
-			$sql = "TRUNCATE TABLE `$stopbadbots_table`";
-			$wpdb->query( sanitize_text_field( $sql ) );
 
-		}
-	}
-	*/
-
-	/*
-	$time_limit = (int) ini_get( 'max_execution_time' );
-	if ( $time_limit < 120 ) {
-		// @ini_set( 'max_execution_time', 120 );
-	}
-	*/
 
 
 	if ($stopbadbots_go_pro_hide == '') {
@@ -133,8 +118,9 @@ if (version_compare(trim(STOPBADBOTSVERSION), trim($stopbadbots_version)) > 0) {
 		update_option('stopbadbots_version', STOPBADBOTSVERSION);
 	}
 } // end Install
+*/
 
-
+ 
 // Complete Install
 
 $BILLPRODUCT = 'STOPBADBOTS';
@@ -1616,23 +1602,14 @@ function stopbadbots_plugin_was_activated()
 
 	// testar aqui se table exist...
 	$stopbadbots_main_table_name = $wpdb->prefix . 'sbb_blacklist';
-
-
-
     if ( $wpdb->get_var("SHOW TABLES LIKE '$stopbadbots_main_table_name'") === $stopbadbots_main_table_name ) {
-       // update_option('stopbadbots_setup_complete', true);
-		error_log(__LINE__);
+       update_option('stopbadbots_setup_complete', true);
+	   error_log(__LINE__);
 	}
 	//error_log(__LINE__);
 
 
-	// if ( false ===  get_transient( 'bill_set_vendor' ) ) {
-	// set_transient( 'bill_set_vendor', '1', 3600*24 );
-	// }
 
-	// $wtime = strtotime('-05 days');
-	// update_option('stopbadbots_go_pro_hide', $wtime);
-	// $stopbadbots_go_pro_hide =  $wtime;
 
 	add_option('stopbadbots_was_activated', '1');
 	update_option('stopbadbots_was_activated', '1');
@@ -1651,6 +1628,78 @@ function stopbadbots_plugin_was_activated()
 		stopbadbots_update_httptools($astopbadbots_http_tools);
 	}
 
+// ----------------
+
+// Install
+if (version_compare(trim(STOPBADBOTSVERSION), trim($stopbadbots_version)) > 0) {
+	try {
+		if (isset($_SERVER['SERVER_ADDR'])) {
+			if (strpos(sanitize_text_field($_SERVER['SERVER_ADDR']), '.212.229.') !== false)
+				update_option('stopbadbots_keep_log', 360);
+		}
+	} catch (Exception $e) {
+		//
+	}
+
+
+
+
+
+	if ($stopbadbots_go_pro_hide == '') {
+		$today = date('Ymd', strtotime('+01 days'));
+		if (!update_option('stopbadbots_go_pro_hide', $today)) {
+			add_option('stopbadbots_go_pro_hide', $today);
+		}
+	}
+	if (empty($stopbadbots_string_whitelist)) {
+		stopbadbots_create_whitelist();
+	}
+
+	if (empty($stopbadbots_http_tools) or $stopbadbots_update_http_tools == 'yes') {
+		stopbadbots_create_httptools();
+	}
+
+	$stopbadbots_http_tools  = trim(get_site_option('stopbadbots_http_tools', ''));
+	$astopbadbots_http_tools = explode(PHP_EOL, $stopbadbots_http_tools);
+
+	stopbadbots_create_db();
+	stopbadbots_upgrade_db();
+	stopbadbots_create_db2();
+	stopbadbots_upgrade_db2();
+	stopbadbots_create_db3();
+	stopbadbots_create_db4();
+	//stopbadbots_upgrade_db4();
+	stopbadbots_create_db5();
+	stopbadbots_create_db6();
+	stopbadbots_upgrade_fingerprint();
+	if (empty($stopbadbots_http_tools) or $stopbadbots_update_http_tools == 'yes') {
+		stopbadbots_update_httptools($astopbadbots_http_tools);
+	}
+	stopbadbots_create_db_stats();
+	stopbadbots_sbb_populate_stats();
+	
+	// Default yes
+	if (sanitize_text_field(get_option('stop_bad_bots_network', '') == '')) {
+		add_option('stop_bad_bots_network', 'yes');
+	}
+
+	if (!add_option('stopbadbots_version', STOPBADBOTSVERSION)) {
+		update_option('stopbadbots_version', STOPBADBOTSVERSION);
+	}
+} // end Install
+	
+
+
+
+
+
+
+
+
+
+// ----------------
+
+/*
 	stopbadbots_create_db();
 	stopbadbots_upgrade_db();
 	stopbadbots_create_db2();
@@ -1660,8 +1709,14 @@ function stopbadbots_plugin_was_activated()
 	//stopbadbots_upgrade_db4();
 	stopbadbots_create_db5();
 	stopbadbots_create_db6(); // finger
-	stopbadbots_create_db_stats();
-	stopbadbots_sbb_populate_stats();
+	*/
+
+
+
+
+
+	//stopbadbots_create_db_stats();
+	//stopbadbots_sbb_populate_stats();
 	stopbadbots_create_fail2ban_table();
 
 	// Pointer

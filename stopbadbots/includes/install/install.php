@@ -173,27 +173,9 @@ function stopbadbots_ajax_installer_handler()
                 // === FINALIZE INSTALLATION ===
                 update_option('stopbadbots_setup_complete', true);
 
-
-
-                // 1. Obtenha o nível de experiência que o usuário escolheu.
-                $experience_level = get_option('stopbadbots_inst_experience_level', 'one-click');
-
-                // 2. Determine a URL de redirecionamento com base na escolha.
-                if ($experience_level === 'manual') {
-                    // Usuário experiente vai para a página de configurações.
-                    $redirect_url = admin_url('admin.php?page=settings-stop-bad-bots');
-                } else {
-                    // Usuário iniciante (one-click) vai para o dashboard principal do plugin.
-                    $redirect_url = admin_url('admin.php?page=stop_bad_bots_plugin');
-                }
-
-                // 3. Envia a URL correta para o JavaScript redirecionar.
+                // Redirect to the main plugin page after completion
+                $redirect_url = admin_url('admin.php?page=stop_bad_bots_plugin');
                 wp_send_json_success(['redirect' => esc_url_raw($redirect_url)]);
-
-
-
-
-
                 break;
         }
     }

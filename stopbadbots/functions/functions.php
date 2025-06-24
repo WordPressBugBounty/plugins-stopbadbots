@@ -1597,6 +1597,8 @@ function stopbadbots_plugin_was_activated()
 	global $stopbadbots_wp_blacklist;
 	global $stopbadbots_update_http_tools;
 	global $astopbadbots_http_tools;
+	global $stopbadbots_go_pro_hide;
+	global $stopbadbots_version;
 	global $wpdb;
 
 
@@ -1604,7 +1606,7 @@ function stopbadbots_plugin_was_activated()
 	$stopbadbots_main_table_name = $wpdb->prefix . 'sbb_blacklist';
     if ( $wpdb->get_var("SHOW TABLES LIKE '$stopbadbots_main_table_name'") === $stopbadbots_main_table_name ) {
        update_option('stopbadbots_setup_complete', true);
-	   error_log(__LINE__);
+	  // error_log(__LINE__);
 	}
 	//error_log(__LINE__);
 
@@ -1677,7 +1679,7 @@ if (version_compare(trim(STOPBADBOTSVERSION), trim($stopbadbots_version)) > 0) {
 	}
 	stopbadbots_create_db_stats();
 	stopbadbots_sbb_populate_stats();
-	
+
 	// Default yes
 	if (sanitize_text_field(get_option('stop_bad_bots_network', '') == '')) {
 		add_option('stop_bad_bots_network', 'yes');

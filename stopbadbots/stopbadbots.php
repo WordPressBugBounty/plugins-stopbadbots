@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.40
+Version: 11.41
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -184,6 +184,12 @@ else
 $stopbadbots_referer = stopbadbots_get_referer();
 
 $stopbadbots_version           = trim(sanitize_text_field(get_site_option('stopbadbots_version', '')));
+
+//if(!empty($stopbadbots_version)){
+//$stopbadbots_setup_complete = true;
+//}
+
+
 $stopbadbots_string_whitelist  = trim(sanitize_text_field(get_site_option('stopbadbots_string_whitelist', '')));
 $astopbadbots_string_whitelist = explode(' ', $stopbadbots_string_whitelist);
 $stopbadbots_ip_whitelist      = trim(sanitize_text_field(get_site_option('stopbadbots_ip_whitelist', '')));
@@ -647,6 +653,13 @@ function stopbadbots_get_all_defined_settings()
  */
 
 
+function stopbadbots_after_update()
+{
+	//global $stopbadbots_setup_complete;
+	update_option('stopbadbots_setup_complete', true);
+}
+add_action('upgrader_process_complete', 'stopbadbots_after_update', 10, 2);
+
 /**
  * Handles the installer reset for debugging purposes.
  * Access via >>>>>>>>>>>>>>>>>>>>> ?debug_reset_installer=true <<<<<<<<<<<<<<<
@@ -684,7 +697,7 @@ function stopbadbots_load_files()
 
 	global $stopbadbots_is_admin;
 
-	if ( function_exists('is_multisite') && is_multisite() ) {
+	if (function_exists('is_multisite') && is_multisite()) {
 		return;
 	}
 
@@ -719,6 +732,10 @@ function stopbadbots_load_files()
 	}
 }
 add_action('plugins_loaded', 'stopbadbots_load_files');
+
+
+
+
 
 
 /**
@@ -758,7 +775,7 @@ function stopbadbots_enforce_installer_redirect()
 	//error_log(__LINE__);
 	// If we got here, a redirect is required.
 
-	
+
 	wp_safe_redirect(admin_url('tools.php?page=stopbadbots-installer'));
 	exit;
 }

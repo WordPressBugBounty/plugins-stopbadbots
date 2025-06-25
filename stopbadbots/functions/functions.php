@@ -120,7 +120,7 @@ if (version_compare(trim(STOPBADBOTSVERSION), trim($stopbadbots_version)) > 0) {
 } // end Install
 */
 
- 
+
 // Complete Install
 
 $BILLPRODUCT = 'STOPBADBOTS';
@@ -1600,13 +1600,14 @@ function stopbadbots_plugin_was_activated()
 	global $stopbadbots_go_pro_hide;
 	global $stopbadbots_version;
 	global $wpdb;
+	global $stopbadbots_setup_complete;
 
 
 	// testar aqui se table exist...
 	$stopbadbots_main_table_name = $wpdb->prefix . 'sbb_blacklist';
-    if ( $wpdb->get_var("SHOW TABLES LIKE '$stopbadbots_main_table_name'") === $stopbadbots_main_table_name ) {
-       update_option('stopbadbots_setup_complete', true);
-	  // error_log(__LINE__);
+	if ($wpdb->get_var("SHOW TABLES LIKE '$stopbadbots_main_table_name'") === $stopbadbots_main_table_name) {
+		update_option('stopbadbots_setup_complete', true);
+		// error_log(__LINE__);
 	}
 	//error_log(__LINE__);
 
@@ -1630,66 +1631,80 @@ function stopbadbots_plugin_was_activated()
 		stopbadbots_update_httptools($astopbadbots_http_tools);
 	}
 
-// ----------------
+	// ----------------
 
-// Install
-if (version_compare(trim(STOPBADBOTSVERSION), trim($stopbadbots_version)) > 0) {
-	try {
-		if (isset($_SERVER['SERVER_ADDR'])) {
-			if (strpos(sanitize_text_field($_SERVER['SERVER_ADDR']), '.212.229.') !== false)
-				update_option('stopbadbots_keep_log', 360);
+	// Install
+	if (version_compare(trim(STOPBADBOTSVERSION), trim($stopbadbots_version)) > 0) {
+
+		try {
+			if (isset($_SERVER['SERVER_ADDR'])) {
+				if (strpos(sanitize_text_field($_SERVER['SERVER_ADDR']), '.212.229.') !== false)
+					update_option('stopbadbots_keep_log', 360);
+			}
+		} catch (Exception $e) {
+			//
 		}
-	} catch (Exception $e) {
-		//
-	}
 
 
 
 
 
-	if ($stopbadbots_go_pro_hide == '') {
-		$today = date('Ymd', strtotime('+01 days'));
-		if (!update_option('stopbadbots_go_pro_hide', $today)) {
-			add_option('stopbadbots_go_pro_hide', $today);
+		if ($stopbadbots_go_pro_hide == '') {
+			$today = date('Ymd', strtotime('+01 days'));
+			if (!update_option('stopbadbots_go_pro_hide', $today)) {
+				add_option('stopbadbots_go_pro_hide', $today);
+			}
 		}
+		if (empty($stopbadbots_string_whitelist)) {
+			stopbadbots_create_whitelist();
+		}
+
+		if (empty($stopbadbots_http_tools) or $stopbadbots_update_http_tools == 'yes') {
+			stopbadbots_create_httptools();
+		}
+
+		$stopbadbots_http_tools  = trim(get_site_option('stopbadbots_http_tools', ''));
+		$astopbadbots_http_tools = explode(PHP_EOL, $stopbadbots_http_tools);
+
+		stopbadbots_create_db();
+		stopbadbots_upgrade_db();
+		stopbadbots_create_db2();
+		stopbadbots_upgrade_db2();
+		stopbadbots_create_db3();
+		stopbadbots_create_db4();
+		//stopbadbots_upgrade_db4();
+		stopbadbots_create_db5();
+		stopbadbots_create_db6();
+		stopbadbots_upgrade_fingerprint();
+		if (empty($stopbadbots_http_tools) or $stopbadbots_update_http_tools == 'yes') {
+			stopbadbots_update_httptools($astopbadbots_http_tools);
+		}
+		stopbadbots_create_db_stats();
+		stopbadbots_sbb_populate_stats();
+
+		// Default yes
+		if (sanitize_text_field(get_option('stop_bad_bots_network', '') == '')) {
+			add_option('stop_bad_bots_network', 'yes');
+		}
+
+
+		if (!empty($stopbadbots_version)) {
+			$stopbadbots_setup_complete = true;
+		}
+
+		//$stopbadbots_version           = trim(sanitize_text_field(get_site_option('stopbadbots_version', '')));
+		if (!empty($stopbadbots_version)) {
+			$stopbadbots_setup_complete = true;
+		}
+
+
+		if (!add_option('stopbadbots_version', STOPBADBOTSVERSION)) {
+			update_option('stopbadbots_version', STOPBADBOTSVERSION);
+		}
+	} // end Install
+	else {
+		$stopbadbots_setup_complete = false;
 	}
-	if (empty($stopbadbots_string_whitelist)) {
-		stopbadbots_create_whitelist();
-	}
-
-	if (empty($stopbadbots_http_tools) or $stopbadbots_update_http_tools == 'yes') {
-		stopbadbots_create_httptools();
-	}
-
-	$stopbadbots_http_tools  = trim(get_site_option('stopbadbots_http_tools', ''));
-	$astopbadbots_http_tools = explode(PHP_EOL, $stopbadbots_http_tools);
-
-	stopbadbots_create_db();
-	stopbadbots_upgrade_db();
-	stopbadbots_create_db2();
-	stopbadbots_upgrade_db2();
-	stopbadbots_create_db3();
-	stopbadbots_create_db4();
-	//stopbadbots_upgrade_db4();
-	stopbadbots_create_db5();
-	stopbadbots_create_db6();
-	stopbadbots_upgrade_fingerprint();
-	if (empty($stopbadbots_http_tools) or $stopbadbots_update_http_tools == 'yes') {
-		stopbadbots_update_httptools($astopbadbots_http_tools);
-	}
-	stopbadbots_create_db_stats();
-	stopbadbots_sbb_populate_stats();
-
-	// Default yes
-	if (sanitize_text_field(get_option('stop_bad_bots_network', '') == '')) {
-		add_option('stop_bad_bots_network', 'yes');
-	}
-
-	if (!add_option('stopbadbots_version', STOPBADBOTSVERSION)) {
-		update_option('stopbadbots_version', STOPBADBOTSVERSION);
-	}
-} // end Install
-	
 
 
 
@@ -1699,9 +1714,10 @@ if (version_compare(trim(STOPBADBOTSVERSION), trim($stopbadbots_version)) > 0) {
 
 
 
-// ----------------
 
-/*
+	// ----------------
+
+	/*
 	stopbadbots_create_db();
 	stopbadbots_upgrade_db();
 	stopbadbots_create_db2();

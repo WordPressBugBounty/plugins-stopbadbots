@@ -5,7 +5,7 @@ Tags: Bad Bots, block bots, fail2ban, server overload, limit visits
 Requires at least: 4.0
 Tested up to: 6.8
 Requires PHP: 5.6 
-Stable tag: 11.40
+Stable tag: 11.41
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,13 +32,11 @@ Stop Bad Bots Protection, Block SPAM bots, Crawlers and spiders and botnets. Sav
 >Currently, you can track key Fail2ban details like the offending IP, when the last attempt occurred, the specific Security Rule (jail) triggered, the number of attempts, and how long the ban lasts. This is your first step towards richer insights like daily totals, activity graphs, and more detailed ban reasons.
 
 >Stop Bad Bots, SPAM bots, Crawlers and spiders without DNS Cloud or API (EndPoint) Traffic Redirection and without slow down your site. **No google penalties**. Multilanguage ready. Included also Dutch, French, Germany, Italian, Spanish and Portuguese language files.
-.
->Italian: Blocca bot dannosi, bot SPAM, crawler e spider senza DNS Cloud o reindirizzamento del traffico API (EndPoint) e senza rallentare il tuo sito. Nessuna sanzione su Google. Tradotto in italiano.
-.
->Português: Bloqueia Bots, SPAM bots, Crawlers e spiders sem DNS Cloud ou API (EndPoint) redirecionamento de tráfego e sem deixar seu site lento. Sem penalidades do Google. Traduzido em Português.
 
 
-**If you're in a hurry and don't want to spend much time configuring the plugin, consider installing our <a href="https://wordpress.org/plugins/antibots">Beginner-Friendly Anti BOts Plugin</a> instead.** 
+**Get Stop Bad Bots protecting your site in moments!**
+ Our easy installer handles everything, configuring essential settings so your site is secured instantly. Even first-time users can launch their protection with just a few clicks.
+
 
 **Introducing our new comprehensive visits log page with Ajax-powered traffic monitoring. Analyze and dive deep into the visits your website receives, including hack attempts. And yes, you will know when Googlebot visits you (googlebot, big, Twitter, Facebook and other bots). Take full control by effortlessly adding visitors to the blacklist or whitelist with a single click when needed.**
 

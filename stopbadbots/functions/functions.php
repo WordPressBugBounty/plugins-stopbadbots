@@ -196,6 +196,7 @@ if ($stopbadbots_tables_empty == 'yes') { // and isset($_COOKIE[$BILLCLASS])){
 
 /* ---------------STEP 1 Tem Fingerprint? ------------------ */
 
+/*
 if ($stopbadbots_engine_option != 'minimal') {
 
 	// auto declared s. e. == 0
@@ -234,15 +235,7 @@ if ($stopbadbots_engine_option != 'minimal') {
 
 		$stopbadbots_table = $wpdb->prefix . 'sbb_fingerprint';
 
-		/*
-		$result = $wpdb->get_results(
-			$wpdb->prepare("SELECT  fingerprint,deny FROM `$stopbadbots_table` 
-		WHERE ip = %s
-		AND fingerprint != '' limit 1",
-				$stopbadbots_ip
-			)
-		);
-		*/
+
 		$result = $wpdb->get_results($wpdb->prepare("SELECT fingerprint, deny FROM %i WHERE ip = %s AND fingerprint != '' LIMIT 1", $stopbadbots_table, $stopbadbots_ip));
 
 
@@ -426,7 +419,173 @@ if ($stopbadbots_engine_option != 'minimal') {
 } // if($stopbadbots_engine_option != 'minimal'){
 else
 	$stopbadbots_is_human = '1';
+*/
 
+/* ---------------STEP 1 Tem Fingerprint? (VERSÃO REFEITA) ------------------ */
+
+if ($stopbadbots_engine_option != 'minimal') {
+
+	$stopbadbots_is_human = '?';
+
+	// Whitelist para bots de busca conhecidos
+	$stopbadbots_mysearch = array(
+		'bingbot', 'googlebot', 'msn.com', 'slurp', 'facebookexternalhit', 'AOL', 'Baidu', 'DuckDuck', 'Teoma', 'Yahoo', 'seznam', 'Yandex', 'Twitterbot',
+	);
+	foreach ($stopbadbots_mysearch as $search_engine) {
+		if (stripos($stopbadbots_userAgent, $search_engine) !== false) {
+			$stopbadbots_is_human = '0'; // '0' significa bot conhecido/permitido
+			break;
+		}
+	}
+
+	add_action('wp_head', 'stopbadbots_ajaxurl');
+
+	$qrow = 0;
+	// Só consulta o DB se não for um bot de busca conhecido
+	if ($stopbadbots_is_human !== '0') {
+		$stopbadbots_table = $wpdb->prefix . 'sbb_fingerprint';
+		$result = $wpdb->get_results($wpdb->prepare("SELECT fingerprint, deny FROM %i WHERE ip = %s AND fingerprint != '' LIMIT 1", $stopbadbots_table, $stopbadbots_ip));
+
+		if (!empty($wpdb->last_error)) {
+			stopbadbots_create_db6();
+			$qrow = 0;
+		} else {
+			$qrow = $wpdb->num_rows;
+		}
+
+		// Se não há fingerprint no DB, injeta o script JS para coletá-la
+		if ($qrow < 1) {
+			add_action('wp_enqueue_scripts', 'stopbadbots_include_scripts');
+			add_action('admin_enqueue_scripts', 'stopbadbots_include_scripts');
+		}
+	}
+
+	$pos = stripos($stopbadbots_request_url, '_grava_fingerprint');
+
+	// Lógica para a primeira visita vs. visitas recorrentes
+	if ($qrow < 1 && !isset($_COOKIE['stopbadbots_cookie'])) {
+		if ($stopbadbots_is_human != '0') {
+			if (stopbadbots_first_time() > 0) {
+				$stopbadbots_is_human = '0';
+			} else {
+				$stopbadbots_is_human = '?';
+			}
+		}
+	} elseif (
+		!$stopbadbots_maybe_search_engine
+		&& !stopbadbots_block_whitelist_string()
+		&& $pos === false
+		&& !stopbadbots_isourserver()
+		&& !stopbadbots_check_wordpress_logged_in_cookie()
+	) {
+		// ----- INÍCIO DO BLOCO DE ANÁLISE DE FINGERPRINT -----
+		$stopbadbots_fingerprint_filed = '';
+		$stopbadbots_fingerprint_deny_filed = 0;
+
+		// Pega a fingerprint do banco de dados se existir
+		if (isset($result[0]->fingerprint)) {
+			$stopbadbots_fingerprint_filed = trim($result[0]->fingerprint);
+			$stopbadbots_fingerprint_deny_filed = trim($result[0]->deny);
+		}
+
+		// Bloqueia se a fingerprint já estiver marcada com 'deny'
+		if ($stopbadbots_fingerprint_deny_filed != 0) {
+			stopbadbots_stats_moreone('qbrowser');
+			if ($stopbadbots_my_radio_report_all_visits == 'yes') {
+				stopbadbots_alertme14($stopbadbots_ip);
+			}
+			stopbadbots_record_log('Blocked Fake Browser (Denied Fingerprint)');
+			header('HTTP/1.1 403 Forbidden');
+			header('Status: 403 Forbidden');
+			header('Connection: Close');
+			die();
+		}
+
+		// Se a fingerprint não veio do DB, tenta pegar do cookie
+		if (empty($stopbadbots_fingerprint_filed) && isset($_COOKIE['stopbadbots_cookie'])) {
+			$stopbadbots_fingerprint_filed = sanitize_text_field($_COOKIE['stopbadbots_cookie']);
+		}
+
+		// Só prossegue se tivermos uma fingerprint para analisar
+		if (!empty($stopbadbots_fingerprint_filed)) {
+
+			// Bloco de verificação geográfica (China, Cuba, etc.)
+			if (!empty($stopbadbots_checkversion) && $stopbadbots_block_china == 'yes') {
+				$blocked_regions = [
+					'Asia/Shanghai' => 'Blocked China',
+					'Asia/Hong_Kong' => 'Blocked China',
+					'Asia/Macau' => 'Blocked China',
+					'America/Havana' => 'Blocked Cuba',
+					'Asia/Pyongyang' => 'Blocked North Korea',
+				];
+				foreach ($blocked_regions as $region => $log_message) {
+					if (strpos($stopbadbots_fingerprint_filed, $region) !== false) {
+						stopbadbots_stats_moreone('qbrowser');
+						if ($stopbadbots_my_radio_report_all_visits == 'yes') {
+							stopbadbots_alertme15($stopbadbots_ip);
+						}
+						stopbadbots_record_log($log_message);
+						header('HTTP/1.1 403 Forbidden');
+						header('Status: 403 Forbidden');
+						header('Connection: Close');
+						die();
+					}
+				}
+			}
+
+			// ===== NOVA LÓGICA DE BLOQUEIO POR INCONSISTÊNCIA (MODO MAXIMUM) =====
+			if ($stopbadbots_engine_option == 'maximum') {
+				
+				$afingerprint = explode('#', $stopbadbots_fingerprint_filed);
+
+				if (is_array($afingerprint) && count($afingerprint) > 4) { // Garante que a fingerprint tenha dados suficientes
+					
+					// 1. Extrai a informação de touchscreen
+					$has_touchscreen = false;
+					$touch_parts = explode(',', $afingerprint[5]); // O dado de toque é o 5º item (índice 4 no JS, 5 aqui por causa do # inicial)
+					if (isset($touch_parts[0]) && intval($touch_parts[0]) > 0) {
+						$has_touchscreen = true;
+					}
+
+					// 2. Compara OS do User-Agent (PHP) com a Plataforma da Fingerprint (JS)
+					$os_from_ua = trim(stopbadbots_find_ua_os($stopbadbots_userAgentOri));
+					$is_linux_ua = ($os_from_ua == 'Linux');
+					
+					$platform_from_js = isset($afingerprint[3]) ? $afingerprint[3] : '';
+					$is_linux_platform = (stripos($platform_from_js, 'linux') !== false);
+
+					// 3. Verifica a inconsistência
+					$inconsistency_found = ($is_linux_platform != $is_linux_ua);
+
+					// 4. BLOQUEIA se houver inconsistência E não for um dispositivo com touchscreen
+					if ($inconsistency_found && !$has_touchscreen) {
+						stopbadbots_stats_moreone('qbrowser');
+						if ($stopbadbots_my_radio_report_all_visits == 'yes') {
+							stopbadbots_alertme14($stopbadbots_ip);
+						}
+						stopbadbots_record_log('Blocked Fake Browser (OS Inconsistency on Non-Touch Device)');
+						header('HTTP/1.1 403 Forbidden');
+						header('Status: 403 Forbidden');
+						header('Connection: Close');
+						die();
+					}
+				}
+			}
+			// ===== FIM DA NOVA LÓGICA =====
+
+			// Se passou por todas as verificações, marca como humano
+			$stopbadbots_is_human = '1';
+		}
+		
+	} else {
+		// Se as condições do 'elseif' não foram atendidas, é um visitante confiável (admin, etc.)
+		$stopbadbots_is_human = '1';
+	}
+} else { // if($stopbadbots_engine_option == 'minimal')
+	$stopbadbots_is_human = '1';
+}
+
+// -----------------End step 1----------------------
 
 // -----------------End step 1----------------------
 
@@ -1692,10 +1851,12 @@ function stopbadbots_plugin_was_activated()
 			$stopbadbots_setup_complete = true;
 		}
 
+		/*
 		//$stopbadbots_version           = trim(sanitize_text_field(get_site_option('stopbadbots_version', '')));
 		if (!empty($stopbadbots_version)) {
 			$stopbadbots_setup_complete = true;
 		}
+		*/
 
 
 		if (!add_option('stopbadbots_version', STOPBADBOTSVERSION)) {

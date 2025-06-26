@@ -30,6 +30,8 @@ jQuery(document).ready(function ($) {
         os = 'Windows';
     } else if (userAgent.indexOf('android') >= 0) {
         os = 'Android';
+    } else if (userAgent.indexOf('cros') >= 0) { // Verifica Chrome OS primeiro
+        os = 'Chrome OS'; // Seja mais específico
     } else if (userAgent.indexOf('linux') >= 0 || userAgent.indexOf('cros') >= 0 || userAgent.indexOf('x11') >= 0) {
         os = 'Linux';
     } else if (userAgent.indexOf('iphone') >= 0 || userAgent.indexOf('ipad') >= 0 || userAgent.indexOf('ipod') >= 0 || userAgent.indexOf('crios') >= 0 || userAgent.indexOf('fxios') >= 0) {

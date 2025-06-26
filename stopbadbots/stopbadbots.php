@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.41
+Version: 11.42
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -94,6 +94,8 @@ define('STOPBADBOTS_FIREFOX', '108'); // 122
 define('STOPBADBOTS_EDGE', '110'); // 131
 
 define('STOPBADBOTSPATHLANGUAGE', dirname(plugin_basename(__FILE__)) . '/language/');
+
+define('STOPBADBOTS_PLUGIN_FILE', __FILE__);
 
 if (!defined('STOPBADBOTSHOMEURL')) {
 	define('STOPBADBOTSHOMEURL', admin_url());
@@ -653,12 +655,32 @@ function stopbadbots_get_all_defined_settings()
  */
 
 
-function stopbadbots_after_update()
-{
-	//global $stopbadbots_setup_complete;
-	update_option('stopbadbots_setup_complete', true);
+/**
+ * Impede que o assistente de instalação seja executado após uma atualização do plugin.
+ *
+ * Esta função é acionada após qualquer processo de atualização do WordPress.
+ * Ela verifica se a atualização foi especificamente para este plugin e, em caso afirmativo,
+ * garante que a opção 'stopbadbots_setup_complete' esteja definida como 'true' para
+ * evitar o redirecionamento para a página de instalação.
+ *
+ * @param WP_Upgrader $upgrader_object O objeto do Upgrader.
+ * @param array       $options         Um array de dados sobre a atualização.
+ */
+function stopbadbots_prevent_installer_on_update($upgrader_object, $options) {
+    // 1. Verifica se a ação é uma 'atualização' e do tipo 'plugin'.
+    if ($options['action'] == 'update' && $options['type'] == 'plugin') {
+        
+        // 2. Verifica se o nosso plugin (stopbadbots) está na lista de plugins que foram atualizados.
+        // É importante definir a constante ANTIHACKER_PLUGIN_FILE no seu arquivo principal.
+        // Ex: define('ANTIHACKER_PLUGIN_FILE', __FILE__);
+        if (isset($options['plugins']) && in_array(plugin_basename(STOPBADBOTS_PLUGIN_FILE), $options['plugins'])) {
+            
+            // 3. Se tudo for verdade, marca o setup como completo para pular o instalador.
+            update_option('stopbadbots_setup_complete', true);
+        }
+    }
 }
-add_action('upgrader_process_complete', 'stopbadbots_after_update', 10, 2);
+add_action('upgrader_process_complete', 'stopbadbots_prevent_installer_on_update', 10, 2);
 
 /**
  * Handles the installer reset for debugging purposes.
@@ -1098,6 +1120,11 @@ if (!empty($stopbadbots_userAgent) and !$stopbadbots_is_admin  and !stopbadbots_
 /* ------------ July 2021 ------------------- */
 
 // -------------------------  Step 2
+
+
+
+
+/*
 $pos = stripos($stopbadbots_request_url, '_grava_fingerprint');
 
 if ($stopbadbots_engine_option != 'minimal') {
@@ -1216,9 +1243,159 @@ if ($stopbadbots_engine_option != 'minimal') {
 		}   // if ($stopbadbots_is_human == '1')
 	}
 } // if($stopbadbots_engine_option != 'minimal')
+*/
 
 
-/*   ------------------------------     END STEP 2 */
+
+/*   ------------------------------     STEP 2 COMPLETO E CORRIGIDO     ------------------------------ */
+
+$pos = stripos($stopbadbots_request_url, '_grava_fingerprint');
+
+if ($stopbadbots_engine_option != 'minimal') {
+
+	if (
+		!$stopbadbots_maybe_search_engine
+		and !stopbadbots_block_whitelist_string()
+		and $pos === false
+		and !stopbadbots_isourserver()
+		and !$stopbadbots_is_admin
+		and !is_super_admin()
+	) {
+
+		if ($stopbadbots_is_human != '1') {
+
+			// Obtém as informações do User Agent
+			$stopbadbots_ua_browser = stopbadbots_find_ua_browser($stopbadbots_userAgentOri);
+			$stopbadbots_ua_version = stopbadbots_find_ua_version($stopbadbots_userAgentOri, $stopbadbots_ua_browser);
+			$stopbadbots_ua_os = stopbadbots_find_ua_os($stopbadbots_userAgentOri);
+
+			// NOVA LÓGICA: Verificação forçada para Linux
+			$is_linux_os = ($stopbadbots_ua_os == 'Linux');
+
+			// Se for Linux E o modo for "maximum", faz a verificação de IP imediatamente, ignorando o cookie do GA.
+			// Nota: você pode mudar '== 'maximum'' para '!= 'conservative'' se quiser que seja mais agressivo.
+			if ($is_linux_os && $stopbadbots_engine_option == 'maximum') {
+				
+				if (stopbadbots_is_bad_hosting($stopbadbots_ip)) {
+					stopbadbots_add_temp_ip();
+					stopbadbots_stats_moreone('qbrowser');
+					if ($stopbadbots_my_radio_report_all_visits == 'yes') {
+						stopbadbots_alertme14($stopbadbots_ip);
+					}
+					stopbadbots_record_log('Blocked Bad Hosting (Forced Linux Check 1)');
+					header('HTTP/1.1 403 Forbidden');
+					header('Status: 403 Forbidden');
+					header('Connection: Close');
+					die();
+				}
+
+				if (stopbadbots_is_bad_hosting2($stopbadbots_ip)) {
+					stopbadbots_add_temp_ip();
+					stopbadbots_stats_moreone('qbrowser');
+					if ($stopbadbots_my_radio_report_all_visits == 'yes') {
+						stopbadbots_alertme14($stopbadbots_ip);
+					}
+					stopbadbots_record_log('Blocked Bad Hosting (Forced Linux Check 2)');
+					header('HTTP/1.1 403 Forbidden');
+					header('Status: 403 Forbidden');
+					header('Connection: Close');
+					die();
+				}
+			}
+
+			// LÓGICA ANTIGA RESTAURADA: Define se o visitante é suspeito e precisa do desafio.
+			$stopbadbots_template = false;
+
+			if ($is_linux_os) {
+				$stopbadbots_template = true;
+			}
+
+			// ===== PEÇAS FALTANTES REINSERIDAS AQUI =====
+			if ($stopbadbots_ua_browser == 'Chrome' and !empty($stopbadbots_ua_version)) {
+				if (version_compare($stopbadbots_ua_version, STOPBADBOTS_CHROME) <= 0) {
+					$stopbadbots_template = true;
+				}
+			}
+
+			if ($stopbadbots_ua_browser == 'Firefox' and !empty($stopbadbots_ua_version)) {
+				if (version_compare($stopbadbots_ua_version, STOPBADBOTS_FIREFOX) <= 0) {
+					$stopbadbots_template = true;
+				}
+			}
+
+			if ($stopbadbots_ua_browser == 'Edge' and !empty($stopbadbots_ua_version)) {
+				if (version_compare($stopbadbots_ua_version, STOPBADBOTS_EDGE) <= 0) {
+					$stopbadbots_template = true;
+				}
+			}
+
+			if ($stopbadbots_ua_browser == 'MSIE' and !empty($stopbadbots_ua_version)) {
+				$stopbadbots_template = true;
+			}
+
+			// Se é a segunda visita mas ainda não foi validado, também é suspeito.
+			if ($stopbadbots_is_human == '0') {
+				$stopbadbots_template = true;
+			}
+            
+			// PEÇA CRÍTICA FALTANTE REINSERIDA
+			add_action('template_redirect', 'stopbadbots_final_step');
+
+			// No modo "maximum", todos os não-verificados são suspeitos.
+			if ($stopbadbots_engine_option == 'maximum') {
+				$stopbadbots_template = true;
+			}
+			// ===== FIM DAS PEÇAS FALTANTES =====
+
+
+			// Check host...
+			if ($stopbadbots_template) {
+				if (!isset($_COOKIE['_ga']) and !isset($_COOKIE['__utma'])) {
+
+					// Adicionamos '&& !$is_linux_os' para evitar dupla verificação se a sua lógica acima for mais ampla.
+					if ($stopbadbots_engine_option != 'conservative' && !$is_linux_os) {
+						if (stopbadbots_is_bad_hosting($stopbadbots_ip)) {
+							stopbadbots_add_temp_ip();
+							stopbadbots_stats_moreone('qbrowser');
+							if ($stopbadbots_my_radio_report_all_visits == 'yes') {
+								stopbadbots_alertme14($stopbadbots_ip);
+							}
+							stopbadbots_record_log('Blocked Fake Browser (1)');
+							header('HTTP/1.1 403 Forbidden');
+							header('Status: 403 Forbidden');
+							header('Connection: Close');
+							die();
+						}
+
+						if (stopbadbots_is_bad_hosting2($stopbadbots_ip)) {
+							stopbadbots_add_temp_ip();
+							stopbadbots_stats_moreone('qbrowser');
+							if ($stopbadbots_my_radio_report_all_visits == 'yes') {
+								stopbadbots_alertme14($stopbadbots_ip);
+							}
+							stopbadbots_record_log('Blocked Fake Browser (2)');
+							header('HTTP/1.1 403 Forbidden');
+							header('Status: 403 Forbidden');
+							header('Connection: Close');
+							die();
+						}
+					}
+
+					if ($stopbadbots_engine_option == 'maximum') {
+						function stoppadbots_page_template() {
+							return STOPBADBOTSPATH . 'template/content_stopbadbots.php';
+						}
+						add_filter('template_include', 'stoppadbots_page_template');
+						header('Refresh: 3;');
+					}
+				}
+			}
+		} // if ($stopbadbots_is_human != '1')
+	}
+} // if($stopbadbots_engine_option != 'minimal')
+
+
+/*   ------------------------------     END STEP 2     ------------------------------ */
 
 /* ------------ End July 2021 ------------------- */
 

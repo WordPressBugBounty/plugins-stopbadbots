@@ -5,7 +5,7 @@ Tags: Bad Bots, block bots, fail2ban, server overload, limit visits
 Requires at least: 4.0
 Tested up to: 6.8
 Requires PHP: 5.6 
-Stable tag: 11.42
+Stable tag: 11.43
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,7 @@ Stop Bad Bots Protection, Block SPAM bots, Crawlers and spiders and botnets. Sav
 
 **Get Stop Bad Bots protecting your site in moments!**
  Our easy installer handles everything, configuring essential settings so your site is secured instantly. Even first-time users can launch their protection with just a few clicks.
+[youtube https://www.youtu.be/P--H7gY4w38?si=o48Az_Ddu99wj3SW autoplay=0]
 
 
 **Introducing our new comprehensive visits log page with Ajax-powered traffic monitoring. Analyze and dive deep into the visits your website receives, including hack attempts. And yes, you will know when Googlebot visits you (googlebot, big, Twitter, Facebook and other bots). Take full control by effortlessly adding visitors to the blacklist or whitelist with a single click when needed.**
@@ -366,5 +367,9 @@ When using our chat, only some information about issues, such as your language a
 == External service (4) ==
 The Stop Bad Bots plugin will retrieve tips and news from our site BillMinozzi.com. This information will be displayed in the plugin dashboard, in the right-hand column under the title "Tips and News." No data is sent to our server. Learn about the terms of use for our plugins and themes at this link:
 https://siterightaway.net/terms-of-use-of-our-plugins-and-themes/
+
+== Advanced Site Health ==
+Our plugin is a powerful tool designed to provide deep insights into your website's real-world operational health. For full transparency, please be aware that our bot detection feature sends visitor IP addresses to public, authoritative lookup services (such as the RIPE NCC's rdap.db.ripe.net) to analyze their origin and identify potential threats.
+For a complete overview of all features, our data handling practices, and the full terms governing our software, please visit our official website: https://siterightaway.net/terms-of-use-of-our-plugins-and-themes/
 
 To learn more details about the StopBadBots plugin and look the bots table, visit the <a href="https://stopbadbots.com">plugin site</a>.

@@ -538,12 +538,30 @@ if ($stopbadbots_engine_option != 'minimal') {
 				
 				$afingerprint = explode('#', $stopbadbots_fingerprint_filed);
 
-				if (is_array($afingerprint) && count($afingerprint) > 4) { // Garante que a fingerprint tenha dados suficientes
+				if (is_array($afingerprint) && count($afingerprint) > 5) { // Garante que a fingerprint tenha dados suficientes
 					
 					// 1. Extrai a informação de touchscreen
+
+					/*
 					$has_touchscreen = false;
 					$touch_parts = explode(',', $afingerprint[5]); // O dado de toque é o 5º item (índice 4 no JS, 5 aqui por causa do # inicial)
 					if (isset($touch_parts[0]) && intval($touch_parts[0]) > 0) {
+						$has_touchscreen = true;
+					}
+					*/
+
+
+					$has_touchscreen = false; // Inicialize como false
+					$touch_parts_string = $afingerprint[5]; // Pegue a string exata do toque
+					$touch_parts = explode(',', $touch_parts_string);
+
+					// Extraia e converta cada parte da informação de toque
+					$max_touch_points = isset($touch_parts[0]) ? intval($touch_parts[0]) : 0;
+					$supports_ontouchstart = (isset($touch_parts[1]) && strtolower($touch_parts[1]) === 'true');
+					$supports_touch_events = (isset($touch_parts[2]) && strtolower($touch_parts[2]) === 'true');
+
+					// Defina has_touchscreen se qualquer uma das condições for verdadeira
+					if ($max_touch_points > 0 || $supports_ontouchstart || $supports_touch_events) {
 						$has_touchscreen = true;
 					}
 
@@ -1377,7 +1395,19 @@ function stopbadbots_alertme($stopbadbots_userAgentOri)
 		'You can stop emails at the Notifications Settings Tab.',
 		'stopbadbots'
 	);
-	$message[] = esc_attr__('Dashboard => Stop Bad Bots => Settings.', 'stopbadbots');
+
+
+	// $message[] = esc_attr__('Dashboard => Stop Bad Bots => Settings.', 'stopbadbots');
+
+$message[] = esc_attr__('Dashboard', 'stopbadbots');
+$message[] = ' => ';
+$message[] = esc_attr__('Stop Bad Bots', 'stopbadbots');
+$message[] = ' => ';
+$message[] = esc_attr__('Settings.', 'stopbadbots');
+
+
+
+
 	$message[] = '';
 	$message[] = esc_attr__('Visit us to learn how to get Weekly Updates and more features:', 'stopbadbots');
 	$message[] = 'https://stopbadbots.com/premium';
@@ -1399,7 +1429,16 @@ function stopbadbots_alertme2($stopbadbots_ip)
 		'You can stop emails at the Notifications Settings Tab.',
 		'stopbadbots'
 	);
-	$message[] = esc_attr__('Dashboard => Stop Bad Bots => Settings.', 'stopbadbots');
+	//$message[] = esc_attr__('Dashboard => Stop Bad Bots => Settings.', 'stopbadbots');
+	
+	$message[] = esc_attr__('Dashboard', 'stopbadbots');
+	$message[] = ' => ';
+	$message[] = esc_attr__('Stop Bad Bots', 'stopbadbots');
+	$message[] = ' => ';
+	$message[] = esc_attr__('Settings.', 'stopbadbots');	
+	
+	
+	
 	$message[] = '';
 	$message[] = esc_attr__('Visit us to learn how to get Weekly Updates and more features:', 'stopbadbots');
 	$message[] = 'https://stopbadbots.com/premium';

@@ -3,7 +3,7 @@ This file contains changelog entries, so we can keep the size of the standard Wo
 
 
 == Changelog ==
-11.34/42  2025-06-26 - Improved Install.
+11.34/43  2025-07-02 - Improved Install.
 11.31  2025-06-11 - Improved chat.
 11.29/30  2025-05-27 - Intehraton with Fail2ban.
 11.27/28  2025-05-06 - Improvements error detection.

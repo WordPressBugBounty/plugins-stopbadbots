@@ -52,13 +52,32 @@ jQuery(document).ready(function ($) {
         return $('<div>').text(text).html();
     }
 
+
+
+    /*
+     $.ajax({
+         url: bill_data.ajax_url,
+         method: 'POST',
+         data: { action: 'bill_chat_reset_messages' },
+         success: function () { },
+         error: function (xhr, status, error) { console.error(bill_data.reset_error, error, xhr.responseText); }
+     });
+     */
+
     $.ajax({
         url: bill_data.ajax_url,
-        method: 'POST',
-        data: { action: 'bill_chat_reset_messages' },
+        type: 'POST',
+        data: {
+            action: 'bill_chat_reset_messages',
+            security: bill_data.reset_nonce // Enviar o nonce
+        },
         success: function () { },
         error: function (xhr, status, error) { console.error(bill_data.reset_error, error, xhr.responseText); }
+
     });
+
+
+
 
     function billChatLoadMessages() {
         $.ajax({

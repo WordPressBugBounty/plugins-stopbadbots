@@ -5,7 +5,7 @@ Tags: Bad Bots, block bots, fail2ban, server overload, limit visits
 Requires at least: 4.0
 Tested up to: 6.8
 Requires PHP: 5.6 
-Stable tag: 11.43
+Stable tag: 11.44
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -348,6 +348,7 @@ This is a free service. Ripe is a not-for-profit membership association.
 
 RIPE NCC Privacy Statement:
 https://www.ripe.net/about-us/legal/ripe-ncc-privacy-statement
+domain: https://rdap.db.ripe.net/ip/
 
 == External service (2) ==
 If the 'Receive bot's table updates by participating in the Real-Time Bad Bots Security Network'
@@ -355,6 +356,7 @@ option in the StopBadBots plugin settings is enabled, your site can share inform
 In return, your WordPress site will receive bot's table updates.
 
 The collected data includes: bot ip, bot user agent, time
+Domain: https://stopbadbots.com/api/httpapi.php
 
 We will update our database with bot information and release it to you by updating your database every 4 months.
 
@@ -363,10 +365,13 @@ Only in this case, when applying your purchase code, it will be sent to our serv
 
 == External service (3) ==
 When using our chat, only some information about issues, such as your language and data from the Diagnose tab, may be sent to our server. We do not share, publish, or disclose any information with third parties.
+domain: https://BillMinozzi.com/chat/api/api.php
 
 == External service (4) ==
 The Stop Bad Bots plugin will retrieve tips and news from our site BillMinozzi.com. This information will be displayed in the plugin dashboard, in the right-hand column under the title "Tips and News." No data is sent to our server. Learn about the terms of use for our plugins and themes at this link:
 https://siterightaway.net/terms-of-use-of-our-plugins-and-themes/
+domain: https://billminozzi.com/API/bill-api.php
+
 
 == Advanced Site Health ==
 Our plugin is a powerful tool designed to provide deep insights into your website's real-world operational health. For full transparency, please be aware that our bot detection feature sends visitor IP addresses to public, authoritative lookup services (such as the RIPE NCC's rdap.db.ripe.net) to analyze their origin and identify potential threats.

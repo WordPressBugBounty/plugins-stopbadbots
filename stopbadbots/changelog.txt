@@ -3,6 +3,7 @@ This file contains changelog entries, so we can keep the size of the standard Wo
 
 
 == Changelog ==
+11.45  2025-07-07 - Improved notes dismiss.
 11.44  2025-07-05 - Improved chat.
 11.34/43  2025-07-02 - Improved Install.
 11.31  2025-06-11 - Improved chat.

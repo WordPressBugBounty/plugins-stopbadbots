@@ -889,6 +889,11 @@ function stopbadbots_admin_print_footer_scripts()
 {
 	global $stopbadbots_current_screen;
 
+	if (get_option('stopbadbots_setup_complete', false)) {
+		return;
+	}
+
+
 	$pointer_content  = '<h3>' . esc_attr__('Open Stop Bad Bots Plugin Here!', 'stopbadbots') . '</h3>';
 	$pointer_content .= '<p>' . esc_attr__('Just Click Over Stop Bad Bots, then Go To Settings=>StartUp Guide.', 'stopbadbots') . '</p>';
 

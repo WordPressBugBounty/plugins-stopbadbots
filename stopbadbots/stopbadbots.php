@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.45
+Version: 11.47
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -95,11 +95,13 @@ define('STOPBADBOTS_EDGE', '110'); // 131
 
 define('STOPBADBOTSPATHLANGUAGE', dirname(plugin_basename(__FILE__)) . '/language/');
 
-define('STOPBADBOTS_PLUGIN_FILE', __FILE__);
+
 
 if (!defined('STOPBADBOTSHOMEURL')) {
 	define('STOPBADBOTSHOMEURL', admin_url());
 }
+
+
 
 $stopbadbots_is_admin = stopbadbots_check_wordpress_logged_in_cookie();
 
@@ -666,6 +668,7 @@ function stopbadbots_get_all_defined_settings()
  * @param WP_Upgrader $upgrader_object O objeto do Upgrader.
  * @param array       $options         Um array de dados sobre a atualização.
  */
+/*
 function stopbadbots_prevent_installer_on_update($upgrader_object, $options) {
     // 1. Verifica se a ação é uma 'atualização' e do tipo 'plugin'.
     if ($options['action'] == 'update' && $options['type'] == 'plugin') {
@@ -680,8 +683,8 @@ function stopbadbots_prevent_installer_on_update($upgrader_object, $options) {
         }
     }
 }
-add_action('upgrader_process_complete', 'stopbadbots_prevent_installer_on_update', 10, 2);
-
+//add_action('upgrader_process_complete', 'stopbadbots_prevent_installer_on_update', 10, 2);
+*/
 /**
  * Handles the installer reset for debugging purposes.
  * Access via >>>>>>>>>>>>>>>>>>>>> ?debug_reset_installer=true <<<<<<<<<<<<<<<
@@ -2138,3 +2141,4 @@ add_action('init', 'stopbadbots_initialize_plugin_settings', 150);
 //register_activation_hook(__FILE__, 'stopbadbots_create_fail2ban_table');
 
 require_once STOPBADBOTSPATH . "functions/fail2ban.php";
+

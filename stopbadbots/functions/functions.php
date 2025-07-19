@@ -45,6 +45,123 @@ if ($stopbadbots_maybe_search_engine and stopbadbots_really_search_engine($stopb
 	return;
 }
 
+
+// -----------------   July 25
+
+/**
+ * Hooks into the WordPress update process to perform actions when this specific plugin is updated.
+ * This single function will:
+ * 1. Run the database schema update.
+ * 2. Set an option to prevent the installer from running again.
+ *
+ * This function is only triggered when updating via the WordPress dashboard or automatic updates.
+ *
+ * @param WP_Upgrader $upgrader_object The WP_Upgrader instance.
+ * @param array       $options         An array of data about the completed update process.
+ * @return void
+ */
+function stopbadbots_handle_plugin_update($upgrader_object, $options) {
+    // First, check if the action was a plugin update.
+    if ($options['action'] !== 'update' || $options['type'] !== 'plugin') {
+        return;
+    }
+
+    // Next, check if our plugin was in the list of plugins that were just updated.
+    // The `isset()` check is a good practice to prevent errors if the 'plugins' key is missing.
+    if (isset($options['plugins']) && in_array(plugin_basename(STOPBADBOTS_PLUGIN_FILE), $options['plugins'])) {
+		// --- Action 1: Prevent the installer from running on update ---
+        // This is the functionality from your original function.
+        update_option('stopbadbots_setup_complete', true);
+
+        // --- Action 2: Update the database schema ---
+        // Call the function that contains the new table structure.
+        stopbadbots_run_database_update();
+    }
+}
+// Add the consolidated function to the 'upgrader_process_complete' hook.
+add_action('upgrader_process_complete', 'stopbadbots_handle_plugin_update', 10, 2);
+
+
+
+/**
+ * Runs the database schema migration if it is needed.
+ *
+ * This function is now fully robust and idempotent. It determines if an update
+ * is needed by checking for the existence of the new 'idx_ip_date' index.
+ *
+ * If this index is missing, it assumes the table is in an old state (regardless of which old state)
+ * and performs the full upgrade. This makes it safe to run across all installations.
+ *
+ * @return void
+ */
+function stopbadbots_run_database_update()
+{
+	global $wpdb;
+	$table_name = $wpdb->prefix . 'sbb_visitorslog';
+
+    // --- Step 1: Check if the update has already been completed ---
+    // The most reliable way to check is to see if our new, primary index exists.
+    // If 'idx_ip_date' exists, we know the migration is done and can safely exit.
+    $new_index_exists = $wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'idx_ip_date'");
+
+    if ($new_index_exists) {
+        // The new index is already here. Migration is complete. Do nothing.
+        return;
+    }
+
+    // If we've reached this point, the update is required.
+
+	require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+    $charset_collate = $wpdb->get_charset_collate();
+
+    // --- Step 2: Clean up ANY possible old indexes ---
+    // This section will safely drop old indexes if they exist. If they don't
+    // (like in Site B), the conditions will be false and nothing will happen.
+    if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'ip'")) {
+        $wpdb->query("DROP INDEX `ip` ON `{$table_name}`");
+    }
+    if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'bot'")) {
+        $wpdb->query("DROP INDEX `bot` ON `{$table_name}`");
+    }
+    if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'human'")) {
+        $wpdb->query("DROP INDEX `human` ON `{$table_name}`");
+    }
+	// Also drop the old UNIQUE key on 'id' if it exists.
+	if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'id'")) {
+        $wpdb->query("DROP INDEX `id` ON `{$table_name}`");
+    }
+    
+    // --- Step 3: Define the FINAL, ideal table structure ---
+    // dbDelta() will intelligently handle all cases:
+    // - For Site B, it will ADD the AUTO_INCREMENT, change `ip` from TEXT to VARCHAR, and ADD all keys.
+    // - For Site A, it will change the keys/indexes.
+	$sql = "CREATE TABLE `{$table_name}` (
+        `id` mediumint(9) NOT NULL AUTO_INCREMENT,
+        `ip` varchar(45) NOT NULL,
+        `date` timestamp NOT NULL,
+        `human` varchar(10) NOT NULL,
+        `response` varchar(5) NOT NULL,
+        `bot` varchar(1) NOT NULL,
+        `method` varchar(10) NOT NULL,
+        `url` text NOT NULL,
+        `referer` text NOT NULL,  
+        `ua` TEXT NOT NULL,
+        `access` varchar(10) NOT NULL,
+        `reason` text NOT NULL,
+        PRIMARY KEY (`id`),
+        KEY `idx_ip_date` (`ip`, `date`),
+        KEY `idx_bot` (`bot`),
+        KEY `idx_human` (`human`)
+    ) $charset_collate;";
+
+    // --- Step 4: Execute the update using dbDelta() ---
+	dbDelta($sql);
+}
+
+
+// ---- end july 25
+
+
 /*
 	By default, version_compare() returns -1
 	if the first version is lower than the second,
@@ -123,8 +240,8 @@ if (version_compare(trim(STOPBADBOTSVERSION), trim($stopbadbots_version)) > 0) {
 
 // Complete Install
 
-$BILLPRODUCT = 'STOPBADBOTS';
-$BILLCLASS = 'ACTIVATED_' . $BILLPRODUCT;
+//$BILLPRODUCT = 'STOPBADBOTS';
+//$BILLCLASS = 'ACTIVATED_' . $BILLPRODUCT;
 
 if ($stopbadbots_tables_empty == 'yes') { // and isset($_COOKIE[$BILLCLASS])){
 	$stopbadbots_installed    = sanitize_text_field(get_option('stopbadbots_installed', ''));
@@ -2289,7 +2406,7 @@ function stopbadbots_create_db3()
     ) $charset_collate;";
 	dbDelta($sql);
 }
-function stopbadbots_create_db4()
+function stopbadbots_create_db4_old()
 {
 	global $wpdb;
 	require_once ABSPATH . 'wp-admin/includes/upgrade.php';
@@ -2301,7 +2418,7 @@ function stopbadbots_create_db4()
 	$charset_collate = $wpdb->get_charset_collate();
 	$sql             = "CREATE TABLE $table (
         `id` mediumint(9) NOT NULL AUTO_INCREMENT,
-        `ip` text NOT NULL,
+		`ip` varchar(45) NOT NULL,
         `date` timestamp NOT NULL,
         `human` varchar(10) NOT NULL,
         `response` varchar(5) NOT NULL,
@@ -2327,6 +2444,54 @@ function stopbadbots_create_db4()
 	$sql = 'CREATE INDEX human ON ' . $table . ' (`human`(10))';
 	dbDelta($sql);
 }
+
+function stopbadbots_create_db4()
+{
+	global $wpdb;
+	require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+
+	$table = $wpdb->prefix . 'sbb_visitorslog';
+	if (stopbadbots_tablexist($table)) {
+		return;
+	}
+
+	$charset_collate = $wpdb->get_charset_collate();
+
+    // -- INÍCIO DAS ALTERAÇÕES --
+    // Alterado: `ip` de TEXT para VARCHAR(45)
+    // Alterado: UNIQUE (`id`) para a forma padrão PRIMARY KEY (`id`)
+	$sql             = "CREATE TABLE $table (
+        `id` mediumint(9) NOT NULL AUTO_INCREMENT,
+        `ip` varchar(45) NOT NULL,
+        `date` timestamp NOT NULL,
+        `human` varchar(10) NOT NULL,
+        `response` varchar(5) NOT NULL,
+        `bot` varchar(1) NOT NULL,
+        `method` varchar(10) NOT NULL,
+        `url` text NOT NULL,
+        `referer` text NOT NULL,  
+        `ua` TEXT NOT NULL,
+        `access` varchar(10) NOT NULL,
+        `reason` text NOT NULL,
+        PRIMARY KEY (`id`)
+    ) $charset_collate;";
+	dbDelta($sql);
+
+    // Alterado: Removidos os índices individuais e substituídos por um índice composto eficiente.
+    // Este novo índice cobre as consultas por IP e data de forma otimizada.
+	$sql = 'CREATE INDEX idx_ip_date ON ' . $table . ' (`ip`, `date`)';
+	dbDelta($sql);
+
+	// Adicionando de volta índices para outras colunas que possam ser usadas em buscas
+	$sql = 'CREATE INDEX idx_bot ON ' . $table . ' (`bot`)';
+	dbDelta($sql);
+
+	$sql = 'CREATE INDEX idx_human ON ' . $table . ' (`human`)';
+	dbDelta($sql);
+    // -- FIM DAS ALTERAÇÕES --
+}
+
+
 function stopbadbots_create_db5()
 {
 	global $wpdb;

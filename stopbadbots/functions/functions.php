@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 
 $stopbadbots_ip            = sbb_findip();
 
-
+//
 $stopbadbots_userAgentOri = stopbadbots_get_ua();
 $stopbadbots_userAgent    = strtolower(trim(strtolower($stopbadbots_userAgentOri)));
 // $stopbadbots_userAgentOri = '';

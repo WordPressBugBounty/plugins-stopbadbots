@@ -48,155 +48,71 @@ if ($stopbadbots_maybe_search_engine and stopbadbots_really_search_engine($stopb
 
 // -----------------   July 25
 
-/**
- * Hooks into the WordPress update process to perform actions when this specific plugin is updated.
- * This single function will:
- * 1. Run the database schema update.
- * 2. Set an option to prevent the installer from running again.
- *
- * This function is only triggered when updating via the WordPress dashboard or automatic updates.
- *
- * @param WP_Upgrader $upgrader_object The WP_Upgrader instance.
- * @param array       $options         An array of data about the completed update process.
- * @return void
- */
-
- /*
-function stopbadbots_handle_plugin_update($upgrader_object, $options) {
-    // First, check if the action was a plugin update.
-    if ($options['action'] !== 'update' || $options['type'] !== 'plugin') {
-        return;
-    }
-
-    // Next, check if our plugin was in the list of plugins that were just updated.
-    // The `isset()` check is a good practice to prevent errors if the 'plugins' key is missing.
-    if (isset($options['plugins']) && in_array(plugin_basename(STOPBADBOTS_PLUGIN_FILE), $options['plugins'])) {
-		// --- Action 1: Prevent the installer from running on update ---
-        // This is the functionality from your original function.
-        update_option('stopbadbots_setup_complete', true);
-
-        // --- Action 2: Update the database schema ---
-        // Call the function that contains the new table structure.
-        stopbadbots_run_database_update();
-    }
-}
-// Add the consolidated function to the 'upgrader_process_complete' hook.
-add_action('upgrader_process_complete', 'stopbadbots_handle_plugin_update', 10, 2);
-*/
 
 
+// A sua constante de versão. Ex: define('STOPBADBOTSVERSION', '7.1.0');
 
 /**
- * Runs the database schema migration if it is needed.
- *
- * This function is now fully robust and idempotent. It determines if an update
- * is needed by checking for the existence of the new 'idx_ip_date' index.
- *
- * If this index is missing, it assumes the table is in an old state (regardless of which old state)
- * and performs the full upgrade. This makes it safe to run across all installations.
- *
- * @return void
+ * A função "cérebro" que orquestra todas as tarefas de atualização.
+ * Ela é acionada pelo hook 'plugins_loaded'.
  */
-/**
- * Handles the plugin update process.
- * INCLUDES A DEBUGGING LINE to confirm it runs.
- */
-function stopbadbots_handle_plugin_update($upgrader_object, $options) {
-    // First, check if the action was a plugin update.
-    if ($options['action'] !== 'update' || $options['type'] !== 'plugin') {
-        return;
-    }
+function stopbadbots_check_for_updates() {
+    // 1. Carrega a versão instalada do banco de dados.
+    $installed_version = get_site_option('stopbadbots_version', '0');
 
-    // Next, check if our plugin was in the list of plugins that were just updated.
-    if (isset($options['plugins']) && in_array(plugin_basename(STOPBADBOTS_PLUGIN_FILE), $options['plugins'])) {
+    // 2. Compara a versão do código com a versão instalada.
+    if (version_compare(trim(STOPBADBOTSVERSION), trim($installed_version), '>')) {
         
-        // --- DEBUGGING LINE ---
-        // This will write a message to the WordPress debug.log file.
-        // This confirms that this part of the code is being reached.
-        error_log('StopBadBots Updater: Plugin update detected. Running database migration...');
+        // --- INÍCIO DA ORQUESTRAÇÃO DOS JOBS DE ATUALIZAÇÃO ---
+        // A versão do código é mais nova. Execute todas as tarefas necessárias.
 
-        // --- Action 1: Prevent the installer from running on update ---
+        // Job 1: Atualizar a opção de setup completo.
         update_option('stopbadbots_setup_complete', true);
 
-        // --- Action 2: Update the database schema ---
-        stopbadbots_run_database_update();
+        // Job 2: Executar a migração do banco de dados.
+        stopbadbots_run_database_migration();
+        
+        // (Futuramente, se você tiver um Job 3, ele iria aqui)
+        
+        // --- FIM DA ORQUESTRAÇÃO ---
+
+        // PASSO FINAL CRÍTICO: Após todos os jobs serem concluídos com sucesso,
+        // atualize a versão do plugin no banco de dados para a nova versão.
+        // Isso "desliga" a rotina de atualização até o próximo lançamento.
+        update_option('stopbadbots_version', STOPBADBOTSVERSION);
     }
 }
-add_action('upgrader_process_complete', 'stopbadbots_handle_plugin_update', 10, 2);
+add_action('plugins_loaded', 'stopbadbots_check_for_updates');
 
 
 /**
- * Runs the database schema migration.
- * CORRECTED with the proper SQL formatting for dbDelta (two spaces before keys).
+ * A função "trabalhadora" que executa a migração do banco de dados.
+ * Ela tem uma única responsabilidade e a executa bem.
  */
-/**
- * Runs the database schema migration and ensures a clean final structure.
- *
- * This function is robust and idempotent. It checks if the update is needed by
- * looking for the new 'idx_ip_date' index. If the update runs, it includes a
- * final cleanup step AFTER dbDelta to remove any redundant keys that the
- * WordPress function might leave behind. This makes it safe to run across all installations.
- *
- * @return void
- */
-/**
- * Runs the database schema migration and ensures a clean final structure.
- *
- * This version uses a more direct and robust SQL command (ALTER TABLE DROP KEY)
- * for the final cleanup step, ensuring the redundant `id` key left by dbDelta is removed.
- *
- * @return void
- */
-/**
- * Runs a direct database migration using explicit ALTER TABLE commands.
- *
- * This function completely bypasses the WordPress dbDelta() function, which has proven
- * unreliable for this specific table migration. Instead, it uses direct, explicit
- * SQL commands to guarantee the final table structure is correct.
- *
- * @return void
- */
-function stopbadbots_run_database_update()
-{
+function stopbadbots_run_database_migration() {
 	global $wpdb;
 	$table_name = $wpdb->prefix . 'sbb_visitorslog';
 
-    //error_log('StopBadBots Updater: Starting direct database migration...');
-
-    // --- Step 1: RADICAL CLEANUP of ALL Keys and Indexes ---
-    // We drop everything to ensure a clean slate, avoiding any MySQL conflicts.
+    // --- LIMPEZA ---
     if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'ip'")) { $wpdb->query("ALTER TABLE `{$table_name}` DROP INDEX `ip`"); }
     if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'bot'")) { $wpdb->query("ALTER TABLE `{$table_name}` DROP INDEX `bot`"); }
     if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'human'")) { $wpdb->query("ALTER TABLE `{$table_name}` DROP INDEX `human`"); }
-    // Drop the redundant UNIQUE key named 'id'.
-    if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'id'")) {
-        $wpdb->query("ALTER TABLE `{$table_name}` DROP KEY `id`");
-    }
-    // Drop the PRIMARY KEY itself if it exists, so we can rebuild it without conflict.
-    if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'PRIMARY'")) {
-        $wpdb->query("ALTER TABLE `{$table_name}` DROP PRIMARY KEY");
-    }
+    if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'id'")) { $wpdb->query("ALTER TABLE `{$table_name}` DROP KEY `id`"); }
+    if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'PRIMARY'")) { $wpdb->query("ALTER TABLE `{$table_name}` DROP PRIMARY KEY"); }
 
-    // --- Step 2: EXPLICITLY MODIFY COLUMNS to the correct format ---
-    // Ensure the 'id' column has AUTO_INCREMENT, crucial for sites that are missing it.
+    // --- MODIFICAÇÃO ---
     $wpdb->query("ALTER TABLE `{$table_name}` MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT");
-
-    // Ensure the 'ip' column is VARCHAR(45), crucial for sites where it's TEXT.
     $ip_column_info = $wpdb->get_row("SHOW COLUMNS FROM `{$table_name}` WHERE Field = 'ip'");
     if ($ip_column_info && strpos(strtolower($ip_column_info->Type), 'text') !== false) {
         $wpdb->query("ALTER TABLE `{$table_name}` MODIFY `ip` VARCHAR(45) NOT NULL");
     }
 
-    // --- Step 3: REBUILD ALL Keys and Indexes from the clean slate ---
-    // Now that columns and keys are clean, we add the final, correct structure.
+    // --- RECONSTRUÇÃO ---
     $wpdb->query("ALTER TABLE `{$table_name}` ADD PRIMARY KEY (`id`)");
     $wpdb->query("ALTER TABLE `{$table_name}` ADD INDEX `idx_ip_date` (`ip`, `date`)");
     $wpdb->query("ALTER TABLE `{$table_name}` ADD INDEX `idx_bot` (`bot`)");
     $wpdb->query("ALTER TABLE `{$table_name}` ADD INDEX `idx_human` (`human`)");
-
-    //error_log('StopBadBots Updater: SUCCESS - Direct database migration completed.');
 }
-
 
 // ---- end july 25
 

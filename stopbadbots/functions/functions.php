@@ -91,20 +91,23 @@ add_action('plugins_loaded', 'stopbadbots_check_for_updates');
  * Ela tem uma única responsabilidade e a executa bem.
  */
 
+/**
+ * Runs the database migration for the sbb_visitorslog table.
+ *
+ * This function is designed to be idempotent, meaning it can be run multiple times
+ * without causing errors. It cleans up old structures (legacy indexes, wrong column types)
+ * before building the new, correct structure.
+ */
 function stopbadbots_run_database_migration()
 {
 	global $wpdb;
 	$table_name = $wpdb->prefix . 'sbb_visitorslog';
 
-	// debug
-	//$wpdb->show_errors(true);
-	//$wpdb->suppress_errors(false);
-
-	// Produção: silencioso por padrão
+	// Production setting: Suppress direct error output and use internal logging.
 	$wpdb->show_errors(false);
 	$wpdb->suppress_errors(true);
 
-	// --- PREPARAÇÃO E LIMPEZA ---
+	// --- PREPARATION AND CLEANUP ---
 
 	// 1. Remove foreign keys
 	try {
@@ -116,17 +119,19 @@ function stopbadbots_run_database_migration()
 			AND REFERENCED_TABLE_NAME IS NOT NULL
 		");
 
-		foreach ($foreign_keys as $fk) {
-			$result = $wpdb->query("ALTER TABLE `{$table_name}` DROP FOREIGN KEY `{$fk->CONSTRAINT_NAME}`");
-			if ($result === false) {
-				error_log("StopBadBots Migration: Failed to drop foreign key {$fk->CONSTRAINT_NAME} on {$table_name}: " . $wpdb->last_error);
+		if (is_array($foreign_keys)) {
+			foreach ($foreign_keys as $fk) {
+				$result = $wpdb->query("ALTER TABLE `{$table_name}` DROP FOREIGN KEY `{$fk->CONSTRAINT_NAME}`");
+				if ($result === false) {
+					error_log("StopBadBots Migration: Failed to drop foreign key {$fk->CONSTRAINT_NAME} on {$table_name}: " . $wpdb->last_error);
+				}
 			}
 		}
 	} catch (Exception $e) {
-		error_log("StopBadBots Migration: Error checking foreign keys on {$table_name}: " . $e->getMessage());
+		error_log("StopBadBots Migration: Error checking for foreign keys on {$table_name}: " . $e->getMessage());
 	}
 
-	// 2. Remove AUTO_INCREMENT da coluna 'id'
+	// 2. Remove AUTO_INCREMENT from the 'id' column (pre-requisite for dropping PK)
 	try {
 		$id_column_info = $wpdb->get_row($wpdb->prepare("SHOW COLUMNS FROM `{$table_name}` WHERE Field = %s", 'id'));
 		if ($id_column_info && stripos($id_column_info->Extra, 'auto_increment') !== false) {
@@ -139,15 +144,29 @@ function stopbadbots_run_database_migration()
 		error_log("StopBadBots Migration: Error checking id column on {$table_name}: " . $e->getMessage());
 	}
 
-	// 3. Remove índices e chave primária existentes
+	// 3. Remove existing indexes and the primary key
 	try {
-		$indexes = ['idx_ip_date', 'idx_bot', 'idx_human'];
-		foreach ($indexes as $index) {
-			$index_info = $wpdb->get_results($wpdb->prepare(
-				"SHOW INDEX FROM `{$table_name}` WHERE Key_name = %s",
+		// **FIX IMPLEMENTED HERE:** List all possible index names to remove (new and legacy).
+		$indexes_to_drop = [
+			// New, correct index names
+			'idx_ip_date',
+			'idx_bot',
+			'idx_human',
+			// Legacy/incorrect index names that might exist
+			'ip',
+			'bot',
+			'human'
+		];
+		$indexes_to_drop = array_unique($indexes_to_drop);
+
+		foreach ($indexes_to_drop as $index) {
+			$index_exists = $wpdb->get_var($wpdb->prepare(
+				"SELECT COUNT(1) FROM information_schema.STATISTICS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = %s AND INDEX_NAME = %s",
+				$table_name,
 				$index
 			));
-			if (!empty($index_info)) {
+
+			if ($index_exists) {
 				$result = $wpdb->query("ALTER TABLE `{$table_name}` DROP INDEX `{$index}`");
 				if ($result === false) {
 					error_log("StopBadBots Migration: Failed to drop index {$index} on {$table_name}: " . $wpdb->last_error);
@@ -155,8 +174,9 @@ function stopbadbots_run_database_migration()
 			}
 		}
 
-		$primary_key_info = $wpdb->get_results("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'PRIMARY'");
-		if (!empty($primary_key_info)) {
+		// Now, safely remove the primary key if it exists
+		$primary_key_exists = $wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'PRIMARY'");
+		if ($primary_key_exists) {
 			$result = $wpdb->query("ALTER TABLE `{$table_name}` DROP PRIMARY KEY");
 			if ($result === false) {
 				error_log("StopBadBots Migration: Failed to drop PRIMARY KEY on {$table_name}: " . $wpdb->last_error);
@@ -166,12 +186,13 @@ function stopbadbots_run_database_migration()
 		error_log("StopBadBots Migration: Error during index/primary key cleanup on {$table_name}: " . $e->getMessage());
 	}
 
-	// --- MODIFICAÇÃO DE COLUNAS ---
+	// --- COLUMN MODIFICATION ---
 
-	// 4. Modifica a coluna 'ip' para VARCHAR(45)
+	// 4. Modify the 'ip' column to VARCHAR(45) if it's not already
 	try {
 		$ip_column_info = $wpdb->get_row($wpdb->prepare("SHOW COLUMNS FROM `{$table_name}` WHERE Field = %s", 'ip'));
-		if ($ip_column_info && stripos($ip_column_info->Type, 'text') !== false) {
+		// This robustly checks if the type is something other than VARCHAR (e.g., INT, BIGINT, TEXT)
+		if ($ip_column_info && stripos($ip_column_info->Type, 'varchar') === false) {
 			$result = $wpdb->query("ALTER TABLE `{$table_name}` MODIFY `ip` VARCHAR(45) NOT NULL");
 			if ($result === false) {
 				error_log("StopBadBots Migration: Failed to modify ip column on {$table_name}: " . $wpdb->last_error);
@@ -181,12 +202,12 @@ function stopbadbots_run_database_migration()
 		error_log("StopBadBots Migration: Error modifying ip column on {$table_name}: " . $e->getMessage());
 	}
 
-	// --- RECONSTRUÇÃO ---
+	// --- REBUILDING STRUCTURE ---
 
-	// 5. Adiciona chave primária se não existir
+	// 5. Add primary key if it doesn't exist
 	try {
-		$primary_key_info = $wpdb->get_results("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'PRIMARY'");
-		if (empty($primary_key_info)) {
+		$primary_key_exists = $wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'PRIMARY'");
+		if (!$primary_key_exists) {
 			$result = $wpdb->query("ALTER TABLE `{$table_name}` ADD PRIMARY KEY (`id`)");
 			if ($result === false) {
 				error_log("StopBadBots Migration: Failed to add PRIMARY KEY on {$table_name}: " . $wpdb->last_error);
@@ -196,7 +217,7 @@ function stopbadbots_run_database_migration()
 		error_log("StopBadBots Migration: Error adding PRIMARY KEY on {$table_name}: " . $e->getMessage());
 	}
 
-	// 6. Adiciona AUTO_INCREMENT à coluna 'id', se necessário
+	// 6. Add AUTO_INCREMENT back to the 'id' column if needed
 	try {
 		$id_column_info = $wpdb->get_row($wpdb->prepare("SHOW COLUMNS FROM `{$table_name}` WHERE Field = %s", 'id'));
 		if ($id_column_info && stripos($id_column_info->Extra, 'auto_increment') === false) {
@@ -209,31 +230,31 @@ function stopbadbots_run_database_migration()
 		error_log("StopBadBots Migration: Error adding AUTO_INCREMENT on {$table_name}: " . $e->getMessage());
 	}
 
-	// 7. Adiciona índices, se não existirem
-	$index_queries = [
-		'idx_ip_date' => "ALTER TABLE `{$table_name}` ADD INDEX `idx_ip_date` (`ip`, `date`)",
-		'idx_bot' => "ALTER TABLE `{$table_name}` ADD INDEX `idx_bot` (`bot`)",
-		'idx_human' => "ALTER TABLE `{$table_name}` ADD INDEX `idx_human` (`human`)",
+	// 7. Add the correct indexes if they don't exist
+	$index_definitions = [
+		'idx_ip_date' => '(`ip`, `date`)',
+		'idx_bot'     => '(`bot`)',
+		'idx_human'   => '(`human`)',
 	];
-	foreach ($index_queries as $index => $query) {
+	foreach ($index_definitions as $index_name => $columns) {
 		try {
-			$index_info = $wpdb->get_results($wpdb->prepare(
-				"SHOW INDEX FROM `{$table_name}` WHERE Key_name = %s",
-				$index
+			$index_exists = $wpdb->get_var($wpdb->prepare(
+				"SELECT COUNT(1) FROM information_schema.STATISTICS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = %s AND INDEX_NAME = %s",
+				$table_name,
+				$index_name
 			));
-			if (empty($index_info)) {
-				$result = $wpdb->query($query);
+			if (!$index_exists) {
+				$result = $wpdb->query("ALTER TABLE `{$table_name}` ADD INDEX `{$index_name}` {$columns}");
 				if ($result === false) {
-					error_log("StopBadBots Migration: Failed to add index {$index} on {$table_name}: " . $wpdb->last_error);
+					error_log("StopBadBots Migration: Failed to add index {$index_name} on {$table_name}: " . $wpdb->last_error);
 				}
 			}
 		} catch (Exception $e) {
-			error_log("StopBadBots Migration: Error adding index {$index} on {$table_name}: " . $e->getMessage());
+			error_log("StopBadBots Migration: Error adding index {$index_name} on {$table_name}: " . $e->getMessage());
 		}
 	}
 
-	// Finalização
-	// error_log("StopBadBots Migration: Database migration for {$table_name} completed.");
+	error_log("StopBadBots Migration: Database migration check for {$table_name} completed.");
 }
 
 

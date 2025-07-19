@@ -56,31 +56,32 @@ if ($stopbadbots_maybe_search_engine and stopbadbots_really_search_engine($stopb
  * A função "cérebro" que orquestra todas as tarefas de atualização.
  * Ela é acionada pelo hook 'plugins_loaded'.
  */
-function stopbadbots_check_for_updates() {
-    // 1. Carrega a versão instalada do banco de dados.
-    $installed_version = get_site_option('stopbadbots_version', '0');
+function stopbadbots_check_for_updates()
+{
+	// 1. Carrega a versão instalada do banco de dados.
+	$installed_version = get_site_option('stopbadbots_version', '0');
 
-    // 2. Compara a versão do código com a versão instalada.
-    if (version_compare(trim(STOPBADBOTSVERSION), trim($installed_version), '>')) {
-        
-        // --- INÍCIO DA ORQUESTRAÇÃO DOS JOBS DE ATUALIZAÇÃO ---
-        // A versão do código é mais nova. Execute todas as tarefas necessárias.
+	// 2. Compara a versão do código com a versão instalada.
+	if (version_compare(trim(STOPBADBOTSVERSION), trim($installed_version), '>')) {
 
-        // Job 1: Atualizar a opção de setup completo.
-        update_option('stopbadbots_setup_complete', true);
+		// --- INÍCIO DA ORQUESTRAÇÃO DOS JOBS DE ATUALIZAÇÃO ---
+		// A versão do código é mais nova. Execute todas as tarefas necessárias.
 
-        // Job 2: Executar a migração do banco de dados.
-        stopbadbots_run_database_migration();
-        
-        // (Futuramente, se você tiver um Job 3, ele iria aqui)
-        
-        // --- FIM DA ORQUESTRAÇÃO ---
+		// Job 1: Atualizar a opção de setup completo.
+		update_option('stopbadbots_setup_complete', true);
 
-        // PASSO FINAL CRÍTICO: Após todos os jobs serem concluídos com sucesso,
-        // atualize a versão do plugin no banco de dados para a nova versão.
-        // Isso "desliga" a rotina de atualização até o próximo lançamento.
-        update_option('stopbadbots_version', STOPBADBOTSVERSION);
-    }
+		// Job 2: Executar a migração do banco de dados.
+		stopbadbots_run_database_migration();
+
+		// (Futuramente, se você tiver um Job 3, ele iria aqui)
+
+		// --- FIM DA ORQUESTRAÇÃO ---
+
+		// PASSO FINAL CRÍTICO: Após todos os jobs serem concluídos com sucesso,
+		// atualize a versão do plugin no banco de dados para a nova versão.
+		// Isso "desliga" a rotina de atualização até o próximo lançamento.
+		update_option('stopbadbots_version', STOPBADBOTSVERSION);
+	}
 }
 add_action('plugins_loaded', 'stopbadbots_check_for_updates');
 
@@ -89,30 +90,152 @@ add_action('plugins_loaded', 'stopbadbots_check_for_updates');
  * A função "trabalhadora" que executa a migração do banco de dados.
  * Ela tem uma única responsabilidade e a executa bem.
  */
-function stopbadbots_run_database_migration() {
+
+function stopbadbots_run_database_migration()
+{
 	global $wpdb;
 	$table_name = $wpdb->prefix . 'sbb_visitorslog';
 
-    // --- LIMPEZA ---
-    if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'ip'")) { $wpdb->query("ALTER TABLE `{$table_name}` DROP INDEX `ip`"); }
-    if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'bot'")) { $wpdb->query("ALTER TABLE `{$table_name}` DROP INDEX `bot`"); }
-    if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'human'")) { $wpdb->query("ALTER TABLE `{$table_name}` DROP INDEX `human`"); }
-    if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'id'")) { $wpdb->query("ALTER TABLE `{$table_name}` DROP KEY `id`"); }
-    if ($wpdb->get_var("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'PRIMARY'")) { $wpdb->query("ALTER TABLE `{$table_name}` DROP PRIMARY KEY"); }
+	// debug
+	//$wpdb->show_errors(true);
+	//$wpdb->suppress_errors(false);
 
-    // --- MODIFICAÇÃO ---
-    $wpdb->query("ALTER TABLE `{$table_name}` MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT");
-    $ip_column_info = $wpdb->get_row("SHOW COLUMNS FROM `{$table_name}` WHERE Field = 'ip'");
-    if ($ip_column_info && strpos(strtolower($ip_column_info->Type), 'text') !== false) {
-        $wpdb->query("ALTER TABLE `{$table_name}` MODIFY `ip` VARCHAR(45) NOT NULL");
-    }
+	// Produção: silencioso por padrão
+	$wpdb->show_errors(false);
+	$wpdb->suppress_errors(true);
 
-    // --- RECONSTRUÇÃO ---
-    $wpdb->query("ALTER TABLE `{$table_name}` ADD PRIMARY KEY (`id`)");
-    $wpdb->query("ALTER TABLE `{$table_name}` ADD INDEX `idx_ip_date` (`ip`, `date`)");
-    $wpdb->query("ALTER TABLE `{$table_name}` ADD INDEX `idx_bot` (`bot`)");
-    $wpdb->query("ALTER TABLE `{$table_name}` ADD INDEX `idx_human` (`human`)");
+	// --- PREPARAÇÃO E LIMPEZA ---
+
+	// 1. Remove foreign keys
+	try {
+		$foreign_keys = $wpdb->get_results("
+			SELECT CONSTRAINT_NAME 
+			FROM information_schema.KEY_COLUMN_USAGE 
+			WHERE TABLE_SCHEMA = DATABASE() 
+			AND TABLE_NAME = '{$table_name}' 
+			AND REFERENCED_TABLE_NAME IS NOT NULL
+		");
+
+		foreach ($foreign_keys as $fk) {
+			$result = $wpdb->query("ALTER TABLE `{$table_name}` DROP FOREIGN KEY `{$fk->CONSTRAINT_NAME}`");
+			if ($result === false) {
+				error_log("StopBadBots Migration: Failed to drop foreign key {$fk->CONSTRAINT_NAME} on {$table_name}: " . $wpdb->last_error);
+			}
+		}
+	} catch (Exception $e) {
+		error_log("StopBadBots Migration: Error checking foreign keys on {$table_name}: " . $e->getMessage());
+	}
+
+	// 2. Remove AUTO_INCREMENT da coluna 'id'
+	try {
+		$id_column_info = $wpdb->get_row($wpdb->prepare("SHOW COLUMNS FROM `{$table_name}` WHERE Field = %s", 'id'));
+		if ($id_column_info && stripos($id_column_info->Extra, 'auto_increment') !== false) {
+			$result = $wpdb->query("ALTER TABLE `{$table_name}` MODIFY `id` mediumint(9) NOT NULL");
+			if ($result === false) {
+				error_log("StopBadBots Migration: Failed to remove AUTO_INCREMENT on {$table_name}.id: " . $wpdb->last_error);
+			}
+		}
+	} catch (Exception $e) {
+		error_log("StopBadBots Migration: Error checking id column on {$table_name}: " . $e->getMessage());
+	}
+
+	// 3. Remove índices e chave primária existentes
+	try {
+		$indexes = ['idx_ip_date', 'idx_bot', 'idx_human'];
+		foreach ($indexes as $index) {
+			$index_info = $wpdb->get_results($wpdb->prepare(
+				"SHOW INDEX FROM `{$table_name}` WHERE Key_name = %s",
+				$index
+			));
+			if (!empty($index_info)) {
+				$result = $wpdb->query("ALTER TABLE `{$table_name}` DROP INDEX `{$index}`");
+				if ($result === false) {
+					error_log("StopBadBots Migration: Failed to drop index {$index} on {$table_name}: " . $wpdb->last_error);
+				}
+			}
+		}
+
+		$primary_key_info = $wpdb->get_results("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'PRIMARY'");
+		if (!empty($primary_key_info)) {
+			$result = $wpdb->query("ALTER TABLE `{$table_name}` DROP PRIMARY KEY");
+			if ($result === false) {
+				error_log("StopBadBots Migration: Failed to drop PRIMARY KEY on {$table_name}: " . $wpdb->last_error);
+			}
+		}
+	} catch (Exception $e) {
+		error_log("StopBadBots Migration: Error during index/primary key cleanup on {$table_name}: " . $e->getMessage());
+	}
+
+	// --- MODIFICAÇÃO DE COLUNAS ---
+
+	// 4. Modifica a coluna 'ip' para VARCHAR(45)
+	try {
+		$ip_column_info = $wpdb->get_row($wpdb->prepare("SHOW COLUMNS FROM `{$table_name}` WHERE Field = %s", 'ip'));
+		if ($ip_column_info && stripos($ip_column_info->Type, 'text') !== false) {
+			$result = $wpdb->query("ALTER TABLE `{$table_name}` MODIFY `ip` VARCHAR(45) NOT NULL");
+			if ($result === false) {
+				error_log("StopBadBots Migration: Failed to modify ip column on {$table_name}: " . $wpdb->last_error);
+			}
+		}
+	} catch (Exception $e) {
+		error_log("StopBadBots Migration: Error modifying ip column on {$table_name}: " . $e->getMessage());
+	}
+
+	// --- RECONSTRUÇÃO ---
+
+	// 5. Adiciona chave primária se não existir
+	try {
+		$primary_key_info = $wpdb->get_results("SHOW INDEX FROM `{$table_name}` WHERE Key_name = 'PRIMARY'");
+		if (empty($primary_key_info)) {
+			$result = $wpdb->query("ALTER TABLE `{$table_name}` ADD PRIMARY KEY (`id`)");
+			if ($result === false) {
+				error_log("StopBadBots Migration: Failed to add PRIMARY KEY on {$table_name}: " . $wpdb->last_error);
+			}
+		}
+	} catch (Exception $e) {
+		error_log("StopBadBots Migration: Error adding PRIMARY KEY on {$table_name}: " . $e->getMessage());
+	}
+
+	// 6. Adiciona AUTO_INCREMENT à coluna 'id', se necessário
+	try {
+		$id_column_info = $wpdb->get_row($wpdb->prepare("SHOW COLUMNS FROM `{$table_name}` WHERE Field = %s", 'id'));
+		if ($id_column_info && stripos($id_column_info->Extra, 'auto_increment') === false) {
+			$result = $wpdb->query("ALTER TABLE `{$table_name}` MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT");
+			if ($result === false) {
+				error_log("StopBadBots Migration: Failed to add AUTO_INCREMENT on {$table_name}.id: " . $wpdb->last_error);
+			}
+		}
+	} catch (Exception $e) {
+		error_log("StopBadBots Migration: Error adding AUTO_INCREMENT on {$table_name}: " . $e->getMessage());
+	}
+
+	// 7. Adiciona índices, se não existirem
+	$index_queries = [
+		'idx_ip_date' => "ALTER TABLE `{$table_name}` ADD INDEX `idx_ip_date` (`ip`, `date`)",
+		'idx_bot' => "ALTER TABLE `{$table_name}` ADD INDEX `idx_bot` (`bot`)",
+		'idx_human' => "ALTER TABLE `{$table_name}` ADD INDEX `idx_human` (`human`)",
+	];
+	foreach ($index_queries as $index => $query) {
+		try {
+			$index_info = $wpdb->get_results($wpdb->prepare(
+				"SHOW INDEX FROM `{$table_name}` WHERE Key_name = %s",
+				$index
+			));
+			if (empty($index_info)) {
+				$result = $wpdb->query($query);
+				if ($result === false) {
+					error_log("StopBadBots Migration: Failed to add index {$index} on {$table_name}: " . $wpdb->last_error);
+				}
+			}
+		} catch (Exception $e) {
+			error_log("StopBadBots Migration: Error adding index {$index} on {$table_name}: " . $e->getMessage());
+		}
+	}
+
+	// Finalização
+	// error_log("StopBadBots Migration: Database migration for {$table_name} completed.");
 }
+
 
 // ---- end july 25
 
@@ -607,11 +730,11 @@ if ($stopbadbots_engine_option != 'minimal') {
 
 			// ===== NOVA LÓGICA DE BLOQUEIO POR INCONSISTÊNCIA (MODO MAXIMUM) =====
 			if ($stopbadbots_engine_option == 'maximum') {
-				
+
 				$afingerprint = explode('#', $stopbadbots_fingerprint_filed);
 
 				if (is_array($afingerprint) && count($afingerprint) > 5) { // Garante que a fingerprint tenha dados suficientes
-					
+
 					// 1. Extrai a informação de touchscreen
 
 					/*
@@ -640,7 +763,7 @@ if ($stopbadbots_engine_option != 'minimal') {
 					// 2. Compara OS do User-Agent (PHP) com a Plataforma da Fingerprint (JS)
 					$os_from_ua = trim(stopbadbots_find_ua_os($stopbadbots_userAgentOri));
 					$is_linux_ua = ($os_from_ua == 'Linux');
-					
+
 					$platform_from_js = isset($afingerprint[3]) ? $afingerprint[3] : '';
 					$is_linux_platform = (stripos($platform_from_js, 'linux') !== false);
 
@@ -666,7 +789,6 @@ if ($stopbadbots_engine_option != 'minimal') {
 			// Se passou por todas as verificações, marca como humano
 			$stopbadbots_is_human = '1';
 		}
-		
 	} else {
 		// Se as condições do 'elseif' não foram atendidas, é um visitante confiável (admin, etc.)
 		$stopbadbots_is_human = '1';
@@ -1476,11 +1598,11 @@ function stopbadbots_alertme($stopbadbots_userAgentOri)
 
 	// $message[] = esc_attr__('Dashboard => Stop Bad Bots => Settings.', 'stopbadbots');
 
-$message[] = esc_attr__('Dashboard', 'stopbadbots');
-$message[] = ' => ';
-$message[] = esc_attr__('Stop Bad Bots', 'stopbadbots');
-$message[] = ' => ';
-$message[] = esc_attr__('Settings.', 'stopbadbots');
+	$message[] = esc_attr__('Dashboard', 'stopbadbots');
+	$message[] = ' => ';
+	$message[] = esc_attr__('Stop Bad Bots', 'stopbadbots');
+	$message[] = ' => ';
+	$message[] = esc_attr__('Settings.', 'stopbadbots');
 
 
 
@@ -1507,15 +1629,15 @@ function stopbadbots_alertme2($stopbadbots_ip)
 		'stopbadbots'
 	);
 	//$message[] = esc_attr__('Dashboard => Stop Bad Bots => Settings.', 'stopbadbots');
-	
+
 	$message[] = esc_attr__('Dashboard', 'stopbadbots');
 	$message[] = ' => ';
 	$message[] = esc_attr__('Stop Bad Bots', 'stopbadbots');
 	$message[] = ' => ';
-	$message[] = esc_attr__('Settings.', 'stopbadbots');	
-	
-	
-	
+	$message[] = esc_attr__('Settings.', 'stopbadbots');
+
+
+
 	$message[] = '';
 	$message[] = esc_attr__('Visit us to learn how to get Weekly Updates and more features:', 'stopbadbots');
 	$message[] = 'https://stopbadbots.com/premium';
@@ -2412,9 +2534,9 @@ function stopbadbots_create_db4()
 
 	$charset_collate = $wpdb->get_charset_collate();
 
-    // -- INÍCIO DAS ALTERAÇÕES --
-    // Alterado: `ip` de TEXT para VARCHAR(45)
-    // Alterado: UNIQUE (`id`) para a forma padrão PRIMARY KEY (`id`)
+	// -- INÍCIO DAS ALTERAÇÕES --
+	// Alterado: `ip` de TEXT para VARCHAR(45)
+	// Alterado: UNIQUE (`id`) para a forma padrão PRIMARY KEY (`id`)
 	$sql             = "CREATE TABLE $table (
         `id` mediumint(9) NOT NULL AUTO_INCREMENT,
         `ip` varchar(45) NOT NULL,
@@ -2432,8 +2554,8 @@ function stopbadbots_create_db4()
     ) $charset_collate;";
 	dbDelta($sql);
 
-    // Alterado: Removidos os índices individuais e substituídos por um índice composto eficiente.
-    // Este novo índice cobre as consultas por IP e data de forma otimizada.
+	// Alterado: Removidos os índices individuais e substituídos por um índice composto eficiente.
+	// Este novo índice cobre as consultas por IP e data de forma otimizada.
 	$sql = 'CREATE INDEX idx_ip_date ON ' . $table . ' (`ip`, `date`)';
 	dbDelta($sql);
 
@@ -2443,7 +2565,7 @@ function stopbadbots_create_db4()
 
 	$sql = 'CREATE INDEX idx_human ON ' . $table . ' (`human`)';
 	dbDelta($sql);
-    // -- FIM DAS ALTERAÇÕES --
+	// -- FIM DAS ALTERAÇÕES --
 }
 
 

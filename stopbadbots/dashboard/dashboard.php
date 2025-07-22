@@ -12,14 +12,14 @@ if (!defined('ABSPATH')) {
 ?>
 <div id="stopbadbots-steps3">
     <div class="stopbadbots-block-title">
-        <?php esc_attr_e("Stop Bad Bots Plugin Activated","stopbadbots"); ?>
+        <?php esc_attr_e("Stop Bad Bots Plugin Activated", "stopbadbots"); ?>
 
     </div>
     <div class="stopbadbots-help-container1">
 
         <!-- "Column1">  -->
         <div class="stopbadbots-help-2column stopbadbots-help-column-2">
-            <h3><?php esc_attr_e("Protection Status","stopbadbots"); ?></h3>
+            <h3><?php esc_attr_e("Protection Status", "stopbadbots"); ?></h3>
             <?php
 
 
@@ -48,7 +48,9 @@ if (!defined('ABSPATH')) {
 
 
             global $stopbadbots_engine_option;
-            echo 'Engine Option: <strong>'. esc_attr($stopbadbots_engine_option). '</strong> Change it on settings page.';
+            echo '<br />';
+
+            echo 'Engine Option: <strong>' . esc_attr($stopbadbots_engine_option) . '</strong> Change it on settings page.';
 
             echo '<br />';
             echo '<br />';
@@ -56,16 +58,16 @@ if (!defined('ABSPATH')) {
             $msg = '';
 
             if ($stopbadbots_block_enumeration == 'no') {
-                $ms = esc_attr__("Activate Block User Enumeration in Settings Page.","stopbadbots");
+                $ms = esc_attr__("Activate Block User Enumeration in Settings Page.", "stopbadbots");
             }
 
             if ($stopbadbots_checkversion == '') {
-                $ms = esc_attr__("Upgrade to Premium for weekly updates, enhanced firewall protection, and more, ensuring a level 100% of security.","stopbadbots");
+                $ms = esc_attr__("Upgrade to Premium for weekly updates, enhanced firewall protection, and more, ensuring a level 100% of security.", "stopbadbots");
             }
 
 
             if ($stopbadbots_block_pingbackrequest == 'no') {
-                $ms = esc_attr__("Activate Block PingBack Requests in Settings Page.","stopbadbots");
+                $ms = esc_attr__("Activate Block PingBack Requests in Settings Page.", "stopbadbots");
             }
 
 
@@ -120,51 +122,116 @@ if (!defined('ABSPATH')) {
                 <?php $site = 'https://stopbadbots.com/premium/'; ?>
                 <a href="<?php echo esc_url($site); ?>" class="button button-primary"><?php esc_attr_e("Learn More", "stopbadbots"); ?></a>
 
-            <?php
+                <?php
             }
 
             $stopbadbots_link_panel = false;
 
             $plugin = 'recaptcha-for-all/recaptcha.php';
 
-            if (!is_plugin_active($plugin)) {
+            if (is_plugin_active($plugin)) {
+                // 1. O plugin está ATIVO
+                //echo 'O plugin está instalado e ATIVO.';
+            } else {
 
-                $stopbadbots_link_panel = true;
+                // O plugin NÃO está ativo. Agora, vamos verificar se ele está instalado ou não.
+                if (file_exists(WP_PLUGIN_DIR . '/' . $plugin)) {
 
-                echo '<br>';
-                echo '<br>';
-                echo esc_attr__('reCAPTCHA extension disabled!', 'stopbadbots');
+                    // 2. O plugin está INSTALADO, mas INATIVO
+                    // echo 'O plugin está instalado, mas INATIVO.';
+                    echo '<br>';
+                    echo '<br>';
 
-               // echo '<br>';
+                ?>
+                    <span class="dashicons dashicons-warning" style="color: #FF0000; font-size: 20px; margin-right: 1px;"></span>
+                <?php
+
+                    echo esc_attr__('reCAPTCHA extension is disabled! Go to plugins page and activate it.', 'stopbadbots');
+                } else {
+                    // 3. O plugin NÃO está INSTALADO
+                    // echo 'O plugin NÃO está INSTALADO.';
+                    echo '<br>';
+                    echo '<br>';
+                    echo esc_attr__('reCAPTCHA extention not intalled!', 'stopbadbots');
 
 
+
+
+                    // Define the base page and the target tab
+                    $base_page = 'stop_bad_bots_plugin';
+                    $target_tab = 'more';
+
+                    // Build the URL dynamically
+                    $link_url = admin_url('admin.php?page=' . $base_page . '&tab=' . $target_tab);
+                ?>
+
+                    <br>
+                    <a href="<?php echo esc_url($link_url); ?>" style="background-color: #FF7F50; border-color: #FFA500; color: #ffffff;" class="button button-primary" target="_blank">
+                    <?php
+
+                    esc_attr_e('Install with one click!', 'antibots');
+                    echo '</a>';
+                }
             }
+
+
+
+
+
+            /////////////////
+
+
 
             $plugin = 'antihacker/antihacker.php';
 
-            if (!is_plugin_active($plugin)) {
 
-                $stopbadbots_link_panel = true;
+            if (is_plugin_active($plugin)) {
+                // 1. O plugin está ATIVO
+                //echo 'O plugin está instalado e ATIVO.';
+            } else {
 
-                echo '<br>';
-                echo '<br>';
-                echo esc_attr__('Anti Hacker extension disabled!', 'stopbadbots');
-                // echo '<br>';
+                // O plugin NÃO está ativo. Agora, vamos verificar se ele está instalado ou não.
+                if (file_exists(WP_PLUGIN_DIR . '/' . $plugin)) {
 
+                    // 2. O plugin está INSTALADO, mas INATIVO
+                    // echo 'O plugin está instalado, mas INATIVO.';
+                    echo '<br>';
+                    echo '<br>';
+
+                    ?>
+                        <span class="dashicons dashicons-warning" style="color: #FF0000; font-size: 20px; margin-right: 1px;"></span>
+                    <?php
+
+                    echo esc_attr__('AntiHacker extension is disabled! Go to plugins page and activate it.', 'stopbadbots');
+                } else {
+                    // 3. O plugin NÃO está INSTALADO
+                    // echo 'O plugin NÃO está INSTALADO.';
+                    echo '<br>';
+                    echo '<br>';
+                    echo esc_attr__('AntiHacker extention not intalled!', 'stopbadbots');
+
+
+
+
+                    // Define the base page and the target tab
+                    $base_page = 'stop_bad_bots_plugin';
+                    $target_tab = 'more';
+
+                    // Build the URL dynamically
+                    $link_url = admin_url('admin.php?page=' . $base_page . '&tab=' . $target_tab);
+                    ?>
+
+                        <br>
+                        <a href="<?php echo esc_url($link_url); ?>" style="background-color: #FF7F50; border-color: #FFA500; color: #ffffff;" class="button button-primary" target="_blank">
+                    <?php
+
+                    esc_attr_e('Install with one click!', 'antibots');
+                    echo '</a>';
+                }
             }
-            echo '<br>';
-            if($stopbadbots_link_panel == true){
-
-                echo '<a href="' . esc_attr( STOPBADBOTSHOMEURL ) . 'plugin-install.php?s=sminozzi&tab=search&type=author">Only 2 clicks to open the panel and install the extension.</a>';
+                    ?>
 
 
-            }
-
-
-
-
-
-            ?>
 
         </div>
         <!-- "Column 3">  -->
@@ -176,32 +243,32 @@ if (!defined('ABSPATH')) {
     <div class="stopbadbots-help-container1">
         <div class="stopbadbots-help-column stopbadbots-help-column-1">
             <img alt="aux" src="<?php echo esc_attr(STOPBADBOTSURL) ?>assets/images/service_configuration.png" />
-            <div class="bill-dashboard-titles"><?php echo esc_attr__("Start Up Guide and Settings","stopbadbots");?></div>
+            <div class="bill-dashboard-titles"><?php echo esc_attr__("Start Up Guide and Settings", "stopbadbots"); ?></div>
             <br /><br />
-            <?php echo esc_attr__("Just click Settings in the left menu (Stop Bad Bots).","stopbadbots");?>
+            <?php echo esc_attr__("Just click Settings in the left menu (Stop Bad Bots).", "stopbadbots"); ?>
             <br />
             Dashboard => Stop Bad Bots => Settings
             <br />
             <?php $site = STOPBADBOTSHOMEURL . "admin.php?page=settings-stop-bad-bots"; ?>
-            <a href="<?php echo esc_url($site); ?>" class="button button-primary"><?php echo esc_attr__("Go","stopbadbots");?></a>
+            <a href="<?php echo esc_url($site); ?>" class="button button-primary"><?php echo esc_attr__("Go", "stopbadbots"); ?></a>
             <br /><br />
         </div> <!-- "Column1">  -->
         <div class="stopbadbots-help-column stopbadbots-help-column-2">
             <img alt="aux" src="<?php echo esc_attr(STOPBADBOTSURL) ?>assets/images/support.png" />
-            <div class="bill-dashboard-titles"><?php esc_attr_e("OnLine Guide, Support, Faq...","stopbadbots"); ?></div>
+            <div class="bill-dashboard-titles"><?php esc_attr_e("OnLine Guide, Support, Faq...", "stopbadbots"); ?></div>
             <br /><br />
-            <?php  esc_attr_e("You will find our complete and updated OnLine guide, faqs page, link to support and more in our site.","stopbadbots"); ?>
+            <?php esc_attr_e("You will find our complete and updated OnLine guide, faqs page, link to support and more in our site.", "stopbadbots"); ?>
             <br />
             <?php $site = 'https://stopbadbots.com'; ?>
             <a href="<?php echo esc_url($site); ?>" class="button button-primary"><?php esc_attr_e("Go", "stopbadbots"); ?></a>
         </div> <!-- "columns 2">  -->
         <div class="stopbadbots-help-column stopbadbots-help-column-3">
             <img alt="aux" src="<?php echo esc_attr(STOPBADBOTSURL) ?>assets/images/system_health.png" />
-            <div class="bill-dashboard-titles"><?php esc_attr_e("Troubleshooting Guide","stopbadbots"); ?></div>
+            <div class="bill-dashboard-titles"><?php esc_attr_e("Troubleshooting Guide", "stopbadbots"); ?></div>
             <br />
-            <?php esc_attr_e("Bots showing in your statistics tool, Use old WP version, Low memory, some plugin with Javascript error are some possible problems.","stopbadbots"); ?>
+            <?php esc_attr_e("Bots showing in your statistics tool, Use old WP version, Low memory, some plugin with Javascript error are some possible problems.", "stopbadbots"); ?>
             <br /><br />
-            <a href="https://siterightaway.net/troubleshooting/" class="button button-primary"><?php esc_attr_e("Troubleshooting Page","stopbadbots"); ?></a>
+            <a href="https://siterightaway.net/troubleshooting/" class="button button-primary"><?php esc_attr_e("Troubleshooting Page", "stopbadbots"); ?></a>
         </div> <!-- "Column 3">  -->
     </div> <!-- "Container1 ">  -->
 </div> <!-- "services"> -->
@@ -215,23 +282,23 @@ if (!defined('ABSPATH')) {
 
 
         <div class="stopbadbots-help-2column stopbadbots-help-column-2">
-            <h3><?php esc_attr_e("Total Bots Blocked Last 15 days","stopbadbots"); ?></h3>
+            <h3><?php esc_attr_e("Total Bots Blocked Last 15 days", "stopbadbots"); ?></h3>
             <br />
             <?php require_once "botsgraph.php"; ?>
-            <center><?php esc_attr_e("Days","stopbadbots"); ?></center>
+            <center><?php esc_attr_e("Days", "stopbadbots"); ?></center>
         </div> <!-- "Column 3">  -->
 
 
 
         <div style="margin-bottom: 20px; min-height: 240px;" class="stopbadbots-help-2column stopbadbots-help-column-2">
-            <h3><?php esc_attr_e("Bots Blocked By Type","stopbadbots"); ?></h3>
+            <h3><?php esc_attr_e("Bots Blocked By Type", "stopbadbots"); ?></h3>
             <br />
             <?php require_once "botsgraph_pie.php"; ?>
         </div> <!-- "Column 3">  -->
 
 
         <div class="stopbadbots-help-2column stopbadbots-help-column-2">
-            <h3><?php esc_attr_e("Bots / Human Visits","stopbadbots"); ?></h3>
+            <h3><?php esc_attr_e("Bots / Human Visits", "stopbadbots"); ?></h3>
             <br />
             <?php require_once "botsgraph_pie2.php"; ?>
             <br /><br />
@@ -247,23 +314,23 @@ if (!defined('ABSPATH')) {
 
 
         <div class="stopbadbots-help-2column stopbadbots-help-column-1">
-            <h3><?php esc_attr_e("Top Bots Blocked by Name","stopbadbots"); ?></h3>
+            <h3><?php esc_attr_e("Top Bots Blocked by Name", "stopbadbots"); ?></h3>
             <?php require_once "topbots.php"; ?>
         </div> <!-- "Column1">  -->
 
         <div class="stopbadbots-help-2column stopbadbots-help-column-1">
-            <h3><?php esc_attr_e("Top Bots Blocked By IP","stopbadbots"); ?></h3>
+            <h3><?php esc_attr_e("Top Bots Blocked By IP", "stopbadbots"); ?></h3>
             <?php require_once "topips.php"; ?>
         </div>
 
 
         <div class="stopbadbots-help-2column stopbadbots-help-column-2">
-            <h3><?php esc_attr_e("Top Bots Bad Referer Blocked","stopbadbots"); ?></h3>
+            <h3><?php esc_attr_e("Top Bots Bad Referer Blocked", "stopbadbots"); ?></h3>
             <?php require_once "toprefs.php"; ?>
         </div>
     </div>
 </div>
 <center>
-    <h4><?php esc_attr_e("With our plugin, many blocked bots will give up of attack your site!","stopbadbots"); ?>
+    <h4><?php esc_attr_e("With our plugin, many blocked bots will give up of attack your site!", "stopbadbots"); ?>
     </h4>
 </center>

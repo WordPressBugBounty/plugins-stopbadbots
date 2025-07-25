@@ -4250,9 +4250,14 @@ function stopbadbots_block_httptools()
 		return '';
 	}
 
-	if (count($astopbadbots_http_tools) < 1) {
+	//if (count($astopbadbots_http_tools) < 1) {
+	//	return '';
+	//}
+
+	if (!is_array($astopbadbots_http_tools) || count($astopbadbots_http_tools) < 1) {
 		return '';
 	}
+
 	for ($i = 0; $i < count($astopbadbots_http_tools); $i++) {
 		$toolnickname = $astopbadbots_http_tools[$i];
 		if (stripos($stopbadbots_userAgentOri, $toolnickname) !== false) {

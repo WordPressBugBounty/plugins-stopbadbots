@@ -5,7 +5,7 @@ Tags: Bad Bots, block bots, fail2ban, server overload, limit visits
 Requires at least: 4.0
 Tested up to: 6.8
 Requires PHP: 5.6 
-Stable tag: 11.55
+Stable tag: 11.56
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,7 @@ Stop Bad Bots Protection, Block SPAM bots, Crawlers and spiders and botnets. Sav
 >Currently, you can track key Fail2ban details like the offending IP, when the last attempt occurred, the specific Security Rule (jail) triggered, the number of attempts, and how long the ban lasts. This is your first step towards richer insights like daily totals, activity graphs, and more detailed ban reasons.
 
 >Stop Bad Bots, SPAM bots, Crawlers and spiders without DNS Cloud or API (EndPoint) Traffic Redirection and without slow down your site. **No google penalties**. Multilanguage ready. Included also Dutch, French, Germany, Italian, Spanish and Portuguese language files.
+
 
 
 **Get Stop Bad Bots protecting your site in moments!**
@@ -89,6 +90,10 @@ Easily integrated with our anti hacker plugin to add an extra layer of protectio
 <li>Spider blocker</li>
 </ul>
 
+
+== Supercharge and update Your ModSecurity Comodo WAF 2025 with Free StopBadBots Custom Rules ==
+Optional.
+<a href="https://stopbadbots.com/sbb-waf-rules/">Learn More...</a>
 
 == Get Real: Unleash the Power of Bot-Free Visitor Analytics: ==
 [youtube https://www.youtube.com/watch?v=z_FlZ0IRg40 autoplay=0]

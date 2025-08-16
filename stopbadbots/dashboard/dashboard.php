@@ -8,7 +8,7 @@
 if (!defined('ABSPATH')) {
     exit;
 }
-//
+// 
 ?>
 <div id="stopbadbots-steps3">
     <div class="stopbadbots-block-title">
@@ -48,9 +48,22 @@ if (!defined('ABSPATH')) {
 
 
             global $stopbadbots_engine_option;
+            // global $stopbadbots_firewalll;
+            global $stopbadbots_checkversion;
+
             echo '<br />';
 
-            echo 'Engine Option: <strong>' . esc_attr($stopbadbots_engine_option) . '</strong> Change it on settings page.';
+
+            if ($stopbadbots_engine_option !== 'maximum') {
+
+            ?>
+                <span class="dashicons dashicons-warning" style="color: #FF0000; font-size: 20px; margin-right: 1px;"></span>
+            <?php
+
+            }
+            echo 'Engine Option: <strong>' . esc_attr($stopbadbots_engine_option) . '</strong>';
+            echo '<br />';
+            echo esc_html("Change it on settings page.", "stopbadbots");
 
             echo '<br />';
             echo '<br />';
@@ -82,7 +95,15 @@ if (!defined('ABSPATH')) {
                 $ms = esc_attr__("Activate Block all bots included at Bad Referer Table", "stopbadbots");
             }
 
-            if ($stopbadbots_firewall != 'yes' and $stopbadbots_checkversion != '') {
+            //die(var_dump($stopbadbots_firewall));
+
+            $stopbadbots_firewall2 = sanitize_text_field(get_option('stopbadbots_firewall', 'yes'));
+            if ($stopbadbots_firewall2 != 'yes' and $stopbadbots_checkversion != '') {
+
+            ?>
+                <span class="dashicons dashicons-warning" style="color: #FF0000; font-size: 20px; margin-right: 1px;"></span>
+            <?php
+
                 $ms = esc_attr__("Activate Firewall to increase protection.", "stopbadbots");
             }
             if (empty($ms)) {

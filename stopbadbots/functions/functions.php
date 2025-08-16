@@ -576,7 +576,7 @@ if ($stopbadbots_engine_option != 'minimal') {
 				}
 			}
 		}
-
+ 
 
 		// if ( ! empty( $stopbadbots_fingerprint_filed ) and $stopbadbots_engine_option != 'conservative' ) {
 		if (!empty($stopbadbots_fingerprint_filed) and $stopbadbots_engine_option != 'conservative' and isset($_COOKIE['stopbadbots_cookie'])) {
@@ -5157,8 +5157,17 @@ function stopbadbots_create_db_stats()
 function stopbadbots_response($stopbadbots_why_block)
 {
 	global $stopbadbots_active;
+	global $stopbadbots_maybe_search_engine;
+	global $stopbadbots_is_admin;
+
 	if ($stopbadbots_active == 'yes' and !stopbadbots_block_whitelist_IP()) {
 
+
+
+		if ($stopbadbots_maybe_search_engine || stopbadbots_block_whitelist_string() || stopbadbots_isourserver() || $stopbadbots_is_admin || is_super_admin()) {
+			return;
+		}
+		
 
 		//http_response_code(403);
 		if (!headers_sent()) {

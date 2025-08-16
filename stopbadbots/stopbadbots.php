@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.55
+Version: 11.56
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -35,7 +35,7 @@ if (!defined('ABSPATH')) {
 }
 
 $bill_debug = false;
-// $bill_debug = true;
+// $bill_debug = true; 
 
 /*
 function stopbadbots_clear_scheduled_hook_antihacker() {
@@ -1037,6 +1037,18 @@ if (empty($stopbadbots_admin_email)) {
 }
 // Firewall
 if (!$stopbadbots_is_admin) {
+
+	// minimal conservative standard maximum
+	// Modsecurity 2025
+	if($stopbadbots_engine_option != 'conservative' && $stopbadbots_engine_option != 'minimal'){
+		if (!isset($_SERVER['HTTP_ACCEPT'])) {
+			stopbadbots_response('Not Human');
+		}
+		if ($_SERVER['REQUEST_METHOD'] === 'HEAD') {
+			stopbadbots_response('Not Human');
+		}	
+	}
+    // end Modsecurity 2025
 	if ($stopbadbots_firewall != 'no' and $stopbadbots_checkversion != '') {
 		$stopbadbots_request_uri_array   = array('@eval', 'eval\(', 'UNION(.*)SELECT', '\(null\)', 'base64_', '\/localhost', '\%2Flocalhost', '\/pingserver', 'wp-config\.php', '\/config\.', '\/wwwroot', '\/makefile', 'crossdomain\.', 'proc\/self\/environ', 'usr\/bin\/perl', 'var\/lib\/php', 'etc\/passwd', '\/https\:', '\/http\:', '\/ftp\:', '\/file\:', '\/php\:', '\/cgi\/', '\.cgi', '\.cmd', '\.bat', '\.exe', '\.sql', '\.ini', '\.dll', '\.htacc', '\.htpas', '\.pass', '\.asp', '\.jsp', '\.bash', '\/\.git', '\/\.svn', ' ', '\<', '\>', '\/\=', '\.\.\.', '\+\+\+', '@@', '\/&&', '\/Nt\.', '\;Nt\.', '\=Nt\.', '\,Nt\.', '\.exec\(', '\)\.html\(', '\{x\.html\(', '\(function\(', '\.php\([0-9]+\)', '(benchmark|sleep)(\s|%20)*\(', 'indoxploi', 'xrumer');
 		$stopbadbots_query_string_array  = array('@@', '\(0x', '0x3c62723e', '\;\!--\=', '\(\)\}', '\:\;\}\;', '\.\.\/', '127\.0\.0\.1', 'UNION(.*)SELECT', '@eval', 'eval\(', 'base64_', 'localhost', 'loopback', '\%0A', '\%0D', '\%00', '\%2e\%2e', 'allow_url_include', 'auto_prepend_file', 'disable_functions', 'input_file', 'execute', 'file_get_contents', 'mosconfig', 'open_basedir', '(benchmark|sleep)(\s|%20)*\(', 'phpinfo\(', 'shell_exec\(', '\/wwwroot', '\/makefile', 'path\=\.', 'mod\=\.', 'wp-config\.php', '\/config\.', '\$_session', '\$_request', '\$_env', '\$_server', '\$_post', '\$_get', 'indoxploi', 'xrumer');

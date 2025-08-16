@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-    console.log('Fingerprint works !!!');
+    // console.log('Fingerprint works !!!');
 
     var getTouchSupport = function () {
         var maxTouchPoints = 0;

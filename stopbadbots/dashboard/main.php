@@ -13,6 +13,8 @@ if (!defined('STOPBADBOTSHOMEURL')) {
 }
 
 // die(var_dump(__LINE__));
+//global $stopbadbots_firewall;
+//die(var_dump($stopbadbots_firewall));
 
 $sbb_urlsettings = STOPBADBOTSHOMEURL . "/admin.php?page=stopbadbots_settings33";
 add_action('admin_init', 'stopbadbots_settings_init_main');
@@ -68,6 +70,8 @@ function stopbadbots_options_page_main()
     global $stopbadbots_referer_active;
     global $stopbadbots_block_enumeration;
     global $stopbadbots_block_pingbackrequest;
+
+    //die(var_dump($stopbadbots_firewall));
 
     if (!function_exists('wp_get_current_user')) {
         include_once ABSPATH . "wp-includes/pluggable.php";
@@ -237,7 +241,7 @@ function stopbadbots_add_admin_menu3()
         'stopbadbots_options_page3'
     );
 }
-if (! function_exists('stopbadbots_is_bill_theme')) {
+if (!function_exists('stopbadbots_is_bill_theme')) {
     function stopbadbots_is_bill_theme()
     {
         $my_theme = wp_get_theme();

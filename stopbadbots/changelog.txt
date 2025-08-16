@@ -3,6 +3,7 @@ This file contains changelog entries, so we can keep the size of the standard Wo
 
 
 == Changelog ==
+11.56  2025-08-16 - Improved Block engine.
 11.55  2025-07-25 - Improved count array result.
 11.46/54  2025-07-19 - Improved table (otimization).
 11.45  2025-07-07 - Improved notes dismiss.

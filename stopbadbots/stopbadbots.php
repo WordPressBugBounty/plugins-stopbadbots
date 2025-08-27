@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.58
+Version: 11.59
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -2204,7 +2204,7 @@ function stopbadbots_check_wordpress_logged_in_cookie()
      * The only reliable way is to use WordPress's own functions.
      * First, we check if the required function has been loaded by WordPress yet.
      */
-    if (!function_exists('current_user_can')) {
+	if (!function_exists('current_user_can') || !function_exists('wp_get_current_user') ) {
         /**
          * The function does not exist yet. This means we are running too early in the
          * WordPress load order.
@@ -2227,7 +2227,9 @@ function stopbadbots_check_wordpress_logged_in_cookie()
      * we can be certain that the current_user_can() function is available.
      * We can now perform the secure check.
      */
-	if (!function_exists('current_user_can')) {
+
+	 // wp_get_current_user()
+	if (!function_exists('current_user_can') || !function_exists('wp_get_current_user') ) {
         // If, for some reason, current_user_can still does not exist (critical error or unusual environment),
         // assume non-admin. Do not cache.
 		return $current_is_admin_status; // Returns false.

@@ -61,9 +61,9 @@ if (!defined('ABSPATH')) {
             <?php
 
             }
-            echo 'Engine Option: <strong>' . esc_attr($stopbadbots_engine_option) . '</strong>';
+            echo esc_html__('Engine Option:', 'stopbadbots') . '<strong>' . esc_attr($stopbadbots_engine_option) . '</strong>';
             echo '<br />';
-            echo esc_html("Change it on settings page.", "stopbadbots");
+            echo esc_html__("Change it on settings page.", "stopbadbots");
 
             echo '<br />';
             echo '<br />';
@@ -223,24 +223,23 @@ if (!defined('ABSPATH')) {
                         <span class="dashicons dashicons-warning" style="color: #FF0000; font-size: 20px; margin-right: 1px;"></span>
                     <?php
 
-                    echo esc_attr__('AntiHacker extension is disabled! Go to plugins page and activate it.', 'stopbadbots');
+                    echo esc_attr__('AntiHacker Extension is Disabled! Activate it from the Plugins page to get a powerful, free firewall and block brute-force and XML-RPC attacks —currently a major source of attacks.', 'stopbadbots');
                 } else {
                     // 3. O plugin NÃO está INSTALADO
                     // echo 'O plugin NÃO está INSTALADO.';
                     echo '<br>';
                     echo '<br>';
-                    echo esc_attr__('AntiHacker extention not intalled!', 'stopbadbots');
-
-
-
-
-                    // Define the base page and the target tab
-                    $base_page = 'stop_bad_bots_plugin';
-                    $target_tab = 'more';
-
-                    // Build the URL dynamically
-                    $link_url = admin_url('admin.php?page=' . $base_page . '&tab=' . $target_tab);
                     ?>
+                        <span class="dashicons dashicons-warning" style="color: #FF0000; font-size: 20px; margin-right: 1px;"></span>
+                        <?php
+                        echo esc_attr__('AntiHacker Extension is Disabled! Install it from the Plugins page to get a powerful, free firewall and block brute-force and XML-RPC attacks —currently a major source of attacks.', 'stopbadbots');
+                        // Define the base page and the target tab
+                        $base_page = 'stop_bad_bots_plugin';
+                        $target_tab = 'more';
+
+                        // Build the URL dynamically
+                        $link_url = admin_url('admin.php?page=' . $base_page . '&tab=' . $target_tab);
+                        ?>
 
                         <br>
                         <a href="<?php echo esc_url($link_url); ?>" style="background-color: #FF7F50; border-color: #FFA500; color: #ffffff;" class="button button-primary" target="_blank">

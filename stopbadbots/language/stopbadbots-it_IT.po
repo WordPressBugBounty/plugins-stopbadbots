@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Plugins - StopBadBots - Development (trunk)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-22 13:28+0100\n"
-"PO-Revision-Date: 2025-06-22 12:34+0000\n"
+"PO-Revision-Date: 2025-08-23 09:34+0000\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
@@ -20,83 +20,340 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.1; php-8.2.10\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: dashboard/botsgraph_pie.php:28 dashboard/calcula_stats_pie2.php:29
-msgid ""
-"Just give us a little time to collect data so we can display it for you here."
-msgstr ""
-"Dateci solo un po' di tempo per raccogliere i dati in modo da poterli "
-"visualizzare qui."
+#: dashboard/memory.php:116
+msgid "(just copy and paste)"
+msgstr "(basta copiare e incollare)"
 
-#: dashboard/dashboard.php:15
-msgid "Stop Bad Bots Plugin Activated"
-msgstr "Stop Bad Bots Plugin attivato"
+#: dashboard/memory.php:124
+msgid "/* That's all, stop editing! Happy blogging. */"
+msgstr "/* Questo è tutto, basta con l'editing! Buon blogging. */"
 
-#: dashboard/dashboard.php:22
-msgid "Protection Status"
-msgstr "Stato di protezione"
+#: includes/install/install.php:299
+msgid "1 day"
+msgstr "1 giorno"
 
-#: dashboard/dashboard.php:59
-msgid "Activate Block User Enumeration in Settings Page."
-msgstr "Attivare Block User Enumeration nella pagina delle impostazioni."
+#: settings/options/plugin_options_tabbed.php:699
+msgid "1 Hour"
+msgstr "1 ora"
 
-#: dashboard/dashboard.php:63
-#, no-php-format
-msgid ""
-"Upgrade to Premium for weekly updates, enhanced firewall protection, and "
-"more, ensuring a level 100% of security."
-msgstr ""
-"Vai Premium per ottenere aggiornamenti settimanali, protezione firewall e "
-"altro, di conseguenza il livello di protezione 10."
+#: settings/options/plugin_options_tabbed.php:575
+msgid "1 per minute"
+msgstr "1 al minuto"
 
-#: dashboard/dashboard.php:68
+#: guide/guide.php:121
+msgid "1) Yandex"
+msgstr "1) Yandex"
+
+#: settings/options/plugin_options_tabbed.php:626
+msgid "10 per hour"
+msgstr "10 per ora"
+
+#: settings/options/plugin_options_tabbed.php:595
+msgid "10 per minute"
+msgstr "10 al minuto"
+
+#: settings/options/plugin_options_tabbed.php:638
+msgid "100 per hour"
+msgstr "100 per ora"
+
+#: includes/install/install.php:302
+#| msgid "days"
+msgid "14 days"
+msgstr "14 giorni"
+
+#: includes/install/install.php:305
+#| msgid "days"
+msgid "180 days"
+msgstr "180 giorni"
+
+#: settings/options/plugin_options_tabbed.php:703
+msgid "2 Hours"
+msgstr "2 ore"
+
+#: settings/options/plugin_options_tabbed.php:579
+msgid "2 per minute"
+msgstr "2 al minuto"
+
+#: guide/guide.php:123
+msgid "2) Yandexbot"
+msgstr "2) Yandexbot"
+
+#: settings/options/plugin_options_tabbed.php:630
+msgid "20 per hour"
+msgstr "20 all'ora"
+
+#: settings/options/plugin_options_tabbed.php:599
+msgid "20 per minute"
+msgstr "20 al minuto"
+
+#: settings/options/plugin_options_tabbed.php:711
+msgid "24 Hours"
+msgstr "24 Ore"
+
+#: includes/install/install.php:300
+#| msgid "days"
+msgid "3 days"
+msgstr "3 giorni"
+
+#: settings/options/plugin_options_tabbed.php:583
+msgid "3 per minute"
+msgstr "3 al minuto"
+
+#: guide/guide.php:125
+msgid "3) Exbot"
+msgstr "3) Exbot"
+
+#: includes/install/install.php:303
+#| msgid "days"
+msgid "30 days"
+msgstr "30 giorni"
+
+#: settings/options/plugin_options_tabbed.php:695
+msgid "30 minutes"
+msgstr "30 minuti"
+
+#: includes/install/install.php:306
+#| msgid "days"
+msgid "360 days"
+msgstr "360 giorni"
+
+#: dashboard/mybanners.php:55
+msgid "4 options of Engine Management."
+msgstr "4 opzioni di gestione del motore."
+
+#: settings/options/plugin_options_tabbed.php:587
+msgid "4 per minute"
+msgstr "4 al minuto"
+
+#: settings/options/plugin_options_tabbed.php:691
+msgid "5 minutes"
+msgstr "5 minuti"
+
+#: settings/options/plugin_options_tabbed.php:622
+msgid "5 per hour"
+msgstr "5 per ora"
+
+#: settings/options/plugin_options_tabbed.php:591
+msgid "5 per minute"
+msgstr "5 al minuto"
+
+#: settings/options/plugin_options_tabbed.php:634
+msgid "50 per hour"
+msgstr "50 all'ora"
+
+#: settings/options/plugin_options_tabbed.php:603
+msgid "50 per minute"
+msgstr "50 al minuto"
+
+#: settings/options/plugin_options_tabbed.php:707
+msgid "6 Hours"
+msgstr "6 ore"
+
+#: includes/install/install.php:301
+#| msgid "days"
+msgid "7 days"
+msgstr "7 giorni"
+
+#: includes/install/install.php:304
+#| msgid "days"
+msgid "90 days"
+msgstr "90 giorni"
+
+#: dashboard/dashboard.php:89
+msgid "Activate Block All Bots in Settings Page."
+msgstr "Attivare Block All Bots nella pagina delle impostazioni."
+
+#: dashboard/dashboard.php:95
+msgid "Activate Block all bots included at Bad Referer Table"
+msgstr "Vuoi bloccare tutti i bot inclusi nella tabella dei Bad Bot?"
+
+#: dashboard/dashboard.php:92
+msgid "Activate Block All IPs in Settings Page."
+msgstr "Attivare Blocca tutti gli IP nella pagina delle impostazioni."
+
+#: dashboard/dashboard.php:83
 msgid "Activate Block PingBack Requests in Settings Page."
 msgstr "Attivare Block PingBack Requests nella pagina delle impostazioni."
 
 #: dashboard/dashboard.php:74
-msgid "Activate Block All Bots in Settings Page."
-msgstr "Attivare Block All Bots nella pagina delle impostazioni."
+msgid "Activate Block User Enumeration in Settings Page."
+msgstr "Attivare Block User Enumeration nella pagina delle impostazioni."
 
-#: dashboard/dashboard.php:77
-msgid "Activate Block All IPs in Settings Page."
-msgstr "Attivare Blocca tutti gli IP nella pagina delle impostazioni."
+#: settings/options/plugin_options_tabbed.php:737
+msgid ""
+"Activate eMail notification for some days and manage the Whitelist tables."
+msgstr ""
+"Attivare la notifica eMail per alcuni giorni e gestire le tabelle della "
+"Whitelist."
 
-#: dashboard/dashboard.php:80
-msgid "Activate Block all bots included at Bad Referer Table"
-msgstr "Vuoi bloccare tutti i bot inclusi nella tabella dei Bad Bot?"
-
-#: dashboard/dashboard.php:84
+#: dashboard/dashboard.php:107
 msgid "Activate Firewall to increase protection."
 msgstr "Attivate il Firewall per aumentare la protezione."
 
-#: dashboard/dashboard.php:87
-msgid "Protection level currently configured."
-msgstr "Livello di protezione attualmente configurato."
+#: functions/functions.php:3175
+msgid "Add new bad bot to the bad bots Table."
+msgstr "Aggiungi un nuovo BadBot alla tabella."
 
-#: dashboard/dashboard.php:101
-msgid "Pro Protection Enabled"
-msgstr "Protezione Pro abilitata"
+#: functions/functions.php:3205
+msgid "Add new bad IP to the bad IPs Table."
+msgstr "Aggiungere un nuovo IP cattivo alla tabella degli IP cattivi."
 
-#: dashboard/dashboard.php:102
-msgid "With weekly database updates and Firewall protection."
+#: functions/functions.php:3225
+msgid "Add new bad Referer to the bad Referer Table."
+msgstr "Aggiungere un nuovo cattivo referer alla tabella dei cattivi referer."
+
+#: functions/functions.php:3280
+msgid "Add one bad bot each time. The table don't accept duplicate nicknames."
 msgstr ""
-"Guarda la nostra scheda Go Pro su come ottenere aggiornamenti settimanali, "
-"più funzioni e protezione Firewall."
+"Aggiungi un solo bad bot per volta. La tabella non accetta nickname "
+"duplicati."
 
-#: dashboard/dashboard.php:105 dashboard/dashboard.php:121
-#: dashboard/memory.php:103 dashboard/mybanners.php:74
-#: functions/functions.php:4312 includes/diagnose/class_bill_diagnose.php:999
-#: includes/diagnose/class_bill_diagnose.php:1450
-#: includes/install-checkup/class_bill_install.php:316
-#: includes/install-checkup/class_bill_install.php:385
-#: includes/vendor/vendor.php:54
-msgid "Learn More"
-msgstr "Approfondisci"
+#: functions/functions.php:3292
+msgid "Add one bad ip each time. The table don't accept duplicate ips."
+msgstr ""
+"Aggiungete ogni volta un ip cattivo. La tabella non accetta ip duplicati."
 
-#: dashboard/dashboard.php:114
-msgid "Only Partial Protection enabled!"
-msgstr "Solo la protezione parziale è abilitata!"
+#: functions/functions.php:3309
+msgid "Add one bad referer each time. The table don't accept duplicate names."
+msgstr ""
+"Aggiungete ogni volta un cattivo referer. La tabella non accetta nomi "
+"duplicati."
 
-#: dashboard/dashboard.php:117
+#: settings/options/plugin_options_tabbed.php:802
+msgid "Add only one for each line."
+msgstr "Aggiungerne solo uno per ogni linea."
+
+#: includes/list-tables/class-sbb-list-table3.php:35
+msgid "Added by"
+msgstr "Aggiunto da"
+
+#: dashboard/memory.php:25
+msgid "After Copy the URL, click UPDATE to proceed or Cancel to abort."
+msgstr ""
+"Dopo aver copiato l'URL, clicca su UPDATE per procedere o Cancel per "
+"interrompere."
+
+#: includes/chat/class_bill_chat.php:51
+msgid "AJAX request failed:"
+msgstr "Richiesta AJAX fallita:"
+
+#: settings/options/plugin_options_tabbed.php:888
+msgid ""
+"Alert me All Times Firewall Block Something. (available only in pro version)"
+msgstr ""
+"Avvertimi tutte le volte che il firewall blocca qualcosa. (disponibile solo "
+"nella versione pro)"
+
+#: settings/options/plugin_options_tabbed.php:872
+msgid "Alert me by email each Bots Attempts"
+msgstr "Avertimi via email per ogni tentativo di accesso da parte dei Bot"
+
+#: includes/install/install.php:322
+msgid "All Done!"
+msgstr "Tutto fatto!"
+
+#: functions/fail2ban.php:56
+msgid ""
+"All features on this page are available only in our Pro (or premium) version."
+msgstr ""
+"Tutte le funzionalità presenti in questa pagina sono disponibili solo nella "
+"nostra versione Pro (o premium)."
+
+#: includes/visits_stats/visits_dashboard.php:66
+#: includes/visits_stats/visits_dashboard.php:83
+msgid "Analysis of total visitor count by unique IP addresses."
+msgstr "Analisi del numero totale di visitatori per indirizzi IP univoci."
+
+#: dashboard/notifications.php:83
+msgid "and mark all with yes."
+msgstr "e segnare tutto con sì."
+
+#: dashboard/dashboard.php:226
+msgid ""
+"AntiHacker Extension is Disabled! Activate it from the Plugins page to get a "
+"powerful, free firewall and block brute-force and XML-RPC attacks —currently "
+"a major source of attacks."
+msgstr ""
+"L'estensione AntiHacker è disattivata! Attivala dalla pagina Plugin per "
+"ottenere un firewall potente e gratuito e bloccare gli attacchi brute-force "
+"e XML-RPC, attualmente una delle principali fonti di attacchi."
+
+#: dashboard/dashboard.php:235
+msgid ""
+"AntiHacker Extension is Disabled! Install it from the Plugins page to get a "
+"powerful, free firewall and block brute-force and XML-RPC attacks —currently "
+"a major source of attacks."
+msgstr ""
+"L'estensione AntiHacker è disattivata! Installala dalla pagina Plugin per "
+"ottenere un firewall potente e gratuito e bloccare gli attacchi brute-force "
+"e XML-RPC, attualmente una delle principali fonti di attacchi."
+
+#: includes/feedback-last/feedback-last.php:250
+#: includes/diagnose/class_bill_diagnose.php:903
+msgid "Artificial Intelligence Support Chat for Issues and Solutions"
+msgstr ""
+"Chat di supporto per l'intelligenza artificiale per problemi e soluzioni"
+
+#: guide/guide.php:43
+msgid ""
+"At eMail and Notifications tab, you can customize your contact email or left "
+"blank to use your WordPress eMail."
+msgstr ""
+"Nella scheda eMail e Notifiche, puoi personalizzare la tua email di contatto "
+"o lasciarla vuota per usare la tua eMail di WordPress."
+
+#: stopbadbots.php:1505
+msgid "Attacks Blocked Last 15 days"
+msgstr "Attacchi bloccati negli ultimi 15 giorni"
+
+#: functions/fail2ban.php:415
+msgid "Attempts"
+msgstr "Tentativi"
+
+#: functions/functions.php:3271
+msgid ""
+"Attention: In this case, you will block also google bot because their name "
+"is GoogleBot."
+msgstr ""
+"Attenzione: in questo caso bloccherai anche google bot, poiché il suo nome è "
+"GoogleBot."
+
+#: includes/diagnose/class_bill_diagnose.php:922
+msgid "Auto Checkup for Errors"
+msgstr "Controllo automatico degli errori"
+
+#: includes/diagnose/class_bill_diagnose.php:927
+msgid "Auto Checkup Server "
+msgstr "Server di controllo automatico"
+
+#: dashboard/mybanners.php:47
+msgid "Automatic updates."
+msgstr "Aggiornamenti automatici."
+
+#: dashboard/mybanners.php:29
+msgid "Avoid Bots Damaging Your SEO"
+msgstr "Evita che i bot danneggino la tua SEO"
+
+#: includes/install/install.php:257 includes/install/install.php:312
+#: includes/install/install.php:325
+msgid "Back"
+msgstr "Indietro"
+
+#: functions/functions.php:3214
+msgid "Bad Bot IP:"
+msgstr "IP del Cattivo bot:"
+
+#: functions/functions.php:3184
+msgid "Bad Bot Nickname:"
+msgstr "Nickname del BadBot:"
+
+#: functions/functions.php:4692
+msgid "Bad Bots can do all sorts of nasty stuff and waste server resources."
+msgstr ""
+"I bot cattivi possono fare ogni sorta di cose brutte e sprecare le risorse "
+"del server."
+
+#: dashboard/dashboard.php:140
 msgid ""
 "Bad bots consume bandwidth, slow down servers, hack into your system, create "
 "spam, steal your content to sell to competitors - harm SEO - , search for "
@@ -106,217 +363,35 @@ msgstr ""
 "creare SPAM, rubare i tuoi contenuti per venderli ai tuoi concorrenti, "
 "cercare vulnerabilità e rovinare l'esperienza dei cliente."
 
-#: dashboard/dashboard.php:136
-msgid "reCAPTCHA extension disabled!"
-msgstr "estensione reCAPTCHA disabilitata!"
+#: functions/functions.php:4696
+msgid "Bad bots don’t play by the rules."
+msgstr "I bot cattivi non giocano secondo le regole."
 
-#: dashboard/dashboard.php:151
-msgid "Anti Hacker extension disabled!"
-msgstr "Estensione Anti Hacker disabilitata!"
+#: functions/functions.php:4700
+msgid "Bad Bots stresses, harm and slowly your Web servers."
+msgstr "I cattivi bot stressano, danneggiano e rallentano i vostri server web."
 
-#: dashboard/dashboard.php:179
-msgid "Start Up Guide and Settings"
-msgstr "Guida all'avvio e impostazioni"
-
-#: dashboard/dashboard.php:181
-msgid "Just click Settings in the left menu (Stop Bad Bots)."
-msgstr "Basta cliccare su Impostazioni nel menu a sinistra (Stop Bad Bots)."
-
-#: dashboard/dashboard.php:186 dashboard/dashboard.php:196
-msgid "Go"
-msgstr "Vai"
-
-#: dashboard/dashboard.php:191
-msgid "OnLine Guide, Support, Faq..."
-msgstr "Guida on line, supporto, Faq..."
-
-#: dashboard/dashboard.php:193
-msgid ""
-"You will find our complete and updated OnLine guide, faqs page, link to "
-"support and more in our site."
+#: functions/functions.php:1696
+msgid "Bad Referer Bot was detected and blocked by Stop Bad Bots Plugin."
 msgstr ""
-"Troverete la nostra guida OnLine completa e aggiornata, la pagina delle faq, "
-"il link al supporto e altro ancora nel nostro sito."
+"Un cattivo bot  referer è stato identificato e bloccato dal Stop Bad Bots "
+"plugin."
 
-#: dashboard/dashboard.php:200
-msgid "Troubleshooting Guide"
-msgstr "Pagina di risoluzione dei problemi"
+#: functions/functions.php:3234
+msgid "Bad Referer Name:"
+msgstr "Nome del cattivo referente:"
 
-#: dashboard/dashboard.php:202
-msgid ""
-"Bots showing in your statistics tool, Use old WP version, Low memory, some "
-"plugin with Javascript error are some possible problems."
-msgstr ""
-"I bot appaiono nel tuo strumento di statistica, l'uso di una vecchia "
-"versione di WP, poca memoria, qualche plugin con errore Javascript sono "
-"alcuni possibili problemi."
+#: functions/functions.php:1576 functions/functions.php:1590
+msgid "Bad Referers per page"
+msgstr "Cattivo referente per page:"
 
-#: dashboard/dashboard.php:204 guide/guide.php:140
-msgid "Troubleshooting Page"
-msgstr "Pagina di risoluzione dei problemi"
+#: functions/fail2ban.php:416
+msgid "Ban Duration (seconds)"
+msgstr "Durata del divieto (secondi)"
 
-#: dashboard/dashboard.php:218
-msgid "Total Bots Blocked Last 15 days"
-msgstr "Totale dei bot bloccati negli ultimi 15 giorni"
-
-#: dashboard/dashboard.php:221
-msgid "Days"
-msgstr "Giorni"
-
-#: dashboard/dashboard.php:227
-msgid "Bots Blocked By Type"
-msgstr "Bot bloccati per tipo"
-
-#: dashboard/dashboard.php:234
-msgid "Bots / Human Visits"
-msgstr "Bot / Visite umane"
-
-#: dashboard/dashboard.php:250
-msgid "Top Bots Blocked by Name"
-msgstr "I 10 top bot bloccati per nome"
-
-#: dashboard/dashboard.php:255
-msgid "Top Bots Blocked By IP"
-msgstr "I Top  bot bloccati per IP"
-
-#: dashboard/dashboard.php:261
-msgid "Top Bots Bad Referer Blocked"
-msgstr "I Top Bots Bad Referer Bloccati"
-
-#: dashboard/dashboard.php:267
-msgid "With our plugin, many blocked bots will give up of attack your site!"
-msgstr ""
-"Con il nostro plugin, molti bot bloccati rinunceranno ad attaccare il tuo "
-"sito!"
-
-#: dashboard/memory.php:18
-msgid ""
-"If your server allow us, we can try to fix your file wp-config.php to "
-"release more memory."
-msgstr ""
-"Se il tuo server ce lo permette, possiamo provare a sistemare il tuo file wp-"
-"config.php per rilasciare più memoria."
-
-#: dashboard/memory.php:20
-msgid "Please, copy the url blue below to safe place before to proceed."
-msgstr ""
-"Per favore, copiate l'url blu qui sotto in un posto sicuro prima di "
-"procedere."
-
-#: dashboard/memory.php:22
-msgid ""
-"Use the url only to undo this operation if you've problem accessing your "
-"site after the update."
-msgstr ""
-"Usa l'url solo per annullare questa operazione se hai problemi di accesso al "
-"tuo sito dopo l'aggiornamento."
-
-#: dashboard/memory.php:25
-msgid "After Copy the URL, click UPDATE to proceed or Cancel to abort."
-msgstr ""
-"Dopo aver copiato l'URL, clicca su UPDATE per procedere o Cancel per "
-"interrompere."
-
-#: dashboard/memory.php:30
-msgid "Update"
-msgstr "Aggiorna"
-
-#: dashboard/memory.php:31 includes/feedback-last/feedback-last.php:274
-msgid "Cancel"
-msgstr "Annulla"
-
-#: dashboard/memory.php:46
-msgid "Unable to get your Memory Info"
-msgstr "Impossibile ottenere le informazioni sulla memoria"
-
-#: dashboard/memory.php:49
-msgid "Memory Info"
-msgstr "Informazioni sulla memoria"
-
-#: dashboard/memory.php:62 functions/health.php:142
-msgid "Current memory WordPress Limit:"
-msgstr "Memoria corrente WordPress Limite"
-
-#: dashboard/memory.php:76 functions/health.php:148
-msgid "Your usage now:"
-msgstr "Il tuo utilizzo ora"
-
-#: dashboard/memory.php:81
-msgid "Total Server Memory:"
-msgstr "Memoria totale del server:"
-
-#: dashboard/memory.php:96
-msgid ""
-"Our plugin cannot function properly because your WordPress memory limit is "
-"too low. Your site will experience serious issues, even if you deactivate "
-"our plugin."
-msgstr ""
-"Il nostro plugin non può funzionare correttamente perché il limite di "
-"memoria di WordPress è troppo basso. Il tuo sito riscontrerà seri problemi, "
-"anche se disattivi il nostro plugin."
-
-#: dashboard/memory.php:101
-msgid ""
-"If you want adjust and control your WordPress Memory Limit and PHP Memory "
-"Limit quickly and without edit any files, try our free plugin WPmemory:"
-msgstr ""
-"Se vuoi regolare e controllare il tuo WordPress Memory Limit e PHP Memory "
-"Limit rapidamente e senza modificare alcun file, prova il nostro plugin "
-"gratuito WPmemory:"
-
-#: dashboard/memory.php:108
-msgid "Follow this instructions to do it manually:"
-msgstr "Seguite queste istruzioni per farlo manualmente:"
-
-#: dashboard/memory.php:114
-msgid ""
-"To increase the WordPress memory limit, add this info to your file wp-config."
-"php (located at root folder of your server)"
-msgstr ""
-"Per aumentare il limite di memoria di WordPress, aggiungi queste "
-"informazioni al tuo file wp-config.php (situato nella cartella principale "
-"del tuo server)"
-
-#: dashboard/memory.php:116
-msgid "(just copy and paste)"
-msgstr "(basta copiare e incollare)"
-
-#: dashboard/memory.php:122
-msgid "before this row:"
-msgstr "prima di questa riga:"
-
-#: dashboard/memory.php:124
-msgid "/* That's all, stop editing! Happy blogging. */"
-msgstr "/* Questo è tutto, basta con l'editing! Buon blogging. */"
-
-#: dashboard/memory.php:127
-msgid "If you need more, just replace 128 with the new memory limit."
-msgstr ""
-"Se avete bisogno di più, basta sostituire 128 con il nuovo limite di memoria."
-
-#: dashboard/memory.php:129
-msgid "To increase your total server memory, talk with your hosting company."
-msgstr ""
-"Per aumentare la memoria totale del tuo server, parla con la tua compagnia "
-"di hosting."
-
-#: dashboard/memory.php:134
-msgid "How to Tell if Your Site Needs a Shot of more Memory:"
-msgstr "Come dire se il tuo sito ha bisogno di una dose di memoria in più:"
-
-#: dashboard/memory.php:136
-msgid ""
-"If your site is behaving slowly, or pages fail to load, you\n"
-"    get random white screens of death or 500\n"
-"    internal server error you may need more memory.\n"
-"    Several things consume memory, such as WordPress itself, the plugins "
-"installed, the\n"
-"    theme you're using and the site content."
-msgstr ""
-"se il tuo sito si comporta lentamente, o le pagine non si caricano, si "
-"ottengono schermate bianche o 500 errori interni del server, potresti aver "
-"bisogno di più memoria. Diverse cose consumano memoria, come WordPress "
-"stesso, i plugin installati, il tema che stai usando e il contenuto del sito."
+#: includes/install/install.php:271
+msgid "Basic Settings"
+msgstr "Impostazioni di base"
 
 #: dashboard/memory.php:142
 msgid ""
@@ -339,41 +414,194 @@ msgstr ""
 "limite di memoria\n"
 "    per soddisfare gli standard di una moderna installazione di WordPress."
 
-#: dashboard/memory.php:151
-msgid ""
-"Increase the WP Memory Limit is a standard practice in\n"
-"    WordPress and you find instructions also in the official\n"
-"    WordPress documentation (Increasing memory allocated to PHP)."
-msgstr ""
-"Aumentare il limite di memoria di WP è una pratica standard in WordPress e "
-"si trovano istruzioni anche nella documentazione ufficiale di WordPress "
-"(Aumentare la memoria assegnata a PHP)."
+#: functions/functions.php:3297
+msgid "Be carefull. This IP will be blocked to access your site."
+msgstr "Fai attenzione. Questo IP sarà bloccato per accedere al tuo sito."
 
-#: dashboard/memory.php:155
+#: functions/functions.php:3314
 msgid ""
-"Increase the WP Memory Limit is a standard practice in\n"
-"    Here is the link:"
-msgstr ""
-"Aumentare il limite di memoria di WP è una pratica standard\n"
-"    Ecco il link:"
+"Be carefull. This Referer will be blocked to access your site. Do not use "
+"HTML"
+msgstr "Fai attenzione. Questo referer sarà bloccato per accedere al tuo sito."
 
-#: dashboard/mybanners.php:21
-msgid "Get Extra Protection"
-msgstr "Ottieni una protezione extra"
+#: guide/guide.php:68
+msgid ""
+"Because not all bots are bad, you need manage the bots and whitelist tables."
+msgstr ""
+"Poiché non tutti i bot sono cattivi, è necessario gestire i bot e le tabelle "
+"di whitelist."
+
+#: functions/functions.php:4712
+msgid "Become Pro: Your bad bots table is always updated."
+msgstr "Diventa Pro: La tua tabella dei bot cattivi è sempre aggiornata."
+
+#: dashboard/memory.php:122
+msgid "before this row:"
+msgstr "prima di questa riga:"
+
+#. Author of the plugin
+msgid "Bill Minozzi"
+msgstr "Bill Minozzi"
+
+#: functions/functions.php:4708
+msgid ""
+"BLACK FRIDAY 30% OFF! Use the coupon code: special-black_2019. Limited time!"
+msgstr ""
+"VENERDÌ NERO 30% DI SCONTO! Usa il codice coupon: special-black_2019. Tempo "
+"limitato!"
+
+#: settings/options/plugin_options_tabbed.php:27
+#: settings/options/plugin_options_tabbed.php:126
+msgid "Block all Bots included at Bad Bots Table?"
+msgstr "Vuoi bloccare tutti i bot inclusi nella tabella dei Bad Bot?"
+
+#: settings/options/plugin_options_tabbed.php:39
+msgid "Block all Bots included at Bad IPs Table?"
+msgstr "Bloccare tutti i bot inclusi nella Bad IPs Table?"
+
+#: settings/options/plugin_options_tabbed.php:165
+msgid "Block all bots included at Bad Referer Table?"
+msgstr "Bloccare tutti i bot inclusi nella tabella di Bad Referer?"
+
+#: settings/options/plugin_options_tabbed.php:148
+msgid "Block all IPs included at Bad IPs Table?"
+msgstr "Bloccare tutti gli IP inclusi nella tabella di Bad IPs?"
+
+#: settings/options/plugin_options_tabbed.php:73
+#: settings/options/plugin_options_tabbed.php:262
+msgid "Block all with Blank User Agent?"
+msgstr "Bloccare tutti con User Agent Bianchi?"
+
+#: includes/diagnose/class_bill_diagnose.php:1120
+msgid ""
+"Block bots: They overload the server and steal your content. Install our "
+"free plugin Antihacker."
+msgstr ""
+"Blocca i bot: sovraccaricano il server e rubano i tuoi contenuti. Installa "
+"il nostro plugin gratuito Antihacker."
+
+#: settings/options/plugin_options_tabbed.php:183
+msgid ""
+"Block Engine Management (Only Minimal and Conservative options available in "
+"the free version of the plugin)."
+msgstr ""
+"Gestione del motore di blocchi (Maximum Block è disponibile solo nella "
+"versione pro)"
+
+#: settings/options/plugin_options_tabbed.php:380
+msgid ""
+"Block False Googlebot and Msnbot & Bingbot?  (available only in pro version)"
+msgstr ""
+"Bloccare i falsi Googlebot e Msnbot & Bingbot?  (disponibile solo nella "
+"versione pro)"
+
+#: dashboard/mybanners.php:51
+msgid "Block HTTP Tools."
+msgstr "Bloccare gli strumenti HTTP"
+
+#: settings/options/plugin_options_tabbed.php:747
+msgid "Block HTTP tools?"
+msgstr "Bloccare gli strumenti HTTP?"
+
+#: settings/options/plugin_options_tabbed.php:84
+#: settings/options/plugin_options_tabbed.php:310
+msgid "Block PingBack Request?"
+msgstr "Bloccare la richiesta di PingBack?"
+
+#: settings/options/plugin_options_tabbed.php:396
+msgid ""
+"Block Traffic from China, Cuba and North Korea?  (available only in pro "
+"version)"
+msgstr ""
+"Bloccare il traffico da Cina, Cuba e Corea del Nord?  (disponibile solo "
+"nella versione pro)"
+
+#: dashboard/mybanners.php:63
+msgid "Block traffic from China, Cuba, and North Korea."
+msgstr "Bloccare il traffico da Cina, Cuba e Corea del Nord?"
+
+#: settings/options/plugin_options_tabbed.php:294
+msgid "Block User enumeration to improve security?"
+msgstr "Bloccare l'enumerazione degli utenti per migliorare la sicurezza?"
+
+#: dashboard/mybanners.php:60
+msgid "Block User Enumeration."
+msgstr "Bloccare l'enumerazione degli utenti?"
+
+#: settings/options/plugin_options_tabbed.php:78
+msgid "Block User Enumeration?"
+msgstr "Bloccare l'enumerazione degli utenti?"
+
+#: includes/install/install.php:282
+#| msgid "Block all with Blank User Agent?"
+msgid "Block visitors with a blank User-Agent?"
+msgstr "Bloccare i visitatori con uno User-Agent vuoto?"
+
+#: dashboard/toprefs.php:38 dashboard/topbots.php:40 dashboard/topips.php:70
+#: dashboard/topips.php:77 dashboard/topcountries.php:62
+msgid "Blocked"
+msgstr "Bloccato"
+
+#: functions/functions.php:1905
+msgid "Blocked Bot by Fake Browser (User Agent)"
+msgstr "Bot bloccato da un falso browser (User Agent)"
+
+#: functions/functions.php:1885
+msgid "Blocked Bot by Rate Limiting"
+msgstr "Bot bloccati dalla limitazione del tasso"
+
+#: functions/functions.php:1925
+msgid "Blocked Visitor by Country (China, Cuba, North Korea)"
+msgstr "Visitatore bloccato per paese (Cina, Cuba, Corea del Nord)"
+
+#: functions/fail2ban.php:195
+msgid "Blocks in the Last 24 Hours"
+msgstr "Blocchi nelle ultime 24 ore"
+
+#: functions/fail2ban.php:110
+msgid "Blocks Last 30 Days"
+msgstr "Blocchi ultimi 30 giorni"
+
+#: dashboard/topbots.php:34 dashboard/topcountries.php:56
+msgid "Bot"
+msgstr "Bot"
+
+#: functions/functions.php:3323
+msgid "Bot included at table!"
+msgstr "Bot aggiunto alla tabella!"
+
+#: functions/functions.php:1606 functions/functions.php:1642
+msgid "Bot was detected and blocked."
+msgstr "Un bot è stato identificato e bloccato."
+
+#: dashboard/dashboard.php:321
+msgid "Bots / Human Visits"
+msgstr "Bot / Visite umane"
+
+#: includes/diagnose/class_bill_diagnose.php:1357
+msgid "Bots and Hackers Attack (click to open)"
+msgstr "Attacchi di bot e hacker (clicca per aprire)"
+
+#. echo '</strong>';
+#: includes/diagnose/class_bill_diagnose.php:1367
+msgid ""
+"Bots aren’t human—they’re automated scripts that visit your site. They steal "
+"your content, making it less unique. They overload your server, slowing it "
+"down and hurting your SEO."
+msgstr ""
+"I bot non sono umani: sono script automatici che visitano il tuo sito. "
+"Rubano i tuoi contenuti, rendendoli meno originali. Sovraccaricano il tuo "
+"server, rallentandolo e danneggiando la tua SEO."
+
+#: dashboard/dashboard.php:314
+msgid "Bots Blocked By Type"
+msgstr "Bot bloccati per tipo"
 
 #: dashboard/mybanners.php:25
 msgid "Bots Can Slow Your Server and Hurt Your Google Rankings"
 msgstr ""
 "I bot possono rallentare il tuo server e danneggiare la tua classifica su "
 "Google"
-
-#: dashboard/mybanners.php:29
-msgid "Avoid Bots Damaging Your SEO"
-msgstr "Evita che i bot danneggino la tua SEO"
-
-#: dashboard/mybanners.php:41
-msgid "features are not included in the free version:"
-msgstr "le funzionalità non sono incluse nella versione gratuita:"
 
 #: dashboard/mybanners.php:45
 msgid ""
@@ -382,53 +610,693 @@ msgstr ""
 "I bot possono rubare contenuti, danneggiare il SEO, rallentare i server e "
 "sfruttare le vulnerabilità."
 
-#: dashboard/mybanners.php:47
-msgid "Automatic updates."
-msgstr "Aggiornamenti automatici."
+#: functions/functions.php:1548
+msgid "Bots per page"
+msgstr "Bot per pagina"
 
-#: dashboard/mybanners.php:49
-msgid "Limit Number of Visits."
-msgstr "Limita il numero di visite."
+#: dashboard/dashboard.php:289
+msgid ""
+"Bots showing in your statistics tool, Use old WP version, Low memory, some "
+"plugin with Javascript error are some possible problems."
+msgstr ""
+"I bot appaiono nel tuo strumento di statistica, l'uso di una vecchia "
+"versione di WP, poca memoria, qualche plugin con errore Javascript sono "
+"alcuni possibili problemi."
 
-#: dashboard/mybanners.php:51
-msgid "Block HTTP Tools."
-msgstr "Bloccare gli strumenti HTTP"
+#: dashboard/mybanners.php:259
+msgid "Can You Do Us a Favor?"
+msgstr "Puoi farci un favore?"
 
-#: dashboard/mybanners.php:55
-msgid "4 options of Engine Management."
-msgstr "4 opzioni di gestione del motore."
+#: dashboard/memory.php:31 includes/feedback-last/feedback-last.php:274
+msgid "Cancel"
+msgstr "Annulla"
 
-#: dashboard/mybanners.php:60
-msgid "Block User Enumeration."
-msgstr "Bloccare l'enumerazione degli utenti?"
+#: includes/diagnose/class_bill_diagnose.php:835
+msgid ""
+"cannot function properly because your WordPress Memory Limit is too low. "
+"Your site will experience serious issues, even if you deactivate our plugin."
+msgstr ""
+"non può funzionare correttamente perché il limite di memoria di WordPress è "
+"troppo basso. Il tuo sito presenterà seri problemi, anche se disattivi il "
+"nostro plugin."
 
-#: dashboard/mybanners.php:63
-msgid "Block traffic from China, Cuba, and North Korea."
-msgstr "Bloccare il traffico da Cina, Cuba e Corea del Nord?"
+#: dashboard/dashboard.php:66
+msgid "Change it on settings page."
+msgstr "Modificalo nella pagina delle impostazioni."
 
-#: dashboard/mybanners.php:66
-msgid "Firewall Protection."
-msgstr "Protezione firewall"
+#: includes/chat/class_bill_chat.php:45
+msgid "Chat messages reset successfully."
+msgstr "I messaggi della chat sono stati reimpostati correttamente."
+
+#: guide/guide.php:88
+msgid ""
+"Check also the IP's table frequently, especially in the first days. Confirm "
+"if you want block all that IPs."
+msgstr ""
+"Controllate anche la tabella degli IP frequentemente, specialmente nei primi "
+"giorni. Confermate se volete bloccare tutti quegli IP."
+
+#: guide/guide.php:74
+msgid "Check the bot's table frequently, especially in the first days."
+msgstr "Controllate spesso la tabella del bot, soprattutto nei primi giorni."
+
+#: includes/diagnose/class_bill_diagnose.php:1123
+msgid ""
+"Check your site for errors with free plugin wpTools. Errors and warnings can "
+"increase page load time by being recorded in log files, consuming resources "
+"and slowing down performance."
+msgstr ""
+"Controlla la presenza di errori nel tuo sito con il plugin gratuito wpTools. "
+"Errori e avvisi possono aumentare il tempo di caricamento delle pagine "
+"perché vengono registrati nei file di registro, consumando risorse e "
+"rallentando le prestazioni."
+
+#: includes/diagnose/class_bill_diagnose.php:896
+msgid ""
+"Click the help button in the top right or go directly to the AI chat box "
+"below for more specific information on the issues listed."
+msgstr ""
+"Per informazioni più specifiche sui problemi elencati, fare clic sul "
+"pulsante della guida in alto a destra o andare direttamente alla casella "
+"della chat AI qui sotto."
+
+#: guide/guide.php:75
+msgid ""
+"Confirm if you want block all that bots. Maybe you want unblock Baidu, "
+"DuckDuck, Yandex, Seznam or another search engine in your language or some "
+"social sites or some useful bot for you."
+msgstr ""
+"Confermate se volete bloccare tutti quei bot. Forse vuoi sbloccare Baidu, "
+"DuckDuck, Yandex, Seznam o un altro motore di ricerca nella tua lingua o "
+"alcuni siti sociali o qualche bot utile per te."
+
+#: settings/options/plugin_options_tabbed.php:191
+msgid "Conservative"
+msgstr "Conservativo"
+
+#: settings/options/plugin_options_tabbed.php:96
+msgid ""
+"Conservative option:  may allow some advanced bots but avoids false "
+"positives. Conservative (and Maximum) also considers the behavior of bots \n"
+"."
+msgstr ""
+"Opzione conservativa: può consentire alcuni bot avanzati ma evita i falsi "
+"positivi. Conservativo (e Massimo) considera anche il comportamento dei bot"
+
+#: dashboard/topips.php:66 dashboard/topcountries.php:58
+msgid "Country"
+msgstr "Nazione"
+
+#: functions/health.php:175
+msgid "Critical"
+msgstr "Critica"
+
+#: includes/diagnose/class_bill_diagnose.php:1909
+msgid "Critical Issues"
+msgstr "Problemi critici"
+
+#: dashboard/memory.php:62 functions/health.php:142
+msgid "Current memory WordPress Limit:"
+msgstr "Memoria corrente WordPress Limite"
+
+#: functions/fail2ban.php:52
+msgid ""
+"Currently, you can track key details like the offending IP, when the last "
+"attempt occurred, the specific Security Rule (jail) triggered, the number of "
+"attempts, and how long the ban lasts"
+msgstr ""
+"Attualmente, è possibile tenere traccia di dettagli chiave come l'IP "
+"incriminato, quando si è verificato l'ultimo tentativo, la specifica regola "
+"di sicurezza (jail) attivata, il numero di tentativi e la durata del divieto"
+
+#: functions/functions.php:1622 functions/functions.php:1654
+msgid "Dashboard"
+msgstr "Pannello di controllo"
+
+#: guide/guide.php:117
+msgid "Dashboard => Stop Bad Bots => Bad Bots Table."
+msgstr "Bacheca => Stop Bad Bots => Tabella Bad Bots."
+
+#: functions/functions.php:1684 functions/functions.php:1706
+#: functions/functions.php:1728 functions/functions.php:1750
+#: functions/functions.php:1772 functions/functions.php:1795
+#: functions/functions.php:1812 functions/functions.php:1832
+#: functions/functions.php:1852 functions/functions.php:1874
+#: functions/functions.php:1894 functions/functions.php:1914
+#: functions/functions.php:1934
+msgid "Dashboard => Stop Bad Bots => Settings."
+msgstr "Bacheca => Stop Bad Bots => Impostazione."
+
+#: functions/functions.php:1608 functions/functions.php:1644
+#: functions/functions.php:1675 functions/functions.php:1698
+#: functions/functions.php:1720 functions/functions.php:1742
+#: functions/functions.php:1764 functions/functions.php:1787
+#: functions/functions.php:1807 functions/functions.php:1824
+#: functions/functions.php:1844 functions/functions.php:1864
+#: functions/functions.php:1886 functions/functions.php:1906
+#: functions/functions.php:1926
+msgid "Date"
+msgstr "Data"
+
+#: functions/fail2ban.php:412
+msgid "Date and Time"
+msgstr "Data e ora"
+
+#: settings/options/plugin_options_tabbed.php:423
+msgid "day"
+msgstr "giorno"
+
+#: includes/diagnose/class_bill_diagnose.php:1306
+msgid "day(s)"
+msgstr "giorno/i"
+
+#: dashboard/dashboard.php:308
+msgid "Days"
+msgstr "Giorni"
+
+#: settings/options/plugin_options_tabbed.php:427
+#: settings/options/plugin_options_tabbed.php:431
+#: settings/options/plugin_options_tabbed.php:435
+#: settings/options/plugin_options_tabbed.php:439
+#: settings/options/plugin_options_tabbed.php:443
+#: settings/options/plugin_options_tabbed.php:447
+#: settings/options/plugin_options_tabbed.php:451
+#: settings/options/plugin_options_tabbed.php:455
+msgid "days"
+msgstr "giorni"
+
+#: guide/guide.php:119
+msgid "Deactivate this 3 boots:"
+msgstr "Disattivare questi 3 boot:"
 
 #: dashboard/mybanners.php:68
 msgid "Dedicated Premium Support."
 msgstr "Supporto Premium dedicato"
 
-#: dashboard/mybanners.php:70
-msgid "More..."
-msgstr "Altro..."
-
-#: dashboard/mybanners.php:253
+#: includes/feedback-last/feedback-last.php:245
 msgid ""
-"Please support us by rating our plugin on WordPress.org. Help us keep this "
-"plugin live and updated."
+"Depending on your response, we can help keep the plugin running smoothly for "
+"you immediately!"
 msgstr ""
-"Sostienici valutando il nostro plugin su WordPress.org. Aiutaci a mantenerlo "
-"attivo e aggiornato."
+"A seconda della tua risposta, possiamo aiutarti a mantenere il plugin "
+"funzionante correttamente per te immediatamente!"
 
-#: dashboard/mybanners.php:256
-msgid "Rate or Share"
-msgstr "Valuta o condividi"
+#: includes/diagnose/class_bill_diagnose.php:912
+msgid ""
+"Describe your issue, or use the buttons below to check for errors or server "
+"settings..."
+msgstr ""
+"Descrivi il problema oppure utilizza i pulsanti qui sotto per verificare la "
+"presenza di errori o impostazioni del server..."
+
+#: functions/functions.php:1843
+msgid "Detected bot in Login Form"
+msgstr "Trovato un Bot su modulo de login"
+
+#: functions/functions.php:1605 functions/functions.php:1641
+#: functions/functions.php:1672 functions/functions.php:1695
+msgid "Detected Bot on"
+msgstr "Trovato un Bot su "
+
+#: functions/functions.php:1863
+msgid "Detected bot using HTTP tools"
+msgstr "Rilevato bot utilizzando strumenti HTTP"
+
+#: functions/functions.php:1717 functions/functions.php:1739
+#: functions/functions.php:1761 functions/functions.php:1783
+msgid "Detected Possible Bot on"
+msgstr "Trovato possibile Bot su "
+
+#: functions/functions.php:1823
+msgid "Detected Spammer in Comments Form"
+msgstr "Rilevato spammer nel modulo dei commenti"
+
+#: functions/functions.php:1806
+msgid "Detected Spammer in Contact Form"
+msgstr "Rilevato spammer nel modulo di contatto"
+
+#: dashboard/mybanners.php:251
+msgid "Did you like The Stop Bad Bots Plugin?"
+msgstr "Ti è piaciuto il plugin Stop Bad Bots?"
+
+#: includes/diagnose/class_bill_diagnose.php:894
+msgid ""
+"Disabling our plugin does not stop the errors from occurring; it simply "
+"means you will no longer be notified here that they are happening, but they "
+"can still harm your site."
+msgstr ""
+"Disattivare il nostro plugin non impedisce che si verifichino errori; \n"
+"significa semplicemente che non sarai più avvisato qui che si stanno "
+"verificando, ma possono comunque danneggiare il tuo sito."
+
+#: includes/feedback-last/feedback-last.php:268
+msgid "Discover New FREE Plugins"
+msgstr "Scopri nuovi plugin GRATUITI"
+
+#: dashboard/notifications.php:85 functions/functions.php:4886
+#: includes/vendor/vendor.php:56
+msgid "Dismiss"
+msgstr "Ignora"
+
+#: includes/diagnose/class_bill_diagnose.php:892
+msgid ""
+"Displaying the latest recurring errors (Javascript Included) from your error "
+"log file and eventually alert about low WordPress memory limit is a courtesy "
+"of plugin"
+msgstr ""
+"La visualizzazione degli ultimi errori ricorrenti dal file di registro degli "
+"errori e l'eventuale avviso sul limite di memoria basso di WordPress sono "
+"una cortesia del plugin"
+
+#: functions/functions.php:3277
+msgid "Do not use special characters neither HTML"
+msgstr "Non usare caratteri speciali."
+
+#: settings/options/plugin_options_tabbed.php:858
+msgid "Do you want receive email alerts for each bot attempt?"
+msgstr ""
+"Vuoi ricevere avvisi via email per ogni tentativo effettuato da un Bad Bot?"
+
+#: includes/install/install.php:276
+msgid "Email for security notifications"
+msgstr "Email per notifiche di sicurezza"
+
+#: functions/functions.php:1613 functions/functions.php:1647
+#: functions/functions.php:1679 functions/functions.php:1701
+#: functions/functions.php:1723 functions/functions.php:1745
+#: functions/functions.php:1767 functions/functions.php:1790
+#: functions/functions.php:1810 functions/functions.php:1827
+#: functions/functions.php:1847 functions/functions.php:1869
+#: functions/functions.php:1889 functions/functions.php:1909
+#: functions/functions.php:1929
+msgid "eMail sent by Stop Bad Bots Plugin."
+msgstr "email inviata dal plugin StopBadBots."
+
+#: table/visitors_render.php:29
+msgid "Empty Table. Please, try again later."
+msgstr "Tabella vuota. Per favore, riprova più tardi."
+
+#: functions/functions.php:1718
+msgid "Empty User Agent was detected and blocked by Stop Bad Bots Plugin."
+msgstr "Empty User Agent è stato rilevato e bloccato da Stop Bad Bots Plugin."
+
+#: settings/options/plugin_options_tabbed.php:51
+msgid "Enable Block Bad Referer?"
+msgstr "Abilitare il blocco dei cattivi referer?"
+
+#: settings/options/plugin_options_tabbed.php:813
+msgid "Enable Both Withelist?"
+msgstr "Abilitare entrambe le Withelist?"
+
+#: settings/options/plugin_options_tabbed.php:58
+msgid "Enable Firewall?"
+msgstr "Abilitare il firewall?"
+
+#: settings/options/plugin_options_tabbed.php:207
+#: settings/options/plugin_options_tabbed.php:226
+msgid "Enable Firewall? (available only in pro version)"
+msgstr "Abilitare il firewall? (disponibile solo nella versione pro)"
+
+#: settings/options/plugin_options_tabbed.php:535
+msgid "Enable the Rate Limiting for non humans?"
+msgstr "Abilitare il Rate Limiting per i non umani?"
+
+#: settings/options/plugin_options_tabbed.php:53
+msgid ""
+"Enabling Block Bad Referer the plugin will blocks  websites that use Referer "
+"Spam to promote their."
+msgstr ""
+"Abilitando Block Bad Referer il plugin blocca i siti web che usano Referer "
+"Spam per promuovere i loro."
+
+#: settings/options/plugin_options_tabbed.php:60
+msgid ""
+"Enabling Firewall the plugin will blocks malicious requests also from "
+"hackers. 100% Plug-n-play, no configuration required."
+msgstr ""
+"Abilitando il firewall il plugin bloccherà le richieste dannose anche da "
+"parte degli hacker. 100% Plug-n-play, nessuna configurazione richiesta."
+
+#: settings/options/plugin_options_tabbed.php:67
+msgid ""
+"Enabling this feature causes your site to anonymously share data with Stop "
+"Bad Bots on Bad Bots visits. In return your WordPress site receives updates "
+"at your Bad Bots Table with new Bad Bots Names, IPs and bad referer."
+msgstr ""
+"Abilitando questa funzione, il vostro sito condivide anonimamente i dati con "
+"Stop Bad Bots sulle visite dei Bad Bots. In cambio il tuo sito WordPress "
+"riceve aggiornamenti alla tua Bad Bots Table con nuovi nomi di Bad Bots, IP "
+"e bad referer."
+
+#: dashboard/dashboard.php:64
+msgid "Engine Option:"
+msgstr "Opzione motore:"
+
+#: includes/diagnose/class_bill_diagnose.php:916
+msgid ""
+"Enter a message and click 'Send', or just click 'Auto Checkup' to analyze "
+"error log or server info configuration."
+msgstr ""
+"Inserisci un messaggio e clicca su \"Invia\", oppure clicca semplicemente su "
+"\"Controllo automatico\" per analizzare il registro degli errori o la "
+"configurazione delle informazioni del server."
+
+#: includes/feedback-last/feedback-last.php:260
+msgid "Enter your message..."
+msgstr "Inserisci il tuo messaggio..."
+
+#: includes/chat/class_bill_chat.php:278
+msgid ""
+"Error contacting the Artificial Intelligence (API). Please try again later."
+msgstr ""
+"Errore durante il contatto con l'intelligenza artificiale (API). Riprova più "
+"tardi."
+
+#: includes/chat/class_bill_chat.php:49
+msgid "Error processing server response:"
+msgstr "Errore durante l'elaborazione della risposta del server:"
+
+#: includes/chat/class_bill_chat.php:46
+msgid "Error resetting chat messages."
+msgstr "Errore durante la reimpostazione dei messaggi della chat."
+
+#: includes/chat/class_bill_chat.php:52
+msgid "Error sending the message. Please try again later."
+msgstr "Errore nell'invio del messaggio. Riprova più tardi."
+
+#: includes/chat/class_bill_chat.php:411
+msgid "Error to get response from AI source!"
+msgstr "Errore durante l'ottenimento della risposta dalla fonte AI!"
+
+#: functions/functions.php:7454
+msgid "Errors have been detected on this site. "
+msgstr "Sono stati rilevati degli errori su questo sito."
+
+#: functions/functions.php:3262
+msgid "Example: SpiderBot (no case sensitive)"
+msgstr "Esempio: SpiderBot (non distingue tra maiuscole e minuscole)"
+
+#: functions/functions.php:3333
+msgid ""
+"Fail to include bot! Check bot nickname and remember Duplicates are not "
+"allowed. "
+msgstr ""
+"Impossibile aggiungere il bot! Controlla il nickname del bot e ricorda che i "
+"duplicati non sono consentiti. "
+
+#: functions/functions.php:3356
+msgid ""
+"Fail to include IP! Check bot IP and remember Duplicates are not allowed. "
+msgstr ""
+"Non é stato possibile includere l'IP! Controlla l'IP del bot e ricorda che i "
+"duplicati non sono ammessi."
+
+#: functions/functions.php:3379
+msgid ""
+"Fail to include Referer! Check referer name and remember Duplicates are not "
+"allowed. "
+msgstr ""
+"Non è stato possibile includere il referer! Controlla il nome del referer e "
+"ricorda che i duplicati non sono ammessi."
+
+#: functions/functions.php:1785
+msgid "Fake User Agent:"
+msgstr "Falso User agent"
+
+#: functions/functions.php:1784
+msgid "False Google/Bing/Msn was detected and blocked by Stop Bad Bots Plugin."
+msgstr ""
+"Falso Google/Bing/Msn è stato rilevato e bloccato da Stop Bad Bots Plugin."
+
+#: guide/guide.php:136
+msgid "Faq Page"
+msgstr "Pagina FAQ"
+
+#: dashboard/mybanners.php:41
+msgid "features are not included in the free version:"
+msgstr "le funzionalità non sono incluse nella versione gratuita:"
+
+#: settings/options/plugin_options_tabbed.php:669
+msgid "fifteen 404 pages"
+msgstr "quindici pagine 404"
+
+#: settings/options/plugin_options_tabbed.php:677
+msgid "fifty 404 pages"
+msgstr "cinquanta pagine 404"
+
+#: includes/diagnose/class_bill_diagnose.php:1479
+msgid "File not readable."
+msgstr "File non leggibile."
+
+#: includes/diagnose/class_bill_diagnose.php:1531
+msgid "File Size: "
+msgstr "Dimensione file:"
+
+#: settings/options/plugin_options_tabbed.php:845
+msgid "Fill out the email address to send messages."
+msgstr "Riempi il campo “indirizzo email” per poter inviare messaggi."
+
+#: settings/options/plugin_options_tabbed.php:92
+msgid ""
+"Find the balance between our software and server power with Block Engine "
+"Management, which lets you control user agent filtering, server CPU "
+"utilization, and visitor behavior."
+msgstr ""
+"Block Engine Management permette di gestire il filtro dell'agente utente, "
+"l'utilizzo della CPU del server e altre cose"
+
+#: dashboard/mybanners.php:66
+msgid "Firewall Protection."
+msgstr "Protezione firewall"
+
+#: settings/options/plugin_options_tabbed.php:661
+msgid "five 404 pages"
+msgstr "cinque pagine 404"
+
+#: dashboard/memory.php:108
+msgid "Follow this instructions to do it manually:"
+msgstr "Seguite queste istruzioni per farlo manualmente:"
+
+#: stopbadbots.php:1503
+msgid "For details, visit the plugin dashboard"
+msgstr "Per i dettagli, visita la bacheca del plugin"
+
+#: functions/functions.php:3266
+msgid ""
+"For example, if you put \"bot\" will block all bots with the string bot at "
+"user agent name."
+msgstr ""
+"Per esempio, se inserisci la parola “bot” bloccherà tutti i bot con questa "
+"nel nome dello user agent."
+
+#: settings/options/plugin_options_tabbed.php:800
+msgid "For IP withelist, just add the IP to unblock it."
+msgstr "Per IP withelist, basta aggiungere l'IP per sbloccarlo."
+
+#: functions/functions.php:981
+msgid "for more details, Support and online guide."
+msgstr "per maggiori dettagli, video e guide online."
+
+#: dashboard/mybanners.php:21
+msgid "Get Extra Protection"
+msgstr "Ottieni una protezione extra"
+
+#: settings/options/plugin_options_tabbed.php:1070
+msgid ""
+"Get Pro and receive, automatically, weekly updates, Firewall and more "
+"Protection."
+msgstr ""
+"Ottenere Pro e ricevere, automaticamente, aggiornamenti settimanali, "
+"Firewall e più protezione."
+
+#: dashboard/dashboard.php:273 dashboard/dashboard.php:283
+msgid "Go"
+msgstr "Vai"
+
+#: guide/guide.php:142
+msgid "Go Pro"
+msgstr "Passa a Pro"
+
+#: includes/install/install.php:326
+#| msgid "Go to WordPress"
+msgid "Go to Dashboard"
+msgstr "Vai alla Dashboard"
+
+#: dashboard/notifications.php:55 dashboard/notifications.php:65
+msgid ""
+"Go to Dashboard => Stop Bad Bots => Settings => General Settings (tab) and "
+"activate it."
+msgstr ""
+"Vai su Bacheca => Stop Bad Bots => Impostazioni => Impostazioni generali "
+"(scheda) e attivalo."
+
+#: dashboard/notifications.php:44
+msgid ""
+"Go to Dashboard => Stop Bad Bots => Settings => General Settings (tab) and "
+"activate it. "
+msgstr ""
+"Vai su Bacheca => Stop Bad Bots => Impostazioni => Impostazioni generali "
+"(scheda) e attivalo"
+
+#: functions/functions.php:966
+msgid ""
+"Go to Dashboard Page for more information, Online Guide and Support. (WP "
+"Dashboard => Stop Bad Bots = Dashboard)"
+msgstr ""
+"Vai alla pagina Bacheca per maggiori informazioni, guida online e supporto. "
+"(WP Bacheca => Stop Bad Bots = Dashboard)"
+
+#: functions/functions.php:971
+msgid ""
+"Go to Visits Log Page for details about the visits. (WP Dashboard => Stop "
+"Bad Bots = Visits Log)"
+msgstr ""
+"Vai alla pagina Visits Log per i dettagli sulle visite. (WP Bacheca => Stop "
+"Bad Bots = Visits Log)"
+
+#: functions/functions.php:4878
+msgid "Go to WordPress"
+msgstr "Vai a WordPress"
+
+#: includes/diagnose/class_bill_diagnose.php:1369
+msgid ""
+"Hackers look for vulnerabilities to access your server. Even small sites are "
+"targets—they use your server to send spam and attack others, damaging your "
+"IP and email reputation."
+msgstr ""
+"Gli hacker cercano vulnerabilità per accedere al tuo server. Anche i siti "
+"più piccoli sono obiettivi: usano il tuo server per inviare spam e attaccare "
+"altri, danneggiando il tuo indirizzo IP e la reputazione della tua email."
+
+#: settings/options/plugin_options_tabbed.php:1072
+msgid "Help us to keep the bot database updated and the plugin stronger."
+msgstr "Aiutaci a tenere aggiornato il database dei bot."
+
+#: includes/diagnose/class_bill_diagnose.php:85
+msgid ""
+"Here are some details about error and memory monitoring for your plugin. "
+"Errors and low memory can prevent your site from functioning properly. On "
+"this page, you will find a partial list of the most recent errors and "
+"warnings. If you need more details, use the chat form, which will search for "
+"additional information using Artificial Intelligence.  \n"
+"If you need to dive deeper, install the free plugin WPTools, which provides "
+"more in-depth insights."
+msgstr ""
+"Ecco alcuni dettagli sul monitoraggio degli errori e della memoria per il "
+"tuo plugin. Errori e poca memoria possono impedire al tuo sito di funzionare "
+"correttamente. In questa pagina troverai un elenco parziale degli errori e "
+"degli avvisi più recenti. Se hai bisogno di maggiori dettagli, usa il modulo "
+"di chat, che cercherà informazioni aggiuntive usando l'intelligenza "
+"artificiale. \n"
+"Se hai bisogno di approfondire, installa il plugin gratuito WPTools, che "
+"fornisce approfondimenti più approfonditi."
+
+#: includes/diagnose/class_bill_diagnose.php:1304
+msgid "hour(s)"
+msgstr "ore)"
+
+#: settings/options/plugin_options_tabbed.php:685
+msgid "How long is an IP address blocked when it breaks a rule"
+msgstr "Per quanto tempo un indirizzo IP è bloccato quando infrange una regola"
+
+#: settings/options/plugin_options_tabbed.php:413
+msgid ""
+"How long keep the visitors log file? If you have a very heavy traffic, "
+"select 1 day. Your choices can impact the Visits Log and Visits Chart Pages."
+msgstr ""
+"Per quanto tempo conservare il file di log dei visitatori? Se hai un "
+"traffico molto intenso, seleziona 1 giorno"
+
+#: includes/install/install.php:296
+msgid "How long to keep visitor logs?"
+msgstr "Per quanto tempo conservare i registri dei visitatori?"
+
+#: dashboard/memory.php:134
+msgid "How to Tell if Your Site Needs a Shot of more Memory:"
+msgstr "Come dire se il tuo sito ha bisogno di una dose di memoria in più:"
+
+#: functions/functions.php:1865
+msgid "HTTP tool:"
+msgstr "Strumenti HTTP:"
+
+#: settings/options/plugin_options_tabbed.php:730
+msgid "HTTP Tools are tools to do HTTP request, used for not humans."
+msgstr ""
+"Gli strumenti HTTP sono strumenti per fare richieste HTTP, utilizzati per "
+"non umani."
+
+#: settings/options/plugin_options_tabbed.php:781
+msgid "HTTP tools to block:"
+msgstr "Strumenti HTTP da bloccare:"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "http://stopbadbots.com"
+msgstr "http://stopbadbots.com"
+
+#: settings/options/plugin_options_tabbed.php:565
+msgid "If a bot requests exceed"
+msgstr "Se le richieste di un bot superano"
+
+#: settings/options/plugin_options_tabbed.php:651
+msgid "If IP made only 404 requests exceed"
+msgstr "Se l'IP ha fatto solo richieste tipo 404 supera"
+
+#: settings/options/plugin_options_tabbed.php:33
+msgid ""
+"If you check \"test mode\", the system don't block but update statistics and "
+"send email notifications to you."
+msgstr ""
+"Se selezioni \"modalità test\", il sistema non blocca ma aggiorna le "
+"statistiche e ti invia notifiche via email."
+
+#: includes/diagnose/class_bill_diagnose.php:1371
+msgid ""
+"If you doubt the accuracy of the table below, check with your hosting "
+"provider or check the IPs with the site https://ipinfo.io."
+msgstr ""
+"Se hai dubbi sull'accuratezza della tabella sottostante, contatta il tuo "
+"provider di hosting o controlla gli IP sul sito https://ipinfo.io."
+
+#: guide/guide.php:90
+msgid ""
+"If you need more info about each bot or IP, visit our site www.StopBadBots."
+"com (page Bots Table and Boats Table by IP)"
+msgstr ""
+"Se hai bisogno di maggiori informazioni su ogni bot o IP, visita il nostro "
+"sito StopBadBots.com (pagina Bots Table e Boats Table by IP)"
+
+#: dashboard/memory.php:127
+msgid "If you need more, just replace 128 with the new memory limit."
+msgstr ""
+"Se avete bisogno di più, basta sostituire 128 con il nuovo limite di memoria."
+
+#: dashboard/tools.php:18
+msgid "If you need support, please, copy and paste the info below in our"
+msgstr ""
+"Se hai bisogno di supporto, per favore, copia e incolla le informazioni qui "
+"sotto nella nostra"
+
+#: settings/options/plugin_options_tabbed.php:860
+msgid "If you under brute force attack, you will receive a lot of emails."
+msgstr "Se sei sotto attacco brute force riceverai un sacco di email."
+
+#: guide/guide.php:77
+msgid ""
+"If you use RSS FEED services, probably they have their bot to read your "
+"feeds."
+msgstr ""
+"Se usi i servizi RSS FEED, probabilmente hanno il loro bot per leggere i "
+"tuoi feed."
+
+#: dashboard/memory.php:101
+msgid ""
+"If you want adjust and control your WordPress Memory Limit and PHP Memory "
+"Limit quickly and without edit any files, try our free plugin WPmemory:"
+msgstr ""
+"Se vuoi regolare e controllare il tuo WordPress Memory Limit e PHP Memory "
+"Limit rapidamente e senza modificare alcun file, prova il nostro plugin "
+"gratuito WPmemory:"
 
 #: dashboard/mybanners.php:261
 msgid ""
@@ -440,445 +1308,40 @@ msgstr ""
 "valutazione su WordPress.org. Ci vuole solo un attimo e ci aiuta a "
 "raggiungere più utenti e a rimanere motivati. Grazie!"
 
-#: dashboard/mybanners.php:264
-msgid "Rate"
-msgstr "Valutare"
-
-#: dashboard/notifications.php:34
-#: settings/options/plugin_options_tabbed.php:865
-msgid "Notifications"
-msgstr "Notifiche"
-
-#: dashboard/notifications.php:42
-msgid "Plugin Stop Bad Bots It is not active!"
-msgstr "Il plugin StopBadBots non è stato attivato!"
-
-#: dashboard/notifications.php:44
+#: dashboard/memory.php:18
 msgid ""
-"Go to Dashboard => Stop Bad Bots => Settings => General Settings (tab) and "
-"activate it. "
+"If your server allow us, we can try to fix your file wp-config.php to "
+"release more memory."
 msgstr ""
-"Vai su Bacheca => Stop Bad Bots => Impostazioni => Impostazioni generali "
-"(scheda) e attivalo"
+"Se il tuo server ce lo permette, possiamo provare a sistemare il tuo file wp-"
+"config.php per rilasciare più memoria."
 
-#: dashboard/notifications.php:46
-msgid "Mark: \"Block all Bots included at Bad Bots Table?\" with yes."
-msgstr ""
-"Marca \"Vuoi bloccare tutti i bot inclusi nella tabella dei Bad Bot?\" con "
-"Si."
-
-#: dashboard/notifications.php:53
-msgid "Plugin Stop Bad Bots (Block Ips) It is not active!"
-msgstr "Plugin Stop Bad Bots (Block Ips) Non è attivo!"
-
-#: dashboard/notifications.php:55 dashboard/notifications.php:65
+#: dashboard/memory.php:136
 msgid ""
-"Go to Dashboard => Stop Bad Bots => Settings => General Settings (tab) and "
-"activate it."
+"If your site is behaving slowly, or pages fail to load, you\n"
+"    get random white screens of death or 500\n"
+"    internal server error you may need more memory.\n"
+"    Several things consume memory, such as WordPress itself, the plugins "
+"installed, the\n"
+"    theme you're using and the site content."
 msgstr ""
-"Vai su Bacheca => Stop Bad Bots => Impostazioni => Impostazioni generali "
-"(scheda) e attivalo."
-
-#: dashboard/notifications.php:57
-msgid "Mark: \"Block all IPs included at Bad IPs Table?\" with yes."
-msgstr ""
-"Marca: \"Bloccare tutti gli IP inclusi nella tabella di Bad IPs?\" con Si."
-
-#: dashboard/notifications.php:63
-msgid "Plugin Stop Bad Bots (Block Bad Refer Table) It is not active!"
-msgstr "Plugin Stop Bad Bots (Block Bad Refer Table) Non è attivo!"
-
-#: dashboard/notifications.php:67
-msgid "Mark: \"Block all bots included at Bad Referer Table?\" with yes."
-msgstr ""
-"Marca: \"Bloccare tutti i bot inclusi nella tabella di Bad Referer?\" con Si."
+"se il tuo sito si comporta lentamente, o le pagine non si caricano, si "
+"ottengono schermate bianche o 500 errori interni del server, potresti aver "
+"bisogno di più memoria. Diverse cose consumano memoria, come WordPress "
+"stesso, i plugin installati, il tema che stai usando e il contenuto del sito."
 
 #: dashboard/notifications.php:74
 msgid "Improve your protection level."
 msgstr "Migliora il tuo livello di protezione."
 
-#: dashboard/notifications.php:76
-msgid "Protection Status level:"
-msgstr "Livello di protezione:"
-
-#: dashboard/notifications.php:79
-msgid "To increase, go to"
-msgstr "Per aumentare, andare su"
-
-#: dashboard/notifications.php:81
-msgid "Stop Bad Bots => Setting => General Settings"
-msgstr "Stop Bad Bots => Impostazione => Impostazioni generali"
-
-#: dashboard/notifications.php:83
-msgid "and mark all with yes."
-msgstr "e segnare tutto con sì."
-
-#: dashboard/notifications.php:85 functions/functions.php:4325
-#: includes/vendor/vendor.php:56
-msgid "Dismiss"
-msgstr "Ignora"
-
-#: dashboard/notifications.php:90
-msgid "No notifications at this time!"
-msgstr "Nessuna notifica in questo momento!"
-
-#: dashboard/tools.php:18
-msgid "If you need support, please, copy and paste the info below in our"
-msgstr ""
-"Se hai bisogno di supporto, per favore, copia e incolla le informazioni qui "
-"sotto nella nostra"
-
-#: dashboard/tools.php:19
-msgid "Support Site"
-msgstr "Pagina di Supporto"
-
-#: dashboard/topbots.php:28
-msgid "No bots blocked by Nickname. Please, try again tomorrow"
-msgstr "Nessun bot bloccato per Nickname. Per favore, riprova domani"
-
-#: dashboard/topbots.php:34 dashboard/topcountries.php:56
-msgid "Bot"
-msgstr "Bot"
-
-#: dashboard/topbots.php:36 includes/list-tables/class-sbb-list-table.php:22
-msgid "Nickname"
-msgstr "Nickname"
-
-#: dashboard/topbots.php:38 dashboard/topcountries.php:60
-#: dashboard/toprefs.php:36
-msgid "Num"
-msgstr "Num"
-
-#: dashboard/topbots.php:40 dashboard/topcountries.php:62
-#: dashboard/topips.php:70 dashboard/topips.php:77 dashboard/toprefs.php:38
-msgid "Blocked"
-msgstr "Bloccato"
-
-#: dashboard/topcountries.php:36
-msgid "No bots blocked by IP. Please, try again tomorrow"
-msgstr "Nessun bot bloccato per IP. Per favore, riprova domani"
-
-#: dashboard/topcountries.php:58 dashboard/topips.php:66
-msgid "Country"
-msgstr "Nazione"
-
-#: functions/functions.php:584
-msgid ""
-"Read the StartUp guide at Stop Bad Bots Settings page. (WP Dashboard => Stop "
-"Bad Bots = Settings)"
-msgstr ""
-"Per gestire individualmente i Bot, vai alla Tabella dei Bad Bots (Bacheca => "
-"Stop Bad Bots => Tabella dei Bad Bot)."
-
-#: functions/functions.php:589
-msgid ""
-"Go to Dashboard Page for more information, Online Guide and Support. (WP "
-"Dashboard => Stop Bad Bots = Dashboard)"
-msgstr ""
-"Vai alla pagina Bacheca per maggiori informazioni, guida online e supporto. "
-"(WP Bacheca => Stop Bad Bots = Dashboard)"
-
-#: functions/functions.php:594
-msgid ""
-"Go to Visits Log Page for details about the visits. (WP Dashboard => Stop "
-"Bad Bots = Visits Log)"
-msgstr ""
-"Vai alla pagina Visits Log per i dettagli sulle visite. (WP Bacheca => Stop "
-"Bad Bots = Visits Log)"
-
-#: functions/functions.php:599
-msgid "Visit the"
-msgstr "Visita il"
-
-#: functions/functions.php:601
-msgid "plugin site"
-msgstr "sito del plugin"
-
-#: functions/functions.php:603
-msgid "for more details, Support and online guide."
-msgstr "per maggiori dettagli, video e guide online."
-
-#: functions/functions.php:668 functions/functions.php:691
-#: table/visitors_render.php:53
-msgid "Visits Log"
-msgstr "Registro delle visite"
-
-#: functions/functions.php:676 functions/functions.php:684
-msgid "Overview"
-msgstr "Panoramica"
-
-#: functions/functions.php:729
-msgid "Open Stop Bad Bots Plugin Here!"
-msgstr "Apri il plugin Stop Bad Bots qui!"
-
-#: functions/functions.php:730
-msgid "Just Click Over Stop Bad Bots, then Go To Settings=>StartUp Guide."
-msgstr ""
-"Basta cliccare su Stop Bad Bots, poi vai a Impostazione=>StartUp Guide."
-
-#: functions/functions.php:1165
-msgid "Bots per page"
-msgstr "Bot per pagina"
-
-#: functions/functions.php:1179
-msgid "IPs per page"
-msgstr "IPs per pagina"
-
-#: functions/functions.php:1193 functions/functions.php:1207
-msgid "Bad Referers per page"
-msgstr "Cattivo referente per page:"
-
-#: functions/functions.php:1222 functions/functions.php:1246
-#: functions/functions.php:1268 functions/functions.php:1291
-msgid "Detected Bot on"
-msgstr "Trovato un Bot su "
-
-#: functions/functions.php:1223 functions/functions.php:1247
-msgid "Bot was detected and blocked."
-msgstr "Un bot è stato identificato e bloccato."
-
-#: functions/functions.php:1225 functions/functions.php:1249
-#: functions/functions.php:1271 functions/functions.php:1294
-#: functions/functions.php:1316 functions/functions.php:1338
-#: functions/functions.php:1360 functions/functions.php:1383
-#: functions/functions.php:1403 functions/functions.php:1420
-#: functions/functions.php:1440 functions/functions.php:1460
-#: functions/functions.php:1482 functions/functions.php:1502
-#: functions/functions.php:1522
-msgid "Date"
-msgstr "Data"
-
-#: functions/functions.php:1226
-msgid "User Agent"
-msgstr "User agent"
-
-#: functions/functions.php:1227 functions/functions.php:1250
-#: functions/functions.php:1272
-msgid "Robot IP Address"
-msgstr "Indirizzo IP del robot"
-
-#: functions/functions.php:1228
-msgid "String Found:"
-msgstr "Trovata stringa:"
-
-#: functions/functions.php:1230 functions/functions.php:1252
-#: functions/functions.php:1275 functions/functions.php:1297
-#: functions/functions.php:1319 functions/functions.php:1341
-#: functions/functions.php:1363 functions/functions.php:1386
-#: functions/functions.php:1406 functions/functions.php:1423
-#: functions/functions.php:1443 functions/functions.php:1465
-#: functions/functions.php:1485 functions/functions.php:1505
-#: functions/functions.php:1525
-msgid "eMail sent by Stop Bad Bots Plugin."
-msgstr "email inviata dal plugin StopBadBots."
-
-#: functions/functions.php:1232 functions/functions.php:1254
-#: functions/functions.php:1277 functions/functions.php:1299
-#: functions/functions.php:1321 functions/functions.php:1343
-#: functions/functions.php:1365 functions/functions.php:1388
-#: functions/functions.php:1407 functions/functions.php:1425
-#: functions/functions.php:1445 functions/functions.php:1467
-#: functions/functions.php:1487 functions/functions.php:1507
-#: functions/functions.php:1527
-msgid "You can stop emails at the Notifications Settings Tab."
-msgstr ""
-"Puoi bloccare l’invio di email in cliccando nella scheda “Impostazioni” e "
-"poi “Notifiche”."
-
-#: functions/functions.php:1235 functions/functions.php:1257
-#: functions/functions.php:1280 functions/functions.php:1302
-#: functions/functions.php:1324 functions/functions.php:1346
-#: functions/functions.php:1368 functions/functions.php:1391
-#: functions/functions.php:1408 functions/functions.php:1428
-#: functions/functions.php:1448 functions/functions.php:1470
-#: functions/functions.php:1490 functions/functions.php:1510
-#: functions/functions.php:1530
-msgid "Dashboard => Stop Bad Bots => Settings."
-msgstr "Bacheca => Stop Bad Bots => Impostazione."
-
-#: functions/functions.php:1237 functions/functions.php:1259
-#: functions/functions.php:1282 functions/functions.php:1304
-#: functions/functions.php:1326 functions/functions.php:1348
-#: functions/functions.php:1370 functions/functions.php:1393
-#: functions/functions.php:1410 functions/functions.php:1430
-#: functions/functions.php:1450 functions/functions.php:1472
-#: functions/functions.php:1492 functions/functions.php:1512
-#: functions/functions.php:1532
-msgid "Visit us to learn how to get Weekly Updates and more features:"
-msgstr ""
-"Vieni a trovarci per sapere come ottenere gli aggiornamenti settimanali e "
-"altre caratteristiche:"
-
-#: functions/functions.php:1269
-msgid "Malicious bot was detected and blocked by firewall."
-msgstr "Un cattivo bot è stato identificato e bloccato dal firewall."
-
-#: functions/functions.php:1273
-msgid "Malicious String Found:"
-msgstr "Trovata una stringa dannosa:"
-
-#: functions/functions.php:1292
-msgid "Bad Referer Bot was detected and blocked by Stop Bad Bots Plugin."
-msgstr ""
-"Un cattivo bot  referer è stato identificato e bloccato dal Stop Bad Bots "
-"plugin."
-
-#: functions/functions.php:1295
-msgid "Referer String Found:"
-msgstr "Stringa di riferimento trovata:"
-
-#: functions/functions.php:1313 functions/functions.php:1335
-#: functions/functions.php:1357 functions/functions.php:1379
-msgid "Detected Possible Bot on"
-msgstr "Trovato possibile Bot su "
-
-#: functions/functions.php:1314
-msgid "Empty User Agent was detected and blocked by Stop Bad Bots Plugin."
-msgstr "Empty User Agent è stato rilevato e bloccato da Stop Bad Bots Plugin."
-
-#: functions/functions.php:1317 functions/functions.php:1339
-#: functions/functions.php:1361 functions/functions.php:1384
-#: functions/functions.php:1404 functions/functions.php:1421
-#: functions/functions.php:1441 functions/functions.php:1463
-#: functions/functions.php:1483 functions/functions.php:1503
-#: functions/functions.php:1523
-msgid "IP Found:"
-msgstr "IP trovato:"
-
-#: functions/functions.php:1336
-msgid "PingBack Requested was detected and blocked by Stop Bad Bots Plugin."
-msgstr ""
-"PingBack Requested è stato rilevato e bloccato da Stop Bad Bots Plugin."
-
-#: functions/functions.php:1358
-msgid "User Enumeration was detected and blocked by Stop Bad Bots Plugin."
-msgstr ""
-"Utenti enumerazione è stato rilevato e bloccato da Stop Bad Bots Plugin."
-
-#: functions/functions.php:1380
-msgid "False Google/Bing/Msn was detected and blocked by Stop Bad Bots Plugin."
-msgstr ""
-"Falso Google/Bing/Msn è stato rilevato e bloccato da Stop Bad Bots Plugin."
-
-#: functions/functions.php:1381
-msgid "Fake User Agent:"
-msgstr "Falso User agent"
-
-#: functions/functions.php:1402
-msgid "Detected Spammer in Contact Form"
-msgstr "Rilevato spammer nel modulo di contatto"
-
-#: functions/functions.php:1419
-msgid "Detected Spammer in Comments Form"
-msgstr "Rilevato spammer nel modulo dei commenti"
-
-#: functions/functions.php:1439
-msgid "Detected bot in Login Form"
-msgstr "Trovato un Bot su modulo de login"
-
-#: functions/functions.php:1459
-msgid "Detected bot using HTTP tools"
-msgstr "Rilevato bot utilizzando strumenti HTTP"
-
-#: functions/functions.php:1461
-msgid "HTTP tool:"
-msgstr "Strumenti HTTP:"
-
-#: functions/functions.php:1481
-msgid "Blocked Bot by Rate Limiting"
-msgstr "Bot bloccati dalla limitazione del tasso"
-
-#: functions/functions.php:1501
-msgid "Blocked Bot by Fake Browser (User Agent)"
-msgstr "Bot bloccato da un falso browser (User Agent)"
-
-#: functions/functions.php:1521
-msgid "Blocked Visitor by Country (China, Cuba, North Korea)"
-msgstr "Visitatore bloccato per paese (Cina, Cuba, Corea del Nord)"
-
-#: functions/functions.php:2619
-msgid "Add new bad bot to the bad bots Table."
-msgstr "Aggiungi un nuovo BadBot alla tabella."
-
-#: functions/functions.php:2627
-msgid "Bad Bot Nickname:"
-msgstr "Nickname del BadBot:"
-
-#: functions/functions.php:2649
-msgid "Add new bad IP to the bad IPs Table."
-msgstr "Aggiungere un nuovo IP cattivo alla tabella degli IP cattivi."
-
-#: functions/functions.php:2657
-msgid "Bad Bot IP:"
-msgstr "IP del Cattivo bot:"
-
-#: functions/functions.php:2669
-msgid "Add new bad Referer to the bad Referer Table."
-msgstr "Aggiungere un nuovo cattivo referer alla tabella dei cattivi referer."
-
-#: functions/functions.php:2677
-msgid "Bad Referer Name:"
-msgstr "Nome del cattivo referente:"
-
-#: functions/functions.php:2701
-msgid ""
-"In addiction to default system table, you can add one or more string to the "
-"table."
-msgstr ""
-"Oltre alla tabella di sistema predefinita, è possibile aggiungere una o più "
-"stringhe alla tabella."
-
-#: functions/functions.php:2705
-msgid "Example: SpiderBot (no case sensitive)"
-msgstr "Esempio: SpiderBot (non distingue tra maiuscole e minuscole)"
-
-#: functions/functions.php:2707
-msgid "Just a piece of the name is enough."
-msgstr "È sufficiente solo una parte del nome."
-
-#: functions/functions.php:2710
-msgid ""
-"For example, if you put \"bot\" will block all bots with the string bot at "
-"user agent name."
-msgstr ""
-"Per esempio, se inserisci la parola “bot” bloccherà tutti i bot con questa "
-"nel nome dello user agent."
-
-#: functions/functions.php:2715
-msgid ""
-"Attention: In this case, you will block also google bot because their name "
-"is GoogleBot."
-msgstr ""
-"Attenzione: in questo caso bloccherai anche google bot, poiché il suo nome è "
-"GoogleBot."
-
-#: functions/functions.php:2720
-msgid "Do not use special characters neither HTML"
-msgstr "Non usare caratteri speciali."
-
-#: functions/functions.php:2724
-msgid "Add one bad bot each time. The table don't accept duplicate nicknames."
-msgstr ""
-"Aggiungi un solo bad bot per volta. La tabella non accetta nickname "
-"duplicati."
-
-#: functions/functions.php:2731
+#: functions/functions.php:3287
 msgid ""
 "In addiction to default ip table, you can add one or more ip to the table."
 msgstr ""
 "Oltre alla tabella ip di default, potete aggiungere uno o più ip alla "
 "tabella."
 
-#: functions/functions.php:2736
-msgid "Add one bad ip each time. The table don't accept duplicate ips."
-msgstr ""
-"Aggiungete ogni volta un ip cattivo. La tabella non accetta ip duplicati."
-
-#: functions/functions.php:2741
-msgid "Be carefull. This IP will be blocked to access your site."
-msgstr "Fai attenzione. Questo IP sarà bloccato per accedere al tuo sito."
-
-#: functions/functions.php:2748
+#: functions/functions.php:3304
 msgid ""
 "In addiction to default referer table, you can add one or more referers to "
 "the table."
@@ -886,99 +1349,192 @@ msgstr ""
 "Oltre alla tabella dei referer di default, è possibile aggiungere uno o più "
 "referer alla tabella."
 
-#: functions/functions.php:2753
-msgid "Add one bad referer each time. The table don't accept duplicate names."
-msgstr ""
-"Aggiungete ogni volta un cattivo referer. La tabella non accetta nomi "
-"duplicati."
-
-#: functions/functions.php:2758
+#: functions/functions.php:3257
 msgid ""
-"Be carefull. This Referer will be blocked to access your site. Do not use "
-"HTML"
-msgstr "Fai attenzione. Questo referer sarà bloccato per accedere al tuo sito."
-
-#: functions/functions.php:2766
-msgid "Bot included at table!"
-msgstr "Bot aggiunto alla tabella!"
-
-#: functions/functions.php:2777
-msgid ""
-"Fail to include bot! Check bot nickname and remember Duplicates are not "
-"allowed. "
+"In addiction to default system table, you can add one or more string to the "
+"table."
 msgstr ""
-"Impossibile aggiungere il bot! Controlla il nickname del bot e ricorda che i "
-"duplicati non sono consentiti. "
+"Oltre alla tabella di sistema predefinita, è possibile aggiungere una o più "
+"stringhe alla tabella."
 
-#: functions/functions.php:2789
+#: dashboard/memory.php:155
+msgid ""
+"Increase the WP Memory Limit is a standard practice in\n"
+"    Here is the link:"
+msgstr ""
+"Aumentare il limite di memoria di WP è una pratica standard\n"
+"    Ecco il link:"
+
+#: dashboard/memory.php:151
+msgid ""
+"Increase the WP Memory Limit is a standard practice in\n"
+"    WordPress and you find instructions also in the official\n"
+"    WordPress documentation (Increasing memory allocated to PHP)."
+msgstr ""
+"Aumentare il limite di memoria di WP è una pratica standard in WordPress e "
+"si trovano istruzioni anche nella documentazione ufficiale di WordPress "
+"(Aumentare la memoria assegnata a PHP)."
+
+#: settings/options/plugin_options_tabbed.php:740
+msgid "Instructions about to block HTTP tools (Only Pro)"
+msgstr "Istruzioni sul blocco degli strumenti HTTP (solo Pro)"
+
+#: functions/fail2ban.php:61
+msgid "integrating StopBadBots with Fail2Ban"
+msgstr "integrazione di StopBadBots con Fail2Ban"
+
+#: includes/chat/class_bill_chat.php:47
+msgid "Invalid message received:"
+msgstr "Messaggio non valido ricevuto:"
+
+#: includes/chat/class_bill_chat.php:48
+msgid "Invalid response format:"
+msgstr "Formato di risposta non valido:"
+
+#: includes/diagnose/class_bill_diagnose.php:1498
+msgid "Invalid size."
+msgstr "Dimensione non valida."
+
+#: functions/fail2ban.php:413
+msgid "IP"
+msgstr "IP"
+
+#: functions/functions.php:1721 functions/functions.php:1743
+#: functions/functions.php:1765 functions/functions.php:1788
+#: functions/functions.php:1808 functions/functions.php:1825
+#: functions/functions.php:1845 functions/functions.php:1867
+#: functions/functions.php:1887 functions/functions.php:1907
+#: functions/functions.php:1927
+msgid "IP Found:"
+msgstr "IP trovato:"
+
+#: functions/functions.php:3346
 msgid "IP included at table!"
 msgstr "IP aggiunto alla tabella!"
 
-#: functions/functions.php:2800
+#: settings/options/plugin_options_tabbed.php:837
+msgid "IP whitelist."
+msgstr "IP whitelist."
+
+#: functions/functions.php:1562
+msgid "IPs per page"
+msgstr "IPs per pagina"
+
+#: guide/guide.php:98
+msgid "It is up to you determine what bot is beneficial or detrimental."
+msgstr "Sta a voi determinare quale bot è benefico o dannoso."
+
+#: functions/fail2ban.php:318 functions/fail2ban.php:371
+#: functions/fail2ban.php:414
+msgid "Jail"
+msgstr "Prigione"
+
+#: functions/fail2ban.php:288
+msgid "Jail Activity (Last 30 Days)"
+msgstr "Attività in carcere (ultimi 30 giorni)"
+
+#: functions/fail2ban.php:342
+msgid "Jail Activity (Today)"
+msgstr "Attività carceraria (oggi)"
+
+#: functions/functions.php:3264
+msgid "Just a piece of the name is enough."
+msgstr "È sufficiente solo una parte del nome."
+
+#: settings/options/plugin_options_tabbed.php:798
+msgid "Just add one string to unblock all User Agent that contain that string."
+msgstr ""
+"Basta aggiungere una stringa per sbloccare tutti gli User Agent che "
+"contengono quella stringa."
+
+#: functions/functions.php:1113
+msgid "Just Click Over Stop Bad Bots, then Go To Settings=>StartUp Guide."
+msgstr ""
+"Basta cliccare su Stop Bad Bots, poi vai a Impostazione=>StartUp Guide."
+
+#: dashboard/dashboard.php:268
+msgid "Just click Settings in the left menu (Stop Bad Bots)."
+msgstr "Basta cliccare su Impostazioni nel menu a sinistra (Stop Bad Bots)."
+
+#: includes/feedback-last/feedback-last.php:277
+msgid "Just Deactivate"
+msgstr "Disattiva solo"
+
+#: dashboard/calcula_stats_pie2.php:29 dashboard/botsgraph_pie.php:28
 msgid ""
-"Fail to include IP! Check bot IP and remember Duplicates are not allowed. "
+"Just give us a little time to collect data so we can display it for you here."
 msgstr ""
-"Non é stato possibile includere l'IP! Controlla l'IP del bot e ricorda che i "
-"duplicati non sono ammessi."
+"Dateci solo un po' di tempo per raccogliere i dati in modo da poterli "
+"visualizzare qui."
 
-#: functions/functions.php:2812
-msgid "Referer included at table!"
-msgstr "Referer aggiunto alla tabella!"
-
-#: functions/functions.php:2823
+#: includes/diagnose/class_bill_diagnose.php:1174
 msgid ""
-"Fail to include Referer! Check referer name and remember Duplicates are not "
-"allowed. "
+"Keeping your plugins up to date is crucial for ensuring security, "
+"performance, and compatibility with the latest features and improvements."
 msgstr ""
-"Non è stato possibile includere il referer! Controlla il nome del referer e "
-"ricorda che i duplicati non sono ammessi."
+"Mantenere aggiornati i plugin è fondamentale per garantire sicurezza, "
+"prestazioni e compatibilità con le funzionalità e i miglioramenti più "
+"recenti."
 
-#: functions/functions.php:4130
-msgid "Bad Bots can do all sorts of nasty stuff and waste server resources."
-msgstr ""
-"I bot cattivi possono fare ogni sorta di cose brutte e sprecare le risorse "
-"del server."
+#: functions/fail2ban.php:406
+msgid "Last 100 Fail2Ban Block Records"
+msgstr "Ultimi 100 record di blocco Fail2Ban"
 
-#: functions/functions.php:4134
-msgid "Bad bots don’t play by the rules."
-msgstr "I bot cattivi non giocano secondo le regole."
+#: dashboard/mybanners.php:74 dashboard/dashboard.php:128
+#: dashboard/dashboard.php:144 functions/functions.php:4874
+#: includes/vendor/vendor.php:54 includes/diagnose/class_bill_diagnose.php:999
+#: includes/diagnose/class_bill_diagnose.php:1450
+msgid "Learn More"
+msgstr "Approfondisci"
 
-#: functions/functions.php:4138
-msgid "Bad Bots stresses, harm and slowly your Web servers."
-msgstr "I cattivi bot stressano, danneggiano e rallentano i vostri server web."
+#: functions/functions.php:7454 functions/functions.php:7477
+#: includes/diagnose/class_bill_diagnose.php:841
+msgid "Learn more"
+msgstr "Approfondisci"
 
-#: functions/functions.php:4142
-msgid "Show support with a 5-star rating."
-msgstr "Mostra il tuo sostegno con una valutazione a 5 stelle."
-
-#: functions/functions.php:4146
+#: includes/diagnose/class_bill_diagnose.php:1128
 msgid ""
-"BLACK FRIDAY 30% OFF! Use the coupon code: special-black_2019. Limited time!"
+"Learn more about Page Load Times and their negative impact on SEO and more"
 msgstr ""
-"VENERDÌ NERO 30% DI SCONTO! Usa il codice coupon: special-black_2019. Tempo "
-"limitato!"
+"Scopri di più sui tempi di caricamento delle pagine e sul loro impatto "
+"negativo sulla SEO e altro ancora"
 
-#: functions/functions.php:4150
-msgid "Become Pro: Your bad bots table is always updated."
-msgstr "Diventa Pro: La tua tabella dei bot cattivi è sempre aggiornata."
+#: includes/install/install.php:278
+#| msgid ""
+#| "Left Blank to use your default WordPress email. Then, click save changes."
+msgid "Leave blank to use your default WordPress admin email."
+msgstr ""
+"Lascia vuoto per utilizzare l'email predefinita dell'amministratore di "
+"WordPress."
 
-#: functions/functions.php:4152
-msgid "Stop Bad Bots Plugin. Its time to Get Pro Protection!"
-msgstr "Stop Bad Bots Plugin. È ora di ottenere la protezione Pro!"
-
-#: functions/functions.php:4316
-msgid "Go to WordPress"
-msgstr "Vai a WordPress"
-
-#: functions/functions.php:5675
+#: settings/options/plugin_options_tabbed.php:847
 msgid ""
-"Your IP is blacklisted on Internet Public Databases. Please, use another way "
-"to contact us."
+"Left Blank to use your default WordPress email. Then, click save changes."
 msgstr ""
-"Il tuo IP è nella lista nera dei database pubblici di Internet. Per favore, "
-"usa un altro modo per contattarci."
+"Lascia vuoto per usare la tua mail di WordPress. Quindi clicca su “salva "
+"cambiamenti”."
 
-#: functions/functions.php:5680
+#: dashboard/mybanners.php:49
+msgid "Limit Number of Visits."
+msgstr "Limita il numero di visite."
+
+#: includes/install/install.php:208
+msgid "Loading"
+msgstr "Caricamento"
+
+#: includes/diagnose/class_bill_diagnose.php:1109
+msgid "Loading time can significantly impact your SEO."
+msgstr "Il tempo di caricamento può avere un impatto significativo sulla SEO."
+
+#: guide/guide.php:51
+msgid ""
+"Look our Go Pro tab about how to get weekly updates, more features and "
+"Firewall protection."
+msgstr ""
+"Guarda la nostra scheda Go Pro su come ottenere aggiornamenti settimanali, "
+"più funzioni e protezione Firewall."
+
+#: functions/functions.php:6251
 msgid ""
 "Looks Like This Message doesn't come from our site. Please, use another way "
 "to contact us."
@@ -986,30 +1542,501 @@ msgstr ""
 "Sembra che questo messaggio non provenga dal nostro sito. Per favore, usa un "
 "altro modo per contattarci."
 
-#: functions/functions.php:6883
-msgid "Errors have been detected on this site. "
-msgstr "Sono stati rilevati degli errori su questo sito."
+#: includes/diagnose/class_bill_diagnose.php:970
+msgid "Low WordPress Memory Limit (click to open)"
+msgstr "Limite di memoria basso di WordPress (clicca per aprire)"
 
-#: functions/functions.php:6883 functions/functions.php:6906
-#: includes/diagnose/class_bill_diagnose.php:841
-msgid "Learn more"
-msgstr "Approfondisci"
+#: functions/health.php:180
+msgid "Low WordPress Memory Limit in wp-config file"
+msgstr "Basso limite di memoria di WordPress nel file wp-config"
 
-#: functions/functions.php:6906
+#: functions/functions.php:1673
+msgid "Malicious bot was detected and blocked by firewall."
+msgstr "Un cattivo bot è stato identificato e bloccato dal firewall."
+
+#: functions/functions.php:1677
+msgid "Malicious String Found:"
+msgstr "Trovata una stringa dannosa:"
+
+#: includes/install/install.php:252
+msgid "Manual Setup (Advanced)"
+msgstr "Configurazione manuale (avanzata)"
+
+#: includes/diagnose/class_bill_diagnose.php:1111
+msgid "Many users will abandon the site before it fully loads."
+msgstr ""
+"Molti utenti abbandoneranno il sito prima che si carichi completamente."
+
+#: dashboard/notifications.php:46
+msgid "Mark: \"Block all Bots included at Bad Bots Table?\" with yes."
+msgstr ""
+"Marca \"Vuoi bloccare tutti i bot inclusi nella tabella dei Bad Bot?\" con "
+"Si."
+
+#: dashboard/notifications.php:67
+msgid "Mark: \"Block all bots included at Bad Referer Table?\" with yes."
+msgstr ""
+"Marca: \"Bloccare tutti i bot inclusi nella tabella di Bad Referer?\" con Si."
+
+#: dashboard/notifications.php:57
+msgid "Mark: \"Block all IPs included at Bad IPs Table?\" with yes."
+msgstr ""
+"Marca: \"Bloccare tutti gli IP inclusi nella tabella di Bad IPs?\" con Si."
+
+#: settings/options/plugin_options_tabbed.php:199
+msgid "Maximum Block"
+msgstr "Blocco massimo"
+
+#: settings/options/plugin_options_tabbed.php:94
+msgid ""
+"Maximum Block option: may result in false positives if your users use "
+"proxies, VPNs, or block cookies and/or JavaScript."
+msgstr ""
+"Opzione di blocco massimo: forse può generare falsi positivi se l'utente usa "
+"Proxy, VPN o blocca cookie e/o javascript per esempio."
+
+#: includes/diagnose/class_bill_diagnose.php:93
+msgid "Memory & Error Monitoring"
+msgstr "Monitoraggio della memoria e degli errori"
+
+#: dashboard/memory.php:49
+msgid "Memory Info"
+msgstr "Informazioni sulla memoria"
+
+#: functions/functions.php:7477
 msgid "Memory issues have been detected on this site. "
 msgstr "Sono stati rilevati problemi di memoria su questo sito."
+
+#: settings/options/plugin_options_tabbed.php:187
+msgid "Minimal"
+msgstr "Minimo"
+
+#: settings/options/plugin_options_tabbed.php:101
+msgid ""
+"Minimal option: only blocks bots included in our database but maybe smart "
+"bots can overload your server."
+msgstr ""
+"Opzione minima: blocca solo i bot inclusi nel nostro database, ma forse i "
+"bot intelligenti possono sovraccaricare il tuo server."
+
+#: includes/diagnose/class_bill_diagnose.php:1302
+msgid "minutes"
+msgstr "minuti"
+
+#: includes/diagnose/class_bill_diagnose.php:1310
+msgid "month(s)"
+msgstr "mesi)"
+
+#: dashboard/mybanners.php:70
+msgid "More..."
+msgstr "Altro..."
 
 #: functions/health.php:161
 msgid "My Memory Test"
 msgstr "Il mio test della memoria"
 
-#: functions/health.php:175
-msgid "Critical"
-msgstr "Critica"
+#: includes/install/install.php:258 includes/install/install.php:313
+msgid "Next"
+msgstr "Prossimo"
 
-#: functions/health.php:180
-msgid "Low WordPress Memory Limit in wp-config file"
-msgstr "Basso limite di memoria di WordPress nel file wp-config"
+#: dashboard/topbots.php:36
+msgid "Nickname"
+msgstr "Nickname"
+
+#: includes/install/install.php:285 includes/install/install.php:292
+#: settings/options/plugin_options_tabbed.php:896
+msgid "No"
+msgstr "No"
+
+#: settings/options/plugin_options_tabbed.php:135
+#: settings/options/plugin_options_tabbed.php:156
+#: settings/options/plugin_options_tabbed.php:174
+#: settings/options/plugin_options_tabbed.php:216
+#: settings/options/plugin_options_tabbed.php:235
+#: settings/options/plugin_options_tabbed.php:253
+#: settings/options/plugin_options_tabbed.php:270
+#: settings/options/plugin_options_tabbed.php:302
+#: settings/options/plugin_options_tabbed.php:318
+#: settings/options/plugin_options_tabbed.php:337
+#: settings/options/plugin_options_tabbed.php:353
+#: settings/options/plugin_options_tabbed.php:370
+#: settings/options/plugin_options_tabbed.php:387
+#: settings/options/plugin_options_tabbed.php:388
+#: settings/options/plugin_options_tabbed.php:404
+#: settings/options/plugin_options_tabbed.php:543
+#: settings/options/plugin_options_tabbed.php:755
+#: settings/options/plugin_options_tabbed.php:771
+#: settings/options/plugin_options_tabbed.php:821
+msgid "no"
+msgstr "no"
+
+#: dashboard/topcountries.php:36
+msgid "No bots blocked by IP. Please, try again tomorrow"
+msgstr "Nessun bot bloccato per IP. Per favore, riprova domani"
+
+#: dashboard/topbots.php:28
+msgid "No bots blocked by Nickname. Please, try again tomorrow"
+msgstr "Nessun bot bloccato per Nickname. Per favore, riprova domani"
+
+#: functions/fail2ban.php:336
+msgid "No jail activity recorded in the last 30 days."
+msgstr "Nessuna attività carceraria registrata negli ultimi 30 giorni."
+
+#: functions/fail2ban.php:389
+msgid "No jail activity recorded today."
+msgstr "Nessuna attività carceraria registrata oggi."
+
+#: dashboard/notifications.php:90
+msgid "No notifications at this time!"
+msgstr "Nessuna notifica in questo momento!"
+
+#: settings/options/plugin_options_tabbed.php:69
+msgid ""
+"No personally identifiable data is sent by this option and we also do not "
+"associate any of the data we do receive with your specific website. The data "
+"is aggregated on a real-time platform to determine which Bots are currently "
+"engaged in negative activity and need to be blocked by our community."
+msgstr ""
+"Nessun dato che identifichi la persona è inviata tramite questa opzione e "
+"inoltre noi non associamo nessuno dei dati che riceviamo con il tuo sito "
+"specifico. I dati sono aggregati su una piattaforma in tempo reale per "
+"determinare quale Bot sono correntemente impegnati in attività negative ed è "
+"necessario che siano bloccati dalla nostra community."
+
+#: includes/visits_stats/analytics-30days.php:20
+msgid "No vists, try again later..."
+msgstr "Tabella vuota. Per favore, riprova più tardi."
+
+#: settings/options/plugin_options_tabbed.php:880
+msgid "No."
+msgstr "No."
+
+#: guide/guide.php:93
+msgid ""
+"Note: If you use the plugin WPFastestCache, deactivate the bot named "
+"\"test\" at Bad Bots Table. (Dashboard => Stop Bad Bots => Bad Bots Table)"
+msgstr ""
+"Nota: se usi il plugin WPFastestCache, disattiva il bot chiamato \"test\" "
+"nella tabella di Bad Bots. (Bacheca => Stop Bad Bots => Tabella Bad Bots)"
+
+#: dashboard/notifications.php:34
+msgid "Notifications"
+msgstr "Notifiche"
+
+#: dashboard/toprefs.php:36 dashboard/topbots.php:38
+#: dashboard/topcountries.php:60
+msgid "Num"
+msgstr "Num"
+
+#: includes/list-tables/class-sbb-list-table3.php:36
+msgid "Num Blocked"
+msgstr "Quantità bloccati"
+
+#: includes/diagnose/class_bill_diagnose.php:1360
+msgid "Number of last attacks: "
+msgstr "Numero degli ultimi attacchi:"
+
+#: includes/install/install.php:246
+msgid "One-Click Setup (Recommended)"
+msgstr "Configurazione con un clic (consigliata)"
+
+#: guide/guide.php:134
+msgid "OnLine Guide"
+msgstr "Guida in linea"
+
+#: dashboard/dashboard.php:278
+msgid "OnLine Guide, Support, Faq..."
+msgstr "Guida on line, supporto, Faq..."
+
+#: dashboard/dashboard.php:137
+msgid "Only Partial Protection enabled!"
+msgstr "Solo la protezione parziale è abilitata!"
+
+#: functions/functions.php:1112
+msgid "Open Stop Bad Bots Plugin Here!"
+msgstr "Apri il plugin Stop Bad Bots qui!"
+
+#: guide/guide.php:10
+msgid "Open the General Settings Tab and click over Yes  (to begin to block)."
+msgstr ""
+"Apri la scheda delle impostazioni Generali e clicca su “Sì” (per iniziare a "
+"bloccare i bot)."
+
+#: guide/guide.php:70
+msgid ""
+"Open the page Bad Bots Table  (under Stop Bad Bots Menu) and take a look at "
+"Default Bad Bots List. If you wish, you can turn off some. (Just check, Bulk "
+"Actions, Apply). Our plugin will create a table with more than 2500 Bots."
+msgstr ""
+"Apri la pagina Bad Bots Table (sotto Stop Bad Bots Menu) e dai un'occhiata a "
+"Default Bad Bots List. Se lo desideri, puoi disattivarne alcuni. (Basta "
+"controllare, Bulk Actions, Apply). Il nostro plugin creerà una tabella con "
+"più di 2500 bot."
+
+#: settings/options/plugin_options_tabbed.php:612
+msgid "Or if a bot requests exceed"
+msgstr "O se un bot richieste superano"
+
+#: includes/diagnose/class_bill_diagnose.php:1376
+#, php-format
+msgid ""
+"Our free <a href=\"%1$s\">StopBadBots</a> and <a href=\"%2$s\">AntiHacker</a>"
+" plugins help safeguard your site."
+msgstr ""
+"I nostri plugin gratuiti <a href=\"%1$s\">StopBadBots</a> e <a href=\"%2$s\">"
+"AntiHacker</a> ti aiutano a proteggere il tuo sito."
+
+#: includes/diagnose/class_bill_diagnose.php:1177
+msgid ""
+"Our free AntiHacker plugin can even check for abandoned plugins that you are "
+"using, as these plugins may no longer receive security updates, leaving your "
+"site vulnerable to attacks and potential exploits, which can compromise your "
+"site's integrity and data."
+msgstr ""
+"Il nostro plugin gratuito AntiHacker può anche verificare la presenza di "
+"plugin abbandonati che stai utilizzando, poiché questi plugin potrebbero non "
+"ricevere più aggiornamenti di sicurezza, lasciando il tuo sito vulnerabile "
+"ad attacchi e potenziali exploit, che possono compromettere l'integrità e i "
+"dati del tuo sito."
+
+#: includes/diagnose/class_bill_diagnose.php:833
+msgid "Our plugin"
+msgstr "Il nostro plugin"
+
+#: dashboard/memory.php:96
+msgid ""
+"Our plugin cannot function properly because your WordPress memory limit is "
+"too low. Your site will experience serious issues, even if you deactivate "
+"our plugin."
+msgstr ""
+"Il nostro plugin non può funzionare correttamente perché il limite di "
+"memoria di WordPress è troppo basso. Il tuo sito riscontrerà seri problemi, "
+"anche se disattivi il nostro plugin."
+
+#: functions/functions.php:1054 functions/functions.php:1062
+msgid "Overview"
+msgstr "Panoramica"
+
+#: settings/options/plugin_options_tabbed.php:65
+msgid "Participate in the Real-Time Bad Bots Security Network?"
+msgstr "Vuoi partecipare alla rete di sicurezza in tempo reale di Bad Bots?"
+
+#: settings/options/plugin_options_tabbed.php:1077
+msgid ""
+"Paste below the Item Purchase Code received by email from us when you bought "
+"the premium version."
+msgstr ""
+"Incolla qui sotto il codice d'acquisto ricevuto via e-mail da noi quando hai "
+"comprato la versione premium."
+
+#: functions/fail2ban.php:320 functions/fail2ban.php:373
+msgid "Percentage"
+msgstr "Percentuale"
+
+#: settings/options/plugin_options_tabbed.php:86
+msgid ""
+"PingBack request happens a lot and is often a pre-cursor to brute-force "
+"password attacks and others nasty things."
+msgstr ""
+"La richiesta di PingBack succede spesso ed è un precursore di attacchi di "
+"password brute-force e altre cose brutte."
+
+#: functions/functions.php:1740
+msgid "PingBack Requested was detected and blocked by Stop Bad Bots Plugin."
+msgstr ""
+"PingBack Requested è stato rilevato e bloccato da Stop Bad Bots Plugin."
+
+#: includes/install/install.php:272
+msgid ""
+"Please confirm these basic settings. All other security rules will be "
+"applied automatically for you."
+msgstr ""
+"Si prega di confermare queste impostazioni di base. Tutte le altre regole di "
+"sicurezza verranno applicate automaticamente."
+
+#: functions/fail2ban.php:55
+msgid ""
+"Please ensure Fail2Ban is installed and operational on your server, VPS or "
+"Cloud VPS for this monitor to function. Our support doesn't include the "
+"installation or configuration of Fail2Ban on your server."
+msgstr ""
+"Assicurati che Fail2Ban sia installato e operativo sul tuo server, VPS o "
+"Cloud VPS affinché questo monitor funzioni. Il nostro supporto non include "
+"l'installazione o la configurazione di Fail2Ban sul tuo server."
+
+#: includes/chat/class_bill_chat.php:53
+msgid "Please enter a message!"
+msgstr "Inserisci un messaggio!"
+
+#: includes/install/install.php:229
+msgid ""
+"Please follow the steps to complete the installation. You can always change "
+"these settings later."
+msgstr ""
+"Segui i passaggi per completare l'installazione. Potrai sempre modificare "
+"queste impostazioni in un secondo momento."
+
+#: dashboard/mybanners.php:253
+msgid ""
+"Please support us by rating our plugin on WordPress.org. Help us keep this "
+"plugin live and updated."
+msgstr ""
+"Sostienici valutando il nostro plugin su WordPress.org. Aiutaci a mantenerlo "
+"attivo e aggiornato."
+
+#: dashboard/memory.php:20
+msgid "Please, copy the url blue below to safe place before to proceed."
+msgstr ""
+"Per favore, copiate l'url blu qui sotto in un posto sicuro prima di "
+"procedere."
+
+#: guide/guide.php:65
+msgid "Please, read this:"
+msgstr "Leggi questo:"
+
+#: includes/vendor/vendor.php:49
+msgid "Please, wait...  Dismissing..."
+msgstr "Per favore, aspetta...  Rimuovendo..."
+
+#: functions/functions.php:979
+msgid "plugin site"
+msgstr "sito del plugin"
+
+#: dashboard/notifications.php:63
+msgid "Plugin Stop Bad Bots (Block Bad Refer Table) It is not active!"
+msgstr "Plugin Stop Bad Bots (Block Bad Refer Table) Non è attivo!"
+
+#: dashboard/notifications.php:53
+msgid "Plugin Stop Bad Bots (Block Ips) It is not active!"
+msgstr "Plugin Stop Bad Bots (Block Ips) Non è attivo!"
+
+#: dashboard/notifications.php:42
+msgid "Plugin Stop Bad Bots It is not active!"
+msgstr "Il plugin StopBadBots non è stato attivato!"
+
+#: includes/diagnose/class_bill_diagnose.php:1170
+msgid "Plugins with Updates Available (click to open)"
+msgstr "Plugin con aggiornamenti disponibili (clicca per aprire)"
+
+#: includes/diagnose/class_bill_diagnose.php:941
+msgid "Potential Problems"
+msgstr "Potenziali problemi"
+
+#: dashboard/dashboard.php:124
+msgid "Pro Protection Enabled"
+msgstr "Protezione Pro abilitata"
+
+#: includes/diagnose/class_bill_diagnose.php:1121
+msgid ""
+"Protect against hackers: They use bots to search for vulnerabilities and "
+"overload the server. Install our free plugin AntiHacker"
+msgstr ""
+"Protezione dagli hacker: utilizzano bot per cercare vulnerabilità e "
+"sovraccaricare il server. Installa il nostro plugin gratuito AntiHacker."
+
+#: settings/options/plugin_options_tabbed.php:345
+msgid ""
+"Protect Comments Form by check external spammer's databases (only when "
+"comment form is submited)?"
+msgstr ""
+"Proteggere il modulo dei commenti controllando i database esterni degli "
+"spammer (solo quando il modulo dei commenti viene inviato)?"
+
+#: settings/options/plugin_options_tabbed.php:329
+msgid "Protect Contact Form 7 and WP Forms?"
+msgstr "Proteggere Contact Form 7 e WP Forms?"
+
+#: settings/options/plugin_options_tabbed.php:362
+msgid "Protect Login Form against bots?"
+msgstr "Proteggere il modulo di accesso dai bot?"
+
+#: dashboard/dashboard.php:110
+msgid "Protection level currently configured."
+msgstr "Livello di protezione attualmente configurato."
+
+#: stopbadbots.php:1499
+msgid "Protection rate:"
+msgstr "Tasso di protezione:"
+
+#: dashboard/dashboard.php:22
+msgid "Protection Status"
+msgstr "Stato di protezione"
+
+#: dashboard/notifications.php:76
+msgid "Protection Status level:"
+msgstr "Livello di protezione:"
+
+#: settings/options/plugin_options_tabbed.php:1089
+msgid "Purchase Code (just paste here to activate your product)"
+msgstr "Codice d'acquisto (incolla qui per attivare il tuo prodotto)"
+
+#: dashboard/mybanners.php:264
+msgid "Rate"
+msgstr "Valutare"
+
+#: dashboard/mybanners.php:256
+msgid "Rate or Share"
+msgstr "Valuta o condividi"
+
+#: functions/functions.php:961
+msgid ""
+"Read the StartUp guide at Stop Bad Bots Settings page. (WP Dashboard => Stop "
+"Bad Bots = Settings)"
+msgstr ""
+"Per gestire individualmente i Bot, vai alla Tabella dei Bad Bots (Bacheca => "
+"Stop Bad Bots => Tabella dei Bad Bot)."
+
+#: dashboard/dashboard.php:170
+msgid "reCAPTCHA extension is disabled! Go to plugins page and activate it."
+msgstr ""
+"L'estensione reCAPTCHA è disabilitata! Vai alla pagina dei plugin e attivala."
+
+#: dashboard/dashboard.php:176
+msgid "reCAPTCHA extention not intalled!"
+msgstr "Estensione reCAPTCHA non installata!"
+
+#: settings/options/plugin_options_tabbed.php:245
+msgid ""
+"Receive bot's table updates by participate in the Real-Time Bad Bots "
+"Security Network?"
+msgstr ""
+"Ricevi gli aggiornamenti della tabella dei bot partecipando alla rete di "
+"sicurezza Real-Time Bad Bots?"
+
+#: includes/install/install.php:289
+#| msgid "Do you want receive email alerts for each bot attempt?"
+msgid "Receive email alerts for each blocked bot?"
+msgstr "Vuoi ricevere avvisi via email per ogni bot bloccato?"
+
+#: functions/functions.php:3369
+msgid "Referer included at table!"
+msgstr "Referer aggiunto alla tabella!"
+
+#: includes/list-tables/class-sbb-list-table3.php:33
+msgid "Referer Name"
+msgstr "Nome del referente"
+
+#: functions/functions.php:1699
+msgid "Referer String Found:"
+msgstr "Stringa di riferimento trovata:"
+
+#: guide/guide.php:104
+msgid "Remember to click Save Changes before to left each tab."
+msgstr ""
+"Ricorda di fare clic su Salva le modifiche prima di lasciare ogni scheda."
+
+#: guide/guide.php:78
+msgid "Remember to deactivate their bot."
+msgstr "Ricordatevi di disattivare il loro bot."
+
+#: includes/chat/class_bill_chat.php:50
+msgid "Response is not valid JSON."
+msgstr "La risposta non è un JSON valido."
+
+#: functions/functions.php:1610 functions/functions.php:1645
+#: functions/functions.php:1676
+msgid "Robot IP Address"
+msgstr "Indirizzo IP del robot"
 
 #: functions/health.php:183
 msgid ""
@@ -1032,15 +2059,647 @@ msgstr ""
 "trovare le istruzioni nella documentazione ufficiale di WordPress (Aumentare "
 "la memoria assegnata a PHP). Basta cliccare sul link qui sotto:"
 
+#: guide/guide.php:79
+msgid "Same thing if you create some smartphone APP."
+msgstr "La stessa cosa se si crea qualche APP per smartphone."
+
+#: settings/options/plugin_options_tabbed.php:524
+msgid ""
+"Search engine crawlers has unlimited access (look Whitelist tab) but you can "
+"block them (remove from Whitelist) and include new ones on User Agent Tables."
+msgstr ""
+"I crawler dei motori di ricerca hanno accesso illimitato (guarda la scheda "
+"Whitelist) ma puoi bloccarli (rimuovi dalla Whitelist) e includerne di nuovi "
+"su User Agent Tables."
+
+#: includes/diagnose/class_bill_diagnose.php:1113
+msgid ""
+"Search engines prioritize faster-loading pages, as they improve user "
+"experience and reduce bounce rates."
+msgstr ""
+"I motori di ricerca danno priorità alle pagine che si caricano più "
+"velocemente, poiché migliorano l'esperienza utente e riducono i tassi di "
+"rimbalzo."
+
+#: includes/list-tables/page2.php:18
+msgid "Search IP"
+msgstr "Ricerca IP"
+
+#: includes/list-tables/page.php:16
+msgid "Search Nickname"
+msgstr "Cerca per nickname"
+
+#: includes/list-tables/page3.php:18
+msgid "Search Referer"
+msgstr "Ricerca Referente"
+
+#: includes/diagnose/class_bill_diagnose.php:1300
+msgid "seconds"
+msgstr "secondi"
+
+#: settings/options/plugin_options_tabbed.php:419
+msgid "Select"
+msgstr "Seleziona"
+
+#: includes/feedback-last/feedback-last.php:261
+#: includes/diagnose/class_bill_diagnose.php:913
+msgid "Send"
+msgstr "Inviare"
+
+#: functions/functions.php:1626 functions/functions.php:1658
+msgid "Settings."
+msgstr "Impostazioni."
+
+#: functions/functions.php:4704
+msgid "Show support with a 5-star rating."
+msgstr "Mostra il tuo sostegno con una valutazione a 5 stelle."
+
+#: includes/diagnose/class_bill_diagnose.php:1441
+msgid "Site Errors"
+msgstr "Errori del sito"
+
+#. Tab heading for Site Health navigation.
+#: includes/diagnose/class_bill_diagnose.php:858
+msgctxt "Site Health"
+msgid "Critical Issues"
+msgstr "Problemi critici"
+
+#: includes/diagnose/class_bill_diagnose.php:1484
+msgid "Size not determined."
+msgstr "Dimensioni non determinate."
+
+#: guide/guide.php:83
+msgid ""
+"Some search engine or social media, like Telegram, Whatsapp, Qwant, Mail.ru, "
+"LinkedIn, bitlybot, Applebot, AppleNewsBot, SkypeUriPreview, FacebookBot, "
+"twitterbot, vkShare\n"
+"for example, sometimes send bots with empty user agent (or another bad "
+"practice) and our system catch them."
+msgstr ""
+"Alcuni motori di ricerca o social media, come Telegram, Whatsapp, Qwant, "
+"Mail.ru, LinkedIn, bitlybot, Applebot, AppleNewsBot, SkypeUriPreview, "
+"FacebookBot, twitterbot, vkShare\n"
+"per esempio, a volte inviano bot con user agent vuoto (o un'altra cattiva "
+"pratica) e il nostro sistema li cattura."
+
+#: settings/options/plugin_options_tabbed.php:195
+msgid "Standard"
+msgstr "Standard"
+
+#: settings/options/plugin_options_tabbed.php:99
+msgid ""
+"Standard option:  maintains a balance between Conservative and Maximum Block "
+"and also considers the behavior of bots."
+msgstr ""
+"Opzione normale: cerca di mantenere l'equilibrio tra Conserative e Maximum "
+"Block."
+
+#: includes/install/install.php:232
+msgid "Start Setup"
+msgstr "Avvia configurazione"
+
+#: dashboard/dashboard.php:266
+msgid "Start Up Guide and Settings"
+msgstr "Guida all'avvio e impostazioni"
+
+#: includes/list-tables/class-sbb-list-table3.php:34
+msgid "Status"
+msgstr "Stato"
+
+#: functions/functions.php:1624 functions/functions.php:1656
+msgid "Stop Bad Bots"
+msgstr "Ferma i bot dannosi"
+
+#: dashboard/notifications.php:81
+msgid "Stop Bad Bots => Setting => General Settings"
+msgstr "Stop Bad Bots => Impostazione => Impostazioni generali"
+
+#: dashboard/dashboard.php:15
+msgid "Stop Bad Bots Plugin Activated"
+msgstr "Stop Bad Bots Plugin attivato"
+
+#: functions/functions.php:4714
+msgid "Stop Bad Bots Plugin. Its time to Get Pro Protection!"
+msgstr "Stop Bad Bots Plugin. È ora di ottenere la protezione Pro!"
+
+#. Description of the plugin
+msgid ""
+"Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. "
+"No Slow Down Your Site!"
+msgstr ""
+"Blocca bot dannosi, bot SPAM e spider. Nessun reindirizzamento DNS o "
+"traffico cloud. Nessun rallentamento del tuo sito!"
+
+#: stopbadbots.php:251
+msgid "Stop Bad Bots: Could not load the localization file (Language file)"
+msgstr ""
+"Stop Bad Bots: non riesco a caricare il file della localizzazione (File di "
+"lingua)"
+
+#. Name of the plugin
+msgid "StopBadBots"
+msgstr "StopBadBots"
+
+#: includes/install/install.php:323
+msgid ""
+"StopBadBots has been successfully configured with our recommended settings! "
+"Your site is now protected."
+msgstr ""
+"StopBadBots è stato configurato correttamente con le impostazioni "
+"consigliate! Il tuo sito è ora protetto."
+
+#: guide/guide.php:96
+msgid ""
+"StopBadBots it is a powerfull tool. Then, like all powerfull tools it is "
+"necessary to use carefully."
+msgstr ""
+"StopBadBots è uno strumento potente. Poi, come tutti gli strumenti potenti è "
+"necessario usarlo con attenzione."
+
+#: includes/install/install.php:297
+msgid ""
+"Storing data for shorter durations conserves database space; typically, "
+"seven days is adequate. Nevertheless, please note that this will directly "
+"affect your visit and analytics reports."
+msgstr ""
+"L'archiviazione dei dati per periodi più brevi consente di risparmiare "
+"spazio sul database; in genere, sette giorni sono sufficienti. Tuttavia, "
+"tieni presente che ciò influirà direttamente sulle tue visite e sui report "
+"di analisi."
+
+#: functions/functions.php:1611
+msgid "String Found:"
+msgstr "Trovata stringa:"
+
+#: settings/options/plugin_options_tabbed.php:830
+msgid "String whitelist (no case sensitive)"
+msgstr "Whitelist di stringhe (no case sensitive)"
+
+#: includes/diagnose/class_bill_diagnose.php:1118
+msgid "Suggestions:"
+msgstr "Suggerimenti:"
+
+#: guide/guide.php:138 includes/feedback-last/feedback-last.php:271
+msgid "Support Page"
+msgstr "Pagina di Supporto"
+
+#: dashboard/tools.php:19
+msgid "Support Site"
+msgstr "Pagina di Supporto"
+
+#: settings/options/plugin_options_tabbed.php:665
+msgid "ten 404 pages"
+msgstr "dieci pagine 404"
+
+#: settings/options/plugin_options_tabbed.php:140
+msgid "test mode"
+msgstr "modalità di prova"
+
+#: includes/install/install.php:228
+msgid ""
+"Thank you for choosing StopBadBots. This quick setup wizard will apply our "
+"recommended security settings to protect your site immediately."
+msgstr ""
+"Grazie per aver scelto StopBadBots. Questa rapida procedura guidata "
+"applicherà le nostre impostazioni di sicurezza consigliate per proteggere "
+"immediatamente il tuo sito."
+
+#: settings/options/plugin_options_tabbed.php:105
+msgid "The default option is Conservative."
+msgstr "L'opzione predefinita è Conservative."
+
+#: settings/options/plugin_options_tabbed.php:107
+msgid "The free version includes only the Minimal and Conservative options."
+msgstr "La versione gratuita include solo le opzioni Minima e Conservativa."
+
+#: includes/diagnose/class_bill_diagnose.php:1106
+msgid "The Load average of your front pages is: "
+msgstr "Il carico medio delle tue pagine iniziali è:"
+
+#: includes/diagnose/class_bill_diagnose.php:1093
+msgid "The page load time is poor (click to open)"
+msgstr "Il tempo di caricamento della pagina è scarso (clicca per aprire)"
+
+#: includes/diagnose/class_bill_diagnose.php:1095
+msgid "The page load time is very poor (click to open)"
+msgstr ""
+"Il tempo di caricamento della pagina è molto scarso (clicca per aprire)"
+
+#: guide/guide.php:110
+msgid ""
+"The Plugin doesn't block main Google, Yahoo, Bing (Microsoft), Twitter and "
+"Facebook bots."
+msgstr "Il plugin non blocca i principali Google, Yahoo e Bing (Microsoft)."
+
+#: functions/fail2ban.php:51
+msgid ""
+"The SBB Fail2Ban Monitor brings your server's powerful Fail2Ban protection "
+"into a clear, visual WordPress dashboard – the user-friendly GUI many have "
+"been waiting for!"
+msgstr ""
+"SBB Fail2Ban Monitor integra la potente protezione Fail2Ban del tuo server "
+"in una dashboard WordPress chiara e visiva: l'interfaccia utente intuitiva "
+"che molti stavano aspettando!"
+
+#: functions/fail2ban.php:50
+msgid ""
+"The use of this page is optional, and it's intended for more advanced users."
+msgstr ""
+"L'utilizzo di questa pagina è facoltativo ed è destinato agli utenti più "
+"esperti."
+
+#: settings/options/plugin_options_tabbed.php:36
+#: settings/options/plugin_options_tabbed.php:45
+msgid "Then click SAVE CHANGES."
+msgstr "Fare clic su SALVA MODIFICHE."
+
+#: includes/diagnose/class_bill_diagnose.php:1903
+msgid ""
+"These are critical issues that can have a significant impact on your site's "
+"performance. They can cause many plugins and functionalities to malfunction "
+"and, in some cases, render your site completely inoperative, depending on "
+"their severity. Address them promptly."
+msgstr ""
+"Si tratta di problemi critici che possono avere un impatto significativo "
+"sulle prestazioni del tuo sito. Possono causare il malfunzionamento di molti "
+"plugin e funzionalità e, in alcuni casi, rendere il tuo sito completamente "
+"inoperativo, a seconda della loro gravità. Risolvili tempestivamente."
+
+#: includes/visits_stats/visits_dashboard.php:43
+msgid ""
+"These data depend on the number of days you keep in the visitors-log file. "
+"Refer to the plugin settings page for more details."
+msgstr ""
+"Questi dati dipendono dal numero di giorni che conservi nel file visitors-"
+"log. Per maggiori dettagli, consulta la pagina delle impostazioni del plugin."
+
+#: includes/install/install.php:290
+msgid ""
+"This can be noisy if your site is under attack. You can view all blocks in "
+"the logs. Recommended: No."
+msgstr ""
+"Questo può essere rumoroso se il tuo sito è sotto attacco. Puoi visualizzare "
+"tutti i blocchi nei log. Consigliato: no."
+
+#: settings/options/plugin_options_tabbed.php:80
+msgid ""
+"This can block bad bots scan by user id and user and login name. This "
+"happens a lot and is often a pre-cursor to very nasty activities and attacks."
+msgstr ""
+"Questo può bloccare la scansione dei bot cattivi per id utente e nome utente "
+"e login. Questo accade spesso ed è spesso un precursore di attività e "
+"attacchi molto cattivi."
+
+#: settings/options/plugin_options_tabbed.php:75
+msgid ""
+"This can reduce abuse against your site. Look your metrics menu in cPanel or "
+"request support to your hosting company for details about your visitors, if "
+"necessary."
+msgstr ""
+"Questo può ridurre gli abusi contro il tuo sito. Guarda il tuo menu delle "
+"metriche nel cPanel o chiedi supporto alla tua società di hosting per i "
+"dettagli sui tuoi visitatori, se necessario."
+
+#: includes/install/install.php:242
+msgid ""
+"This choice helps us understand our users. The default \"One-Click Setup\" "
+"will apply all recommended settings for you."
+msgstr ""
+"Questa scelta ci aiuta a comprendere i nostri utenti. L'impostazione "
+"predefinita \"Configurazione in un clic\" applicherà tutte le impostazioni "
+"consigliate."
+
+#: includes/install/install.php:283
+msgid ""
+"This is a common characteristic of poorly written bots and scrapers. "
+"Recommended: Yes."
+msgstr ""
+"Questa è una caratteristica comune dei bot e degli scraper mal scritti. "
+"Consigliato: Sì."
+
+#: includes/diagnose/class_bill_diagnose.php:1467
+msgid "This is a partial list of the errors found."
+msgstr "Questo è un elenco parziale degli errori riscontrati."
+
+#: functions/fail2ban.php:53
+msgid ""
+"This is your first step towards richer insights like daily totals, activity "
+"graphs, and more detailed ban reasons."
+msgstr ""
+"Questo è il primo passo verso informazioni più approfondite, come totali "
+"giornalieri, grafici delle attività e motivi di divieto più dettagliati."
+
+#: settings/options/plugin_options_tabbed.php:515
+#: settings/options/plugin_options_tabbed.php:728
+#: settings/options/plugin_options_tabbed.php:792
+msgid "This page works only in Pro Version."
+msgstr "Questa pagina funziona solo nella versione Pro."
+
+#: settings/options/plugin_options_tabbed.php:795
+msgid ""
+"This tables are very usefull if you want to block HTTP tools or use Rate "
+"Limiting.You can create 2 whitelist in this page: String and IP."
+msgstr ""
+"Queste tabelle sono molto utili se vuoi bloccare gli strumenti HTTP o usare "
+"il Rate Limiting.Puoi creare 2 whitelist in questa pagina: Stringa e IP."
+
+#: settings/options/plugin_options_tabbed.php:733
+msgid "To Block HTTP Tools, just add one for each line."
+msgstr "Per bloccare gli strumenti HTTP, basta aggiungerne uno per ogni riga."
+
+#: dashboard/memory.php:114
+msgid ""
+"To increase the WordPress memory limit, add this info to your file wp-config."
+"php (located at root folder of your server)"
+msgstr ""
+"Per aumentare il limite di memoria di WordPress, aggiungi queste "
+"informazioni al tuo file wp-config.php (situato nella cartella principale "
+"del tuo server)"
+
+#: dashboard/memory.php:129
+msgid "To increase your total server memory, talk with your hosting company."
+msgstr ""
+"Per aumentare la memoria totale del tuo server, parla con la tua compagnia "
+"di hosting."
+
+#: dashboard/notifications.php:79
+msgid "To increase, go to"
+msgstr "Per aumentare, andare su"
+
+#: settings/options/plugin_options_tabbed.php:31
+msgid ""
+"To manage the bots individually, go to Bad Bots Table (Dashboard=> Stop Bad "
+"Bots =>Bad Bots Table)."
+msgstr ""
+"Per gestire individualmente i Bot, vai alla Tabella dei Bad Bots (Bacheca => "
+"Stop Bad Bots => Tabella dei Bad Bot)."
+
+#: settings/options/plugin_options_tabbed.php:43
+msgid ""
+"To manage the IPs individually, go to Bad IPs Table (Dashboard=> Stop Bad "
+"Bots =>Bad IPs Table)."
+msgstr ""
+"Per gestire gli IP singolarmente, vai su Bad IPs Table (Bacheca=> Stop Bad "
+"Bots =>Bad IPs Table)."
+
+#: settings/options/plugin_options_tabbed.php:735
+msgid ""
+"To Manage, you can also remove one or more lines. Then, click Save Changes."
+msgstr ""
+"In Gestione, puoi anche rimuovere una o più righe. Poi, clicca su Salva "
+"modifiche."
+
+#: guide/guide.php:56
+msgid ""
+"To perform an analytical and detailed analysis of the visits received on "
+"your website, visit the page StopBadBots => Visits Log. There, you can "
+"easily add visitors to the blacklist or whitelist with just one click."
+msgstr ""
+"Per effettuare un'analisi analitica e dettagliata delle visite ricevute sul "
+"tuo sito web, visita la pagina StopBadBots => Visits Log. Lì puoi facilmente "
+"aggiungere i visitatori alla blacklist o alla whitelist con un solo clic."
+
+#: dashboard/dashboard.php:348
+msgid "Top Bots Bad Referer Blocked"
+msgstr "I Top Bots Bad Referer Bloccati"
+
+#: dashboard/dashboard.php:342
+msgid "Top Bots Blocked By IP"
+msgstr "I Top  bot bloccati per IP"
+
+#: dashboard/dashboard.php:337
+msgid "Top Bots Blocked by Name"
+msgstr "I 10 top bot bloccati per nome"
+
+#: stopbadbots.php:1521
+msgid "Total Attacks Blocked By IP"
+msgstr "Attacchi totali bloccati per IP"
+
+#: stopbadbots.php:1512
+msgid "Total Attacks Blocked By Type"
+msgstr "Attacchi totali bloccati per tipo"
+
+#: functions/fail2ban.php:319 functions/fail2ban.php:372
+msgid "Total Bans"
+msgstr "Divieti totali"
+
+#: dashboard/dashboard.php:305
+msgid "Total Bots Blocked Last 15 days"
+msgstr "Totale dei bot bloccati negli ultimi 15 giorni"
+
+#: includes/diagnose/class_bill_diagnose.php:987
+msgid "Total Php Server Memory"
+msgstr "Memoria totale del server:"
+
+#: dashboard/memory.php:81
+msgid "Total Server Memory:"
+msgstr "Memoria totale del server:"
+
+#: dashboard/dashboard.php:287
+msgid "Troubleshooting Guide"
+msgstr "Pagina di risoluzione dei problemi"
+
+#: dashboard/dashboard.php:291 guide/guide.php:140
+msgid "Troubleshooting Page"
+msgstr "Pagina di risoluzione dei problemi"
+
+#: settings/options/plugin_options_tabbed.php:673
+msgid "twenty 404 pages"
+msgstr "venti pagine 404"
+
+#: dashboard/memory.php:46
+msgid "Unable to get your Memory Info"
+msgstr "Impossibile ottenere le informazioni sulla memoria"
+
+#: guide/guide.php:100
+msgid ""
+"Unfortunately the amount of bots is growing vertiginously. They can overload "
+"your site. You need invest time to manage this."
+msgstr ""
+"Purtroppo la quantità di bot sta crescendo vertiginosamente. Possono "
+"sovraccaricare il tuo sito. È necessario investire tempo per gestire questo."
+
+#: settings/options/plugin_options_tabbed.php:571
+#: settings/options/plugin_options_tabbed.php:618
+#: settings/options/plugin_options_tabbed.php:657
+msgid "Unlimited"
+msgstr "Illimitato"
+
+#: dashboard/memory.php:30
+msgid "Update"
+msgstr "Aggiorna"
+
+#: settings/options/plugin_options_tabbed.php:763
+msgid ""
+"Update HTTP tools each new plugin version or when plugin is activated? Maybe "
+"you will need remove that tools you don't want to block again."
+msgstr ""
+"Aggiornare gli strumenti HTTP ogni nuova versione del plugin o quando il "
+"plugin viene attivato? Forse avrete bisogno di rimuovere gli strumenti che "
+"non volete bloccare di nuovo."
+
+#: table/visitors_render.php:68
+msgid "Upgrade for Max Protection"
+msgstr "Protezione firewall"
+
+#: dashboard/dashboard.php:78
+msgid ""
+"Upgrade to Premium for weekly updates, enhanced firewall protection, and "
+"more, ensuring a level 100% of security."
+msgstr ""
+"Vai Premium per ottenere aggiornamenti settimanali, protezione firewall e "
+"altro, di conseguenza il livello di protezione 10."
+
+#: dashboard/memory.php:22
+msgid ""
+"Use the url only to undo this operation if you've problem accessing your "
+"site after the update."
+msgstr ""
+"Usa l'url solo per annullare questa operazione se hai problemi di accesso al "
+"tuo sito dopo l'aggiornamento."
+
+#: functions/functions.php:1609
+msgid "User Agent"
+msgstr "User agent"
+
+#: functions/functions.php:1762
+msgid "User Enumeration was detected and blocked by Stop Bad Bots Plugin."
+msgstr ""
+"Utenti enumerazione è stato rilevato e bloccato da Stop Bad Bots Plugin."
+
+#: settings/options/plugin_options_tabbed.php:1074
+msgid "Visit our Pro Page for more details."
+msgstr "Vista la nostra pagina Premium per maggiori dettagli."
+
+#: functions/fail2ban.php:60
+#, php-format
+msgid "Visit our site for more details on %s."
+msgstr "Visita il nostro sito per maggiori dettagli su %s."
+
+#: functions/functions.php:977
+msgid "Visit the"
+msgstr "Visita il"
+
+#: guide/guide.php:131
+msgid ""
+"Visit the plugin site for more details, video, online guide, FAQ and "
+"Troubleshooting page and bot's and IP's details."
+msgstr ""
+"Visitate il sito del plugin per maggiori dettagli, video, guida online, FAQ "
+"e pagina di risoluzione dei problemi e dettagli su bot e IP."
+
+#: functions/functions.php:1632 functions/functions.php:1663
+#: functions/functions.php:1686 functions/functions.php:1708
+#: functions/functions.php:1730 functions/functions.php:1752
+#: functions/functions.php:1774 functions/functions.php:1797
+#: functions/functions.php:1814 functions/functions.php:1834
+#: functions/functions.php:1854 functions/functions.php:1876
+#: functions/functions.php:1896 functions/functions.php:1916
+#: functions/functions.php:1936
+msgid "Visit us to learn how to get Weekly Updates and more features:"
+msgstr ""
+"Vieni a trovarci per sapere come ottenere gli aggiornamenti settimanali e "
+"altre caratteristiche:"
+
+#: table/visitors_render.php:53 functions/functions.php:1046
+#: functions/functions.php:1069
+msgid "Visits Log"
+msgstr "Registro delle visite"
+
+#: includes/vendor/vendor.php:55
+msgid "Watch Again"
+msgstr "Guarda di nuovo"
+
+#: settings/options/plugin_options_tabbed.php:520
+msgid ""
+"We can limit a number of bot's visits (non humans), just choose the options "
+"below."
+msgstr ""
+"Possiamo limitare il numero di visite dei bot (non umani), basta scegliere "
+"le opzioni qui sotto."
+
+#: settings/options/plugin_options_tabbed.php:517
+msgid ""
+"We can't block all bots. We need, for example, allow google, uptime, "
+"WordPress, stripe and others."
+msgstr ""
+"Non possiamo bloccare tutti i bot. Dobbiamo, per esempio, permettere a "
+"google, uptime, WordPress, stripe e altri."
+
+#: guide/guide.php:81
+msgid ""
+"We have also a table of bad IPs. Many bad bots use fake or blank User Agent. "
+"Then, we need block them by IP."
+msgstr ""
+"Abbiamo anche una tabella degli IP cattivi. Molti bot cattivi usano User "
+"Agent falsi o vuoti. Quindi, abbiamo bisogno di bloccarli per IP."
+
+#: includes/install/install.php:248
+msgid "We'll automatically apply the best-practice settings for you."
+msgstr ""
+"Applicheremo automaticamente le impostazioni più adatte alle tue esigenze."
+
+#: includes/diagnose/class_bill_diagnose.php:1308
+msgid "week(s)"
+msgstr "settimana/e"
+
+#: includes/install/install.php:227
+msgid "Welcome"
+msgstr "Benvenuto"
+
+#: includes/diagnose/class_bill_diagnose.php:94
+msgid "Welcome to plugin Insights!"
+msgstr "Benvenuti al plugin Insights!"
+
+#: includes/feedback-last/feedback-last.php:241
+msgid "What can we do to resolve the problem you're facing?"
+msgstr "Cosa possiamo fare per risolvere il problema che stai affrontando?"
+
+#: dashboard/dashboard.php:354
+msgid "With our plugin, many blocked bots will give up of attack your site!"
+msgstr ""
+"Con il nostro plugin, molti bot bloccati rinunceranno ad attaccare il tuo "
+"sito!"
+
+#: dashboard/dashboard.php:125
+msgid "With weekly database updates and Firewall protection."
+msgstr ""
+"Guarda la nostra scheda Go Pro su come ottenere aggiornamenti settimanali, "
+"più funzioni e protezione Firewall."
+
 #: functions/health.php:188
 msgid "WordPress Help Page"
 msgstr "Pagina di aiuto di WordPress"
 
-#: guide/guide.php:10
-msgid "Open the General Settings Tab and click over Yes  (to begin to block)."
-msgstr ""
-"Apri la scheda delle impostazioni Generali e clicca su “Sì” (per iniziare a "
-"bloccare i bot)."
+#: includes/install/install.php:284 includes/install/install.php:291
+#: settings/options/plugin_options_tabbed.php:892
+msgid "Yes"
+msgstr "Sì"
+
+#: settings/options/plugin_options_tabbed.php:130
+#: settings/options/plugin_options_tabbed.php:152
+#: settings/options/plugin_options_tabbed.php:169
+#: settings/options/plugin_options_tabbed.php:211
+#: settings/options/plugin_options_tabbed.php:230
+#: settings/options/plugin_options_tabbed.php:249
+#: settings/options/plugin_options_tabbed.php:266
+#: settings/options/plugin_options_tabbed.php:298
+#: settings/options/plugin_options_tabbed.php:314
+#: settings/options/plugin_options_tabbed.php:333
+#: settings/options/plugin_options_tabbed.php:349
+#: settings/options/plugin_options_tabbed.php:366
+#: settings/options/plugin_options_tabbed.php:384
+#: settings/options/plugin_options_tabbed.php:400
+#: settings/options/plugin_options_tabbed.php:539
+#: settings/options/plugin_options_tabbed.php:751
+#: settings/options/plugin_options_tabbed.php:767
+#: settings/options/plugin_options_tabbed.php:817
+msgid "yes"
+msgstr "sì"
+
+#: settings/options/plugin_options_tabbed.php:876
+msgid "Yes."
+msgstr "Sì."
 
 #: guide/guide.php:13
 msgid ""
@@ -1066,27 +2725,23 @@ msgstr ""
 "Puoi anche aggiungere Bad Referer alla tabella Bad Referer. Bacheca => Stop "
 "Bad Bots => Aggiungi Bad Referer alla tabella."
 
+#: settings/options/plugin_options_tabbed.php:522
+msgid "You can also whitelist bots, look the Whitelist tab."
+msgstr "Puoi anche mettere i bot in in whitelist, guarda la scheda Whitelist."
+
+#: guide/guide.php:30
+msgid "You can go to Block HTTP tools tab and manage it."
+msgstr "Puoi andare alla scheda Block HTTP tools e gestirlo."
+
 #: guide/guide.php:25
 msgid "You can go to Limit Bots Visits tab and block bots by visit number."
 msgstr ""
 "Puoi andare alla scheda Limit Bots Visits e bloccare i bot per numero di "
 "visite."
 
-#: guide/guide.php:30
-msgid "You can go to Block HTTP tools tab and manage it."
-msgstr "Puoi andare alla scheda Block HTTP tools e gestirlo."
-
 #: guide/guide.php:35
 msgid "You can go to WhiteList tab and manage  String and IP table."
 msgstr "Puoi andare alla scheda WhiteList e gestire la tabella String e IP."
-
-#: guide/guide.php:43
-msgid ""
-"At eMail and Notifications tab, you can customize your contact email or left "
-"blank to use your WordPress eMail."
-msgstr ""
-"Nella scheda eMail e Notifiche, puoi personalizzare la tua email di contatto "
-"o lasciarla vuota per usare la tua eMail di WordPress."
 
 #: guide/guide.php:46
 msgid ""
@@ -1095,46 +2750,6 @@ msgid ""
 msgstr ""
 "Potete registrare la vostra opzione ricevendo o meno avvisi via e-mail sui "
 "tentativi di bot e sui blocchi del firewall."
-
-#: guide/guide.php:51
-msgid ""
-"Look our Go Pro tab about how to get weekly updates, more features and "
-"Firewall protection."
-msgstr ""
-"Guarda la nostra scheda Go Pro su come ottenere aggiornamenti settimanali, "
-"più funzioni e protezione Firewall."
-
-#: guide/guide.php:56
-msgid ""
-"To perform an analytical and detailed analysis of the visits received on "
-"your website, visit the page StopBadBots => Visits Log. There, you can "
-"easily add visitors to the blacklist or whitelist with just one click."
-msgstr ""
-"Per effettuare un'analisi analitica e dettagliata delle visite ricevute sul "
-"tuo sito web, visita la pagina StopBadBots => Visits Log. Lì puoi facilmente "
-"aggiungere i visitatori alla blacklist o alla whitelist con un solo clic."
-
-#: guide/guide.php:65
-msgid "Please, read this:"
-msgstr "Leggi questo:"
-
-#: guide/guide.php:68
-msgid ""
-"Because not all bots are bad, you need manage the bots and whitelist tables."
-msgstr ""
-"Poiché non tutti i bot sono cattivi, è necessario gestire i bot e le tabelle "
-"di whitelist."
-
-#: guide/guide.php:70
-msgid ""
-"Open the page Bad Bots Table  (under Stop Bad Bots Menu) and take a look at "
-"Default Bad Bots List. If you wish, you can turn off some. (Just check, Bulk "
-"Actions, Apply). Our plugin will create a table with more than 2500 Bots."
-msgstr ""
-"Apri la pagina Bad Bots Table (sotto Stop Bad Bots Menu) e dai un'occhiata a "
-"Default Bad Bots List. Se lo desideri, puoi disattivarne alcuni. (Basta "
-"controllare, Bulk Actions, Apply). Il nostro plugin creerà una tabella con "
-"più di 2500 bot."
 
 #: guide/guide.php:71
 msgid ""
@@ -1145,442 +2760,87 @@ msgstr ""
 "Bloccati”. Clicca sul titolo (Num Bloccati) per impostarlo come criterio di "
 "ordinamento."
 
-#: guide/guide.php:74
-msgid "Check the bot's table frequently, especially in the first days."
-msgstr "Controllate spesso la tabella del bot, soprattutto nei primi giorni."
-
-#: guide/guide.php:75
+#: settings/options/plugin_options_tabbed.php:862
 msgid ""
-"Confirm if you want block all that bots. Maybe you want unblock Baidu, "
-"DuckDuck, Yandex, Seznam or another search engine in your language or some "
-"social sites or some useful bot for you."
+"You can see the bots attacks info at Bad Bots Table. (column Num Blocked)."
 msgstr ""
-"Confermate se volete bloccare tutti quei bot. Forse vuoi sbloccare Baidu, "
-"DuckDuck, Yandex, Seznam o un altro motore di ricerca nella tua lingua o "
-"alcuni siti sociali o qualche bot utile per te."
+"Puoi vedere le info degli attacchi nella tabella dei Bad Bot. (colonna Num "
+"Bloccati)."
 
-#: guide/guide.php:77
-msgid ""
-"If you use RSS FEED services, probably they have their bot to read your "
-"feeds."
+#: functions/functions.php:1614 functions/functions.php:1648
+#: functions/functions.php:1680 functions/functions.php:1702
+#: functions/functions.php:1724 functions/functions.php:1746
+#: functions/functions.php:1768 functions/functions.php:1791
+#: functions/functions.php:1811 functions/functions.php:1828
+#: functions/functions.php:1848 functions/functions.php:1870
+#: functions/functions.php:1890 functions/functions.php:1910
+#: functions/functions.php:1930
+msgid "You can stop emails at the Notifications Settings Tab."
 msgstr ""
-"Se usi i servizi RSS FEED, probabilmente hanno il loro bot per leggere i "
-"tuoi feed."
-
-#: guide/guide.php:78
-msgid "Remember to deactivate their bot."
-msgstr "Ricordatevi di disattivare il loro bot."
-
-#: guide/guide.php:79
-msgid "Same thing if you create some smartphone APP."
-msgstr "La stessa cosa se si crea qualche APP per smartphone."
-
-#: guide/guide.php:81
-msgid ""
-"We have also a table of bad IPs. Many bad bots use fake or blank User Agent. "
-"Then, we need block them by IP."
-msgstr ""
-"Abbiamo anche una tabella degli IP cattivi. Molti bot cattivi usano User "
-"Agent falsi o vuoti. Quindi, abbiamo bisogno di bloccarli per IP."
-
-#: guide/guide.php:84
-msgid ""
-"Some search engine or social media, like Telegram, Whatsapp, Qwant, Mail.ru, "
-"LinkedIn, bitlybot, Applebot, AppleNewsBot, SkypeUriPreview, FacebookBot, "
-"twitterbot, vkShare\n"
-"for example, sometimes send bots with empty user agent (or another bad "
-"practice) and our system catch them."
-msgstr ""
-"Alcuni motori di ricerca o social media, come Telegram, Whatsapp, Qwant, "
-"Mail.ru, LinkedIn, bitlybot, Applebot, AppleNewsBot, SkypeUriPreview, "
-"FacebookBot, twitterbot, vkShare\n"
-"per esempio, a volte inviano bot con user agent vuoto (o un'altra cattiva "
-"pratica) e il nostro sistema li cattura."
-
-#: guide/guide.php:88
-msgid ""
-"Check also the IP's table frequently, especially in the first days. Confirm "
-"if you want block all that IPs."
-msgstr ""
-"Controllate anche la tabella degli IP frequentemente, specialmente nei primi "
-"giorni. Confermate se volete bloccare tutti quegli IP."
-
-#: guide/guide.php:90
-msgid ""
-"If you need more info about each bot or IP, visit our site www.StopBadBots."
-"com (page Bots Table and Boats Table by IP)"
-msgstr ""
-"Se hai bisogno di maggiori informazioni su ogni bot o IP, visita il nostro "
-"sito StopBadBots.com (pagina Bots Table e Boats Table by IP)"
-
-#: guide/guide.php:93
-msgid ""
-"Note: If you use the plugin WPFastestCache, deactivate the bot named "
-"\"test\" at Bad Bots Table. (Dashboard => Stop Bad Bots => Bad Bots Table)"
-msgstr ""
-"Nota: se usi il plugin WPFastestCache, disattiva il bot chiamato \"test\" "
-"nella tabella di Bad Bots. (Bacheca => Stop Bad Bots => Tabella Bad Bots)"
-
-#: guide/guide.php:96
-msgid ""
-"StopBadBots it is a powerfull tool. Then, like all powerfull tools it is "
-"necessary to use carefully."
-msgstr ""
-"StopBadBots è uno strumento potente. Poi, come tutti gli strumenti potenti è "
-"necessario usarlo con attenzione."
-
-#: guide/guide.php:98
-msgid "It is up to you determine what bot is beneficial or detrimental."
-msgstr "Sta a voi determinare quale bot è benefico o dannoso."
-
-#: guide/guide.php:100
-msgid ""
-"Unfortunately the amount of bots is growing vertiginously. They can overload "
-"your site. You need invest time to manage this."
-msgstr ""
-"Purtroppo la quantità di bot sta crescendo vertiginosamente. Possono "
-"sovraccaricare il tuo sito. È necessario investire tempo per gestire questo."
-
-#: guide/guide.php:104
-msgid "Remember to click Save Changes before to left each tab."
-msgstr ""
-"Ricorda di fare clic su Salva le modifiche prima di lasciare ogni scheda."
+"Puoi bloccare l’invio di email in cliccando nella scheda “Impostazioni” e "
+"poi “Notifiche”."
 
 #: guide/guide.php:107
 msgid "You don't need create any robots.txt or htaccess file. "
 msgstr "Non devi creare un file robot.txt o htaccess. "
 
-#: guide/guide.php:110
-msgid ""
-"The Plugin doesn't block main Google, Yahoo, Bing (Microsoft), Twitter and "
-"Facebook bots."
-msgstr "Il plugin non blocca i principali Google, Yahoo e Bing (Microsoft)."
+#: settings/options/plugin_options_tabbed.php:1078
+msgid "You don't need reinstall the plugin."
+msgstr "Non devi reinstallare il plugin."
 
 #: guide/guide.php:115
 msgid "You have also the option to deactivate Yandex bot."
 msgstr "Hai anche la possibilità di disattivare Yandex bot."
 
-#: guide/guide.php:117
-msgid "Dashboard => Stop Bad Bots => Bad Bots Table."
-msgstr "Bacheca => Stop Bad Bots => Tabella Bad Bots."
-
-#: guide/guide.php:119
-msgid "Deactivate this 3 boots:"
-msgstr "Disattivare questi 3 boot:"
-
-#: guide/guide.php:121
-msgid "1) Yandex"
-msgstr "1) Yandex"
-
-#: guide/guide.php:123
-msgid "2) Yandexbot"
-msgstr "2) Yandexbot"
-
-#: guide/guide.php:125
-msgid "3) Exbot"
-msgstr "3) Exbot"
-
-#: guide/guide.php:131
+#: settings/options/plugin_options_tabbed.php:29
 msgid ""
-"Visit the plugin site for more details, video, online guide, FAQ and "
-"Troubleshooting page and bot's and IP's details."
+"You need only check yes or no below. All Bad Bots enabled at Bad Bots Table "
+"will be blocked."
 msgstr ""
-"Visitate il sito del plugin per maggiori dettagli, video, guida online, FAQ "
-"e pagina di risoluzione dei problemi e dettagli su bot e IP."
+"Devi solo seleziona “sì” o “no” qui sotto. Tutti Bad Bots abilitati nella "
+"Tabella saranno bloccati."
 
-#: guide/guide.php:134
-msgid "OnLine Guide"
-msgstr "Guida in linea"
-
-#: guide/guide.php:136
-msgid "Faq Page"
-msgstr "Pagina FAQ"
-
-#: guide/guide.php:138 includes/feedback-last/feedback-last.php:271
-msgid "Support Page"
-msgstr "Pagina di Supporto"
-
-#: guide/guide.php:142
-msgid "Go Pro"
-msgstr "Passa a Pro"
-
-#: includes/chat/class_bill_chat.php:44
-msgid "Chat messages reset successfully."
-msgstr "I messaggi della chat sono stati reimpostati correttamente."
-
-#: includes/chat/class_bill_chat.php:45
-msgid "Error resetting chat messages."
-msgstr "Errore durante la reimpostazione dei messaggi della chat."
-
-#: includes/chat/class_bill_chat.php:46
-msgid "Invalid message received:"
-msgstr "Messaggio non valido ricevuto:"
-
-#: includes/chat/class_bill_chat.php:47
-msgid "Invalid response format:"
-msgstr "Formato di risposta non valido:"
-
-#: includes/chat/class_bill_chat.php:48
-msgid "Error processing server response:"
-msgstr "Errore durante l'elaborazione della risposta del server:"
-
-#: includes/chat/class_bill_chat.php:49
-msgid "Response is not valid JSON."
-msgstr "La risposta non è un JSON valido."
-
-#: includes/chat/class_bill_chat.php:50
-msgid "AJAX request failed:"
-msgstr "Richiesta AJAX fallita:"
-
-#: includes/chat/class_bill_chat.php:51
-msgid "Error sending the message. Please try again later."
-msgstr "Errore nell'invio del messaggio. Riprova più tardi."
-
-#: includes/chat/class_bill_chat.php:52
-msgid "Please enter a message!"
-msgstr "Inserisci un messaggio!"
-
-#: includes/chat/class_bill_chat.php:277
+#: settings/options/plugin_options_tabbed.php:41
 msgid ""
-"Error contacting the Artificial Intelligence (API). Please try again later."
+"You need only check yes or no below. All Bad IPs enabled at Bad IPs Table "
+"will be blocked."
 msgstr ""
-"Errore durante il contatto con l'intelligenza artificiale (API). Riprova più "
-"tardi."
+"Dovete solo controllare sì o no qui sotto. Tutti i Bad IPs abilitati nella "
+"Bad IPs Table saranno bloccati."
 
-#: includes/chat/class_bill_chat.php:410
-msgid "Error to get response from AI source!"
-msgstr "Errore durante l'ottenimento della risposta dalla fonte AI!"
+#: includes/install/install.php:254
+msgid "You plan to configure all settings manually after installation."
+msgstr ""
+"Si prevede di configurare manualmente tutte le impostazioni dopo "
+"l'installazione."
 
-#: includes/diagnose/class_bill_diagnose.php:86
+#: dashboard/dashboard.php:280
 msgid ""
-"Here are some details about error and memory monitoring for your plugin. "
-"Errors and low memory can prevent your site from functioning properly. On "
-"this page, you will find a partial list of the most recent errors and "
-"warnings. If you need more details, use the chat form, which will search for "
-"additional information using Artificial Intelligence.  \n"
-"If you need to dive deeper, install the free plugin WPTools, which provides "
-"more in-depth insights."
+"You will find our complete and updated OnLine guide, faqs page, link to "
+"support and more in our site."
 msgstr ""
-"Ecco alcuni dettagli sul monitoraggio degli errori e della memoria per il "
-"tuo plugin. Errori e poca memoria possono impedire al tuo sito di funzionare "
-"correttamente. In questa pagina troverai un elenco parziale degli errori e "
-"degli avvisi più recenti. Se hai bisogno di maggiori dettagli, usa il modulo "
-"di chat, che cercherà informazioni aggiuntive usando l'intelligenza "
-"artificiale. \n"
-"Se hai bisogno di approfondire, installa il plugin gratuito WPTools, che "
-"fornisce approfondimenti più approfonditi."
+"Troverete la nostra guida OnLine completa e aggiornata, la pagina delle faq, "
+"il link al supporto e altro ancora nel nostro sito."
 
-#: includes/diagnose/class_bill_diagnose.php:93
-msgid "Memory & Error Monitoring"
-msgstr "Monitoraggio della memoria e degli errori"
+#: settings/options/plugin_options_tabbed.php:804
+msgid "Your current ip is: "
+msgstr "Il suo attuale ip è"
 
-#: includes/diagnose/class_bill_diagnose.php:94
-msgid "Welcome to plugin Insights!"
-msgstr "Benvenuti al plugin Insights!"
+#: settings/options/plugin_options_tabbed.php:837
+msgid "Your Current IP:"
+msgstr "Il tuo attuale IP:"
 
-#: includes/diagnose/class_bill_diagnose.php:833
-msgid "Our plugin"
-msgstr "Il nostro plugin"
+#: includes/install/install.php:241
+msgid "Your Experience Level"
+msgstr "Il tuo livello di esperienza"
 
-#: includes/diagnose/class_bill_diagnose.php:835
+#: functions/functions.php:6246
 msgid ""
-"cannot function properly because your WordPress Memory Limit is too low. "
-"Your site will experience serious issues, even if you deactivate our plugin."
+"Your IP is blacklisted on Internet Public Databases. Please, use another way "
+"to contact us."
 msgstr ""
-"non può funzionare correttamente perché il limite di memoria di WordPress è "
-"troppo basso. Il tuo sito presenterà seri problemi, anche se disattivi il "
-"nostro plugin."
-
-#: includes/diagnose/class_bill_diagnose.php:892
-msgid ""
-"Displaying the latest recurring errors (Javascript Included) from your error "
-"log file and eventually alert about low WordPress memory limit is a courtesy "
-"of plugin"
-msgstr ""
-"La visualizzazione degli ultimi errori ricorrenti dal file di registro degli "
-"errori e l'eventuale avviso sul limite di memoria basso di WordPress sono "
-"una cortesia del plugin"
-
-#: includes/diagnose/class_bill_diagnose.php:894
-msgid ""
-"Disabling our plugin does not stop the errors from occurring; it simply "
-"means you will no longer be notified here that they are happening, but they "
-"can still harm your site."
-msgstr ""
-"Disattivare il nostro plugin non impedisce che si verifichino errori; \n"
-"significa semplicemente che non sarai più avvisato qui che si stanno "
-"verificando, ma possono comunque danneggiare il tuo sito."
-
-#: includes/diagnose/class_bill_diagnose.php:896
-msgid ""
-"Click the help button in the top right or go directly to the AI chat box "
-"below for more specific information on the issues listed."
-msgstr ""
-"Per informazioni più specifiche sui problemi elencati, fare clic sul "
-"pulsante della guida in alto a destra o andare direttamente alla casella "
-"della chat AI qui sotto."
-
-#: includes/diagnose/class_bill_diagnose.php:903
-#: includes/feedback-last/feedback-last.php:250
-msgid "Artificial Intelligence Support Chat for Issues and Solutions"
-msgstr ""
-"Chat di supporto per l'intelligenza artificiale per problemi e soluzioni"
-
-#: includes/diagnose/class_bill_diagnose.php:912
-msgid ""
-"Describe your issue, or use the buttons below to check for errors or server "
-"settings..."
-msgstr ""
-"Descrivi il problema oppure utilizza i pulsanti qui sotto per verificare la "
-"presenza di errori o impostazioni del server..."
-
-#: includes/diagnose/class_bill_diagnose.php:913
-#: includes/feedback-last/feedback-last.php:261
-msgid "Send"
-msgstr "Inviare"
-
-#: includes/diagnose/class_bill_diagnose.php:916
-msgid ""
-"Enter a message and click 'Send', or just click 'Auto Checkup' to analyze "
-"error log or server info configuration."
-msgstr ""
-"Inserisci un messaggio e clicca su \"Invia\", oppure clicca semplicemente su "
-"\"Controllo automatico\" per analizzare il registro degli errori o la "
-"configurazione delle informazioni del server."
-
-#: includes/diagnose/class_bill_diagnose.php:922
-msgid "Auto Checkup for Errors"
-msgstr "Controllo automatico degli errori"
-
-#: includes/diagnose/class_bill_diagnose.php:927
-msgid "Auto Checkup Server "
-msgstr "Server di controllo automatico"
-
-#: includes/diagnose/class_bill_diagnose.php:941
-msgid "Potential Problems"
-msgstr "Potenziali problemi"
-
-#: includes/diagnose/class_bill_diagnose.php:970
-msgid "Low WordPress Memory Limit (click to open)"
-msgstr "Limite di memoria basso di WordPress (clicca per aprire)"
-
-#: includes/diagnose/class_bill_diagnose.php:983
-msgid "Your usage now"
-msgstr "Il tuo utilizzo ora"
-
-#: includes/diagnose/class_bill_diagnose.php:987
-msgid "Total Php Server Memory"
-msgstr "Memoria totale del server:"
-
-#: includes/diagnose/class_bill_diagnose.php:995
-#: includes/install-checkup/class_bill_install.php:307
-msgid ""
-"Your WordPress Memory Limit is too low, which can lead to critical issues on "
-"your site due to insufficient resources. Promptly address this issue before "
-"continuing."
-msgstr ""
-"Il limite di memoria di WordPress è troppo basso, il che può causare "
-"problemi critici sul tuo sito a causa di risorse insufficienti. Risolvi "
-"subito questo problema prima di continuare."
-
-#: includes/diagnose/class_bill_diagnose.php:1170
-msgid "Plugins with Updates Available (click to open)"
-msgstr "Plugin con aggiornamenti disponibili (clicca per aprire)"
-
-#: includes/diagnose/class_bill_diagnose.php:1174
-msgid ""
-"Keeping your plugins up to date is crucial for ensuring security, "
-"performance, and compatibility with the latest features and improvements."
-msgstr ""
-"Mantenere aggiornati i plugin è fondamentale per garantire sicurezza, "
-"prestazioni e compatibilità con le funzionalità e i miglioramenti più "
-"recenti."
-
-#: includes/diagnose/class_bill_diagnose.php:1177
-msgid ""
-"Our free AntiHacker plugin can even check for abandoned plugins that you are "
-"using, as these plugins may no longer receive security updates, leaving your "
-"site vulnerable to attacks and potential exploits, which can compromise your "
-"site's integrity and data."
-msgstr ""
-"Il nostro plugin gratuito AntiHacker può anche verificare la presenza di "
-"plugin abbandonati che stai utilizzando, poiché questi plugin potrebbero non "
-"ricevere più aggiornamenti di sicurezza, lasciando il tuo sito vulnerabile "
-"ad attacchi e potenziali exploit, che possono compromettere l'integrità e i "
-"dati del tuo sito."
-
-#: includes/diagnose/class_bill_diagnose.php:1300
-msgid "seconds"
-msgstr "secondi"
-
-#: includes/diagnose/class_bill_diagnose.php:1302
-msgid "minutes"
-msgstr "minuti"
-
-#: includes/diagnose/class_bill_diagnose.php:1304
-msgid "hour(s)"
-msgstr "ore)"
-
-#: includes/diagnose/class_bill_diagnose.php:1306
-msgid "day(s)"
-msgstr "giorno/i"
-
-#: includes/diagnose/class_bill_diagnose.php:1308
-msgid "week(s)"
-msgstr "settimana/e"
-
-#: includes/diagnose/class_bill_diagnose.php:1310
-msgid "month(s)"
-msgstr "mesi)"
-
-#: includes/diagnose/class_bill_diagnose.php:1357
-msgid "Bots and Hackers Attack (click to open)"
-msgstr "Attacchi di bot e hacker (clicca per aprire)"
-
-#: includes/diagnose/class_bill_diagnose.php:1360
-msgid "Number of last attacks: "
-msgstr "Numero degli ultimi attacchi:"
-
-#: includes/diagnose/class_bill_diagnose.php:1367
-msgid ""
-"Bots aren’t human—they’re automated scripts that visit your site. They steal "
-"your content, making it less unique. They overload your server, slowing it "
-"down and hurting your SEO."
-msgstr ""
-"I bot non sono umani: sono script automatici che visitano il tuo sito. "
-"Rubano i tuoi contenuti, rendendoli meno originali. Sovraccaricano il tuo "
-"server, rallentandolo e danneggiando la tua SEO."
-
-#: includes/diagnose/class_bill_diagnose.php:1369
-msgid ""
-"Hackers look for vulnerabilities to access your server. Even small sites are "
-"targets—they use your server to send spam and attack others, damaging your "
-"IP and email reputation."
-msgstr ""
-"Gli hacker cercano vulnerabilità per accedere al tuo server. Anche i siti "
-"più piccoli sono obiettivi: usano il tuo server per inviare spam e attaccare "
-"altri, danneggiando il tuo indirizzo IP e la reputazione della tua email."
-
-#: includes/diagnose/class_bill_diagnose.php:1371
-msgid ""
-"If you doubt the accuracy of the table below, check with your hosting "
-"provider or check the IPs with the site https://ipinfo.io."
-msgstr ""
-"Se hai dubbi sull'accuratezza della tabella sottostante, contatta il tuo "
-"provider di hosting o controlla gli IP sul sito https://ipinfo.io."
-
-#: includes/diagnose/class_bill_diagnose.php:1377
-#, php-format
-msgid ""
-"Our free <a href=\"%1$s\">StopBadBots</a> and <a href=\"%2$s\">AntiHacker</a>"
-" plugins help safeguard your site."
-msgstr ""
-"I nostri plugin gratuiti <a href=\"%1$s\">StopBadBots</a> e <a href=\"%2$s\">"
-"AntiHacker</a> ti aiutano a proteggere il tuo sito."
-
-#: includes/diagnose/class_bill_diagnose.php:1441
-msgid "Site Errors"
-msgstr "Errori del sito"
+"Il tuo IP è nella lista nera dei database pubblici di Internet. Per favore, "
+"usa un altro modo per contattarci."
 
 #: includes/diagnose/class_bill_diagnose.php:1446
 msgid ""
@@ -1596,1066 +2856,20 @@ msgstr ""
 "del sito. Gli errori di JavaScript possono terminare l'esecuzione di "
 "JavaScript, lasciando tutti i comandi successivi inutilizzabili."
 
-#: includes/diagnose/class_bill_diagnose.php:1467
-msgid "This is a partial list of the errors found."
-msgstr "Questo è un elenco parziale degli errori riscontrati."
+#: includes/diagnose/class_bill_diagnose.php:983
+msgid "Your usage now"
+msgstr "Il tuo utilizzo ora"
 
-#: includes/diagnose/class_bill_diagnose.php:1479
-msgid "File not readable."
-msgstr "File non leggibile."
+#: dashboard/memory.php:76 functions/health.php:148
+msgid "Your usage now:"
+msgstr "Il tuo utilizzo ora"
 
-#: includes/diagnose/class_bill_diagnose.php:1484
-msgid "Size not determined."
-msgstr "Dimensioni non determinate."
-
-#: includes/diagnose/class_bill_diagnose.php:1498
-msgid "Invalid size."
-msgstr "Dimensione non valida."
-
-#: includes/diagnose/class_bill_diagnose.php:1531
-msgid "File Size: "
-msgstr "Dimensione file:"
-
-#: includes/diagnose/class_bill_diagnose.php:1904
+#: includes/diagnose/class_bill_diagnose.php:995
 msgid ""
-"These are critical issues that can have a significant impact on your site's "
-"performance. They can cause many plugins and functionalities to malfunction "
-"and, in some cases, render your site completely inoperative, depending on "
-"their severity. Address them promptly."
+"Your WordPress Memory Limit is too low, which can lead to critical issues on "
+"your site due to insufficient resources. Promptly address this issue before "
+"continuing."
 msgstr ""
-"Si tratta di problemi critici che possono avere un impatto significativo "
-"sulle prestazioni del tuo sito. Possono causare il malfunzionamento di molti "
-"plugin e funzionalità e, in alcuni casi, rendere il tuo sito completamente "
-"inoperativo, a seconda della loro gravità. Risolvili tempestivamente."
-
-#: includes/diagnose/class_bill_diagnose.php:1909
-msgid "Critical Issues"
-msgstr "Problemi critici"
-
-#: includes/feedback-last/feedback-last.php:241
-msgid "What can we do to resolve the problem you're facing?"
-msgstr "Cosa possiamo fare per risolvere il problema che stai affrontando?"
-
-#: includes/feedback-last/feedback-last.php:245
-msgid ""
-"Depending on your response, we can help keep the plugin running smoothly for "
-"you immediately!"
-msgstr ""
-"A seconda della tua risposta, possiamo aiutarti a mantenere il plugin "
-"funzionante correttamente per te immediatamente!"
-
-#: includes/feedback-last/feedback-last.php:260
-msgid "Enter your message..."
-msgstr "Inserisci il tuo messaggio..."
-
-#: includes/feedback-last/feedback-last.php:268
-msgid "Discover New FREE Plugins"
-msgstr "Scopri nuovi plugin GRATUITI"
-
-#: includes/feedback-last/feedback-last.php:277
-msgid "Just Deactivate"
-msgstr "Disattiva solo"
-
-#: includes/install/install.php:208
-msgid "Loading"
-msgstr "Caricamento"
-
-#: includes/install/install.php:227
-msgid "Welcome"
-msgstr "Benvenuto"
-
-#: includes/install/install.php:228
-msgid ""
-"Thank you for choosing StopBadBots. This quick setup wizard will apply our "
-"recommended security settings to protect your site immediately."
-msgstr ""
-"Grazie per aver scelto StopBadBots. Questa rapida procedura guidata "
-"applicherà le nostre impostazioni di sicurezza consigliate per proteggere "
-"immediatamente il tuo sito."
-
-#: includes/install/install.php:229
-msgid ""
-"Please follow the steps to complete the installation. You can always change "
-"these settings later."
-msgstr ""
-"Segui i passaggi per completare l'installazione. Potrai sempre modificare "
-"queste impostazioni in un secondo momento."
-
-#: includes/install/install.php:232
-msgid "Start Setup"
-msgstr "Avvia configurazione"
-
-#: includes/install/install.php:241
-msgid "Your Experience Level"
-msgstr "Il tuo livello di esperienza"
-
-#: includes/install/install.php:242
-msgid ""
-"This choice helps us understand our users. The default \"One-Click Setup\" "
-"will apply all recommended settings for you."
-msgstr ""
-"Questa scelta ci aiuta a comprendere i nostri utenti. L'impostazione "
-"predefinita \"Configurazione in un clic\" applicherà tutte le impostazioni "
-"consigliate."
-
-#: includes/install/install.php:246
-msgid "One-Click Setup (Recommended)"
-msgstr "Configurazione con un clic (consigliata)"
-
-#: includes/install/install.php:248
-msgid "We'll automatically apply the best-practice settings for you."
-msgstr ""
-"Applicheremo automaticamente le impostazioni più adatte alle tue esigenze."
-
-#: includes/install/install.php:252
-msgid "Manual Setup (Advanced)"
-msgstr "Configurazione manuale (avanzata)"
-
-#: includes/install/install.php:254
-msgid "You plan to configure all settings manually after installation."
-msgstr ""
-"Si prevede di configurare manualmente tutte le impostazioni dopo "
-"l'installazione."
-
-#: includes/install/install.php:257 includes/install/install.php:312
-#: includes/install/install.php:325
-msgid "Back"
-msgstr "Indietro"
-
-#: includes/install/install.php:258 includes/install/install.php:313
-msgid "Next"
-msgstr "Prossimo"
-
-#: includes/install/install.php:271
-msgid "Basic Settings"
-msgstr "Impostazioni di base"
-
-#: includes/install/install.php:272
-msgid ""
-"Please confirm these basic settings. All other security rules will be "
-"applied automatically for you."
-msgstr ""
-"Si prega di confermare queste impostazioni di base. Tutte le altre regole di "
-"sicurezza verranno applicate automaticamente."
-
-#: includes/install/install.php:276
-msgid "Email for security notifications"
-msgstr "Email per notifiche di sicurezza"
-
-#: includes/install/install.php:278
-#| msgid ""
-#| "Left Blank to use your default WordPress email. Then, click save changes."
-msgid "Leave blank to use your default WordPress admin email."
-msgstr ""
-"Lascia vuoto per utilizzare l'email predefinita dell'amministratore di "
-"WordPress."
-
-#: includes/install/install.php:282
-#| msgid "Block all with Blank User Agent?"
-msgid "Block visitors with a blank User-Agent?"
-msgstr "Bloccare i visitatori con uno User-Agent vuoto?"
-
-#: includes/install/install.php:283
-msgid ""
-"This is a common characteristic of poorly written bots and scrapers. "
-"Recommended: Yes."
-msgstr ""
-"Questa è una caratteristica comune dei bot e degli scraper mal scritti. "
-"Consigliato: Sì."
-
-#: includes/install/install.php:284 includes/install/install.php:291
-#: settings/options/plugin_options_tabbed.php:892
-msgid "Yes"
-msgstr "Sì"
-
-#: includes/install/install.php:285 includes/install/install.php:292
-#: settings/options/plugin_options_tabbed.php:896
-msgid "No"
-msgstr "No"
-
-#: includes/install/install.php:289
-#| msgid "Do you want receive email alerts for each bot attempt?"
-msgid "Receive email alerts for each blocked bot?"
-msgstr "Vuoi ricevere avvisi via email per ogni bot bloccato?"
-
-#: includes/install/install.php:290
-msgid ""
-"This can be noisy if your site is under attack. You can view all blocks in "
-"the logs. Recommended: No."
-msgstr ""
-"Questo può essere rumoroso se il tuo sito è sotto attacco. Puoi visualizzare "
-"tutti i blocchi nei log. Consigliato: no."
-
-#: includes/install/install.php:296
-msgid "How long to keep visitor logs?"
-msgstr "Per quanto tempo conservare i registri dei visitatori?"
-
-#: includes/install/install.php:297
-msgid ""
-"Storing data for shorter durations conserves database space; typically, "
-"seven days is adequate. Nevertheless, please note that this will directly "
-"affect your visit and analytics reports."
-msgstr ""
-"L'archiviazione dei dati per periodi più brevi consente di risparmiare "
-"spazio sul database; in genere, sette giorni sono sufficienti. Tuttavia, "
-"tieni presente che ciò influirà direttamente sulle tue visite e sui report "
-"di analisi."
-
-#: includes/install/install.php:299
-msgid "1 day"
-msgstr "1 giorno"
-
-#: includes/install/install.php:300
-#| msgid "days"
-msgid "3 days"
-msgstr "3 giorni"
-
-#: includes/install/install.php:301
-#| msgid "days"
-msgid "7 days"
-msgstr "7 giorni"
-
-#: includes/install/install.php:302
-#| msgid "days"
-msgid "14 days"
-msgstr "14 giorni"
-
-#: includes/install/install.php:303
-#| msgid "days"
-msgid "30 days"
-msgstr "30 giorni"
-
-#: includes/install/install.php:304
-#| msgid "days"
-msgid "90 days"
-msgstr "90 giorni"
-
-#: includes/install/install.php:305
-#| msgid "days"
-msgid "180 days"
-msgstr "180 giorni"
-
-#: includes/install/install.php:306
-#| msgid "days"
-msgid "360 days"
-msgstr "360 giorni"
-
-#: includes/install/install.php:322
-msgid "All Done!"
-msgstr "Tutto fatto!"
-
-#: includes/install/install.php:323
-msgid ""
-"StopBadBots has been successfully configured with our recommended settings! "
-"Your site is now protected."
-msgstr ""
-"StopBadBots è stato configurato correttamente con le impostazioni "
-"consigliate! Il tuo sito è ora protetto."
-
-#: includes/install/install.php:326
-#| msgid "Go to WordPress"
-msgid "Go to Dashboard"
-msgstr "Vai alla Dashboard"
-
-#: includes/list-tables/class-sbb-list-table.php:23
-msgid "Name"
-msgstr "Nome"
-
-#: includes/list-tables/class-sbb-list-table.php:24
-#: includes/list-tables/class-sbb-list-table2.php:23
-#: includes/list-tables/class-sbb-list-table3.php:34
-msgid "Status"
-msgstr "Stato"
-
-#: includes/list-tables/class-sbb-list-table.php:25
-#: includes/list-tables/class-sbb-list-table2.php:25
-#: includes/list-tables/class-sbb-list-table3.php:36
-msgid "Num Blocked"
-msgstr "Quantità bloccati"
-
-#: includes/list-tables/class-sbb-list-table.php:90
-#: includes/list-tables/class-sbb-list-table2.php:86
-#: includes/list-tables/class-sbb-list-table3.php:108
-msgid "Change Status"
-msgstr "Cambia Stato"
-
-#: includes/list-tables/class-sbb-list-table.php:106
-#: includes/list-tables/class-sbb-list-table.php:120
-#: includes/list-tables/class-sbb-list-table2.php:102
-#: includes/list-tables/class-sbb-list-table2.php:116
-#: includes/list-tables/class-sbb-list-table3.php:124
-#: includes/list-tables/class-sbb-list-table3.php:138
-msgid "deactivate"
-msgstr "disattiva"
-
-#: includes/list-tables/class-sbb-list-table.php:119
-#: includes/list-tables/class-sbb-list-table2.php:115
-#: includes/list-tables/class-sbb-list-table3.php:137
-msgid "Activate"
-msgstr "Attiva"
-
-#: includes/list-tables/class-sbb-list-table2.php:22
-msgid "IP"
-msgstr "IP"
-
-#: includes/list-tables/class-sbb-list-table2.php:24
-#: includes/list-tables/class-sbb-list-table3.php:35
-msgid "Added by"
-msgstr "Aggiunto da"
-
-#: includes/list-tables/class-sbb-list-table3.php:33
-msgid "Referer Name"
-msgstr "Nome del referente"
-
-#: includes/list-tables/page.php:16
-msgid "Search Nickname"
-msgstr "Cerca per nickname"
-
-#: includes/list-tables/page2.php:18
-msgid "Search IP"
-msgstr "Ricerca IP"
-
-#: includes/list-tables/page3.php:18
-msgid "Search Referer"
-msgstr "Ricerca Referente"
-
-#: includes/stopbadbots.php:241 stopbadbots.php:241
-msgid "Stop Bad Bots: Could not load the localization file (Language file)"
-msgstr ""
-"Stop Bad Bots: non riesco a caricare il file della localizzazione (File di "
-"lingua)"
-
-#: includes/stopbadbots.php:1132 stopbadbots.php:1236
-msgid "Protection rate:"
-msgstr "Tasso di protezione:"
-
-#: includes/stopbadbots.php:1136 stopbadbots.php:1240
-msgid "For details, visit the plugin dashboard"
-msgstr "Per i dettagli, visita la bacheca del plugin"
-
-#: includes/stopbadbots.php:1138 stopbadbots.php:1242
-msgid "Attacks Blocked Last 15 days"
-msgstr "Attacchi bloccati negli ultimi 15 giorni"
-
-#: includes/stopbadbots.php:1145 stopbadbots.php:1249
-msgid "Total Attacks Blocked By Type"
-msgstr "Attacchi totali bloccati per tipo"
-
-#: includes/stopbadbots.php:1154 stopbadbots.php:1258
-msgid "Total Attacks Blocked By IP"
-msgstr "Attacchi totali bloccati per IP"
-
-#: includes/vendor/vendor.php:49
-msgid "Please, wait...  Dismissing..."
-msgstr "Per favore, aspetta...  Rimuovendo..."
-
-#: includes/vendor/vendor.php:55
-msgid "Watch Again"
-msgstr "Guarda di nuovo"
-
-#: includes/visits_stats/analytics-30days.php:20
-msgid "No vists, try again later..."
-msgstr "Tabella vuota. Per favore, riprova più tardi."
-
-#: includes/visits_stats/visits_dashboard.php:44
-msgid ""
-"These data depend on the number of days you keep in the visitors-log file. "
-"Refer to the plugin settings page for more details."
-msgstr ""
-"Questi dati dipendono dal numero di giorni che conservi nel file visitors-"
-"log. Per maggiori dettagli, consulta la pagina delle impostazioni del plugin."
-
-#: includes/visits_stats/visits_dashboard.php:67
-#: includes/visits_stats/visits_dashboard.php:84
-msgid "Analysis of total visitor count by unique IP addresses."
-msgstr "Analisi del numero totale di visitatori per indirizzi IP univoci."
-
-#: settings/options/plugin_options_tabbed.php:27
-#: settings/options/plugin_options_tabbed.php:126
-msgid "Block all Bots included at Bad Bots Table?"
-msgstr "Vuoi bloccare tutti i bot inclusi nella tabella dei Bad Bot?"
-
-#: settings/options/plugin_options_tabbed.php:29
-msgid ""
-"You need only check yes or no below. All Bad Bots enabled at Bad Bots Table "
-"will be blocked."
-msgstr ""
-"Devi solo seleziona “sì” o “no” qui sotto. Tutti Bad Bots abilitati nella "
-"Tabella saranno bloccati."
-
-#: settings/options/plugin_options_tabbed.php:31
-msgid ""
-"To manage the bots individually, go to Bad Bots Table (Dashboard=> Stop Bad "
-"Bots =>Bad Bots Table)."
-msgstr ""
-"Per gestire individualmente i Bot, vai alla Tabella dei Bad Bots (Bacheca => "
-"Stop Bad Bots => Tabella dei Bad Bot)."
-
-#: settings/options/plugin_options_tabbed.php:33
-msgid ""
-"If you check \"test mode\", the system don't block but update statistics and "
-"send email notifications to you."
-msgstr ""
-"Se selezioni \"modalità test\", il sistema non blocca ma aggiorna le "
-"statistiche e ti invia notifiche via email."
-
-#: settings/options/plugin_options_tabbed.php:36
-#: settings/options/plugin_options_tabbed.php:45
-msgid "Then click SAVE CHANGES."
-msgstr "Fare clic su SALVA MODIFICHE."
-
-#: settings/options/plugin_options_tabbed.php:39
-msgid "Block all Bots included at Bad IPs Table?"
-msgstr "Bloccare tutti i bot inclusi nella Bad IPs Table?"
-
-#: settings/options/plugin_options_tabbed.php:41
-msgid ""
-"You need only check yes or no below. All Bad IPs enabled at Bad IPs Table "
-"will be blocked."
-msgstr ""
-"Dovete solo controllare sì o no qui sotto. Tutti i Bad IPs abilitati nella "
-"Bad IPs Table saranno bloccati."
-
-#: settings/options/plugin_options_tabbed.php:43
-msgid ""
-"To manage the IPs individually, go to Bad IPs Table (Dashboard=> Stop Bad "
-"Bots =>Bad IPs Table)."
-msgstr ""
-"Per gestire gli IP singolarmente, vai su Bad IPs Table (Bacheca=> Stop Bad "
-"Bots =>Bad IPs Table)."
-
-#: settings/options/plugin_options_tabbed.php:51
-msgid "Enable Block Bad Referer?"
-msgstr "Abilitare il blocco dei cattivi referer?"
-
-#: settings/options/plugin_options_tabbed.php:53
-msgid ""
-"Enabling Block Bad Referer the plugin will blocks  websites that use Referer "
-"Spam to promote their."
-msgstr ""
-"Abilitando Block Bad Referer il plugin blocca i siti web che usano Referer "
-"Spam per promuovere i loro."
-
-#: settings/options/plugin_options_tabbed.php:58
-msgid "Enable Firewall?"
-msgstr "Abilitare il firewall?"
-
-#: settings/options/plugin_options_tabbed.php:60
-msgid ""
-"Enabling Firewall the plugin will blocks malicious requests also from "
-"hackers. 100% Plug-n-play, no configuration required."
-msgstr ""
-"Abilitando il firewall il plugin bloccherà le richieste dannose anche da "
-"parte degli hacker. 100% Plug-n-play, nessuna configurazione richiesta."
-
-#: settings/options/plugin_options_tabbed.php:65
-msgid "Participate in the Real-Time Bad Bots Security Network?"
-msgstr "Vuoi partecipare alla rete di sicurezza in tempo reale di Bad Bots?"
-
-#: settings/options/plugin_options_tabbed.php:67
-msgid ""
-"Enabling this feature causes your site to anonymously share data with Stop "
-"Bad Bots on Bad Bots visits. In return your WordPress site receives updates "
-"at your Bad Bots Table with new Bad Bots Names, IPs and bad referer."
-msgstr ""
-"Abilitando questa funzione, il vostro sito condivide anonimamente i dati con "
-"Stop Bad Bots sulle visite dei Bad Bots. In cambio il tuo sito WordPress "
-"riceve aggiornamenti alla tua Bad Bots Table con nuovi nomi di Bad Bots, IP "
-"e bad referer."
-
-#: settings/options/plugin_options_tabbed.php:69
-msgid ""
-"No personally identifiable data is sent by this option and we also do not "
-"associate any of the data we do receive with your specific website. The data "
-"is aggregated on a real-time platform to determine which Bots are currently "
-"engaged in negative activity and need to be blocked by our community."
-msgstr ""
-"Nessun dato che identifichi la persona è inviata tramite questa opzione e "
-"inoltre noi non associamo nessuno dei dati che riceviamo con il tuo sito "
-"specifico. I dati sono aggregati su una piattaforma in tempo reale per "
-"determinare quale Bot sono correntemente impegnati in attività negative ed è "
-"necessario che siano bloccati dalla nostra community."
-
-#: settings/options/plugin_options_tabbed.php:73
-#: settings/options/plugin_options_tabbed.php:262
-msgid "Block all with Blank User Agent?"
-msgstr "Bloccare tutti con User Agent Bianchi?"
-
-#: settings/options/plugin_options_tabbed.php:75
-msgid ""
-"This can reduce abuse against your site. Look your metrics menu in cPanel or "
-"request support to your hosting company for details about your visitors, if "
-"necessary."
-msgstr ""
-"Questo può ridurre gli abusi contro il tuo sito. Guarda il tuo menu delle "
-"metriche nel cPanel o chiedi supporto alla tua società di hosting per i "
-"dettagli sui tuoi visitatori, se necessario."
-
-#: settings/options/plugin_options_tabbed.php:78
-msgid "Block User Enumeration?"
-msgstr "Bloccare l'enumerazione degli utenti?"
-
-#: settings/options/plugin_options_tabbed.php:80
-msgid ""
-"This can block bad bots scan by user id and user and login name. This "
-"happens a lot and is often a pre-cursor to very nasty activities and attacks."
-msgstr ""
-"Questo può bloccare la scansione dei bot cattivi per id utente e nome utente "
-"e login. Questo accade spesso ed è spesso un precursore di attività e "
-"attacchi molto cattivi."
-
-#: settings/options/plugin_options_tabbed.php:84
-#: settings/options/plugin_options_tabbed.php:310
-msgid "Block PingBack Request?"
-msgstr "Bloccare la richiesta di PingBack?"
-
-#: settings/options/plugin_options_tabbed.php:86
-msgid ""
-"PingBack request happens a lot and is often a pre-cursor to brute-force "
-"password attacks and others nasty things."
-msgstr ""
-"La richiesta di PingBack succede spesso ed è un precursore di attacchi di "
-"password brute-force e altre cose brutte."
-
-#: settings/options/plugin_options_tabbed.php:92
-msgid ""
-"Find the balance between our software and server power with Block Engine "
-"Management, which lets you control user agent filtering, server CPU "
-"utilization, and visitor behavior."
-msgstr ""
-"Block Engine Management permette di gestire il filtro dell'agente utente, "
-"l'utilizzo della CPU del server e altre cose"
-
-#: settings/options/plugin_options_tabbed.php:94
-msgid ""
-"Maximum Block option: may result in false positives if your users use "
-"proxies, VPNs, or block cookies and/or JavaScript."
-msgstr ""
-"Opzione di blocco massimo: forse può generare falsi positivi se l'utente usa "
-"Proxy, VPN o blocca cookie e/o javascript per esempio."
-
-#: settings/options/plugin_options_tabbed.php:96
-msgid ""
-"Conservative option:  may allow some advanced bots but avoids false "
-"positives. Conservative (and Maximum) also considers the behavior of bots \n"
-"."
-msgstr ""
-"Opzione conservativa: può consentire alcuni bot avanzati ma evita i falsi "
-"positivi. Conservativo (e Massimo) considera anche il comportamento dei bot"
-
-#: settings/options/plugin_options_tabbed.php:99
-msgid ""
-"Standard option:  maintains a balance between Conservative and Maximum Block "
-"and also considers the behavior of bots."
-msgstr ""
-"Opzione normale: cerca di mantenere l'equilibrio tra Conserative e Maximum "
-"Block."
-
-#: settings/options/plugin_options_tabbed.php:101
-msgid ""
-"Minimal option: only blocks bots included in our database but maybe smart "
-"bots can overload your server."
-msgstr ""
-"Opzione minima: blocca solo i bot inclusi nel nostro database, ma forse i "
-"bot intelligenti possono sovraccaricare il tuo server."
-
-#: settings/options/plugin_options_tabbed.php:105
-msgid "The default option is Conservative."
-msgstr "L'opzione predefinita è Conservative."
-
-#: settings/options/plugin_options_tabbed.php:107
-msgid "The free version includes only the Minimal and Conservative options."
-msgstr "La versione gratuita include solo le opzioni Minima e Conservativa."
-
-#: settings/options/plugin_options_tabbed.php:121
-#: settings/options/plugin_options_tabbed.php:527
-msgid "Instructions"
-msgstr "Istruzioni"
-
-#: settings/options/plugin_options_tabbed.php:130
-#: settings/options/plugin_options_tabbed.php:152
-#: settings/options/plugin_options_tabbed.php:169
-#: settings/options/plugin_options_tabbed.php:211
-#: settings/options/plugin_options_tabbed.php:230
-#: settings/options/plugin_options_tabbed.php:249
-#: settings/options/plugin_options_tabbed.php:266
-#: settings/options/plugin_options_tabbed.php:298
-#: settings/options/plugin_options_tabbed.php:314
-#: settings/options/plugin_options_tabbed.php:333
-#: settings/options/plugin_options_tabbed.php:349
-#: settings/options/plugin_options_tabbed.php:366
-#: settings/options/plugin_options_tabbed.php:384
-#: settings/options/plugin_options_tabbed.php:400
-#: settings/options/plugin_options_tabbed.php:539
-#: settings/options/plugin_options_tabbed.php:751
-#: settings/options/plugin_options_tabbed.php:767
-#: settings/options/plugin_options_tabbed.php:817
-msgid "yes"
-msgstr "sì"
-
-#: settings/options/plugin_options_tabbed.php:135
-#: settings/options/plugin_options_tabbed.php:156
-#: settings/options/plugin_options_tabbed.php:174
-#: settings/options/plugin_options_tabbed.php:216
-#: settings/options/plugin_options_tabbed.php:235
-#: settings/options/plugin_options_tabbed.php:253
-#: settings/options/plugin_options_tabbed.php:270
-#: settings/options/plugin_options_tabbed.php:302
-#: settings/options/plugin_options_tabbed.php:318
-#: settings/options/plugin_options_tabbed.php:337
-#: settings/options/plugin_options_tabbed.php:353
-#: settings/options/plugin_options_tabbed.php:370
-#: settings/options/plugin_options_tabbed.php:387
-#: settings/options/plugin_options_tabbed.php:388
-#: settings/options/plugin_options_tabbed.php:404
-#: settings/options/plugin_options_tabbed.php:543
-#: settings/options/plugin_options_tabbed.php:755
-#: settings/options/plugin_options_tabbed.php:771
-#: settings/options/plugin_options_tabbed.php:821
-msgid "no"
-msgstr "no"
-
-#: settings/options/plugin_options_tabbed.php:140
-msgid "test mode"
-msgstr "modalità di prova"
-
-#: settings/options/plugin_options_tabbed.php:148
-msgid "Block all IPs included at Bad IPs Table?"
-msgstr "Bloccare tutti gli IP inclusi nella tabella di Bad IPs?"
-
-#: settings/options/plugin_options_tabbed.php:165
-msgid "Block all bots included at Bad Referer Table?"
-msgstr "Bloccare tutti i bot inclusi nella tabella di Bad Referer?"
-
-#: settings/options/plugin_options_tabbed.php:183
-msgid ""
-"Block Engine Management (Only Minimal and Conservative options available in "
-"the free version of the plugin)."
-msgstr ""
-"Gestione del motore di blocchi (Maximum Block è disponibile solo nella "
-"versione pro)"
-
-#: settings/options/plugin_options_tabbed.php:187
-msgid "Minimal"
-msgstr "Minimo"
-
-#: settings/options/plugin_options_tabbed.php:191
-msgid "Conservative"
-msgstr "Conservativo"
-
-#: settings/options/plugin_options_tabbed.php:195
-msgid "Standard"
-msgstr "Standard"
-
-#: settings/options/plugin_options_tabbed.php:199
-msgid "Maximum Block"
-msgstr "Blocco massimo"
-
-#: settings/options/plugin_options_tabbed.php:207
-#: settings/options/plugin_options_tabbed.php:226
-msgid "Enable Firewall? (available only in pro version)"
-msgstr "Abilitare il firewall? (disponibile solo nella versione pro)"
-
-#: settings/options/plugin_options_tabbed.php:245
-msgid ""
-"Receive bot's table updates by participate in the Real-Time Bad Bots "
-"Security Network?"
-msgstr ""
-"Ricevi gli aggiornamenti della tabella dei bot partecipando alla rete di "
-"sicurezza Real-Time Bad Bots?"
-
-#: settings/options/plugin_options_tabbed.php:294
-msgid "Block User enumeration to improve security?"
-msgstr "Bloccare l'enumerazione degli utenti per migliorare la sicurezza?"
-
-#: settings/options/plugin_options_tabbed.php:329
-msgid "Protect Contact Form 7 and WP Forms?"
-msgstr "Proteggere Contact Form 7 e WP Forms?"
-
-#: settings/options/plugin_options_tabbed.php:345
-msgid ""
-"Protect Comments Form by check external spammer's databases (only when "
-"comment form is submited)?"
-msgstr ""
-"Proteggere il modulo dei commenti controllando i database esterni degli "
-"spammer (solo quando il modulo dei commenti viene inviato)?"
-
-#: settings/options/plugin_options_tabbed.php:362
-msgid "Protect Login Form against bots?"
-msgstr "Proteggere il modulo di accesso dai bot?"
-
-#: settings/options/plugin_options_tabbed.php:380
-msgid ""
-"Block False Googlebot and Msnbot & Bingbot?  (available only in pro version)"
-msgstr ""
-"Bloccare i falsi Googlebot e Msnbot & Bingbot?  (disponibile solo nella "
-"versione pro)"
-
-#: settings/options/plugin_options_tabbed.php:396
-msgid ""
-"Block Traffic from China, Cuba and North Korea?  (available only in pro "
-"version)"
-msgstr ""
-"Bloccare il traffico da Cina, Cuba e Corea del Nord?  (disponibile solo "
-"nella versione pro)"
-
-#: settings/options/plugin_options_tabbed.php:413
-msgid ""
-"How long keep the visitors log file? If you have a very heavy traffic, "
-"select 1 day. Your choices can impact the Visits Log and Visits Chart Pages."
-msgstr ""
-"Per quanto tempo conservare il file di log dei visitatori? Se hai un "
-"traffico molto intenso, seleziona 1 giorno"
-
-#: settings/options/plugin_options_tabbed.php:419
-msgid "Select"
-msgstr "Seleziona"
-
-#: settings/options/plugin_options_tabbed.php:423
-msgid "day"
-msgstr "giorno"
-
-#: settings/options/plugin_options_tabbed.php:427
-#: settings/options/plugin_options_tabbed.php:431
-#: settings/options/plugin_options_tabbed.php:435
-#: settings/options/plugin_options_tabbed.php:439
-#: settings/options/plugin_options_tabbed.php:443
-#: settings/options/plugin_options_tabbed.php:447
-#: settings/options/plugin_options_tabbed.php:451
-#: settings/options/plugin_options_tabbed.php:455
-msgid "days"
-msgstr "giorni"
-
-#: settings/options/plugin_options_tabbed.php:515
-#: settings/options/plugin_options_tabbed.php:728
-#: settings/options/plugin_options_tabbed.php:792
-msgid "This page works only in Pro Version."
-msgstr "Questa pagina funziona solo nella versione Pro."
-
-#: settings/options/plugin_options_tabbed.php:517
-msgid ""
-"We can't block all bots. We need, for example, allow google, uptime, "
-"WordPress, stripe and others."
-msgstr ""
-"Non possiamo bloccare tutti i bot. Dobbiamo, per esempio, permettere a "
-"google, uptime, WordPress, stripe e altri."
-
-#: settings/options/plugin_options_tabbed.php:520
-msgid ""
-"We can limit a number of bot's visits (non humans), just choose the options "
-"below."
-msgstr ""
-"Possiamo limitare il numero di visite dei bot (non umani), basta scegliere "
-"le opzioni qui sotto."
-
-#: settings/options/plugin_options_tabbed.php:522
-msgid "You can also whitelist bots, look the Whitelist tab."
-msgstr "Puoi anche mettere i bot in in whitelist, guarda la scheda Whitelist."
-
-#: settings/options/plugin_options_tabbed.php:524
-msgid ""
-"Search engine crawlers has unlimited access (look Whitelist tab) but you can "
-"block them (remove from Whitelist) and include new ones on User Agent Tables."
-msgstr ""
-"I crawler dei motori di ricerca hanno accesso illimitato (guarda la scheda "
-"Whitelist) ma puoi bloccarli (rimuovi dalla Whitelist) e includerne di nuovi "
-"su User Agent Tables."
-
-#: settings/options/plugin_options_tabbed.php:535
-msgid "Enable the Rate Limiting for non humans?"
-msgstr "Abilitare il Rate Limiting per i non umani?"
-
-#: settings/options/plugin_options_tabbed.php:565
-msgid "If a bot requests exceed"
-msgstr "Se le richieste di un bot superano"
-
-#: settings/options/plugin_options_tabbed.php:571
-#: settings/options/plugin_options_tabbed.php:618
-#: settings/options/plugin_options_tabbed.php:657
-msgid "Unlimited"
-msgstr "Illimitato"
-
-#: settings/options/plugin_options_tabbed.php:575
-msgid "1 per minute"
-msgstr "1 al minuto"
-
-#: settings/options/plugin_options_tabbed.php:579
-msgid "2 per minute"
-msgstr "2 al minuto"
-
-#: settings/options/plugin_options_tabbed.php:583
-msgid "3 per minute"
-msgstr "3 al minuto"
-
-#: settings/options/plugin_options_tabbed.php:587
-msgid "4 per minute"
-msgstr "4 al minuto"
-
-#: settings/options/plugin_options_tabbed.php:591
-msgid "5 per minute"
-msgstr "5 al minuto"
-
-#: settings/options/plugin_options_tabbed.php:595
-msgid "10 per minute"
-msgstr "10 al minuto"
-
-#: settings/options/plugin_options_tabbed.php:599
-msgid "20 per minute"
-msgstr "20 al minuto"
-
-#: settings/options/plugin_options_tabbed.php:603
-msgid "50 per minute"
-msgstr "50 al minuto"
-
-#: settings/options/plugin_options_tabbed.php:612
-msgid "Or if a bot requests exceed"
-msgstr "O se un bot richieste superano"
-
-#: settings/options/plugin_options_tabbed.php:622
-msgid "5 per hour"
-msgstr "5 per ora"
-
-#: settings/options/plugin_options_tabbed.php:626
-msgid "10 per hour"
-msgstr "10 per ora"
-
-#: settings/options/plugin_options_tabbed.php:630
-msgid "20 per hour"
-msgstr "20 all'ora"
-
-#: settings/options/plugin_options_tabbed.php:634
-msgid "50 per hour"
-msgstr "50 all'ora"
-
-#: settings/options/plugin_options_tabbed.php:638
-msgid "100 per hour"
-msgstr "100 per ora"
-
-#: settings/options/plugin_options_tabbed.php:651
-msgid "If IP made only 404 requests exceed"
-msgstr "Se l'IP ha fatto solo richieste tipo 404 supera"
-
-#: settings/options/plugin_options_tabbed.php:661
-msgid "five 404 pages"
-msgstr "cinque pagine 404"
-
-#: settings/options/plugin_options_tabbed.php:665
-msgid "ten 404 pages"
-msgstr "dieci pagine 404"
-
-#: settings/options/plugin_options_tabbed.php:669
-msgid "fifteen 404 pages"
-msgstr "quindici pagine 404"
-
-#: settings/options/plugin_options_tabbed.php:673
-msgid "twenty 404 pages"
-msgstr "venti pagine 404"
-
-#: settings/options/plugin_options_tabbed.php:677
-msgid "fifty 404 pages"
-msgstr "cinquanta pagine 404"
-
-#: settings/options/plugin_options_tabbed.php:685
-msgid "How long is an IP address blocked when it breaks a rule"
-msgstr "Per quanto tempo un indirizzo IP è bloccato quando infrange una regola"
-
-#: settings/options/plugin_options_tabbed.php:691
-msgid "5 minutes"
-msgstr "5 minuti"
-
-#: settings/options/plugin_options_tabbed.php:695
-msgid "30 minutes"
-msgstr "30 minuti"
-
-#: settings/options/plugin_options_tabbed.php:699
-msgid "1 Hour"
-msgstr "1 ora"
-
-#: settings/options/plugin_options_tabbed.php:703
-msgid "2 Hours"
-msgstr "2 ore"
-
-#: settings/options/plugin_options_tabbed.php:707
-msgid "6 Hours"
-msgstr "6 ore"
-
-#: settings/options/plugin_options_tabbed.php:711
-msgid "24 Hours"
-msgstr "24 Ore"
-
-#: settings/options/plugin_options_tabbed.php:730
-msgid "HTTP Tools are tools to do HTTP request, used for not humans."
-msgstr ""
-"Gli strumenti HTTP sono strumenti per fare richieste HTTP, utilizzati per "
-"non umani."
-
-#: settings/options/plugin_options_tabbed.php:733
-msgid "To Block HTTP Tools, just add one for each line."
-msgstr "Per bloccare gli strumenti HTTP, basta aggiungerne uno per ogni riga."
-
-#: settings/options/plugin_options_tabbed.php:735
-msgid ""
-"To Manage, you can also remove one or more lines. Then, click Save Changes."
-msgstr ""
-"In Gestione, puoi anche rimuovere una o più righe. Poi, clicca su Salva "
-"modifiche."
-
-#: settings/options/plugin_options_tabbed.php:737
-msgid ""
-"Activate eMail notification for some days and manage the Whitelist tables."
-msgstr ""
-"Attivare la notifica eMail per alcuni giorni e gestire le tabelle della "
-"Whitelist."
-
-#: settings/options/plugin_options_tabbed.php:740
-msgid "Instructions about to block HTTP tools (Only Pro)"
-msgstr "Istruzioni sul blocco degli strumenti HTTP (solo Pro)"
-
-#: settings/options/plugin_options_tabbed.php:747
-msgid "Block HTTP tools?"
-msgstr "Bloccare gli strumenti HTTP?"
-
-#: settings/options/plugin_options_tabbed.php:763
-msgid ""
-"Update HTTP tools each new plugin version or when plugin is activated? Maybe "
-"you will need remove that tools you don't want to block again."
-msgstr ""
-"Aggiornare gli strumenti HTTP ogni nuova versione del plugin o quando il "
-"plugin viene attivato? Forse avrete bisogno di rimuovere gli strumenti che "
-"non volete bloccare di nuovo."
-
-#: settings/options/plugin_options_tabbed.php:781
-msgid "HTTP tools to block:"
-msgstr "Strumenti HTTP da bloccare:"
-
-#: settings/options/plugin_options_tabbed.php:795
-msgid ""
-"This tables are very usefull if you want to block HTTP tools or use Rate "
-"Limiting.You can create 2 whitelist in this page: String and IP."
-msgstr ""
-"Queste tabelle sono molto utili se vuoi bloccare gli strumenti HTTP o usare "
-"il Rate Limiting.Puoi creare 2 whitelist in questa pagina: Stringa e IP."
-
-#: settings/options/plugin_options_tabbed.php:798
-msgid "Just add one string to unblock all User Agent that contain that string."
-msgstr ""
-"Basta aggiungere una stringa per sbloccare tutti gli User Agent che "
-"contengono quella stringa."
-
-#: settings/options/plugin_options_tabbed.php:800
-msgid "For IP withelist, just add the IP to unblock it."
-msgstr "Per IP withelist, basta aggiungere l'IP per sbloccarlo."
-
-#: settings/options/plugin_options_tabbed.php:802
-msgid "Add only one for each line."
-msgstr "Aggiungerne solo uno per ogni linea."
-
-#: settings/options/plugin_options_tabbed.php:804
-msgid "Your current ip is: "
-msgstr "Il suo attuale ip è"
-
-#: settings/options/plugin_options_tabbed.php:807
-msgid "Instructions about User Agent String and IP Whitelist. (Only Pro)"
-msgstr "Istruzioni su User Agent String e IP Whitelist. (Solo Pro)"
-
-#: settings/options/plugin_options_tabbed.php:813
-msgid "Enable Both Withelist?"
-msgstr "Abilitare entrambe le Withelist?"
-
-#: settings/options/plugin_options_tabbed.php:830
-msgid "String whitelist (no case sensitive)"
-msgstr "Whitelist di stringhe (no case sensitive)"
-
-#: settings/options/plugin_options_tabbed.php:837
-msgid "IP whitelist."
-msgstr "IP whitelist."
-
-#: settings/options/plugin_options_tabbed.php:837
-msgid "Your Current IP:"
-msgstr "Il tuo attuale IP:"
-
-#: settings/options/plugin_options_tabbed.php:845
-msgid "Fill out the email address to send messages."
-msgstr "Riempi il campo “indirizzo email” per poter inviare messaggi."
-
-#: settings/options/plugin_options_tabbed.php:847
-msgid ""
-"Left Blank to use your default WordPress email. Then, click save changes."
-msgstr ""
-"Lascia vuoto per usare la tua mail di WordPress. Quindi clicca su “salva "
-"cambiamenti”."
-
-#: settings/options/plugin_options_tabbed.php:858
-msgid "Do you want receive email alerts for each bot attempt?"
-msgstr ""
-"Vuoi ricevere avvisi via email per ogni tentativo effettuato da un Bad Bot?"
-
-#: settings/options/plugin_options_tabbed.php:860
-msgid "If you under brute force attack, you will receive a lot of emails."
-msgstr "Se sei sotto attacco brute force riceverai un sacco di email."
-
-#: settings/options/plugin_options_tabbed.php:862
-msgid ""
-"You can see the bots attacks info at Bad Bots Table. (column Num Blocked)."
-msgstr ""
-"Puoi vedere le info degli attacchi nella tabella dei Bad Bot. (colonna Num "
-"Bloccati)."
-
-#: settings/options/plugin_options_tabbed.php:872
-msgid "Alert me by email each Bots Attempts"
-msgstr "Avertimi via email per ogni tentativo di accesso da parte dei Bot"
-
-#: settings/options/plugin_options_tabbed.php:876
-msgid "Yes."
-msgstr "Sì."
-
-#: settings/options/plugin_options_tabbed.php:880
-msgid "No."
-msgstr "No."
-
-#: settings/options/plugin_options_tabbed.php:888
-msgid ""
-"Alert me All Times Firewall Block Something. (available only in pro version)"
-msgstr ""
-"Avvertimi tutte le volte che il firewall blocca qualcosa. (disponibile solo "
-"nella versione pro)"
-
-#: settings/options/plugin_options_tabbed.php:1070
-msgid ""
-"Get Pro and receive, automatically, weekly updates, Firewall and more "
-"Protection."
-msgstr ""
-"Ottenere Pro e ricevere, automaticamente, aggiornamenti settimanali, "
-"Firewall e più protezione."
-
-#: settings/options/plugin_options_tabbed.php:1072
-msgid "Help us to keep the bot database updated and the plugin stronger."
-msgstr "Aiutaci a tenere aggiornato il database dei bot."
-
-#: settings/options/plugin_options_tabbed.php:1074
-msgid "Visit our Pro Page for more details."
-msgstr "Vista la nostra pagina Premium per maggiori dettagli."
-
-#: settings/options/plugin_options_tabbed.php:1077
-msgid ""
-"Paste below the Item Purchase Code received by email from us when you bought "
-"the premium version."
-msgstr ""
-"Incolla qui sotto il codice d'acquisto ricevuto via e-mail da noi quando hai "
-"comprato la versione premium."
-
-#: settings/options/plugin_options_tabbed.php:1078
-msgid "You don't need reinstall the plugin."
-msgstr "Non devi reinstallare il plugin."
-
-#: settings/options/plugin_options_tabbed.php:1089
-msgid "Purchase Code (just paste here to activate your product)"
-msgstr "Codice d'acquisto (incolla qui per attivare il tuo prodotto)"
-
-#: table/visitors_render.php:29
-msgid "Empty Table. Please, try again later."
-msgstr "Tabella vuota. Per favore, riprova più tardi."
-
-#: table/visitors_render.php:68
-msgid "Upgrade for Max Protection"
-msgstr "Protezione firewall"
+"Il limite di memoria di WordPress è troppo basso, il che può causare "
+"problemi critici sul tuo sito a causa di risorse insufficienti. Risolvi "
+"subito questo problema prima di continuare."

@@ -19,6 +19,42 @@ if (!defined('STOPBADBOTSHOMEURL')) {
 $sbb_urlsettings = STOPBADBOTSHOMEURL . "/admin.php?page=stopbadbots_settings33";
 add_action('admin_init', 'stopbadbots_settings_init_main');
 add_action('admin_menu', 'stopbadbots_add_admin_menu0');
+
+function stopbadbots_add_admin_menu1()
+{
+    add_submenu_page(
+        'stop_bad_bots_plugin', // $parent_slug
+        'Bad Bots Table', // string $page_title
+        'Add Bad Bot to Table', // string $menu_title
+        'manage_options',
+        'Add New Bad Bot', // Page Title
+        'stopbadbots_options_page'
+    );
+}
+function stopbadbots_add_admin_menu2()
+{
+    add_submenu_page(
+        'stop_bad_bots_plugin', // $parent_slug
+        'Bad IPs Table', // string $page_title
+        'Add Bad IP to Table', // string $menu_title
+        'manage_options',
+        'Add New Bad IP', // Page Title
+        'stopbadbots_options_page2'
+    );
+}
+function stopbadbots_add_admin_menu3()
+{
+    add_submenu_page(
+        'stop_bad_bots_plugin', // $parent_slug
+        'Bad Referer Table', // string $page_title
+        'Add Bad Referer to Table', // string $menu_title
+        'manage_options',
+        'Add New Bad Referer', // Page Title
+        'stopbadbots_options_page3'
+    );
+}
+
+
 function stopbadbots_enqueue_scripts()
 {
     wp_enqueue_style('bill-help-dashboard', STOPBADBOTSURL . '/dashboard/css/help.css');
@@ -201,13 +237,14 @@ function stopbadbots_options_page_main()
     echo '</div> <!-- "stopbadbots-theme_help-wrapper"> -->';
 } // end Function stopbadbots_options_page
 
-
+ 
 
 
 
 require_once ABSPATH . 'wp-admin/includes/screen.php';
 // ob_end_clean();
-require_once ABSPATH . 'wp-includes/pluggable.php';
+// require_once ABSPATH . 'wp-includes/pluggable.php';
+/*
 function stopbadbots_add_admin_menu1()
 {
     add_submenu_page(
@@ -241,6 +278,7 @@ function stopbadbots_add_admin_menu3()
         'stopbadbots_options_page3'
     );
 }
+*/
 if (!function_exists('stopbadbots_is_bill_theme')) {
     function stopbadbots_is_bill_theme()
     {

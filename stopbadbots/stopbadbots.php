@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.59
+Version: 11.60
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -207,10 +207,6 @@ $stopbadbots_tables_empty  = sanitize_text_field(get_option('stopbadbots_tables_
 
 $stopbadbots_firewall = sanitize_text_field(get_option('stopbadbots_firewall', 'yes'));
 
-//$stopbadbots_is_admin = stopbadbots_check_wordpress_logged_in_cookie();
-
-
-
 //$stop_bad_bots_automatic_updates = sanitize_text_field( get_option( 'stop_bad_bots_automatic_updates', 'yes' ) );
 
 
@@ -342,16 +338,7 @@ function stopbadbots_localization_init()
 /* End language */
 
 
-/*
-//require_once STOPBADBOTSPATH . 'settings/load-plugin.php';
 
-function stopbadbots_initialize_plugin_settings()
-{
-	// Inicialização do plugin.
-	require_once STOPBADBOTSPATH . 'settings/load-plugin.php';
-}
-add_action('admin_menu', 'stopbadbots_initialize_plugin_settings', 150);
-*/
 
 
 
@@ -1049,7 +1036,15 @@ if (!$stopbadbots_is_admin) {
 		}	
 	}
     // end Modsecurity 2025
+
+
 	if ($stopbadbots_firewall != 'no' and $stopbadbots_checkversion != '') {
+
+
+
+
+		/*
+		/////////////////////////////////////
 		$stopbadbots_request_uri_array   = array('@eval', 'eval\(', 'UNION(.*)SELECT', '\(null\)', 'base64_', '\/localhost', '\%2Flocalhost', '\/pingserver', 'wp-config\.php', '\/config\.', '\/wwwroot', '\/makefile', 'crossdomain\.', 'proc\/self\/environ', 'usr\/bin\/perl', 'var\/lib\/php', 'etc\/passwd', '\/https\:', '\/http\:', '\/ftp\:', '\/file\:', '\/php\:', '\/cgi\/', '\.cgi', '\.cmd', '\.bat', '\.exe', '\.sql', '\.ini', '\.dll', '\.htacc', '\.htpas', '\.pass', '\.asp', '\.jsp', '\.bash', '\/\.git', '\/\.svn', ' ', '\<', '\>', '\/\=', '\.\.\.', '\+\+\+', '@@', '\/&&', '\/Nt\.', '\;Nt\.', '\=Nt\.', '\,Nt\.', '\.exec\(', '\)\.html\(', '\{x\.html\(', '\(function\(', '\.php\([0-9]+\)', '(benchmark|sleep)(\s|%20)*\(', 'indoxploi', 'xrumer');
 		$stopbadbots_query_string_array  = array('@@', '\(0x', '0x3c62723e', '\;\!--\=', '\(\)\}', '\:\;\}\;', '\.\.\/', '127\.0\.0\.1', 'UNION(.*)SELECT', '@eval', 'eval\(', 'base64_', 'localhost', 'loopback', '\%0A', '\%0D', '\%00', '\%2e\%2e', 'allow_url_include', 'auto_prepend_file', 'disable_functions', 'input_file', 'execute', 'file_get_contents', 'mosconfig', 'open_basedir', '(benchmark|sleep)(\s|%20)*\(', 'phpinfo\(', 'shell_exec\(', '\/wwwroot', '\/makefile', 'path\=\.', 'mod\=\.', 'wp-config\.php', '\/config\.', '\$_session', '\$_request', '\$_env', '\$_server', '\$_post', '\$_get', 'indoxploi', 'xrumer');
 		$stopbadbots_request_uri_string  = false;
@@ -1086,6 +1081,122 @@ if (!$stopbadbots_is_admin) {
 				// wp_die("");
 			} // Endif match...
 		} // endif if ($stopbadbots_query_string_string || $user_agent_string)
+        ////////////////////////////////////////
+		*/
+		
+
+    // Array of rules for the request URI.
+    // This array now combines original rules, additional generic attack patterns,
+    // and detailed new signatures for sensitive files.
+    $stopbadbots_request_uri_array   = array(
+        // ORIGINAL RULES (from your old code)
+        '@eval', 'eval\(', 'UNION(.*)SELECT', '\(null\)', 'base64_', '\/localhost', '\%2Flocalhost', '\/pingserver', 'wp-config\.php', '\/config\.', '\/wwwroot', '\/makefile', 'crossdomain\.', 'proc\/self\/environ', 'usr\/bin\/perl', 'var\/lib\/php', 'etc\/passwd', '\/https\:', '\/http\:', '\/ftp\:', '\/file\:', '\/php\:', '\/cgi\/', '\.cgi', '\.cmd', '\.bat', '\.exe', '\.sql', '\.ini', '\.dll', '\.pass', '\.asp', '\.jsp', '\.bash', '\/\.git', '\/\.svn', ' ', '\<', '\>', '\/\=', '\.\.\.', '\+\+\+', '@@', '\/&&', '\/Nt\.', '\;Nt\.', '\=Nt\.', '\,Nt\.', '\.exec\(', '\)\.html\(', '\{x\.html\(', '\(function\(', '\.php\([0-9]+\)', '(benchmark|sleep)(\s|%20)*\(', 'indoxploi', 'xrumer', '\/\.env', // The .env rule was also present implicitly or explicitly
+
+        // --- ADDITIONAL GENERIC ATTACK PATTERNS (from old code's 'suggested additions') ---
+        // Blocks access to common backups and configuration files
+        '\.bak', '\.conf', '\.cfg', '\.ds_store',
+        // Blocks access to compressed backups in the site root
+        '\/(db|master|sql|wp|www|wwwroot)\.(gz|zip)',
+        // Blocks generic patterns for command execution and dangerous functions
+        '((curl_|shell_)?exec|(f|p)open|passthru|phpinfo|proc_open|system)(.*)(\()(.*)(\))',
+
+        // --- NEW DETAILED SIGNATURES (from your 'new code's $stopbadbots_new_signatures array) ---
+        // Apache (precise versions)
+        '\.htaccess', '\.htdigest', '\.htpasswd',
+        // Other version control systems
+        '\/\.gitignore', '\/\.hg', '\/\.hgignore',
+        // WordPress configuration backups
+        'wp-config\.bak', 'wp-config\.old', 'wp-config\.temp', 'wp-config\.tmp', 'wp-config\.txt',
+        // Frameworks and CMS configuration files
+        '\/sites\/default\/default\.settings\.php', '\/sites\/default\/settings\.php', // Drupal
+        '\/app\/etc\/local\.xml', // Magento 1
+        '\/Web\.config', // ASP.NET
+        // Development tools and dependency files
+        '\/sftp-config\.json', '\/gruntfile\.js', '\/npm-debug\.log',
+        '\/composer\.json', '\/composer\.lock', '\/packages\.json',
+    );
+
+    // Array of rules for the Query String.
+    // This array now includes the strong SQL Injection and XSS protections
+    // that were present in the old code's 'suggested additions'.
+    $stopbadbots_query_string_array  = array(
+        // ORIGINAL RULES (from your old code)
+        '@@', '\(0x', '0x3c62723e', '\;\!--\=', '\(\)\}', '\:\;\}\;', '\.\.\/', '127\.0\.0\.1', 'UNION(.*)SELECT', '@eval', 'eval\(', 'base64_', 'localhost', 'loopback', '\%0A', '\%0D', '\%00', '\%2e\%2e', 'allow_url_include', 'auto_prepend_file', 'disable_functions', 'input_file', 'execute', 'file_get_contents', 'mosconfig', 'open_basedir', '(benchmark|sleep)(\s|%20)*\(', 'phpinfo\(', 'shell_exec\(', '\/wwwroot', '\/makefile', 'path\=\.', 'mod\=\.', 'wp-config\.php', '\/config\.', '\$_session', '\$_request', '\$_env', '\$_server', '\$_post', '\$_get', 'indoxploi', 'xrumer',
+
+        // --- REINTRODUCED STRONG PROTECTIONS (from old code's 'suggested additions') ---
+        // Blocks attempts to manipulate global variables more comprehensively
+        '(globals|request)(=|\[)',
+        // Powerful rule that blocks a wide range of SQL Injection and XSS attacks
+        '(<|>|\'|")(.*)(\/\*|alter|base64|benchmark|cast|char|concat|create|declare|delete|drop|exec|function|html|insert|md5|request|script|select|set|union|update)'
+    );
+
+    // Array of rules for the User Agent (unchanged from your new code).
+    $stopbadbots_user_agent_array   = array('drivermysqli', 'acapbot', '\/bin\/bash', 'binlar', 'casper', 'cmswor', 'diavol', 'dotbot', 'finder', 'flicky', 'md5sum', 'morfeus', 'nutch', 'planet', 'purebot', 'pycurl', 'semalt', 'shellshock', 'skygrid', 'snoopy', 'sucker', 'turnit', 'vikspi', 'zmeu');
+
+    // --- START OF UPDATED FIREWALL LOGIC ---
+
+    // REINTRODUCED: Check for excessively long request URI (from old code).
+    // This helps prevent certain denial-of-service (DoS) attacks or attempts
+    // to pass large malicious payloads via the URI.
+    $request_uri_length_limit = 2048; // Adjust this value as needed.
+    if (isset($_SERVER['REQUEST_URI']) && strlen($_SERVER['REQUEST_URI']) > $request_uri_length_limit) {
+        stopbadbots_response('URI Length Exceeded');
+    }
+
+    // RAW variables for firewall security checks.
+    // IMPORTANT: NO SANITIZATION HERE. The firewall must operate on raw, unmodified data
+    // to effectively detect malicious patterns that might be masked by sanitization.
+    $firewall_raw_request_uri  = '';
+    $firewall_raw_query_string = '';
+    $firewall_raw_user_agent   = '';
+
+    // Populate RAW variables for the firewall.
+    if (isset($_SERVER['REQUEST_URI']) && !empty($_SERVER['REQUEST_URI'])) {
+        $firewall_raw_request_uri = $_SERVER['REQUEST_URI'];
+    }
+    if (isset($_SERVER['QUERY_STRING']) && !empty($_SERVER['QUERY_STRING'])) {
+        $firewall_raw_query_string = $_SERVER['QUERY_STRING'];
+    }
+    if (isset($_SERVER['HTTP_USER_AGENT']) && !empty($_SERVER['HTTP_USER_AGENT'])) {
+        $firewall_raw_user_agent = $_SERVER['HTTP_USER_AGENT'];
+    }
+
+    // The firewall detection logic now uses the RAW variables to detect threats.
+    if ($firewall_raw_request_uri || $firewall_raw_query_string || $firewall_raw_user_agent) {
+        if (
+            ($firewall_raw_request_uri  && preg_match('/' . implode('|', $stopbadbots_request_uri_array)  . '/i', $firewall_raw_request_uri,  $matches))
+            ||
+            ($firewall_raw_query_string && preg_match('/' . implode('|', $stopbadbots_query_string_array) . '/i', $firewall_raw_query_string, $matches2))
+            ||
+            ($firewall_raw_user_agent   && preg_match('/' . implode('|', $stopbadbots_user_agent_array)   . '/i', $firewall_raw_user_agent,   $matches3))
+        ) {
+            // If a match is found, trigger alerts and block the request.
+            // Added isset check for $stopbadbots_Blocked_Firewall as it might not always be defined.
+            if (isset($stopbadbots_Blocked_Firewall) && $stopbadbots_Blocked_Firewall == 'yes') {
+                if (isset($matches) && is_array($matches) && count($matches) > 0) {
+                    stopbadbots_alertme3($matches[0]);
+                }
+                if (isset($matches2) && is_array($matches2) && count($matches2) > 0) {
+                    stopbadbots_alertme3($matches2[0]);
+                }
+                if (isset($matches3) && is_array($matches3) && count($matches3) > 0) {
+                    // Note: original code used alertme3 for user agent. Changed to alertme4 based on previous logic.
+                    // If stopbadbots_alertme3 is correct for user agent, you can revert this line.
+                    stopbadbots_alertme4($matches3[0]);
+                }
+            }
+            stopbadbots_stats_moreone('qfire');
+            stopbadbots_response('Firewall'); // Trigger the blocking response
+        } // Endif match...
+    } // end if ($firewall_raw_request_uri || $firewall_raw_query_string || $firewall_raw_user_agent)
+
+    // IMPORTANT NOTE: The SANITIZED variables ($stopbadbots_request_uri_string, $stopbadbots_query_string_string, $stopbadbots_user_agent_string)
+    // and their population using sanitize_text_field() have been REMOVED from this firewall logic.
+    // This ensures the firewall always operates on raw data.
+    // If you need sanitized versions of these variables for OTHER parts of your code (e.g., logging, database insertion),
+    // you must create them AFTER the firewall execution, or in a different scope where sanitization is appropriate.
+
+
 	} // firewall <> no
 }
 
@@ -2159,6 +2270,9 @@ require_once STOPBADBOTSPATH . "functions/fail2ban.php";
 //stopbadbots_run_database_update();
 //die(var_dump(__LINE__));
 
+
+
+
 function stopbadbots_check_wordpress_logged_in_cookie()
 {
     /**
@@ -2204,36 +2318,54 @@ function stopbadbots_check_wordpress_logged_in_cookie()
      * The only reliable way is to use WordPress's own functions.
      * First, we check if the required function has been loaded by WordPress yet.
      */
-	if (!function_exists('current_user_can') || !function_exists('wp_get_current_user') ) {
+    if (!function_exists('current_user_can') || !function_exists('wp_get_current_user')) {
         /**
          * The function does not exist yet. This means we are running too early in the
          * WordPress load order.
          * The solution is to manually load the file where this function is defined.
          */
-        try {
-            require_once ABSPATH . WPINC . '/pluggable.php';
-        } catch (Throwable $e) {
-            // Log the error or handle it as appropriate for your application.
-            // For example, you might log to a file or an error tracking service.
-            error_log("Failed to include pluggable.php in stopbadbots: " . $e->getMessage());
-            // In case of failure to load, assume non-admin for safety.
-            // Do not cache, allowing a retry on the next function call.
-            return $current_is_admin_status; // Returns false.
+        
+        $max_attempts = 15;
+        $attempt = 0;
+        
+        // Try multiple times before loading the file
+        while (!function_exists('current_user_can') && $attempt < $max_attempts) {
+            $attempt++;
+            usleep(150000); // Wait 150ms between attempts
+            clearstatcache(); // Clear file cache
+            
+            // Check if functions exist naturally (without loading)
+            if (function_exists('current_user_can') && function_exists('wp_get_current_user')) {
+                break; // Functions are now available, no need to load manually
+            }
+        }
+        
+        // Only load the file if functions still don't exist after all attempts
+        if (!function_exists('current_user_can') && !function_exists('wp_get_current_user')) {
+            if (defined('ABSPATH') && defined('WPINC')) {
+                try {
+                    $pluggable_file = ABSPATH . WPINC . '/pluggable.php';
+                    if (file_exists($pluggable_file)) {
+                        require_once $pluggable_file;
+                    }
+                } catch (Throwable $e) {
+                    // Silently continue if loading fails
+                }
+            }
         }
     }
 
     /**
-     * Now that we have explicitly loaded the file (if it wasn't already),
-     * we can be certain that the current_user_can() function is available.
+     * Now that we have attempted to load the file (if it wasn't already),
+     * we can check if the current_user_can() function is available.
      * We can now perform the secure check.
      */
 
-	 // wp_get_current_user()
-	if (!function_exists('current_user_can') || !function_exists('wp_get_current_user') ) {
+    if (!function_exists('current_user_can') || !function_exists('wp_get_current_user')) {
         // If, for some reason, current_user_can still does not exist (critical error or unusual environment),
         // assume non-admin. Do not cache.
-		return $current_is_admin_status; // Returns false.
-	}
+        return $current_is_admin_status; // Returns false.
+    }
 
     if (current_user_can('manage_options')) {
         // The secure check passed. The user is a confirmed administrator.
@@ -2254,3 +2386,57 @@ function stopbadbots_check_wordpress_logged_in_cookie()
     // Return the final, securely determined result.
     return $current_is_admin_status;
 }
+
+
+/*
+1. Verificação em Loop com Delay (Polling)
+
+
+
+function antihacker_check_wordpress_logged_in_cookie() {
+    static $is_admin_cached_true = null;
+    
+    if ($is_admin_cached_true === true) {
+        return true;
+    }
+    
+    // Tentar por um tempo limitado esperar pelo WordPress
+    $max_attempts = 15;
+    $attempt = 0;
+    
+    while (!function_exists('current_user_can') && $attempt < $max_attempts) {
+        $attempt++;
+        usleep(150000); // Espera 100ms entre tentativas
+        clearstatcache(); // Limpa cache de arquivos
+        
+        // Tenta carregar se ainda não existir
+        if (!function_exists('current_user_can') && defined('ABSPATH') && defined('WPINC')) {
+            try {
+                require_once ABSPATH . WPINC . '/pluggable.php';
+            } catch (Throwable $e) {
+                // Silenciosamente continua tentando
+            }
+        }
+    }
+    
+    // Se ainda não carregou após tentativas, aborta
+    if (!function_exists('current_user_can')) {
+        return false;
+    }
+    
+    // Resto da sua lógica original...
+    $current_is_admin_status = false;
+    
+    // ... (seu código de verificação de cookies)
+    
+    if (current_user_can('manage_options')) {
+        $current_is_admin_status = true;
+    }
+    
+    if ($current_is_admin_status === true) {
+        $is_admin_cached_true = true;
+    }
+    
+    return $current_is_admin_status;
+}
+*/

@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.61
+Version: 11.62
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -2328,23 +2328,10 @@ function stopbadbots_check_wordpress_logged_in_cookie()
          * The solution is to manually load the file where this function is defined.
          */
         
-        $max_attempts = 15;
-        $attempt = 0;
-        
-        // Try multiple times before loading the file
-        while (!function_exists('current_user_can') && $attempt < $max_attempts) {
-            $attempt++;
-            usleep(150000); // Wait 150ms between attempts
-            clearstatcache(); // Clear file cache
-            
-            // Check if functions exist naturally (without loading)
-            if (function_exists('current_user_can') && function_exists('wp_get_current_user')) {
-                break; // Functions are now available, no need to load manually
-            }
-        }
+
         
         // Only load the file if functions still don't exist after all attempts
-        if (!function_exists('current_user_can') && !function_exists('wp_get_current_user')) {
+        if (!function_exists('current_user_can') || !function_exists('wp_get_current_user')) {
             if (defined('ABSPATH') && defined('WPINC')) {
                 try {
                     $pluggable_file = ABSPATH . WPINC . '/pluggable.php';

@@ -5065,3 +5065,16 @@ ZuperlistBot,ZuperlistBot,C
 ZyBorg,ZyBorg/1.1,C
 Zyte,Zyte,C
 zzamsjc,zzamsjc.com,C
+httprint,httprint,C
+bsqlbf,bsqlbf,C
+HTTrack 3.0,HTTrack 3.0,C
+pangolin,pangolin,C
+brutus,brutus,C
+joomscan,joomscan,C
+paros,paros,C
+burp,burp,C
+owasp-zap,owasp-zap,C
+jaascois,jaascois,C
+AppScan,AppScan,C
+AppSpider,AppSpider,C
+RookIE,RookIE,C

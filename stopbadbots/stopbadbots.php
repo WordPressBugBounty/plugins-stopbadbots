@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.62
+Version: 11.64
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -223,12 +223,20 @@ if ($stopbadbots_is_admin) {
 
 
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'stopbadbots_add_action_links');
-function stopbadbots_add_action_links($links)
+function stopbadbots_add_action_links_old($links)
 {
 	$mylinks = array(
 		'<a href="' . admin_url('admin.php?page=settings-stop-bad-bots') . '">Settings</a>',
 	);
 	return array_merge($links, $mylinks);
+}
+function stopbadbots_add_action_links($links)
+{
+    $mylinks = array(
+        '<a href="' . admin_url('admin.php?page=stop_bad_bots_plugin') . '">Dashboard</a>',
+        '<a href="' . admin_url('admin.php?page=settings-stop-bad-bots') . '">Settings</a>',
+    );
+    return array_merge($links, $mylinks);
 }
 
 
@@ -1029,9 +1037,11 @@ if (!$stopbadbots_is_admin) {
 	// Modsecurity 2025
 	if($stopbadbots_engine_option != 'conservative' && $stopbadbots_engine_option != 'minimal'){
 		if (!isset($_SERVER['HTTP_ACCEPT'])) {
+			stopbadbots_stats_moreone('qfire');
 			stopbadbots_response('Not Human');
 		}
 		if ($_SERVER['REQUEST_METHOD'] === 'HEAD') {
+			stopbadbots_stats_moreone('qfire');
 			stopbadbots_response('Not Human');
 		}	
 	}

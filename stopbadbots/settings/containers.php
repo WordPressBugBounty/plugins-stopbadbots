@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Options page entity.
  */
 class Page {
+	public $title;
 	protected $slug;
 	protected $hook;
 	protected $page_title;

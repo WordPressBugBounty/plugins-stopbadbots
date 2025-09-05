@@ -68,7 +68,7 @@ class OptionPageBuilder {
 					// Você pode usar $this->page->title com segurança.
 				} else {
 					// A propriedade não existe ou é null.
-					$this->page->title = "Settings";
+					$this->page->title = "Settings"; 
 				}
 
 				add_submenu_page(

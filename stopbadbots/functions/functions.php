@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @author Bill Minozzi
  * @copyright 2016-2023
@@ -5021,7 +5020,7 @@ function stopbadbots_sbb_populate_stats()
 	}
 }
 
-function stopbadbots_stats_moreone($qtype)
+function stopbadbots_stats_moreone_old($qtype)
 {
 	global $wpdb;
 
@@ -5118,6 +5117,43 @@ function stopbadbots_stats_moreone($qtype)
 	if (!$r)
 		stopbadbots_sbb_populate_stats();
 }
+function stopbadbots_stats_moreone($qtype)
+{
+    global $wpdb;
+
+    // whitelist para segurança
+    $allowed = [
+        'qnick', 'qip', 'qfire', 'qref', 'qua', 'qping', 'quenu',
+        'qlogin', 'qcom', 'qcon', 'qfalseg', 'qother',
+        'qtotal', 'qtools', 'qrate', 'qbrowser'
+    ];
+
+    if (!in_array($qtype, $allowed, true)) {
+        error_log('99999 - wrong qtype');
+        return;
+    }
+
+    // data no formato MMDD
+    $qtoday = date('md');
+
+    $table_name = $wpdb->prefix . 'sbb_stats';
+
+    // update seguro
+    $r = $wpdb->query(
+        $wpdb->prepare(
+            "UPDATE `$table_name`
+             SET $qtype = $qtype + 1, qtotal = qtotal + 1
+             WHERE date = %s LIMIT 1",
+            $qtoday
+        )
+    );
+
+    // se não existe registro, popula
+    if (!$r) {
+        stopbadbots_sbb_populate_stats();
+    }
+}
+
 function stopbadbots_create_db_stats()
 {
 	global $wpdb;

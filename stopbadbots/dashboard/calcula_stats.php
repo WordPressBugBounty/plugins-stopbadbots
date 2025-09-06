@@ -3,8 +3,10 @@
  * @author William Sergio Minossi
  * @copyright 2012-30-07
  */
-if (!defined('ABSPATH'))
+if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
+}
+
 /*
 CREATE TABLE `wp_sbb_stats` (
   `id` mediumint(9) NOT NULL,
@@ -12,72 +14,53 @@ CREATE TABLE `wp_sbb_stats` (
   `qnick` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `qip` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `qtotal` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
-) 
+);
 */
+
 global $wpdb;
 $table_name = $wpdb->prefix . "sbb_stats";
-/*
-$query = "SELECT date,qtotal FROM `$table_name`";
-$results9 = $wpdb->get_results($query);
-*/
-$results9 = $wpdb->get_results($wpdb->prepare("SELECT date,qtotal FROM %i", $table_name));
 
+// busca dados (sem %i no prepare)
+$results9 = $wpdb->get_results("SELECT date, qtotal FROM `$table_name`");
 
-$results8 = json_decode(json_encode($results9), true);
-
+// converte em array simples, garantindo zeros à esquerda
+$results8 = [];
+foreach ($results9 as $row) {
+    $results8[] = [
+        'date'   => str_pad($row->date, 4, '0', STR_PAD_LEFT),
+        'qtotal' => (int)$row->qtotal,
+    ];
+}
 unset($results9);
 
- 
-      
-$x = 0; 
+// últimos 15 dias
 $d = 15;
-for ($i = $d ; $i > 0; $i--)
-{
-    $timestamp = time();
-    $tm = 86400 * ($x); // 60 * 60 * 24 = 86400 = 1 day in seconds
-    $tm = $timestamp - $tm;
+$array30d = [];
+$array30  = [];
 
-    $the_day = date("d", $tm);
-    
-    $this_month = date('m', $tm);
+for ($x = 0; $x < $d; $x++) {
+    $tm = strtotime("-$x days");
+    $md = date("md", $tm); // formato MMDD
 
+    $array30d[$x] = $md;
+    $key = array_search($md, array_column($results8, 'date'));
 
-    
-    $array30d[$x] = $this_month.$the_day ;
-    //$_dia = 'dia_';
-    $key = array_search(trim($array30d[$x]), array_column($results8, 'date'));
-    if($key)
-    {
-        // $awork = array_column( $results8 , 'qtotal');
-        // $array30[$x] = $awork[$key];
-        // objeto:
-        // $array30[$x] = $results9[$key]->qtotal;
-        // 
-        
-        $awork = $results8[$key]['qtotal'];
-        $array30[$x] = $awork;
+    if ($key !== false) {
+        $array30[$x] = $results8[$key]['qtotal'];
+    } else {
+        $array30[$x] = 0;
     }
-    else
-      $array30[$x] = 0;
-    $x++;
 }
 
-
-$array30 = array_reverse($array30);
+// coloca em ordem cronológica
+$array30  = array_reverse($array30);
 $array30d = array_reverse($array30d);
 
-
 /*
+// debug
 echo '<pre>';
+print_r($array30d);
 print_r($array30);
 echo '</pre>';
-*/
-
-/*
-$d2 = array();
-for($i=0; $i < 7; $i++ )
-{
-     array_push($d2, array($array30d[$i],$array30[$i]));
-}
 */
 ?>

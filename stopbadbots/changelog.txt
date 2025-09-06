@@ -3,7 +3,7 @@ This file contains changelog entries, so we can keep the size of the standard Wo
 
 
 == Changelog ==
-11.64  2025-09-05 - Improved Security.
+11.65  2025-09-06 - Improved Security.
 11.62  2025-08-27 - Improved Security.
 11.57  2025-08-16 - Improved Dashboard.
 11.56  2025-08-16 - Improved Block engine.

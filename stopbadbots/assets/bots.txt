@@ -5078,3 +5078,158 @@ jaascois,jaascois,C
 AppScan,AppScan,C
 AppSpider,AppSpider,C
 RookIE,RookIE,C
+01h4x.com,01h4x.com,C
+ALittle Client,ALittle Client,C
+Aboundexbot,Aboundexbot,C
+AdsTxtCrawlerTP,AdsTxtCrawlerTP,C
+AhrefsBot,AhrefsBot,C
+Aliyun,Aliyun,C
+AliyunSecBot,AliyunSecBot,C
+Anarchy,Anarchy,C
+Anarchy99,Anarchy99,C
+Ankit,Ankit,C
+Atomseobot,Atomseobot,C
+AwarioBot,AwarioBot,C
+AwarioRssBot,AwarioRssBot,C
+BacklinksExtendedBot,BacklinksExtendedBot,C
+Battleztar Bazinga,Battleztar Bazinga,C
+Black Hole,Black Hole,C
+Bytespider,Bytespider,C
+CODE87,CODE87,C
+CazoodleBot,CazoodleBot,C
+ChatGPT,ChatGPT,C
+CheTeam,CheTeam,C
+Citoid,Citoid,C
+Cloud mapping,Cloud mapping,C
+Cocolyzebot,Cocolyzebot,C
+Crawling at Home Project,Crawling at Home Project,C
+CrunchBot,CrunchBot,C
+CyotekWebCopy,CyotekWebCopy,C
+DTS Agent,DTS Agent,C
+DnBCrawler-Analytics,DnBCrawler-Analytics,C
+Domains Project,Domains Project,C
+Download Wonder,Download Wonder,C
+EMail Siphon,EMail Siphon,C
+EMail Wolf,EMail Wolf,C
+Express WebPictures,Express WebPictures,C
+Extreme Picture Finder,Extreme Picture Finder,C
+GeedoProductSearch,GeedoProductSearch,C
+IDBTE4M,IDBTE4M,C
+Image Fetch,Image Fetch,C
+Image Sucker,Image Sucker,C
+ImagesiftBot,ImagesiftBot,C
+Indy Library,Indy Library,C
+Information Security Team InfraSec Scanner,Information Security Team InfraSec Scanner,C
+InfraSec Scanner,InfraSec Scanner,C
+Internet Ninja,Internet Ninja,C
+JOC Web Spider,JOC Web Spider,C
+JamesBOT,JamesBOT,C
+Kenjin Spider,Kenjin Spider,C
+Keybot ,Keybot ,C
+Keyword Density,Keyword Density,C
+Kinza,Kinza,C
+LieBaoFast,LieBaoFast,C
+Lipperhey Spider,Lipperhey Spider,C
+MIDown tool,MIDown tool,C
+MQQBrowser,MQQBrowser,C
+MTRobot,MTRobot,C
+Majestic-SEO,Majestic-SEO,C
+Majestic SEO,Majestic SEO,C
+Mass Downloader,Mass Downloader,C
+Mata Hari,Mata Hari,C
+Mb2345Browser,Mb2345Browser,C
+MeanPath Bot,MeanPath Bot,C
+Meanpathbot,Meanpathbot,C
+MicroMessenger,MicroMessenger,C
+Microsoft Data Access,Microsoft Data Access,C
+Microsoft URL Control,Microsoft URL Control,C
+Minefield,Minefield,C
+Mister PiX,Mister PiX,C
+Moblie Safari,Moblie Safari,C
+MolokaiBot,MolokaiBot,C
+Morfeus Fucking Scanner,Morfeus Fucking Scanner,C
+Mozlila,Mozlila,C
+Name Intelligence,Name Intelligence,C
+Net Vampire,Net Vampire,C
+Nuclei,Nuclei,C
+Offline Explorer,Offline Explorer,C
+Offline Navigator,Offline Navigator,C
+Page Analyzer,Page Analyzer,C
+Pandalytics,Pandalytics,C
+Papa Foto,Papa Foto,C
+QueryN Metasearch,QueryN Metasearch,C
+RSSingBot,RSSingBot,C
+Rainbot,Rainbot,C
+RankActiveLinkBot,RankActiveLinkBot,C
+Rogerbot,Rogerbot,C
+ScrepyBot,ScrepyBot,C
+SemrushBot,SemrushBot,C
+SenutoBot,SenutoBot,C
+SeoCherryBot,SeoCherryBot,C
+SeobilityBot,SeobilityBot,C
+SiteCheckerBotCrawler,SiteCheckerBotCrawler,C
+Site Sucker,Site Sucker,C
+Sociscraper,Sociscraper,C
+Sogou web spider,Sogou web spider,C
+Spbot,Spbot,C
+Spider_Bot,Spider_Bot,C
+SplitSignalBot,SplitSignalBot,C
+The Intraformant,The Intraformant,C
+Thumbor,Thumbor,C
+TinyTestBot,TinyTestBot,C
+URLy Warning,URLy Warning,C
+V-BOT,V-BOT,C
+VB Project,VB Project,C
+VelenPublicWebCrawler,VelenPublicWebCrawler,C
+WebGo IS,WebGo IS,C
+Web Auto,Web Auto,C
+Web Collage,Web Collage,C
+Web Enhancer,Web Enhancer,C
+Web Fetch,Web Fetch,C
+Web Fuck,Web Fuck,C
+Web Pix,Web Pix,C
+Web Sauger,Web Sauger,C
+Web Sucker,Web Sucker,C
+Website Quester,Website Quester,C
+Who.is Bot,Who.is Bot,C
+WiseGuys Robot,WiseGuys Robot,C
+Xaldon WebSpider,Xaldon WebSpider,C
+adscanner,adscanner,C
+anthropic-ai,anthropic-ai,C
+arquivo-web-crawler,arquivo-web-crawler,C
+arquivo.pt,arquivo.pt,C
+awario.com,awario.com,C
+cah.io.community,cah.io.community,C
+check1.exe,check1.exe,C
+clark-crawler,clark-crawler,C
+cohere-ai,cohere-ai,C
+dataforseobot,dataforseobot,C
+domainsproject.org,domainsproject.org,C
+everyfeed-spider,everyfeed-spider,C
+facebookscraper,facebookscraper,C
+internetVista monitor,internetVista monitor,C
+isitwp.com,isitwp.com,C
+iubenda-radar,iubenda-radar,C
+linkdexbot,linkdexbot,C
+lwp-request,lwp-request,C
+meanpathbot,meanpathbot,C
+netEstate NE Crawler,netEstate NE Crawler,C
+openai,openai,C
+openai.com,openai.com,C
+page scorer,page scorer,C
+polaris version,polaris version,C
+probe-image-size,probe-image-size,C
+ripz,ripz,C
+s1z.ru,s1z.ru,C
+satoristudio.net,satoristudio.net,C
+scalaj-http,scalaj-http,C
+seocompany.store,seocompany.store,C
+seostar,seostar,C
+sitechecker.pro,sitechecker.pro,C
+siteripz,siteripz,C
+spyfu,spyfu,C
+ubermetrics-technologies.com,ubermetrics-technologies.com,C
+voyagerx.com,voyagerx.com,C
+webpros.com,webpros.com,C
+webprosbot,webprosbot,C
+zauba.io,zauba.io,C

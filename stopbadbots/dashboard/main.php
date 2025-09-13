@@ -178,6 +178,7 @@ function stopbadbots_options_page_main()
             <a href="?page=stop_bad_bots_plugin&tab=notifications" class="nav-tab">Notifications</a>
             <a href="?page=stop_bad_bots_plugin&tab=debug" class="nav-tab">Debug Info</a>
             <a href="?page=stop_bad_bots_plugin&tab=more" class="nav-tab">More Tools</a>
+            <a href="?page=stop_bad_bots_plugin&tab=checkup" class="nav-tab">Instant 24/7 Support</a>
 
 
             <!--
@@ -197,6 +198,17 @@ function stopbadbots_options_page_main()
             include_once STOPBADBOTSPATH . 'dashboard/tools.php';
         } elseif ($active_tab == 'more') {
             include_once STOPBADBOTSPATH . 'dashboard/more.php';
+        } elseif ($active_tab == 'checkup') {
+            //$site_health_url = admin_url('site-health.php?tab=critical-issues');
+            // $site_health_url = admin_url('site-health.php?tab=critical-issues');
+            // wp_safe_redirect($site_health_url);
+            //https://minozzi.eu/wp-admin/admin.php?page=stop_bad_bots_plugin&tab=checkup
+            //https://minozzi.eu/wp-admin/site-health.php?tab=Critical+Issues
+            // https://minozzi.eu/wp-admin/admin.php?page=stop_bad_bots_plugin&tab=checkup
+            echo '<div id="stopbadbots-dashboard-wrap">';
+            echo '<div id="stopbadbots-dashboard-left">';
+            include_once STOPBADBOTSPATH . 'dashboard/chat.php';
+            //die('Include...');
         } else {
             echo '<div id="stopbadbots-dashboard-wrap">';
             echo '<div id="stopbadbots-dashboard-left">';
@@ -237,7 +249,7 @@ function stopbadbots_options_page_main()
     echo '</div> <!-- "stopbadbots-theme_help-wrapper"> -->';
 } // end Function stopbadbots_options_page
 
- 
+
 
 
 

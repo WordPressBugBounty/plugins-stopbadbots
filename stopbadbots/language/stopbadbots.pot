@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: stop bad bots\n"
-"POT-Creation-Date: 2025-08-23 09:30+0000\n"
+"POT-Creation-Date: 2025-09-13 07:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Bill <sergiominozzi@gmail.com>\n"
 "Language-Team: Bill Minozzi <sergiominozzi@gmail.com>\n"
@@ -108,10 +108,6 @@ msgstr ""
 msgid "360 days"
 msgstr ""
 
-#: dashboard/mybanners.php:55
-msgid "4 options of Engine Management."
-msgstr ""
-
 #: settings/options/plugin_options_tabbed.php:587
 msgid "4 per minute"
 msgstr ""
@@ -148,19 +144,19 @@ msgstr ""
 msgid "90 days"
 msgstr ""
 
-#: dashboard/dashboard.php:89
+#: dashboard/dashboard.php:93
 msgid "Activate Block All Bots in Settings Page."
 msgstr ""
 
-#: dashboard/dashboard.php:95
+#: dashboard/dashboard.php:99
 msgid "Activate Block all bots included at Bad Referer Table"
 msgstr ""
 
-#: dashboard/dashboard.php:92
+#: dashboard/dashboard.php:96
 msgid "Activate Block All IPs in Settings Page."
 msgstr ""
 
-#: dashboard/dashboard.php:83
+#: dashboard/dashboard.php:87
 msgid "Activate Block PingBack Requests in Settings Page."
 msgstr ""
 
@@ -173,31 +169,31 @@ msgid ""
 "Activate eMail notification for some days and manage the Whitelist tables."
 msgstr ""
 
-#: dashboard/dashboard.php:107
+#: dashboard/dashboard.php:111
 msgid "Activate Firewall to increase protection."
 msgstr ""
 
-#: functions/functions.php:3175
+#: functions/functions.php:3174
 msgid "Add new bad bot to the bad bots Table."
 msgstr ""
 
-#: functions/functions.php:3205
+#: functions/functions.php:3204
 msgid "Add new bad IP to the bad IPs Table."
 msgstr ""
 
-#: functions/functions.php:3225
+#: functions/functions.php:3224
 msgid "Add new bad Referer to the bad Referer Table."
 msgstr ""
 
-#: functions/functions.php:3280
+#: functions/functions.php:3279
 msgid "Add one bad bot each time. The table don't accept duplicate nicknames."
 msgstr ""
 
-#: functions/functions.php:3292
+#: functions/functions.php:3291
 msgid "Add one bad ip each time. The table don't accept duplicate ips."
 msgstr ""
 
-#: functions/functions.php:3309
+#: functions/functions.php:3308
 msgid "Add one bad referer each time. The table don't accept duplicate names."
 msgstr ""
 
@@ -213,7 +209,8 @@ msgstr ""
 msgid "After Copy the URL, click UPDATE to proceed or Cancel to abort."
 msgstr ""
 
-#: includes/chat/class_bill_chat.php:51
+#: dashboard/class_bill_chat.php:57 includes/chat/class_bill_chat.php:53
+#: includes/chat/_class_bill_chat.php:51
 msgid "AJAX request failed:"
 msgstr ""
 
@@ -244,22 +241,22 @@ msgstr ""
 msgid "and mark all with yes."
 msgstr ""
 
-#: dashboard/dashboard.php:226
+#: dashboard/dashboard.php:230
 msgid ""
 "AntiHacker Extension is Disabled! Activate it from the Plugins page to get a "
 "powerful, free firewall and block brute-force and XML-RPC attacks —currently "
 "a major source of attacks."
 msgstr ""
 
-#: dashboard/dashboard.php:235
+#: dashboard/dashboard.php:239
 msgid ""
 "AntiHacker Extension is Disabled! Install it from the Plugins page to get a "
 "powerful, free firewall and block brute-force and XML-RPC attacks —currently "
 "a major source of attacks."
 msgstr ""
 
-#: includes/feedback-last/feedback-last.php:250
-#: includes/diagnose/class_bill_diagnose.php:903
+#: dashboard/chat.php:25 includes/feedback-last/feedback-last.php:250
+#: includes/diagnose/class_bill_diagnose.php:905
 msgid "Artificial Intelligence Support Chat for Issues and Solutions"
 msgstr ""
 
@@ -269,7 +266,7 @@ msgid ""
 "blank to use your WordPress eMail."
 msgstr ""
 
-#: stopbadbots.php:1505
+#: stopbadbots.php:1636
 msgid "Attacks Blocked Last 15 days"
 msgstr ""
 
@@ -277,22 +274,22 @@ msgstr ""
 msgid "Attempts"
 msgstr ""
 
-#: functions/functions.php:3271
+#: functions/functions.php:3270
 msgid ""
 "Attention: In this case, you will block also google bot because their name "
 "is GoogleBot."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:922
+#: dashboard/chat.php:62 includes/diagnose/class_bill_diagnose.php:924
 msgid "Auto Checkup for Errors"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:927
+#: dashboard/chat.php:67 includes/diagnose/class_bill_diagnose.php:929
 msgid "Auto Checkup Server "
 msgstr ""
 
 #: dashboard/mybanners.php:47
-msgid "Automatic updates."
+msgid "Automatic database updates."
 msgstr ""
 
 #: dashboard/mybanners.php:29
@@ -304,42 +301,42 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: functions/functions.php:3214
+#: functions/functions.php:3213
 msgid "Bad Bot IP:"
 msgstr ""
 
-#: functions/functions.php:3184
+#: functions/functions.php:3183
 msgid "Bad Bot Nickname:"
 msgstr ""
 
-#: functions/functions.php:4692
+#: functions/functions.php:4691
 msgid "Bad Bots can do all sorts of nasty stuff and waste server resources."
 msgstr ""
 
-#: dashboard/dashboard.php:140
+#: dashboard/dashboard.php:144
 msgid ""
 "Bad bots consume bandwidth, slow down servers, hack into your system, create "
 "spam, steal your content to sell to competitors - harm SEO - , search for "
 "vulnerabilities, and ruin the customer experience."
 msgstr ""
 
-#: functions/functions.php:4696
+#: functions/functions.php:4695
 msgid "Bad bots don’t play by the rules."
 msgstr ""
 
-#: functions/functions.php:4700
+#: functions/functions.php:4699
 msgid "Bad Bots stresses, harm and slowly your Web servers."
 msgstr ""
 
-#: functions/functions.php:1696
+#: functions/functions.php:1695
 msgid "Bad Referer Bot was detected and blocked by Stop Bad Bots Plugin."
 msgstr ""
 
-#: functions/functions.php:3234
+#: functions/functions.php:3233
 msgid "Bad Referer Name:"
 msgstr ""
 
-#: functions/functions.php:1576 functions/functions.php:1590
+#: functions/functions.php:1575 functions/functions.php:1589
 msgid "Bad Referers per page"
 msgstr ""
 
@@ -363,11 +360,11 @@ msgid ""
 "    to meet the standards for a modern WordPress installation."
 msgstr ""
 
-#: functions/functions.php:3297
+#: functions/functions.php:3296
 msgid "Be carefull. This IP will be blocked to access your site."
 msgstr ""
 
-#: functions/functions.php:3314
+#: functions/functions.php:3313
 msgid ""
 "Be carefull. This Referer will be blocked to access your site. Do not use "
 "HTML"
@@ -378,7 +375,7 @@ msgid ""
 "Because not all bots are bad, you need manage the bots and whitelist tables."
 msgstr ""
 
-#: functions/functions.php:4712
+#: functions/functions.php:4711
 msgid "Become Pro: Your bad bots table is always updated."
 msgstr ""
 
@@ -390,7 +387,7 @@ msgstr ""
 msgid "Bill Minozzi"
 msgstr ""
 
-#: functions/functions.php:4708
+#: functions/functions.php:4707
 msgid ""
 "BLACK FRIDAY 30% OFF! Use the coupon code: special-black_2019. Limited time!"
 msgstr ""
@@ -417,7 +414,7 @@ msgstr ""
 msgid "Block all with Blank User Agent?"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1120
+#: includes/diagnose/class_bill_diagnose.php:1122
 msgid ""
 "Block bots: They overload the server and steal your content. Install our "
 "free plugin Antihacker."
@@ -478,15 +475,15 @@ msgstr ""
 msgid "Blocked"
 msgstr ""
 
-#: functions/functions.php:1905
+#: functions/functions.php:1904
 msgid "Blocked Bot by Fake Browser (User Agent)"
 msgstr ""
 
-#: functions/functions.php:1885
+#: functions/functions.php:1884
 msgid "Blocked Bot by Rate Limiting"
 msgstr ""
 
-#: functions/functions.php:1925
+#: functions/functions.php:1924
 msgid "Blocked Visitor by Country (China, Cuba, North Korea)"
 msgstr ""
 
@@ -502,31 +499,31 @@ msgstr ""
 msgid "Bot"
 msgstr ""
 
-#: functions/functions.php:3323
+#: functions/functions.php:3322
 msgid "Bot included at table!"
 msgstr ""
 
-#: functions/functions.php:1606 functions/functions.php:1642
+#: functions/functions.php:1605 functions/functions.php:1641
 msgid "Bot was detected and blocked."
 msgstr ""
 
-#: dashboard/dashboard.php:321
+#: dashboard/dashboard.php:325
 msgid "Bots / Human Visits"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1357
+#: includes/diagnose/class_bill_diagnose.php:1359
 msgid "Bots and Hackers Attack (click to open)"
 msgstr ""
 
 #. echo '</strong>';
-#: includes/diagnose/class_bill_diagnose.php:1367
+#: includes/diagnose/class_bill_diagnose.php:1369
 msgid ""
 "Bots aren’t human—they’re automated scripts that visit your site. They steal "
 "your content, making it less unique. They overload your server, slowing it "
 "down and hurting your SEO."
 msgstr ""
 
-#: dashboard/dashboard.php:314
+#: dashboard/dashboard.php:318
 msgid "Bots Blocked By Type"
 msgstr ""
 
@@ -539,17 +536,17 @@ msgid ""
 "Bots can steal content, harm SEO, slow servers, and exploit vulnerabilities."
 msgstr ""
 
-#: functions/functions.php:1548
+#: functions/functions.php:1547
 msgid "Bots per page"
 msgstr ""
 
-#: dashboard/dashboard.php:289
+#: dashboard/dashboard.php:293
 msgid ""
 "Bots showing in your statistics tool, Use old WP version, Low memory, some "
 "plugin with Javascript error are some possible problems."
 msgstr ""
 
-#: dashboard/mybanners.php:259
+#: dashboard/mybanners.php:260
 msgid "Can You Do Us a Favor?"
 msgstr ""
 
@@ -557,7 +554,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:835
+#: includes/diagnose/class_bill_diagnose.php:837
 msgid ""
 "cannot function properly because your WordPress Memory Limit is too low. "
 "Your site will experience serious issues, even if you deactivate our plugin."
@@ -567,7 +564,12 @@ msgstr ""
 msgid "Change it on settings page."
 msgstr ""
 
-#: includes/chat/class_bill_chat.php:45
+#: dashboard/chat.php:14
+msgid "Chat 24 X 7"
+msgstr ""
+
+#: dashboard/class_bill_chat.php:51 includes/chat/class_bill_chat.php:47
+#: includes/chat/_class_bill_chat.php:45
 msgid "Chat messages reset successfully."
 msgstr ""
 
@@ -581,14 +583,14 @@ msgstr ""
 msgid "Check the bot's table frequently, especially in the first days."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1123
+#: includes/diagnose/class_bill_diagnose.php:1125
 msgid ""
 "Check your site for errors with free plugin wpTools. Errors and warnings can "
 "increase page load time by being recorded in log files, consuming resources "
 "and slowing down performance."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:896
+#: includes/diagnose/class_bill_diagnose.php:898
 msgid ""
 "Click the help button in the top right or go directly to the AI chat box "
 "below for more specific information on the issues listed."
@@ -620,7 +622,7 @@ msgstr ""
 msgid "Critical"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1909
+#: includes/diagnose/class_bill_diagnose.php:1911
 msgid "Critical Issues"
 msgstr ""
 
@@ -635,7 +637,7 @@ msgid ""
 "attempts, and how long the ban lasts"
 msgstr ""
 
-#: functions/functions.php:1622 functions/functions.php:1654
+#: functions/functions.php:1621 functions/functions.php:1653
 msgid "Dashboard"
 msgstr ""
 
@@ -643,24 +645,24 @@ msgstr ""
 msgid "Dashboard => Stop Bad Bots => Bad Bots Table."
 msgstr ""
 
-#: functions/functions.php:1684 functions/functions.php:1706
-#: functions/functions.php:1728 functions/functions.php:1750
-#: functions/functions.php:1772 functions/functions.php:1795
-#: functions/functions.php:1812 functions/functions.php:1832
-#: functions/functions.php:1852 functions/functions.php:1874
-#: functions/functions.php:1894 functions/functions.php:1914
-#: functions/functions.php:1934
+#: functions/functions.php:1683 functions/functions.php:1705
+#: functions/functions.php:1727 functions/functions.php:1749
+#: functions/functions.php:1771 functions/functions.php:1794
+#: functions/functions.php:1811 functions/functions.php:1831
+#: functions/functions.php:1851 functions/functions.php:1873
+#: functions/functions.php:1893 functions/functions.php:1913
+#: functions/functions.php:1933
 msgid "Dashboard => Stop Bad Bots => Settings."
 msgstr ""
 
-#: functions/functions.php:1608 functions/functions.php:1644
-#: functions/functions.php:1675 functions/functions.php:1698
-#: functions/functions.php:1720 functions/functions.php:1742
-#: functions/functions.php:1764 functions/functions.php:1787
-#: functions/functions.php:1807 functions/functions.php:1824
-#: functions/functions.php:1844 functions/functions.php:1864
-#: functions/functions.php:1886 functions/functions.php:1906
-#: functions/functions.php:1926
+#: functions/functions.php:1607 functions/functions.php:1643
+#: functions/functions.php:1674 functions/functions.php:1697
+#: functions/functions.php:1719 functions/functions.php:1741
+#: functions/functions.php:1763 functions/functions.php:1786
+#: functions/functions.php:1806 functions/functions.php:1823
+#: functions/functions.php:1843 functions/functions.php:1863
+#: functions/functions.php:1885 functions/functions.php:1905
+#: functions/functions.php:1925
 msgid "Date"
 msgstr ""
 
@@ -672,11 +674,11 @@ msgstr ""
 msgid "day"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1306
+#: includes/diagnose/class_bill_diagnose.php:1308
 msgid "day(s)"
 msgstr ""
 
-#: dashboard/dashboard.php:308
+#: dashboard/dashboard.php:312
 msgid "Days"
 msgstr ""
 
@@ -705,43 +707,43 @@ msgid ""
 "you immediately!"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:912
+#: dashboard/chat.php:53 includes/diagnose/class_bill_diagnose.php:914
 msgid ""
 "Describe your issue, or use the buttons below to check for errors or server "
 "settings..."
 msgstr ""
 
-#: functions/functions.php:1843
+#: functions/functions.php:1842
 msgid "Detected bot in Login Form"
 msgstr ""
 
-#: functions/functions.php:1605 functions/functions.php:1641
-#: functions/functions.php:1672 functions/functions.php:1695
+#: functions/functions.php:1604 functions/functions.php:1640
+#: functions/functions.php:1671 functions/functions.php:1694
 msgid "Detected Bot on"
 msgstr ""
 
-#: functions/functions.php:1863
+#: functions/functions.php:1862
 msgid "Detected bot using HTTP tools"
 msgstr ""
 
-#: functions/functions.php:1717 functions/functions.php:1739
-#: functions/functions.php:1761 functions/functions.php:1783
+#: functions/functions.php:1716 functions/functions.php:1738
+#: functions/functions.php:1760 functions/functions.php:1782
 msgid "Detected Possible Bot on"
 msgstr ""
 
-#: functions/functions.php:1823
+#: functions/functions.php:1822
 msgid "Detected Spammer in Comments Form"
 msgstr ""
 
-#: functions/functions.php:1806
+#: functions/functions.php:1805
 msgid "Detected Spammer in Contact Form"
 msgstr ""
 
-#: dashboard/mybanners.php:251
+#: dashboard/mybanners.php:252
 msgid "Did you like The Stop Bad Bots Plugin?"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:894
+#: includes/diagnose/class_bill_diagnose.php:896
 msgid ""
 "Disabling our plugin does not stop the errors from occurring; it simply "
 "means you will no longer be notified here that they are happening, but they "
@@ -752,19 +754,19 @@ msgstr ""
 msgid "Discover New FREE Plugins"
 msgstr ""
 
-#: dashboard/notifications.php:85 functions/functions.php:4886
+#: dashboard/notifications.php:85 functions/functions.php:4885
 #: includes/vendor/vendor.php:56
 msgid "Dismiss"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:892
+#: includes/diagnose/class_bill_diagnose.php:894
 msgid ""
 "Displaying the latest recurring errors (Javascript Included) from your error "
 "log file and eventually alert about low WordPress memory limit is a courtesy "
 "of plugin"
 msgstr ""
 
-#: functions/functions.php:3277
+#: functions/functions.php:3276
 msgid "Do not use special characters neither HTML"
 msgstr ""
 
@@ -776,14 +778,14 @@ msgstr ""
 msgid "Email for security notifications"
 msgstr ""
 
-#: functions/functions.php:1613 functions/functions.php:1647
-#: functions/functions.php:1679 functions/functions.php:1701
-#: functions/functions.php:1723 functions/functions.php:1745
-#: functions/functions.php:1767 functions/functions.php:1790
-#: functions/functions.php:1810 functions/functions.php:1827
-#: functions/functions.php:1847 functions/functions.php:1869
-#: functions/functions.php:1889 functions/functions.php:1909
-#: functions/functions.php:1929
+#: functions/functions.php:1612 functions/functions.php:1646
+#: functions/functions.php:1678 functions/functions.php:1700
+#: functions/functions.php:1722 functions/functions.php:1744
+#: functions/functions.php:1766 functions/functions.php:1789
+#: functions/functions.php:1809 functions/functions.php:1826
+#: functions/functions.php:1846 functions/functions.php:1868
+#: functions/functions.php:1888 functions/functions.php:1908
+#: functions/functions.php:1928
 msgid "eMail sent by Stop Bad Bots Plugin."
 msgstr ""
 
@@ -791,7 +793,7 @@ msgstr ""
 msgid "Empty Table. Please, try again later."
 msgstr ""
 
-#: functions/functions.php:1718
+#: functions/functions.php:1717
 msgid "Empty User Agent was detected and blocked by Stop Bad Bots Plugin."
 msgstr ""
 
@@ -839,7 +841,7 @@ msgstr ""
 msgid "Engine Option:"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:916
+#: dashboard/chat.php:57 includes/diagnose/class_bill_diagnose.php:918
 msgid ""
 "Enter a message and click 'Send', or just click 'Auto Checkup' to analyze "
 "error log or server info configuration."
@@ -849,57 +851,66 @@ msgstr ""
 msgid "Enter your message..."
 msgstr ""
 
-#: includes/chat/class_bill_chat.php:278
+#: dashboard/chat.php:41
+msgid "Error & Server Issues"
+msgstr ""
+
+#: dashboard/class_bill_chat.php:216 includes/chat/class_bill_chat.php:284
+#: includes/chat/_class_bill_chat.php:278
 msgid ""
 "Error contacting the Artificial Intelligence (API). Please try again later."
 msgstr ""
 
-#: includes/chat/class_bill_chat.php:49
+#: dashboard/class_bill_chat.php:55 includes/chat/class_bill_chat.php:51
+#: includes/chat/_class_bill_chat.php:49
 msgid "Error processing server response:"
 msgstr ""
 
-#: includes/chat/class_bill_chat.php:46
+#: dashboard/class_bill_chat.php:52 includes/chat/class_bill_chat.php:48
+#: includes/chat/_class_bill_chat.php:46
 msgid "Error resetting chat messages."
 msgstr ""
 
-#: includes/chat/class_bill_chat.php:52
+#: dashboard/class_bill_chat.php:58 includes/chat/class_bill_chat.php:54
+#: includes/chat/_class_bill_chat.php:52
 msgid "Error sending the message. Please try again later."
 msgstr ""
 
-#: includes/chat/class_bill_chat.php:411
+#: dashboard/class_bill_chat.php:304 includes/chat/class_bill_chat.php:420
+#: includes/chat/_class_bill_chat.php:441
 msgid "Error to get response from AI source!"
 msgstr ""
 
-#: functions/functions.php:7454
+#: functions/functions.php:7490
 msgid "Errors have been detected on this site. "
 msgstr ""
 
-#: functions/functions.php:3262
+#: functions/functions.php:3261
 msgid "Example: SpiderBot (no case sensitive)"
 msgstr ""
 
-#: functions/functions.php:3333
+#: functions/functions.php:3332
 msgid ""
 "Fail to include bot! Check bot nickname and remember Duplicates are not "
 "allowed. "
 msgstr ""
 
-#: functions/functions.php:3356
+#: functions/functions.php:3355
 msgid ""
 "Fail to include IP! Check bot IP and remember Duplicates are not allowed. "
 msgstr ""
 
-#: functions/functions.php:3379
+#: functions/functions.php:3378
 msgid ""
 "Fail to include Referer! Check referer name and remember Duplicates are not "
 "allowed. "
 msgstr ""
 
-#: functions/functions.php:1785
+#: functions/functions.php:1784
 msgid "Fake User Agent:"
 msgstr ""
 
-#: functions/functions.php:1784
+#: functions/functions.php:1783
 msgid "False Google/Bing/Msn was detected and blocked by Stop Bad Bots Plugin."
 msgstr ""
 
@@ -919,11 +930,11 @@ msgstr ""
 msgid "fifty 404 pages"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1479
+#: includes/diagnose/class_bill_diagnose.php:1481
 msgid "File not readable."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1531
+#: includes/diagnose/class_bill_diagnose.php:1533
 msgid "File Size: "
 msgstr ""
 
@@ -950,11 +961,11 @@ msgstr ""
 msgid "Follow this instructions to do it manually:"
 msgstr ""
 
-#: stopbadbots.php:1503
+#: stopbadbots.php:1634
 msgid "For details, visit the plugin dashboard"
 msgstr ""
 
-#: functions/functions.php:3266
+#: functions/functions.php:3265
 msgid ""
 "For example, if you put \"bot\" will block all bots with the string bot at "
 "user agent name."
@@ -964,7 +975,7 @@ msgstr ""
 msgid "For IP withelist, just add the IP to unblock it."
 msgstr ""
 
-#: functions/functions.php:981
+#: functions/functions.php:980
 msgid "for more details, Support and online guide."
 msgstr ""
 
@@ -978,7 +989,7 @@ msgid ""
 "Protection."
 msgstr ""
 
-#: dashboard/dashboard.php:273 dashboard/dashboard.php:283
+#: dashboard/dashboard.php:277 dashboard/dashboard.php:287
 msgid "Go"
 msgstr ""
 
@@ -1002,23 +1013,23 @@ msgid ""
 "activate it. "
 msgstr ""
 
-#: functions/functions.php:966
+#: functions/functions.php:965
 msgid ""
 "Go to Dashboard Page for more information, Online Guide and Support. (WP "
 "Dashboard => Stop Bad Bots = Dashboard)"
 msgstr ""
 
-#: functions/functions.php:971
+#: functions/functions.php:970
 msgid ""
 "Go to Visits Log Page for details about the visits. (WP Dashboard => Stop "
 "Bad Bots = Visits Log)"
 msgstr ""
 
-#: functions/functions.php:4878
+#: functions/functions.php:4877
 msgid "Go to WordPress"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1369
+#: includes/diagnose/class_bill_diagnose.php:1371
 msgid ""
 "Hackers look for vulnerabilities to access your server. Even small sites are "
 "targets—they use your server to send spam and attack others, damaging your "
@@ -1040,7 +1051,7 @@ msgid ""
 "more in-depth insights."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1304
+#: includes/diagnose/class_bill_diagnose.php:1306
 msgid "hour(s)"
 msgstr ""
 
@@ -1062,7 +1073,7 @@ msgstr ""
 msgid "How to Tell if Your Site Needs a Shot of more Memory:"
 msgstr ""
 
-#: functions/functions.php:1865
+#: functions/functions.php:1864
 msgid "HTTP tool:"
 msgstr ""
 
@@ -1093,7 +1104,7 @@ msgid ""
 "send email notifications to you."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1371
+#: includes/diagnose/class_bill_diagnose.php:1373
 msgid ""
 "If you doubt the accuracy of the table below, check with your hosting "
 "provider or check the IPs with the site https://ipinfo.io."
@@ -1129,7 +1140,7 @@ msgid ""
 "Limit quickly and without edit any files, try our free plugin WPmemory:"
 msgstr ""
 
-#: dashboard/mybanners.php:261
+#: dashboard/mybanners.php:262
 msgid ""
 "If you're enjoying the Stop Bad Bots Plugin, we’d be grateful if you could "
 "rate it on WordPress.org. It only takes a moment and helps us reach more "
@@ -1156,18 +1167,18 @@ msgstr ""
 msgid "Improve your protection level."
 msgstr ""
 
-#: functions/functions.php:3287
+#: functions/functions.php:3286
 msgid ""
 "In addiction to default ip table, you can add one or more ip to the table."
 msgstr ""
 
-#: functions/functions.php:3304
+#: functions/functions.php:3303
 msgid ""
 "In addiction to default referer table, you can add one or more referers to "
 "the table."
 msgstr ""
 
-#: functions/functions.php:3257
+#: functions/functions.php:3256
 msgid ""
 "In addiction to default system table, you can add one or more string to the "
 "table."
@@ -1194,15 +1205,17 @@ msgstr ""
 msgid "integrating StopBadBots with Fail2Ban"
 msgstr ""
 
-#: includes/chat/class_bill_chat.php:47
+#: dashboard/class_bill_chat.php:53 includes/chat/class_bill_chat.php:49
+#: includes/chat/_class_bill_chat.php:47
 msgid "Invalid message received:"
 msgstr ""
 
-#: includes/chat/class_bill_chat.php:48
+#: dashboard/class_bill_chat.php:54 includes/chat/class_bill_chat.php:50
+#: includes/chat/_class_bill_chat.php:48
 msgid "Invalid response format:"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1498
+#: includes/diagnose/class_bill_diagnose.php:1500
 msgid "Invalid size."
 msgstr ""
 
@@ -1210,16 +1223,16 @@ msgstr ""
 msgid "IP"
 msgstr ""
 
-#: functions/functions.php:1721 functions/functions.php:1743
-#: functions/functions.php:1765 functions/functions.php:1788
-#: functions/functions.php:1808 functions/functions.php:1825
-#: functions/functions.php:1845 functions/functions.php:1867
-#: functions/functions.php:1887 functions/functions.php:1907
-#: functions/functions.php:1927
+#: functions/functions.php:1720 functions/functions.php:1742
+#: functions/functions.php:1764 functions/functions.php:1787
+#: functions/functions.php:1807 functions/functions.php:1824
+#: functions/functions.php:1844 functions/functions.php:1866
+#: functions/functions.php:1886 functions/functions.php:1906
+#: functions/functions.php:1926
 msgid "IP Found:"
 msgstr ""
 
-#: functions/functions.php:3346
+#: functions/functions.php:3345
 msgid "IP included at table!"
 msgstr ""
 
@@ -1227,7 +1240,7 @@ msgstr ""
 msgid "IP whitelist."
 msgstr ""
 
-#: functions/functions.php:1562
+#: functions/functions.php:1561
 msgid "IPs per page"
 msgstr ""
 
@@ -1248,7 +1261,7 @@ msgstr ""
 msgid "Jail Activity (Today)"
 msgstr ""
 
-#: functions/functions.php:3264
+#: functions/functions.php:3263
 msgid "Just a piece of the name is enough."
 msgstr ""
 
@@ -1256,11 +1269,11 @@ msgstr ""
 msgid "Just add one string to unblock all User Agent that contain that string."
 msgstr ""
 
-#: functions/functions.php:1113
+#: functions/functions.php:1112
 msgid "Just Click Over Stop Bad Bots, then Go To Settings=>StartUp Guide."
 msgstr ""
 
-#: dashboard/dashboard.php:268
+#: dashboard/dashboard.php:272
 msgid "Just click Settings in the left menu (Stop Bad Bots)."
 msgstr ""
 
@@ -1273,7 +1286,7 @@ msgid ""
 "Just give us a little time to collect data so we can display it for you here."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1174
+#: includes/diagnose/class_bill_diagnose.php:1176
 msgid ""
 "Keeping your plugins up to date is crucial for ensuring security, "
 "performance, and compatibility with the latest features and improvements."
@@ -1283,19 +1296,19 @@ msgstr ""
 msgid "Last 100 Fail2Ban Block Records"
 msgstr ""
 
-#: dashboard/mybanners.php:74 dashboard/dashboard.php:128
-#: dashboard/dashboard.php:144 functions/functions.php:4874
-#: includes/vendor/vendor.php:54 includes/diagnose/class_bill_diagnose.php:999
-#: includes/diagnose/class_bill_diagnose.php:1450
+#: dashboard/mybanners.php:75 dashboard/dashboard.php:132
+#: dashboard/dashboard.php:148 functions/functions.php:4873
+#: includes/vendor/vendor.php:54 includes/diagnose/class_bill_diagnose.php:1001
+#: includes/diagnose/class_bill_diagnose.php:1452
 msgid "Learn More"
 msgstr ""
 
-#: functions/functions.php:7454 functions/functions.php:7477
-#: includes/diagnose/class_bill_diagnose.php:841
+#: functions/functions.php:7490 functions/functions.php:7513
+#: includes/diagnose/class_bill_diagnose.php:843
 msgid "Learn more"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1128
+#: includes/diagnose/class_bill_diagnose.php:1130
 msgid ""
 "Learn more about Page Load Times and their negative impact on SEO and more"
 msgstr ""
@@ -1317,7 +1330,7 @@ msgstr ""
 msgid "Loading"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1109
+#: includes/diagnose/class_bill_diagnose.php:1111
 msgid "Loading time can significantly impact your SEO."
 msgstr ""
 
@@ -1327,13 +1340,13 @@ msgid ""
 "Firewall protection."
 msgstr ""
 
-#: functions/functions.php:6251
+#: functions/functions.php:6287
 msgid ""
 "Looks Like This Message doesn't come from our site. Please, use another way "
 "to contact us."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:970
+#: includes/diagnose/class_bill_diagnose.php:972
 msgid "Low WordPress Memory Limit (click to open)"
 msgstr ""
 
@@ -1341,11 +1354,11 @@ msgstr ""
 msgid "Low WordPress Memory Limit in wp-config file"
 msgstr ""
 
-#: functions/functions.php:1673
+#: functions/functions.php:1672
 msgid "Malicious bot was detected and blocked by firewall."
 msgstr ""
 
-#: functions/functions.php:1677
+#: functions/functions.php:1676
 msgid "Malicious String Found:"
 msgstr ""
 
@@ -1353,7 +1366,7 @@ msgstr ""
 msgid "Manual Setup (Advanced)"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1111
+#: includes/diagnose/class_bill_diagnose.php:1113
 msgid "Many users will abandon the site before it fully loads."
 msgstr ""
 
@@ -1387,7 +1400,7 @@ msgstr ""
 msgid "Memory Info"
 msgstr ""
 
-#: functions/functions.php:7477
+#: functions/functions.php:7513
 msgid "Memory issues have been detected on this site. "
 msgstr ""
 
@@ -1401,11 +1414,11 @@ msgid ""
 "bots can overload your server."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1302
+#: includes/diagnose/class_bill_diagnose.php:1304
 msgid "minutes"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1310
+#: includes/diagnose/class_bill_diagnose.php:1312
 msgid "month(s)"
 msgstr ""
 
@@ -1507,7 +1520,7 @@ msgstr ""
 msgid "Num Blocked"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1360
+#: includes/diagnose/class_bill_diagnose.php:1362
 msgid "Number of last attacks: "
 msgstr ""
 
@@ -1519,15 +1532,15 @@ msgstr ""
 msgid "OnLine Guide"
 msgstr ""
 
-#: dashboard/dashboard.php:278
+#: dashboard/dashboard.php:282
 msgid "OnLine Guide, Support, Faq..."
 msgstr ""
 
-#: dashboard/dashboard.php:137
+#: dashboard/dashboard.php:141
 msgid "Only Partial Protection enabled!"
 msgstr ""
 
-#: functions/functions.php:1112
+#: functions/functions.php:1111
 msgid "Open Stop Bad Bots Plugin Here!"
 msgstr ""
 
@@ -1546,14 +1559,14 @@ msgstr ""
 msgid "Or if a bot requests exceed"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1376
+#: includes/diagnose/class_bill_diagnose.php:1378
 #, php-format
 msgid ""
 "Our free <a href=\"%1$s\">StopBadBots</a> and <a href=\"%2$s\">AntiHacker</a>"
 " plugins help safeguard your site."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1177
+#: includes/diagnose/class_bill_diagnose.php:1179
 msgid ""
 "Our free AntiHacker plugin can even check for abandoned plugins that you are "
 "using, as these plugins may no longer receive security updates, leaving your "
@@ -1561,7 +1574,7 @@ msgid ""
 "site's integrity and data."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:833
+#: includes/diagnose/class_bill_diagnose.php:835
 msgid "Our plugin"
 msgstr ""
 
@@ -1572,7 +1585,7 @@ msgid ""
 "our plugin."
 msgstr ""
 
-#: functions/functions.php:1054 functions/functions.php:1062
+#: functions/functions.php:1053 functions/functions.php:1061
 msgid "Overview"
 msgstr ""
 
@@ -1596,7 +1609,7 @@ msgid ""
 "password attacks and others nasty things."
 msgstr ""
 
-#: functions/functions.php:1740
+#: functions/functions.php:1739
 msgid "PingBack Requested was detected and blocked by Stop Bad Bots Plugin."
 msgstr ""
 
@@ -1613,7 +1626,8 @@ msgid ""
 "installation or configuration of Fail2Ban on your server."
 msgstr ""
 
-#: includes/chat/class_bill_chat.php:53
+#: dashboard/class_bill_chat.php:59 includes/chat/class_bill_chat.php:55
+#: includes/chat/_class_bill_chat.php:53
 msgid "Please enter a message!"
 msgstr ""
 
@@ -1623,7 +1637,7 @@ msgid ""
 "these settings later."
 msgstr ""
 
-#: dashboard/mybanners.php:253
+#: dashboard/mybanners.php:254
 msgid ""
 "Please support us by rating our plugin on WordPress.org. Help us keep this "
 "plugin live and updated."
@@ -1641,7 +1655,7 @@ msgstr ""
 msgid "Please, wait...  Dismissing..."
 msgstr ""
 
-#: functions/functions.php:979
+#: functions/functions.php:978
 msgid "plugin site"
 msgstr ""
 
@@ -1657,19 +1671,23 @@ msgstr ""
 msgid "Plugin Stop Bad Bots It is not active!"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1170
+#: dashboard/chat.php:45
+msgid "Plugin Usage & Configuration"
+msgstr ""
+
+#: includes/diagnose/class_bill_diagnose.php:1172
 msgid "Plugins with Updates Available (click to open)"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:941
+#: includes/diagnose/class_bill_diagnose.php:943
 msgid "Potential Problems"
 msgstr ""
 
-#: dashboard/dashboard.php:124
+#: dashboard/dashboard.php:128
 msgid "Pro Protection Enabled"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1121
+#: includes/diagnose/class_bill_diagnose.php:1123
 msgid ""
 "Protect against hackers: They use bots to search for vulnerabilities and "
 "overload the server. Install our free plugin AntiHacker"
@@ -1689,11 +1707,11 @@ msgstr ""
 msgid "Protect Login Form against bots?"
 msgstr ""
 
-#: dashboard/dashboard.php:110
+#: dashboard/dashboard.php:114
 msgid "Protection level currently configured."
 msgstr ""
 
-#: stopbadbots.php:1499
+#: stopbadbots.php:1630
 msgid "Protection rate:"
 msgstr ""
 
@@ -1709,25 +1727,25 @@ msgstr ""
 msgid "Purchase Code (just paste here to activate your product)"
 msgstr ""
 
-#: dashboard/mybanners.php:264
+#: dashboard/mybanners.php:265
 msgid "Rate"
 msgstr ""
 
-#: dashboard/mybanners.php:256
+#: dashboard/mybanners.php:257
 msgid "Rate or Share"
 msgstr ""
 
-#: functions/functions.php:961
+#: functions/functions.php:960
 msgid ""
 "Read the StartUp guide at Stop Bad Bots Settings page. (WP Dashboard => Stop "
 "Bad Bots = Settings)"
 msgstr ""
 
-#: dashboard/dashboard.php:170
+#: dashboard/dashboard.php:174
 msgid "reCAPTCHA extension is disabled! Go to plugins page and activate it."
 msgstr ""
 
-#: dashboard/dashboard.php:176
+#: dashboard/dashboard.php:180
 msgid "reCAPTCHA extention not intalled!"
 msgstr ""
 
@@ -1741,7 +1759,7 @@ msgstr ""
 msgid "Receive email alerts for each blocked bot?"
 msgstr ""
 
-#: functions/functions.php:3369
+#: functions/functions.php:3368
 msgid "Referer included at table!"
 msgstr ""
 
@@ -1749,7 +1767,7 @@ msgstr ""
 msgid "Referer Name"
 msgstr ""
 
-#: functions/functions.php:1699
+#: functions/functions.php:1698
 msgid "Referer String Found:"
 msgstr ""
 
@@ -1761,12 +1779,13 @@ msgstr ""
 msgid "Remember to deactivate their bot."
 msgstr ""
 
-#: includes/chat/class_bill_chat.php:50
+#: dashboard/class_bill_chat.php:56 includes/chat/class_bill_chat.php:52
+#: includes/chat/_class_bill_chat.php:50
 msgid "Response is not valid JSON."
 msgstr ""
 
-#: functions/functions.php:1610 functions/functions.php:1645
-#: functions/functions.php:1676
+#: functions/functions.php:1609 functions/functions.php:1644
+#: functions/functions.php:1675
 msgid "Robot IP Address"
 msgstr ""
 
@@ -1792,7 +1811,7 @@ msgid ""
 "block them (remove from Whitelist) and include new ones on User Agent Tables."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1113
+#: includes/diagnose/class_bill_diagnose.php:1115
 msgid ""
 "Search engines prioritize faster-loading pages, as they improve user "
 "experience and reduce bounce rates."
@@ -1810,7 +1829,7 @@ msgstr ""
 msgid "Search Referer"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1300
+#: includes/diagnose/class_bill_diagnose.php:1302
 msgid "seconds"
 msgstr ""
 
@@ -1818,30 +1837,34 @@ msgstr ""
 msgid "Select"
 msgstr ""
 
-#: includes/feedback-last/feedback-last.php:261
-#: includes/diagnose/class_bill_diagnose.php:913
+#: dashboard/chat.php:37
+msgid "Select assistance type:"
+msgstr ""
+
+#: dashboard/chat.php:54 includes/feedback-last/feedback-last.php:261
+#: includes/diagnose/class_bill_diagnose.php:915
 msgid "Send"
 msgstr ""
 
-#: functions/functions.php:1626 functions/functions.php:1658
+#: functions/functions.php:1625 functions/functions.php:1657
 msgid "Settings."
 msgstr ""
 
-#: functions/functions.php:4704
+#: functions/functions.php:4703
 msgid "Show support with a 5-star rating."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1441
+#: includes/diagnose/class_bill_diagnose.php:1443
 msgid "Site Errors"
 msgstr ""
 
 #. Tab heading for Site Health navigation.
-#: includes/diagnose/class_bill_diagnose.php:858
+#: includes/diagnose/class_bill_diagnose.php:860
 msgctxt "Site Health"
 msgid "Critical Issues"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1484
+#: includes/diagnose/class_bill_diagnose.php:1486
 msgid "Size not determined."
 msgstr ""
 
@@ -1868,7 +1891,7 @@ msgstr ""
 msgid "Start Setup"
 msgstr ""
 
-#: dashboard/dashboard.php:266
+#: dashboard/dashboard.php:270
 msgid "Start Up Guide and Settings"
 msgstr ""
 
@@ -1876,7 +1899,7 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: functions/functions.php:1624 functions/functions.php:1656
+#: functions/functions.php:1623 functions/functions.php:1655
 msgid "Stop Bad Bots"
 msgstr ""
 
@@ -1888,7 +1911,7 @@ msgstr ""
 msgid "Stop Bad Bots Plugin Activated"
 msgstr ""
 
-#: functions/functions.php:4714
+#: functions/functions.php:4713
 msgid "Stop Bad Bots Plugin. Its time to Get Pro Protection!"
 msgstr ""
 
@@ -1898,7 +1921,7 @@ msgid ""
 "No Slow Down Your Site!"
 msgstr ""
 
-#: stopbadbots.php:251
+#: stopbadbots.php:255
 msgid "Stop Bad Bots: Could not load the localization file (Language file)"
 msgstr ""
 
@@ -1925,7 +1948,7 @@ msgid ""
 "affect your visit and analytics reports."
 msgstr ""
 
-#: functions/functions.php:1611
+#: functions/functions.php:1610
 msgid "String Found:"
 msgstr ""
 
@@ -1933,7 +1956,7 @@ msgstr ""
 msgid "String whitelist (no case sensitive)"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1118
+#: includes/diagnose/class_bill_diagnose.php:1120
 msgid "Suggestions:"
 msgstr ""
 
@@ -1967,15 +1990,15 @@ msgstr ""
 msgid "The free version includes only the Minimal and Conservative options."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1106
+#: includes/diagnose/class_bill_diagnose.php:1108
 msgid "The Load average of your front pages is: "
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1093
+#: includes/diagnose/class_bill_diagnose.php:1095
 msgid "The page load time is poor (click to open)"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1095
+#: includes/diagnose/class_bill_diagnose.php:1097
 msgid "The page load time is very poor (click to open)"
 msgstr ""
 
@@ -1992,6 +2015,13 @@ msgid ""
 "been waiting for!"
 msgstr ""
 
+#: dashboard/chat.php:19
+msgid ""
+"The tool assists with plugin installation, server issues, and product setup. "
+"You can run quick scans using the \"Auto Checkup\" buttons. The database is "
+"being expanded to cover more questions, and you can ask in your own language."
+msgstr ""
+
 #: functions/fail2ban.php:50
 msgid ""
 "The use of this page is optional, and it's intended for more advanced users."
@@ -2002,7 +2032,7 @@ msgstr ""
 msgid "Then click SAVE CHANGES."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1903
+#: includes/diagnose/class_bill_diagnose.php:1905
 msgid ""
 "These are critical issues that can have a significant impact on your site's "
 "performance. They can cause many plugins and functionalities to malfunction "
@@ -2047,7 +2077,7 @@ msgid ""
 "Recommended: Yes."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1467
+#: includes/diagnose/class_bill_diagnose.php:1469
 msgid "This is a partial list of the errors found."
 msgstr ""
 
@@ -2111,23 +2141,23 @@ msgid ""
 "easily add visitors to the blacklist or whitelist with just one click."
 msgstr ""
 
-#: dashboard/dashboard.php:348
+#: dashboard/dashboard.php:352
 msgid "Top Bots Bad Referer Blocked"
 msgstr ""
 
-#: dashboard/dashboard.php:342
+#: dashboard/dashboard.php:346
 msgid "Top Bots Blocked By IP"
 msgstr ""
 
-#: dashboard/dashboard.php:337
+#: dashboard/dashboard.php:341
 msgid "Top Bots Blocked by Name"
 msgstr ""
 
-#: stopbadbots.php:1521
+#: stopbadbots.php:1652
 msgid "Total Attacks Blocked By IP"
 msgstr ""
 
-#: stopbadbots.php:1512
+#: stopbadbots.php:1643
 msgid "Total Attacks Blocked By Type"
 msgstr ""
 
@@ -2135,11 +2165,11 @@ msgstr ""
 msgid "Total Bans"
 msgstr ""
 
-#: dashboard/dashboard.php:305
+#: dashboard/dashboard.php:309
 msgid "Total Bots Blocked Last 15 days"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:987
+#: includes/diagnose/class_bill_diagnose.php:989
 msgid "Total Php Server Memory"
 msgstr ""
 
@@ -2147,16 +2177,20 @@ msgstr ""
 msgid "Total Server Memory:"
 msgstr ""
 
-#: dashboard/dashboard.php:287
+#: dashboard/dashboard.php:291
 msgid "Troubleshooting Guide"
 msgstr ""
 
-#: dashboard/dashboard.php:291 guide/guide.php:140
+#: dashboard/dashboard.php:295 guide/guide.php:140
 msgid "Troubleshooting Page"
 msgstr ""
 
 #: settings/options/plugin_options_tabbed.php:673
 msgid "twenty 404 pages"
+msgstr ""
+
+#: dashboard/mybanners.php:55
+msgid "Two extra options for enhanced engine performance."
 msgstr ""
 
 #: dashboard/memory.php:46
@@ -2189,10 +2223,10 @@ msgstr ""
 msgid "Upgrade for Max Protection"
 msgstr ""
 
-#: dashboard/dashboard.php:78
+#: dashboard/dashboard.php:82
 msgid ""
-"Upgrade to Premium for weekly updates, enhanced firewall protection, and "
-"more, ensuring a level 100% of security."
+"Upgrade to Premium for automatic updates, enhanced firewall protection, and "
+"advanced options to maximize your security."
 msgstr ""
 
 #: dashboard/memory.php:22
@@ -2201,11 +2235,11 @@ msgid ""
 "site after the update."
 msgstr ""
 
-#: functions/functions.php:1609
+#: functions/functions.php:1608
 msgid "User Agent"
 msgstr ""
 
-#: functions/functions.php:1762
+#: functions/functions.php:1761
 msgid "User Enumeration was detected and blocked by Stop Bad Bots Plugin."
 msgstr ""
 
@@ -2218,7 +2252,7 @@ msgstr ""
 msgid "Visit our site for more details on %s."
 msgstr ""
 
-#: functions/functions.php:977
+#: functions/functions.php:976
 msgid "Visit the"
 msgstr ""
 
@@ -2228,19 +2262,19 @@ msgid ""
 "Troubleshooting page and bot's and IP's details."
 msgstr ""
 
-#: functions/functions.php:1632 functions/functions.php:1663
-#: functions/functions.php:1686 functions/functions.php:1708
-#: functions/functions.php:1730 functions/functions.php:1752
-#: functions/functions.php:1774 functions/functions.php:1797
-#: functions/functions.php:1814 functions/functions.php:1834
-#: functions/functions.php:1854 functions/functions.php:1876
-#: functions/functions.php:1896 functions/functions.php:1916
-#: functions/functions.php:1936
+#: functions/functions.php:1631 functions/functions.php:1662
+#: functions/functions.php:1685 functions/functions.php:1707
+#: functions/functions.php:1729 functions/functions.php:1751
+#: functions/functions.php:1773 functions/functions.php:1796
+#: functions/functions.php:1813 functions/functions.php:1833
+#: functions/functions.php:1853 functions/functions.php:1875
+#: functions/functions.php:1895 functions/functions.php:1915
+#: functions/functions.php:1935
 msgid "Visit us to learn how to get Weekly Updates and more features:"
 msgstr ""
 
-#: table/visitors_render.php:53 functions/functions.php:1046
-#: functions/functions.php:1069
+#: table/visitors_render.php:53 functions/functions.php:1045
+#: functions/functions.php:1068
 msgid "Visits Log"
 msgstr ""
 
@@ -2270,7 +2304,7 @@ msgstr ""
 msgid "We'll automatically apply the best-practice settings for you."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1308
+#: includes/diagnose/class_bill_diagnose.php:1310
 msgid "week(s)"
 msgstr ""
 
@@ -2286,11 +2320,11 @@ msgstr ""
 msgid "What can we do to resolve the problem you're facing?"
 msgstr ""
 
-#: dashboard/dashboard.php:354
+#: dashboard/dashboard.php:358
 msgid "With our plugin, many blocked bots will give up of attack your site!"
 msgstr ""
 
-#: dashboard/dashboard.php:125
+#: dashboard/dashboard.php:129
 msgid "With weekly database updates and Firewall protection."
 msgstr ""
 
@@ -2379,14 +2413,14 @@ msgid ""
 "You can see the bots attacks info at Bad Bots Table. (column Num Blocked)."
 msgstr ""
 
-#: functions/functions.php:1614 functions/functions.php:1648
-#: functions/functions.php:1680 functions/functions.php:1702
-#: functions/functions.php:1724 functions/functions.php:1746
-#: functions/functions.php:1768 functions/functions.php:1791
-#: functions/functions.php:1811 functions/functions.php:1828
-#: functions/functions.php:1848 functions/functions.php:1870
-#: functions/functions.php:1890 functions/functions.php:1910
-#: functions/functions.php:1930
+#: functions/functions.php:1613 functions/functions.php:1647
+#: functions/functions.php:1679 functions/functions.php:1701
+#: functions/functions.php:1723 functions/functions.php:1745
+#: functions/functions.php:1767 functions/functions.php:1790
+#: functions/functions.php:1810 functions/functions.php:1827
+#: functions/functions.php:1847 functions/functions.php:1869
+#: functions/functions.php:1889 functions/functions.php:1909
+#: functions/functions.php:1929
 msgid "You can stop emails at the Notifications Settings Tab."
 msgstr ""
 
@@ -2418,7 +2452,7 @@ msgstr ""
 msgid "You plan to configure all settings manually after installation."
 msgstr ""
 
-#: dashboard/dashboard.php:280
+#: dashboard/dashboard.php:284
 msgid ""
 "You will find our complete and updated OnLine guide, faqs page, link to "
 "support and more in our site."
@@ -2436,13 +2470,13 @@ msgstr ""
 msgid "Your Experience Level"
 msgstr ""
 
-#: functions/functions.php:6246
+#: functions/functions.php:6282
 msgid ""
 "Your IP is blacklisted on Internet Public Databases. Please, use another way "
 "to contact us."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:1446
+#: includes/diagnose/class_bill_diagnose.php:1448
 msgid ""
 "Your site has experienced errors for the past 2 days. These errors, "
 "including JavaScript issues, can result in visual problems or disrupt "
@@ -2451,7 +2485,7 @@ msgid ""
 "commands inoperable."
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:983
+#: includes/diagnose/class_bill_diagnose.php:985
 msgid "Your usage now"
 msgstr ""
 
@@ -2459,7 +2493,7 @@ msgstr ""
 msgid "Your usage now:"
 msgstr ""
 
-#: includes/diagnose/class_bill_diagnose.php:995
+#: includes/diagnose/class_bill_diagnose.php:997
 msgid ""
 "Your WordPress Memory Limit is too low, which can lead to critical issues on "
 "your site due to insufficient resources. Promptly address this issue before "

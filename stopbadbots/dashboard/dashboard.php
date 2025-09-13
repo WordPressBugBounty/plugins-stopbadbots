@@ -75,7 +75,11 @@ if (!defined('ABSPATH')) {
             }
 
             if ($stopbadbots_checkversion == '') {
-                $ms = esc_attr__("Upgrade to Premium for weekly updates, enhanced firewall protection, and more, ensuring a level 100% of security.", "stopbadbots");
+            ?>
+                <span class="dashicons dashicons-warning" style="color: #FF0000; font-size: 20px; margin-right: 1px;"></span>
+            <?php
+                // $ms = esc_attr__("Upgrade to Premium for automatic updates, enhanced firewall protection, and more advanced options, ensuring a level 100% of security.", "stopbadbots");
+                $ms = esc_attr__("Upgrade to Premium for automatic updates, enhanced firewall protection, and advanced options to maximize your security.", "stopbadbots");
             }
 
 

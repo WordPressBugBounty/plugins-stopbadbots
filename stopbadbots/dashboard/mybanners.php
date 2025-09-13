@@ -31,48 +31,49 @@ if (empty($stopbadbots_checkversion)) {
             break;
     }
     echo '<h2>' . esc_attr($title_ad) . '</h2>';
-    ?>
+?>
     <video id="bill-banner-2" style="margin:-30px 0px -15px -12px; padding:0px;" width="400" height="230" muted>
         <source src="<?php echo esc_url($url); ?>" type="video/mp4">
     </video>
 
     <li>
-    <?php
-    esc_attr_e('features are not included in the free version:', 'stopbadbots');
-    echo '</li>';
-    ?>
-    <!--
+        <?php
+        esc_attr_e('features are not included in the free version:', 'stopbadbots');
+        echo '</li>';
+        ?>
+        <!--
     <li><?php esc_attr_e("Bots can steal content, harm SEO, slow servers, and exploit vulnerabilities.", "stopbadbots"); ?></li>
     -->
-    - <?php esc_attr_e("Automatic updates.", "stopbadbots"); ?>
-    <br>
-    - <?php esc_attr_e("Limit Number of Visits.", "stopbadbots"); ?>
-    <br>
-    - <?php esc_attr_e("Block HTTP Tools.", "stopbadbots"); ?>
-    <br>
+        - <?php esc_attr_e("Automatic database updates.", "stopbadbots"); ?>
+        <br>
+        - <?php esc_attr_e("Limit Number of Visits.", "stopbadbots"); ?>
+        <br>
+        - <?php esc_attr_e("Block HTTP Tools.", "stopbadbots"); ?>
+        <br>
 
 
-   - <?php esc_attr_e("4 options of Engine Management.", "stopbadbots"); ?>
+        - <?php esc_attr_e("Two extra options for enhanced engine performance.", "stopbadbots"); ?>
 
-    <br>
+        <br>
 
 
-    - <?php esc_attr_e("Block User Enumeration.", "stopbadbots"); ?>
-    <br />
+        - <?php esc_attr_e("Block User Enumeration.", "stopbadbots"); ?>
+        <br />
 
-   -<?php esc_attr_e("Block traffic from China, Cuba, and North Korea.", "stopbadbots"); ?>
-   <br />
+        -<?php esc_attr_e("Block traffic from China, Cuba, and North Korea.", "stopbadbots"); ?>
+        <br />
 
-    -<?php esc_attr_e("Firewall Protection.", "stopbadbots"); ?>
-    <br />
-    -<?php esc_attr_e("Dedicated Premium Support.", "stopbadbots"); ?>
-    <br />
-    -<?php esc_attr_e("More...", "stopbadbots"); ?></li>
+        -<?php esc_attr_e("Firewall Protection.", "stopbadbots"); ?>
+        <br />
+        -<?php esc_attr_e("Dedicated Premium Support.", "stopbadbots"); ?>
+        <br />
+        -<?php esc_attr_e("More...", "stopbadbots"); ?>
+    </li>
 
 
     <br />
     <a href="https://stopbadbots.com/premium/" class="button button-medium button-primary"><?php esc_html_e('Learn More', 'stopbadbots'); ?></a>
-    <?php
+<?php
     echo '</ul>';
 }
 

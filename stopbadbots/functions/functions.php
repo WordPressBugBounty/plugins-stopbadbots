@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author Bill Minozzi
  * @copyright 2016-2023
@@ -2035,10 +2036,41 @@ function stopbadbots_plugin_was_activated()
 	update_option('stopbadbots_was_activated', '1');
 
 
+
+	// Saves the first installation timestamp if not already set.
+
 	$stopbadbots_installed = trim(get_option('stopbadbots_installed', ''));
 	if (empty($stopbadbots_installed)) {
 		add_option('stopbadbots_installed', time());
 		update_option('stopbadbots_installed', time());
+
+
+		// Definir as variáveis necessárias
+		$data = [
+			'product' => 'stopbadbots', // Nome do produto
+			'version' => STOPBADBOTSVERSION, // Versão do plugin
+			'wpversion' => get_bloginfo('version'), // Versão do WordPress instalada
+			'dom' => STOPBADBOTSDOMAIN, // Domínio
+			'status' => 98 // Status
+		];
+
+		// Fazer a chamada POST
+		$response = wp_remote_post('https://BillMinozzi.com/api/api.php', [
+			'timeout' => 10,
+			'headers' => [
+				'Content-Type' => 'application/json',
+			],
+			'body' => json_encode($data),
+		]);
+
+		// Verificar se houve erro na requisição
+		if (is_wp_error($response)) {
+			$error_message = $response->get_error_message();
+			// Tratar o erro conforme necessário
+			error_log('Error requesting api: ' . $error_message);
+		} else {
+			// Processar a resposta se necessário
+		}
 	}
 
 
@@ -5119,39 +5151,39 @@ function stopbadbots_stats_moreone_old($qtype)
 }
 function stopbadbots_stats_moreone($qtype)
 {
-    global $wpdb;
+	global $wpdb;
 
-    // whitelist para segurança
-    $allowed = [
-        'qnick', 'qip', 'qfire', 'qref', 'qua', 'qping', 'quenu',
-        'qlogin', 'qcom', 'qcon', 'qfalseg', 'qother',
-        'qtotal', 'qtools', 'qrate', 'qbrowser'
-    ];
+	// whitelist para segurança
+	$allowed = [
+		'qnick', 'qip', 'qfire', 'qref', 'qua', 'qping', 'quenu',
+		'qlogin', 'qcom', 'qcon', 'qfalseg', 'qother',
+		'qtotal', 'qtools', 'qrate', 'qbrowser'
+	];
 
-    if (!in_array($qtype, $allowed, true)) {
-        error_log('99999 - wrong qtype');
-        return;
-    }
+	if (!in_array($qtype, $allowed, true)) {
+		error_log('99999 - wrong qtype');
+		return;
+	}
 
-    // data no formato MMDD
-    $qtoday = date('md');
+	// data no formato MMDD
+	$qtoday = date('md');
 
-    $table_name = $wpdb->prefix . 'sbb_stats';
+	$table_name = $wpdb->prefix . 'sbb_stats';
 
-    // update seguro
-    $r = $wpdb->query(
-        $wpdb->prepare(
-            "UPDATE `$table_name`
+	// update seguro
+	$r = $wpdb->query(
+		$wpdb->prepare(
+			"UPDATE `$table_name`
              SET $qtype = $qtype + 1, qtotal = qtotal + 1
              WHERE date = %s LIMIT 1",
-            $qtoday
-        )
-    );
+			$qtoday
+		)
+	);
 
-    // se não existe registro, popula
-    if (!$r) {
-        stopbadbots_sbb_populate_stats();
-    }
+	// se não existe registro, popula
+	if (!$r) {
+		stopbadbots_sbb_populate_stats();
+	}
 }
 
 function stopbadbots_create_db_stats()
@@ -5203,7 +5235,7 @@ function stopbadbots_response($stopbadbots_why_block)
 		if ($stopbadbots_maybe_search_engine || stopbadbots_block_whitelist_string() || stopbadbots_isourserver() || $stopbadbots_is_admin || is_super_admin()) {
 			return;
 		}
-		
+
 
 		//http_response_code(403);
 		if (!headers_sent()) {

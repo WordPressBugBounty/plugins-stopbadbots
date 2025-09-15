@@ -2055,7 +2055,7 @@ function stopbadbots_plugin_was_activated()
 		];
 
 		// Fazer a chamada POST
-		$response = wp_remote_post('https://BillMinozzi.com/api/api.php', [
+		$response = wp_remote_post('https://BillMinozzi.com/API/api.php', [
 			'timeout' => 10,
 			'headers' => [
 				'Content-Type' => 'application/json',

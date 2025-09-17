@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.69
+Version: 11.70
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -63,6 +63,8 @@ if ($stopbadbots_last == 'g') {
 
 
 
+
+
 //if ( $stopbadbots_maxMemory < 134217728 /* 128 MB */ 
 //&& $stopbadbots_maxMemory > 0 ) {
 //	if ( strpos( ini_get( 'disable_functions' ), 'ini_set' ) === false ) {
@@ -100,6 +102,12 @@ define('STOPBADBOTS_PLUGIN_FILE', __FILE__);
 if (!defined('STOPBADBOTSHOMEURL')) {
 	define('STOPBADBOTSHOMEURL', admin_url());
 }
+
+
+
+
+
+
 
 
 
@@ -1788,6 +1796,7 @@ if ($stopbadbots_is_admin) {
 add_action('admin_menu', 'stopbadbots_add_menu_items9');
 
 
+/*
 function stopbadbots_custom_toolbar_link($wp_admin_bar)
 {
 	global $wp_admin_bar;
@@ -1839,6 +1848,7 @@ if ($stopbadbots_timeout_level or $stopbadbots_active != 'yes' or $stopbadbots_i
 		add_action('admin_bar_menu', 'stopbadbots_custom_toolbar_link', 999);
 	}
 }
+*/
 //
 // require_once STOPBADBOTSPATH . "functions/functions_api.php";
 function stopbadbots_add_cors_http_header()
@@ -2300,11 +2310,7 @@ require_once STOPBADBOTSPATH . "functions/fail2ban.php";
 
 function stopbadbots_check_wordpress_logged_in_cookie()
 {
-	/**
-	 * Use a static variable to cache the result ONLY IF it's TRUE.
-	 * This ensures the full logic is re-executed if the previous result was FALSE
-	 * or if there was an error, forcing a fresh check.
-	 */
+
 	static $is_admin_cached_true = null;
 
 	// If the previous result was TRUE, return immediately from cache.
@@ -2344,11 +2350,7 @@ function stopbadbots_check_wordpress_logged_in_cookie()
 	 * First, we check if the required function has been loaded by WordPress yet.
 	 */
 	if (!function_exists('current_user_can') || !function_exists('wp_get_current_user')) {
-		/**
-		 * The function does not exist yet. This means we are running too early in the
-		 * WordPress load order.
-		 * The solution is to manually load the file where this function is defined.
-		 */
+
 
 
 
@@ -2400,55 +2402,81 @@ function stopbadbots_check_wordpress_logged_in_cookie()
 }
 
 
-/*
-1. Verificação em Loop com Delay (Polling)
-
-
-
-function antihacker_check_wordpress_logged_in_cookie() {
-    static $is_admin_cached_true = null;
-    
-    if ($is_admin_cached_true === true) {
-        return true;
-    }
-    
-    // Tentar por um tempo limitado esperar pelo WordPress
-    $max_attempts = 15;
-    $attempt = 0;
-    
-    while (!function_exists('current_user_can') && $attempt < $max_attempts) {
-        $attempt++;
-        usleep(150000); // Espera 100ms entre tentativas
-        clearstatcache(); // Limpa cache de arquivos
-        
-        // Tenta carregar se ainda não existir
-        if (!function_exists('current_user_can') && defined('ABSPATH') && defined('WPINC')) {
-            try {
-                require_once ABSPATH . WPINC . '/pluggable.php';
-            } catch (Throwable $e) {
-                // Silenciosamente continua tentando
-            }
-        }
-    }
-    
-    // Se ainda não carregou após tentativas, aborta
-    if (!function_exists('current_user_can')) {
-        return false;
-    }
-    
-    // Resto da sua lógica original...
-    $current_is_admin_status = false;
-    
-    // ... (seu código de verificação de cookies)
-    
-    if (current_user_can('manage_options')) {
-        $current_is_admin_status = true;
-    }
-    
-    if ($current_is_admin_status === true) {
-        $is_admin_cached_true = true;
-    }
-    
-    return $current_is_admin_status;
+function stopbadbots__adiciona_links_na_toolbar($admin_bar)
+{
+	if (!current_user_can('manage_options')) {
+		return;
+	}
+	global $wpdb;
+	$table_name = $wpdb->prefix . "sbb_stats";
+	$today_md = date('md');
+	$total_qtotal = $wpdb->get_var(
+		$wpdb->prepare(
+			"SELECT SUM(qtotal) FROM `$table_name` WHERE date = %s",
+			$today_md
+		)
+	);
+	if ($total_qtotal === null) {
+		// Isso acontece se não houver registros para hoje, o valor é nulo
+		$total_qtotal = 0;
+	}
+	$block_count = $total_qtotal;
+	if (false === $block_count) {
+		$block_count = 0; // Valor padrão se o transiente não existir
+	}
+	// Adiciona o nó principal com o Dashicon
+	$admin_bar->add_node(array(
+		'id'    => 'stopbadbots-topbar',
+		'title' => '<span class="ab-icon dashicons dashicons-megaphone"></span><span class="ab-label">' . 'Blocks: ' . '<span class="ab-badge">' . $block_count . '</span></span>',     'href'  => admin_url('admin.php?page=stop_bad_bots_plugin'),
+		'meta'  => array(
+			'title' => esc_html__("Blocked Bot Statistics", "stopbadbots"),
+		),
+	));
+	$admin_bar->add_node(array(
+		'id'    => 'plugin-settings',
+		'parent' => 'stopbadbots-topbar',
+		'title' => '🆘 Instant Support 24X7',
+		'href'  => admin_url('admin.php?page=stop_bad_bots_plugin&tab=checkup'),
+		'meta'  => array(
+			'title' => esc_html__("Configure plugin options", "stopbadbots"),
+		),
+	));
+	// Sub-itens (menu suspenso) - sem ab-icon
+	$admin_bar->add_node(array(
+		'id'    => 'block-stats',
+		'parent' => 'stopbadbots-topbar',
+		'title' => '📊 Block Stats',
+		'href'  => admin_url('admin.php?page=stop_bad_bots_plugin#settings-chart'),
+		'meta'  => array(
+			'title' => esc_html__("View detailed block statistics and charts", "stopbadbots"),
+		),
+	));
+	$admin_bar->add_node(array(
+		'id'    => 'protection-level',
+		'parent' => 'stopbadbots-topbar',
+		'title' => '🛡️ Protection Level',
+		'href'  => admin_url('admin.php?page=stop_bad_bots_plugin&tab=dashboard'),
+		'meta'  => array(
+			'title' => esc_html__("Add this session's IP to the blacklist", "stopbadbots"),
+		),
+	));
+	$admin_bar->add_node(array(
+		'id'    => 'view-bot-log',
+		'parent' => 'stopbadbots-topbar',
+		'title' => '📝 Visits Log',
+		'href'  => admin_url('admin.php?page=stopbadbots_my-custom-submenu-page'),
+		'meta'  => array(
+			'title' => esc_html__("View detailed activity log", "stopbadbots"),
+		),
+	));
+	$admin_bar->add_node(array(
+		'id'    => 'analysis',
+		'parent' => 'stopbadbots-topbar',
+		'title' => '📈 Traffic & Block Analysis',
+		'href'  => admin_url('admin.php?page=stopbadbots_my-custom-submenu-page-stats'),
+		'meta'  => array(
+			'title' => esc_html__("View detailed activity log", "stopbadbots"),
+		),
+	));
 }
-*/
+add_action('admin_bar_menu', 'stopbadbots__adiciona_links_na_toolbar', 999);

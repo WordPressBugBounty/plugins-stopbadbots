@@ -5,7 +5,7 @@ Tags: Bad Bots, block bots, fail2ban, server overload, limit visits
 Requires at least: 4.0
 Tested up to: 6.8
 Requires PHP: 5.6 
-Stable tag: 11.69
+Stable tag: 11.70
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -379,7 +379,20 @@ domain: https://billminozzi.com/API/bill-api.php
 
 
 == Advanced Site Health ==
-Our plugin is a powerful tool designed to provide deep insights into your website's real-world operational health. For full transparency, please be aware that our bot detection feature sends visitor IP addresses to public, authoritative lookup services (such as the RIPE NCC's rdap.db.ripe.net) to analyze their origin and identify potential threats.
-For a complete overview of all features, our data handling practices, and the full terms governing our software, please visit our official website: https://siterightaway.net/terms-of-use-of-our-plugins-and-themes/
+
+WordPress’s built-in Site Health feature provides a great baseline for your site’s well-being. However, in today’s digital landscape, true “health” goes beyond server configuration. A site can have a perfect score and still be slow, vulnerable, or plagued by critical errors.
+
+Our plugin extends the core Site Health concept to provide a truly holistic analysis of what keeps your site fast, stable, and secure. We don’t just check the basics; we diagnose critical issues that directly impact your visitors’ experience and your site’s operational integrity.
+
+Our enhanced checks include:Performance & Memory Analysis, Proactive Error Detection, Modern Security Monitoring.
+That  involves querying public, authoritative services like rdap.db.ripe.net with visitor IP addresses for security analysis.
+domain: https://rdap.db.ripe.net/ip/
+and
+domain: https://BillMinozzi.com/API/api.php
+info send: Domain, plugin and WordPress version, status (string) 98.
+
+For a complete overview of all features, our data handling practices, and the full terms governing our software, please visit our official website: 
+https://siterightaway.net/terms-of-use-of-our-plugins-and-themes/
 
 To learn more details about the StopBadBots plugin and look the bots table, visit the <a href="https://stopbadbots.com">plugin site</a>.
+

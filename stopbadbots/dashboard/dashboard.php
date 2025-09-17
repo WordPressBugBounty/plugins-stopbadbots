@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
         <!-- "Column1">  -->
         <div class="stopbadbots-help-2column stopbadbots-help-column-2">
-            <h3><?php esc_attr_e("Protection Status", "stopbadbots"); ?></h3>
+            <h3><?php esc_attr_e("Protection Level", "stopbadbots"); ?></h3>
             <?php
 
 
@@ -111,10 +111,14 @@ if (!defined('ABSPATH')) {
                 $ms = esc_attr__("Activate Firewall to increase protection.", "stopbadbots");
             }
             if (empty($ms)) {
-                echo esc_attr__('Protection level currently configured.', "stopbadbots");
+                echo esc_attr__('Your current protection level is configured. To increase it, go to the Settings page and enable all options.', "stopbadbots");
             } else {
                 echo esc_attr($ms);
             }
+            echo '<br><br><strong>';
+            echo esc_attr__('Bots can destroy your SEO. Overloading servers, slowing page loads, crashing sites, and stealing content.', "stopbadbots");
+            echo '</strong>';
+
             ?>
             <br /> <br />
         </div> <!-- "columns 2">  -->
@@ -128,7 +132,7 @@ if (!defined('ABSPATH')) {
                 <h3 style="color:green; margin-top:10px;"><?php esc_attr_e("Pro Protection Enabled", "stopbadbots"); ?></h3>
                 <?php esc_attr_e("With weekly database updates and Firewall protection.", "stopbadbots"); ?>
                 <br />
-                <?php $site = 'https://stopbadbots.com'; ?>
+                <?php $site = 'https://siterightaway.net/stop-bad-bots-silver/'; ?>
                 <a href="<?php echo esc_url($site); ?>" class="button button-primary"><?php esc_attr_e("Learn More", "stopbadbots"); ?></a>
             <?php } else {
 
@@ -302,7 +306,7 @@ if (!defined('ABSPATH')) {
 <div id="stopbadbots-services3">
 
 
-    <div class="stopbadbots-help-container1">
+    <div id="settings-chart" class="stopbadbots-help-container1">
 
 
         <div class="stopbadbots-help-2column stopbadbots-help-column-2">

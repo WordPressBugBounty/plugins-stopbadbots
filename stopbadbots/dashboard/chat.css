@@ -303,3 +303,9 @@
     max-width: 80%;
     align-self: flex-start;
 }
+
+#stopbadbots_img_robot {
+
+    margin-right: 10px;
+    max-width: 30px;
+}

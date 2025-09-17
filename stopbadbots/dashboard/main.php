@@ -175,7 +175,7 @@ function stopbadbots_options_page_main()
         ?>
         <h2 class="nav-tab-wrapper">
             <a href="?page=stop_bad_bots_plugin&tab=memory&tab=dashboard" class="nav-tab">Dashboard</a>
-            <a href="?page=stop_bad_bots_plugin&tab=notifications" class="nav-tab">Notifications</a>
+            <!-- <a href="?page=stop_bad_bots_plugin&tab=notifications" class="nav-tab">Notifications</a> -->
             <a href="?page=stop_bad_bots_plugin&tab=debug" class="nav-tab">Debug Info</a>
             <a href="?page=stop_bad_bots_plugin&tab=more" class="nav-tab">More Tools</a>
             <a href="?page=stop_bad_bots_plugin&tab=checkup" class="nav-tab">Instant 24/7 Support</a>

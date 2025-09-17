@@ -58,12 +58,12 @@ if (file_exists(plugin_dir_path(__FILE__) . 'chat.js')) {
         </div>
         <div class="stopbadbots-dashboard-auto-checkup-container" style="text-align: center; margin-top: 10px;">
             <button type="button" id="stopbadbots-dashboard-auto-checkup" class="stopbadbots-dashboard-new-chat-button">
-                <img src="<?php echo esc_url(plugin_dir_url(__FILE__) . 'robot2.png'); ?>" alt="" width="35" height="30">
+                <img id="stopbadbots_img_robot" src="<?php echo esc_url(plugin_dir_url(__FILE__) . 'robot2.png'); ?>" alt="" width="35" height="30">
                 <?php echo esc_attr__('Auto Checkup for Errors', "stopbadbots"); ?>
             </button>
             &nbsp;&nbsp;&nbsp;
             <button type="button" id="stopbadbots-dashboard-auto-checkup2" class="stopbadbots-dashboard-new-chat-button">
-                <img src="<?php echo esc_url(plugin_dir_url(__FILE__) . 'robot2.png'); ?>" alt="" width="35" height="30">
+                <img id="stopbadbots_img_robot" src="<?php echo esc_url(plugin_dir_url(__FILE__) . 'robot2.png'); ?>" alt="" width="35" height="30">
                 <?php echo esc_attr__('Auto Checkup Server ', "stopbadbots"); ?>
             </button>
         </div>

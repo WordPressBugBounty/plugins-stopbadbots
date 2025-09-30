@@ -2083,7 +2083,12 @@ function stopbadbots_plugin_was_activated()
 	// ----------------
 
 	// Install
-	if (version_compare(trim(STOPBADBOTSVERSION), trim($stopbadbots_version)) > 0) {
+
+	$current_version = STOPBADBOTSVERSION !== null ? trim(STOPBADBOTSVERSION) : '';
+	$new_version = $stopbadbots_version !== null ? trim($stopbadbots_version) : '';
+
+	if (version_compare($current_version, $new_version) > 0) {
+		//	if (version_compare(trim(STOPBADBOTSVERSION), trim($stopbadbots_version)) > 0) {
 
 		try {
 			if (isset($_SERVER['SERVER_ADDR'])) {

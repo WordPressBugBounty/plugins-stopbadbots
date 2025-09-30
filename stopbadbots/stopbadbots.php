@@ -2,7 +2,7 @@
 Plugin Name: StopBadBots
 Plugin URI: http://stopbadbots.com
 Description: Stop Bad Bots, SPAM bots and spiders. No DNS or Cloud Traffic Redirection. No Slow Down Your Site!
-Version: 11.70
+Version: 11.71
 Text Domain: stopbadbots
 Domain Path: /language
 Author: Bill Minozzi
@@ -33,6 +33,18 @@ DEALINGS IN THE SOFTWARE.
 if (!defined('ABSPATH')) {
 	exit;
 }
+// --- Adicione este ob_start() para capturar o output que vem antes do seu código ---
+if (!ob_start()) {
+	// Se o buffer não puder ser iniciado, algo já saiu.
+	// Tente capturar o que saiu.
+	$early_output = ob_get_clean();
+
+	if ($early_output) {
+		// Encontramos o output. Logue-o ou exiba-o.
+		// error_log("OUTPUT PRECOCE DETECTED: " . $early_output);
+
+	}
+}
 
 $bill_debug = false;
 // $bill_debug = true; 
@@ -46,7 +58,7 @@ function stopbadbots_clear_scheduled_hook_antihacker() {
 // Debug//
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1);
-// ob_start();
+
 // Fix memory
 $stopbadbots_maxMemory = @ini_get('memory_limit');
 $stopbadbots_last      = strtolower(substr($stopbadbots_maxMemory, -1));

@@ -5,7 +5,7 @@ Tags: Bad Bots, block bots, fail2ban, server overload, limit visits
 Requires at least: 4.0
 Tested up to: 6.8
 Requires PHP: 5.6 
-Stable tag: 11.70
+Stable tag: 11.71
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,31 @@ Stop Bad Bots Protection, Block SPAM bots, Crawlers and spiders and botnets. Sav
 **STOP BAD BOTS**
 ★★★★★<br>
 
+
+### **🚀 In a Hurry? See the Essentials and Get Protected in Less than 2 Minutes.**
+
+**What it does:**
+Protects your WordPress site from bad bots, crawlers, spam, and malicious traffic. It also prevents **server overload and safeguards your SEO** (avoid delay in loading the page and it doesn't allow content theft, preventing duplications of your content).
+
+**Why it matters:**
+Roughly 30% of all internet traffic is from bots, and 2.5% is malicious (data theft, brute-force attacks, slowing down sites). According to **Cloudflare, that's nearly 2 million attacks every second**.
+
+**Main Protections:**
+* **Blocks bad bots**, fake Google/Microsoft bots, scrapers, and spammers.
+* **No DNS, Cloud, or external API required** → The plugin is self-contained, fast, and lightweight.
+* **Doesn't block legitimate bots from Google, Bing, Yahoo, Twitter, or Facebook.
+
+**Features:**
+* **Quick Start:** Install in under 2 minutes (**smart installer**). Just a few clicks and your site is protected.
+* **Visits Log:** See who's visiting your site.
+* **Real-time Analytics:** Get detailed insights, with traffic neatly separated into bots and humans.
+* **Attack Charts:** Visualize blocked threats with daily charts showing the number of blocks by type.
+* **Instant Support:** Get **24/7 AI-powered support** (included in the free version).
+* **Intuitive Dashboard:** A clear, user-friendly interface to manage your security.
+* **Languages:** Available in Dutch, French, German, Italian, Spanish, and Portuguese.
+
+
+### **🔎 Want All the Details? Read the Full Explanation Below**
 **Bad Bots: A Growing Danger**
 
 >Can you imagine the sheer volume of data crossing the internet every second? It's truly monstrous, isn't it? Millions of interactions, searches, and transactions...
